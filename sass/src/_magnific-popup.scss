@@ -1,0 +1,30 @@
+.mfp-close {
+	i {
+		pointer-events: none;
+	}
+}
+
+.pswp__button {
+	i {
+		display: none;
+		pointer-events: none;
+	}
+}
+
+.pswp--open {
+	.pswp__button {
+		i {
+			display: inline-block;
+		}
+	}
+}
+
+.pswp__button:focus,
+.pswp__button:hover {
+    //opacity: 0;
+}
+
+.pswp__button--close,
+button.pswp__button--close:hover {
+    background-position: 0 -100px;
+}
