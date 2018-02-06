@@ -197,6 +197,12 @@
 
 	$(window).load(function() {
 		var $backToTopBtn = $('#back-to-top');
+
+		$backToTopBtn.click(function() {
+		    $('html').animate({ scrollTop: 0 }, 'slow');
+		    return true;
+		});
+
 		var $footer = $('#footer');
 		$(window).scroll(function() {
 			if($(window).scrollTop() > 200) {

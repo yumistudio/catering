@@ -124,6 +124,18 @@ i {
     color: $gold;
 }
 
+#back-to-top {
+    position: fixed;
+    right: 50px;
+    border: solid 1px $gold50; 
+    bottom: -50px;
+    @include transition(bottom .3s);
+
+    &.show {
+        bottom: 50px;
+    }
+}
+
 textarea,
 input[type=text],
 input[type=number],
@@ -1250,14 +1262,14 @@ lable.es_shortcode_form_email {
 }
 
 #artists-list {
-    .contnet-box {
+    .content-box {
         position: relative;
         height: 350px;
         margin-bottom: 30px; 
     }
 }
 
-.contnet-box {
+.content-box {
     .bg {
         position: absolute;
         left: 0; right: 0;

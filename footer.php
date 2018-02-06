@@ -42,6 +42,8 @@
 			</div>
 		</div><!-- End: inner-wrap -->
 	</div><!-- End: outer-wrap -->
+	<div id="back-to-top" class="btn btn-nav"><i class="icon-arrow-up"></i></div>
 	<?php wp_footer(); ?>
+
 </body>
 </html>
