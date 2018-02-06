@@ -10,41 +10,17 @@
  * @version 1.0
  */
 
-get_header(); ?>
-
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
-
 get_header();
-
+get_template_part( 'template-parts/page/content', 'header' );
 ?>
 <section id="maincontent" class="one-column-section">
 
 	<div class="container-fluid section-wrap section-padding bg-lightgrey">
 		
-		<div class="col-xs-12 col-sm-offset-1 col-sm-2">
+		<div class="col-sm-offset-3 col-xs-12 col-sm-7">
 			<h2>Ooops!</h2>
-
-		</div>
-		
-		<div class="col-xs-12 col-sm-7">
-			
-			<h3>THAT PAGE CAN’T BE FOUND.</h3>
-			It looks like nothing was found at this location.
+			<h3>Strona nie może zostać odnaleziona.</h3>
+			Wygląda na to, że nie możemy znaleźć w podanej lokalizacji.
 		
 		</div>
 		
