@@ -21,13 +21,13 @@ $objects = get_posts( array(
 ) );
 
 $args = array(
-    //'post_type'			=> 'tribe_events',
-    //'posts_per_page'	=> 4,
+    'post_type'			=> 'tribe_events',
+    'posts_per_page'	=> 4,
     //'meta_key' => '_EventStartDate',
-    //'orderby' => '_EventStartDate',
+    'orderby' => '_EventStartDate',
     'eventDisplay' => 'past',
     'order'	=> 'ASC',
-    /*
+    
     'meta_query' => array(
        array(
            'key' => '_EventStartDate',
@@ -35,11 +35,21 @@ $args = array(
            'compare' => '>',
        )
    	)
-   	*/
+   	
 );
 
 
-$events = tribe_get_events( $args );
+//$events = tribe_get_events( $args );
+//$events = get_posts( $args );
+
+$args2 = array(
+    'posts_per_page'	=> 4,
+    //'eventDisplay' => 'past',
+    'start_date' => date( 'Y-m-d H:i:s' ),
+    'order'	=> 'ASC'
+);
+$events = tribe_get_events( $args2 );
+
 
 //global $wpdb; 
 //print($wpdb->last_query);
@@ -107,11 +117,13 @@ $events = tribe_get_events( $args );
 	</div>
 	<div class="container-fluid max-width events-list">
         <?php $i=0; foreach($events as $post) :
-        	global $post;
+        	//global $post;
+        	//print_r($post);
         	$eventMeta = get_post_meta($post->ID);
 			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $eventMeta['_EventEndDate'][0]);
+			$terms = get_the_terms($post->ID, 'tribe_events_cat');
+			
 			if ($i == 0) :
-			$terms = get_the_terms($post->ID, 'tribe_events_cat')
 			?>
 			<div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 col-lg-offset-0 col-lg-4">
 				<?php the_post_thumbnail() ?>

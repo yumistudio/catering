@@ -195,6 +195,7 @@
 			
 			$eventFld.val(event.id);
 			$ticketFld.val(event.ticket_id);
+			console.log(event.start_date);
 			$timeFld.val(event.start_date.substring(11, 16));			
 
 			$dateHint.text(event.title);

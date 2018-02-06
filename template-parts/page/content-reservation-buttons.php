@@ -1,4 +1,4 @@
-	<div class="container-fluid side-padding rsvrn-buttons">		
+	<div id="rsvrn-buttons" class="container-fluid side-padding">		
 		<div class="col-xs-12 col-sm-6 col-lg-3">	
 			<a href="/wydarzenia/" class="reservation-btn">
 				
