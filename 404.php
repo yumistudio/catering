@@ -20,7 +20,7 @@ get_template_part( 'template-parts/page/content', 'header' );
 		<div class="col-sm-offset-3 col-xs-12 col-sm-7">
 			<h2>Ooops!</h2>
 			<h3>Strona nie może zostać odnaleziona.</h3>
-			Wygląda na to, że nie możemy znaleźć w podanej lokalizacji.
+			Wygląda na to, że nie możemy znaleźć w podanej lokalizacji...
 		
 		</div>
 		
