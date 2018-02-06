@@ -1,0 +1,84 @@
+/* ---- grid ---- */
+
+.grid {
+  @include pie-clearfix;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+    float: left;
+    position: relative;
+
+    width: 33.33333%;
+    
+    & > a {
+        display: block;
+        position: relative;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #000;
+    }
+
+    .tile-title {
+        position: absolute;
+        bottom: 0;
+        padding: 30px; 
+        margin: 0;
+        color: #fff;
+        text-align: left;
+    }
+
+    .date {
+        displlay: block;
+        color: $lightgrey;
+        text-transform: uppercase;
+        @include transition(color .3s);
+    }
+    .title {
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        @include transition(color .3s);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        background-color: $gold;
+        opacity: 0;
+        @include transition(opacity .3s);
+    }
+
+    &:hover {
+        .title, .date {
+            color: #000;
+        }
+        .overlay {
+            opacity: .8;
+        }
+    }
+
+}
+
+.grid-item--height-small {
+    padding-top: 50%;   
+}
+
+.grid-item--height-reg {
+    padding-top: 100%;
+}
+
+.grid-item--height-big {
+    padding-top: 150%;
+}
+
