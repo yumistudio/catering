@@ -17,7 +17,7 @@
 	var sumType = jQuery('#type-val');
 	var sumTotal = jQuery('#cost-val');
 	var $ajaxLoader = jQuery('#ajax-loader');
-	var eventUrl = 'http://' + window.location.hostname + '/wp-json/tribe/events/v1/events/?start_date='+date+'&end_date='+date;
+	
 
 	$('.buy-ticket a.buy-link').click(function(e) {
 		e.preventDefault();
@@ -177,6 +177,7 @@
 		$ajaxLoader.addClass('on');
 		
 		var date = ct.getFullYear() + '-' + (ct.getMonth()+1).pad() + '-' + ct.getDate();
+		var eventUrl = 'http://' + window.location.hostname + '/wp-json/tribe/events/v1/events/?start_date='+date+'&end_date='+date;
 		var cost = 0;
 
 		if ($i != null)
@@ -195,7 +196,7 @@
 			
 			$eventFld.val(event.id);
 			$ticketFld.val(event.ticket_id);
-			console.log(event.start_date);
+			
 			$timeFld.val(event.start_date.substring(11, 16));			
 
 			$dateHint.text(event.title);
