@@ -1,0 +1,142 @@
+<?php
+/**
+ * Filename: index-pdf.php
+ * Project: WordPress PDF Templates
+ * Copyright: (c) 2014-2016 Antti Kuosmanen
+ * License: GPLv3
+ *
+ * Copy this file to your theme directory to start customising the PDF template.
+*/
+
+  //$logo = '../../../wp-content/uploads/2017/06/logo.jpg';
+  //$logo = 'logo.jpg';
+  $logo = 'wp-content/uploads/2017/06/logo.jpg';
+  $gallery = get_field('image_gallery');
+?>
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title><?php wp_title(); ?></title>
+  <?php wp_head(); ?>
+  <style>
+    /* latin-ext */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v13/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v13/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 900;
+      src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 900;
+      src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+
+    @page{ margin: 0; }
+    body { font-family: 'Lato Regular'; padding: 120px 0;}
+    .fh { position: fixed; width: 100%; height: 100px; background-color: #e2e4e2; }
+    .header { top: 0; }
+    .footer { bottom: 0; height: 100px;  }
+    .footer-inner { font-size: 10px; padding: 20px; }
+    .header svg { width: 200px; height: 30px; fill: #fff; }
+    .header svg path { fill: #FFFFFF; }
+    .logo { width: 200px; height:100px; float: right; background: #282b28 url('<?php echo $logo; ?>') center center no-repeat; }
+    .container { padding: 0 20px; }
+    .post-content { float: left; width: 50%; }
+    .header h1 { margin-left: 20px; }
+    .footer-inner > div { margin-top: 5px; }
+    .float { width: 40%; height: 100px; background: red; }
+  </style>
+
+</head>
+<body>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <div class="fh header">
+    <div class="logo">
+    </div>
+    <div class="header-inner">
+      <h1><?php the_title(); ?></h1>
+    
+    </div>
+  </div>
+
+  <div class="fh footer">
+    <div class="logo">
+      
+    </div>
+    <div class="footer-inner">
+      <div itemscope="" itemprop="address" itemtype="http://schema.org/PostalAddress">
+        <b><span itemprop="addressLocality">KILDARE</span></b> -
+        <span itemprop="streetAddress"><?php echo ot_get_option( 'address_kildare' ); ?></span> |
+        <span itemprop="postalCode"><?php echo ot_get_option( 'eircode_kildare' ); ?></span>
+        <span itemprop="telephone"><?php echo ot_get_option( 'phone_no_kildare' ); ?></span> |
+        <a href='mailto:<?php echo ot_get_option( 'email_kildare' ); ?>' itemprop="email"><?php echo ot_get_option( 'email_kildare' ); ?></a>
+      </div>
+      <div itemscope="" itemprop="address" itemtype="http://schema.org/PostalAddress">
+        <b><span itemprop="addressLocality">CORK</span></b> -
+        <span itemprop="streetAddress"><?php echo ot_get_option( 'address_cork' ); ?></span> |
+        <span itemprop="postalCode"><?php echo ot_get_option( 'eircode_cork' ); ?></span>
+        <span itemprop="telephone"><?php echo ot_get_option( 'phone_no_cork' ); ?></span> |
+        <a href='mailto:<?php echo ot_get_option( 'email_cork' ); ?>' itemprop="email"><?php echo ot_get_option( 'email_cork' ); ?></a>
+      </div>
+      <div itemscope="" itemprop="address" itemtype="http://schema.org/PostalAddress">
+        <b><span itemprop="addressLocality">KERRY</span></b> -
+        <span itemprop="streetAddress"><?php echo ot_get_option( 'address_kerry' ); ?></span> |
+        <span itemprop="postalCode"><?php echo ot_get_option( 'eircode_kerry' ); ?></span>
+        <span itemprop="telephone"><?php echo ot_get_option( 'phone_no_kerry' ); ?></span> |
+        <a href='mailto:<?php echo ot_get_option( 'email_kerry' ); ?>' itemprop="email"><?php echo ot_get_option( 'email_kerry' ); ?></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="post-content">
+      <?php the_content(); ?>
+    </div>
+  <div class="images">
+      <div class="float" style="float: left"></div>
+      <div class="float" style="float: right"></div>
+      <?php the_post_thumbnail(); ?>
+    </div>
+  </div>
+  <?php endwhile; endif; ?>
+  
+</body>
+</html>

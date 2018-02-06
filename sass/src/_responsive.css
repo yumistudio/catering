@@ -1,0 +1,119 @@
+header.main-header {
+	position: relative;
+	z-index: 10;
+}
+
+#page {
+	@include pie-clearfix;
+	margin-bottom: 50px;
+}
+
+.layout { 
+	box-sizing: border-box;
+}
+
+.layout.layout-main.main-left {
+	float: left;
+	width: 66%;
+	margin-top: 20px;
+}
+
+.layout.layout-right {
+	float: right;
+	width: 34%;
+	margin-top: 20px;
+	padding-left: 30px;
+}
+
+.logo-container {
+	float: left;
+	margin-top: 45px;
+	max-width: 253px;
+
+	img {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.slogan {
+	font-size: 1.125em;
+}
+
+.fb-site-like {
+	float: right;
+	margin: 10px 0;
+	height: 20px;
+}
+
+
+.footer-top-wrap {
+	border-top: solid 1px lighten($color-dark, 40%);
+	background-color: #eaeaea;
+	height: 100px;
+}
+
+.footer {
+
+	background-color: $color-dark;
+
+	.footer-tools-wrap {
+		border-top: solid 1px lighten($color-dark, 10%);
+		border-bottom: solid 1px lighten($color-dark, 10%);
+		@include pie-clearfix;
+	}
+
+	.footer-middle-wrap {
+		
+	}
+
+	.footer-bottom-wrap {
+		background: #5f5f5f;
+		height: 100px;
+	}
+
+	.footer-bottom { display: table; color: white; font-size: 0.8em; }
+	.footer-bottom > div { display: table-cell; vertical-align: top; padding-top: 25px; }
+
+	.bottom-logo {
+		width: 210px; height: 32px;
+		background: url(../Images/logo-footer.png) no-repeat 0 25px;
+		padding-right: 60px;
+	}
+
+	.bottom-logo:after {
+		display: block; content: '';
+		float: right;
+		width: 48px; height: 100%;
+		background: url(../Images/stars-flag.png) no-repeat;
+		margin-top: -3px;
+	}
+
+	.social-icons {
+		text-align: right;
+		padding-top: 10px;
+		a {
+			display: inline-block;
+			margin-right: 10px;
+			width: 38px; height: 37px;
+			background: no-repeat left top;
+		}
+
+		a.facebook { background-image: url(../Icons/icon-social-facebook.png); }
+		a.twitter { background-image: url(../Icons/icon-social-twitter.png); }
+		
+	}
+
+	.copyright-text { }
+
+	.certificates { 
+		padding-top: 5px !important;
+		padding-left: 60px;
+		width: 110px;
+		ul { margin: 0; }
+		li { display: inline-block; width: 45px; height: 45px; background: no-repeat; }
+		li:nth-child(1) { background-image: url(../Images/cert-1.png); }
+		li:nth-child(2) { background-image: url(../Images/cert-2.png); }
+	}
+
+}
