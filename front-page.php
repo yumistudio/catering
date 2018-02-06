@@ -25,9 +25,7 @@ $args = array(
     'posts_per_page'	=> 4,
     //'meta_key' => '_EventStartDate',
     'orderby' => '_EventStartDate',
-    'eventDisplay' => 'past',
     'order'	=> 'ASC',
-    
     'meta_query' => array(
        array(
            'key' => '_EventStartDate',
@@ -117,12 +115,10 @@ $events = tribe_get_events( $args2 );
 	</div>
 	<div class="container-fluid max-width events-list">
         <?php $i=0; foreach($events as $post) :
-        	//global $post;
-        	//print_r($post);
-        	$eventMeta = get_post_meta($post->ID);
-			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $eventMeta['_EventEndDate'][0]);
+        	
+			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $post->EventEndDate);
 			$terms = get_the_terms($post->ID, 'tribe_events_cat');
-			
+
 			if ($i == 0) :
 			?>
 			<div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 col-lg-offset-0 col-lg-4">
@@ -275,11 +271,11 @@ $grid = array(
 					'compare' => 'NOT IN',
 				),
 			),
+			'orderby' => '_EventStartDate',
+    		'order'	=> 'DESC',
 		);
 
 		$query = new WP_Query($args);
-
-		 
 		$i=0;
 		while ( $query->have_posts() ) : $query->the_post(); 
 			global $post;
