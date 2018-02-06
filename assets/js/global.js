@@ -195,15 +195,17 @@
 		$(this).siblings('input').val((parseInt(value) + 1));
 	});
 
-	var $backToTopBtn = $('#back-to-top');
-	var $footer = $('#footer');
-	$(window).scroll(function() {
-		if($(window).scrollTop() > 200) {
-			$backToTopBtn.addClass('show');	
-		} else {
-			$backToTopBtn.removeClass('show');
-		}
-		//console.log($backToTopBtn.offset());
+	$(window).load(function() {
+		var $backToTopBtn = $('#back-to-top');
+		var $footer = $('#footer');
+		$(window).scroll(function() {
+			if($(window).scrollTop() > 200) {
+				$backToTopBtn.addClass('show');	
+			} else {
+				$backToTopBtn.removeClass('show');
+			}
+			//console.log($backToTopBtn.offset());
+		});
 	});
 
 	$.fn.extend({
