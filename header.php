@@ -37,55 +37,88 @@ wp_head();
     <div id="outer-wrap">
         
         <?php if ( has_nav_menu( 'top' ) ) : ?>
-        <div id="main-navigation" class="">
+        <header id="homepage-header">
+            <div id="main-navigation" class="">
 
 
-            <div id="sticky-navigation" class="">
-                <a href="/" id="sticky-logo"><i class="icon-s54-logo"></i></a>
-                <?php wp_nav_menu( array(
-                    'theme_location' => 'top',
-                    'menu_id'        => 'sticky-menu',
-                    'menu_class'     => 'navigation',
-                ) ); ?>
-                <div class="reservation-link"><a href="/rezerwacja/">Rezerwacja</a></div>
-            </div>
-            <div id="mobile-nav-toggle"><i class="icon-menu"></i></div>
-            <div id="top-navigation-bar" class="container-fluid">
-                <a id="logo-mobile" href="/">
-                    <img src="/wp-content/themes/funktional/assets/images/logo.png" />
-                </a>
-                <div class="social">
-                    <a href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank"><i class="icon-social-facebook"></i></a>
-                    <a href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank"><i class="icon-social-instagram"></i></a>
-                    <a href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank"><i class="icon-social-tripadvisor"></i></a>
-                </div>
-                <span id="call-us-link">
-                    <a href="tel:<?php echo ot_get_option( 'phone' ); ?>">
-                        <i class="icon-phone"></i>
-                        <?php echo ot_get_option(    'phone' ); ?>
-                    </a>
-                </span>
-                <span class="reservation-link"><a href="/rezerwacja/">Rezerwacja</a></span>
-            </div>
-            <div id="main-navigation-bar" class="container-fluid">
-                <div class="col-xs-3 col-md-2">
-                    <a id="logo" href="/">
-                        <img src="/wp-content/themes/funktional/assets/images/logo.png" />
-                    </a>
-                </div>
-                <div class="col-xs-9 col-md-10">
-                    <div class="menu-wrap">
-                        <div class="menu-inner-wrap">
-                        <?php wp_nav_menu( array(
-                            'theme_location' => 'top',
-                            'menu_id'        => 'top-menu',
-                            'menu_class'     => 'navigation',
-                        ) ); ?>
+                <div id="sticky-navigation" class="">
+                    <div id="main-nav" class="container">
+                    <div class="row">
+                        <div id="main-nav__left" class="col-md-5 text-right no-gutters">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">O nas</a></li>
+                                    <li><a href="#">Menu & deli</a></li>
+                                    <li><a href="#">Galeria</a></li>
+                                </ul>
+                            </nav>
+                            </div>
+                        <div id="main-nav__logo" class="col-md-2">
+                            <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav-white.png" alt="logo cargo"/>
+                        </div>
+                        <div id="main-nav__right" class="col-md-5 text-left no-gutters">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Rezerwacja</a></li>
+                                    <li><a href="#">Oferta</a></li>
+                                    <li><a href="#">Kontakt</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div><!-- .container-fluid -->
-        </div><!-- .navigation-top -->
+
+                <div id="mobile-nav-toggle"><i class="icon-menu"></i></div>
+
+                <div id="top-navigation-bar" class="container-fluid">
+                    <div class="container no-gutters">
+                        <div id="top-navigation-bar__address" class="pull-left"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H, Kraków</div>
+                        <div id="top-navigation-bar__phone" class="pull-right"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
+                    </div>
+                </div>
+                <div id="main-nav" class="container">
+                   <div class="row">
+                       <div id="main-nav__left" class="col-md-5 text-right">
+                           <nav>
+                               <ul>
+                                   <li><a href="#">O nas</a></li>
+                                   <li><a href="#">Menu & deli</a></li>
+                                   <li><a href="#">Galeria</a></li>
+                               </ul>
+                           </nav>
+                        </div>
+                       <div id="main-nav__logo" class="col-md-2">
+                           <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav.png" alt="logo cargo"/>
+                       </div>
+                       <div id="main-nav__right" class="col-md-5 text-left">
+                            <nav>
+                               <ul>
+                                   <li><a href="#">Rezerwacja</a></li>
+                                   <li><a href="#">Oferta</a></li>
+                                   <li><a href="#">Kontakt</a></li>
+                               </ul>
+                           </nav>
+                       </div>
+                   </div>
+                </div><!-- .container -->
+            </div><!-- .navigation-top -->
+
+            <div id="homepage-header__welcome">
+                <h1>#GRILLWITHIT</h1>
+                <p>
+                    Sezonowana wołowina,</br>
+                    świeże owoce morza</br> 
+                    i delikatesy.</br>
+                </p>
+                <a href="#" class="btn">Sprawdź menu</a>
+            </div>
+            <div id="homepage-header__reservation">
+                <a href="#" class="btn">Rezerwacja</a>
+            </div>
+            <div class="next-section"><i class="icon-arrow-down"></i></div>
+        </header>
         <?php endif; ?>
+
         <div id="inner-wrap">
         
