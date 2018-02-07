@@ -1,10 +1,10 @@
 // These 3 variables are copies of ones used in Compass' Vertical Rhythm module.
 
 // The font size set on the root html element.
-$base-font-size: 14px !default;
+$base-font-size: 16px !default;
 
 // The base line height determines the basic unit of vertical rhythm.
-$base-line-height: 14px !default;
+$base-line-height: 16px !default;
 
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em, rem.
@@ -14,7 +14,7 @@ $rhythm-unit: 'em' !default;
 $strict-normalize: false !default;
 
 // The default font family.
-$base-font-family: 'Open Sans', sans-serif !default;
+$base-font-family: 'Hind', sans-serif !default;
 
 // The font sizes for h1-h6.
 $h1-font-size: 2.4rem	* $base-font-size !default;
@@ -35,9 +35,16 @@ $gold       : #ffe2a6;
 $gold50     : rgba(255, 226, 166, .5)   ;
 $brown      : #665a42;
 
+
+//New swatches 
+$white: #ffffff !default;
+$black: #000000 !default;
+$color-pallete-red: #ac1249 !default;
+$color-pallete-gold: #ffca61 !default;
+
 //#2f2f2f;
 
-$text-color: $lightgrey;
+$text-color: #343434 !default;
 
 @import "normalize";
 // Import Bootstrap Compass integration
@@ -60,6 +67,15 @@ $md: min-width 992px;
 $lg: min-width 1200px;
 $xl: min-width 1440px;
 
+@mixin margin-y($value) {
+    margin-top: $value;
+    margin-bottom: $value;
+}
+
+@mixin margin-x($value) {
+    margin-left: $value;
+    margin-right: $value;
+}
 
 @mixin white-text {
     color: #fff;
@@ -164,4 +180,46 @@ img.responsive-img,
 .responsive-img > img {
     max-width: 100%;
     height: auto;
+}
+
+//Container
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoint($xxs) {
+        max-width: 390px;
+    }
+    @include breakpoint($xs) {
+        max-width: 450px;
+    }
+    @include breakpoint($sm) {
+        max-width: 720px;
+    }
+    @include breakpoint($md) {
+        max-width: 960px;
+    }
+    @include breakpoint($lg) {
+        max-width: 1170px;
+    }
+    @include breakpoint($xl) {
+        max-width: 1170px;
+    }
+}
+
+//Utilities
+
+.no-gutters {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
 }

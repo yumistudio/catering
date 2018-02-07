@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 's54-ui-icons';
-  src:  url('#{$icomoon-font-path}/s54-ui-icons.eot?ws1r8i');
-  src:  url('#{$icomoon-font-path}/s54-ui-icons.eot?ws1r8i#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/s54-ui-icons.ttf?ws1r8i') format('truetype'),
-    url('#{$icomoon-font-path}/s54-ui-icons.woff?ws1r8i') format('woff'),
-    url('#{$icomoon-font-path}/s54-ui-icons.svg?ws1r8i#s54-ui-icons') format('svg');
+  font-family: 'cargo-ui-icons';
+  src:  url('#{$icomoon-font-path}/cargo-ui-icons.eot?p1ap18');
+  src:  url('#{$icomoon-font-path}/cargo-ui-icons.eot?p1ap18#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/cargo-ui-icons.ttf?p1ap18') format('truetype'),
+    url('#{$icomoon-font-path}/cargo-ui-icons.woff?p1ap18') format('woff'),
+    url('#{$icomoon-font-path}/cargo-ui-icons.svg?p1ap18#cargo-ui-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-i {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 's54-ui-icons' !important;
+  font-family: 'cargo-ui-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,19 +24,24 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-s54-logo {
+.icon-arrow-up {
   &:before {
-    content: $icon-s54-logo;
+    content: $icon-arrow-up;
   }
 }
-.icon-navigate-left {
+.icon-arrow-down {
   &:before {
-    content: $icon-navigate-left;
+    content: $icon-arrow-down;
   }
 }
-.icon-navigate-right {
+.icon-arrow-right {
   &:before {
-    content: $icon-navigate-right;
+    content: $icon-arrow-right;
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
   }
 }
 .icon-navigate-up {
@@ -49,29 +54,54 @@ i {
     content: $icon-navigate-down;
   }
 }
-.icon-arrow-left {
+.icon-navigate-right {
   &:before {
-    content: $icon-arrow-left;
+    content: $icon-navigate-right;
   }
 }
-.icon-arrow-right {
+.icon-navigate-left {
   &:before {
-    content: $icon-arrow-right;
+    content: $icon-navigate-left;
   }
 }
-.icon-arrow-up {
+.icon-arrow-full-up {
   &:before {
-    content: $icon-arrow-up;
+    content: $icon-arrow-full-up;
   }
 }
-.icon-arrow-down {
+.icon-arrow-full-down {
   &:before {
-    content: $icon-arrow-down;
+    content: $icon-arrow-full-down;
   }
 }
-.icon-search {
+.icon-arrow-full-right {
   &:before {
-    content: $icon-search;
+    content: $icon-arrow-full-right;
+  }
+}
+.icon-arrow-full-left {
+  &:before {
+    content: $icon-arrow-full-left;
+  }
+}
+.icon-map-outline {
+  &:before {
+    content: $icon-map-outline;
+  }
+}
+.icon-phone-outline {
+  &:before {
+    content: $icon-phone-outline;
+  }
+}
+.icon-mail-outline {
+  &:before {
+    content: $icon-mail-outline;
+  }
+}
+.icon-clock-outline {
+  &:before {
+    content: $icon-clock-outline;
   }
 }
 .icon-calendar {
@@ -79,59 +109,14 @@ i {
     content: $icon-calendar;
   }
 }
+.icon-calendar-clock {
+  &:before {
+    content: $icon-calendar-clock;
+  }
+}
 .icon-clock {
   &:before {
     content: $icon-clock;
-  }
-}
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-.icon-menu {
-  &:before {
-    content: $icon-menu;
-  }
-}
-.icon-plus {
-  &:before {
-    content: $icon-plus;
-  }
-}
-.icon-minus {
-  &:before {
-    content: $icon-minus;
-  }
-}
-.icon-play {
-  &:before {
-    content: $icon-play;
-  }
-}
-.icon-grid {
-  &:before {
-    content: $icon-grid;
-  }
-}
-.icon-info {
-  &:before {
-    content: $icon-info;
-  }
-}
-.icon-female {
-  &:before {
-    content: $icon-female;
-  }
-}
-.icon-male {
-  &:before {
-    content: $icon-male;
-  }
-}
-.icon-map-placeholder {
-  &:before {
-    content: $icon-map-placeholder;
   }
 }
 .icon-phone {
@@ -144,39 +129,74 @@ i {
     content: $icon-mail;
   }
 }
-.icon-clock-full {
+.icon-group {
   &:before {
-    content: $icon-clock-full;
+    content: $icon-group;
   }
 }
-.icon-ticket {
+.icon-person {
   &:before {
-    content: $icon-ticket;
+    content: $icon-person;
   }
 }
-.icon-table {
+.icon-close {
   &:before {
-    content: $icon-table;
+    content: $icon-close;
   }
 }
-.icon-lodge {
+.icon-done {
   &:before {
-    content: $icon-lodge;
+    content: $icon-done;
   }
 }
-.icon-paper {
+.icon-plus {
   &:before {
-    content: $icon-paper;
+    content: $icon-plus;
   }
 }
-.icon-cocktail {
+.icon-minus {
   &:before {
-    content: $icon-cocktail;
+    content: $icon-minus;
   }
 }
-.icon-sandwich {
+.icon-search {
   &:before {
-    content: $icon-sandwich;
+    content: $icon-search;
+  }
+}
+.icon-dropdown {
+  &:before {
+    content: $icon-dropdown;
+  }
+}
+.icon-parking {
+  &:before {
+    content: $icon-parking;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+.icon-speaker {
+  &:before {
+    content: $icon-speaker;
+  }
+}
+.icon-terrace {
+  &:before {
+    content: $icon-terrace;
+  }
+}
+.icon-warning {
+  &:before {
+    content: $icon-warning;
+  }
+}
+.icon-wine-bottle {
+  &:before {
+    content: $icon-wine-bottle;
   }
 }
 .icon-social-facebook {
@@ -194,4 +214,3 @@ i {
     content: $icon-social-tripadvisor;
   }
 }
-

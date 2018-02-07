@@ -21,7 +21,7 @@ $rem-fallback: false !default;
 // typeface() mixin.
 $typefaces: (
   body: (
-    font-family: ('Open Sans', sans-serif),
+    font-family: ('Hind', sans-serif),
   ),
   monospace: (
     font-family: (monospace, monospace),
@@ -31,7 +31,7 @@ $typefaces: (
 // The font sizes for h1-h6 expressed as tee shirt sizes.
 $font-size: (
   xxl: 26px,
-  xxl-d: 42px,
+  xxl-d: 48px,
   xl:  20px,
   xl-d:  24px,
   l:  16px,
@@ -51,40 +51,44 @@ $indent-amount: 40px !default;
 $normalize-vertical-rhythm: false !default;
 
 // IcoMoon config
-$icomoon-font-path: "assets/fonts" !default;
+$icomoon-font-path: "assets/fonts/icomoon" !default;
 
-$icon-s54-logo: "\e900";
-$icon-navigate-left: "\e901";
-$icon-navigate-right: "\e902";
-$icon-navigate-up: "\e903";
-$icon-navigate-down: "\e904";
-$icon-arrow-left: "\e905";
-$icon-arrow-right: "\e906";
-$icon-arrow-up: "\e907";
-$icon-arrow-down: "\e908";
-$icon-search: "\e909";
-$icon-calendar: "\e90a";
-$icon-clock: "\e90b";
-$icon-close: "\e90c";
-$icon-menu: "\e90d";
-$icon-plus: "\e90e";
-$icon-minus: "\e90f";
-$icon-play: "\e910";
-$icon-grid: "\e911";
-$icon-info: "\e912";
-$icon-female: "\e913";
-$icon-male: "\e914";
-$icon-map-placeholder: "\e915";
-$icon-phone: "\e916";
-$icon-mail: "\e917";
-$icon-clock-full: "\e918";
-$icon-ticket: "\e919";
-$icon-table: "\e91a";
-$icon-lodge: "\e91b";
-$icon-paper: "\e91c";
-$icon-cocktail: "\e91d";
-$icon-sandwich: "\e91e";
-$icon-social-facebook: "\e91f";
-$icon-social-instagram: "\e920";
-$icon-social-tripadvisor: "\e921";
+$icon-arrow-up: "\e900";
+$icon-arrow-down: "\e901";
+$icon-arrow-right: "\e902";
+$icon-arrow-left: "\e903";
+$icon-navigate-up: "\e904";
+$icon-navigate-down: "\e905";
+$icon-navigate-right: "\e906";
+$icon-navigate-left: "\e907";
+$icon-arrow-full-up: "\e908";
+$icon-arrow-full-down: "\e909";
+$icon-arrow-full-right: "\e90a";
+$icon-arrow-full-left: "\e90b";
+$icon-map-outline: "\e90c";
+$icon-phone-outline: "\e90d";
+$icon-mail-outline: "\e90e";
+$icon-clock-outline: "\e90f";
+$icon-calendar: "\e910";
+$icon-calendar-clock: "\e911";
+$icon-clock: "\e912";
+$icon-phone: "\e913";
+$icon-mail: "\e914";
+$icon-group: "\e915";
+$icon-person: "\e916";
+$icon-close: "\e917";
+$icon-done: "\e918";
+$icon-plus: "\e919";
+$icon-minus: "\e91a";
+$icon-search: "\e91b";
+$icon-dropdown: "\e91c";
+$icon-parking: "\e91d";
+$icon-menu: "\e91e";
+$icon-speaker: "\e91f";
+$icon-terrace: "\e920";
+$icon-warning: "\e921";
+$icon-wine-bottle: "\e922";
+$icon-social-facebook: "\e923";
+$icon-social-instagram: "\e924";
+$icon-social-tripadvisor: "\e925";
 

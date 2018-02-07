@@ -36,8 +36,7 @@ wp_head();
     </div>
     <div id="outer-wrap">
         
-        <?php if ( has_nav_menu( 'top' ) ) : ?>
-        <header id="homepage-header">
+        <header <?php if ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
             <div id="main-navigation" class="">
 
 
@@ -104,21 +103,26 @@ wp_head();
                 </div><!-- .container -->
             </div><!-- .navigation-top -->
 
-            <div id="homepage-header__welcome">
-                <h1>#GRILLWITHIT</h1>
-                <p>
-                    Sezonowana wołowina,</br>
-                    świeże owoce morza</br> 
-                    i delikatesy.</br>
-                </p>
-                <a href="#" class="btn">Sprawdź menu</a>
-            </div>
-            <div id="homepage-header__reservation">
-                <a href="#" class="btn">Rezerwacja</a>
-            </div>
-            <div class="next-section"><i class="icon-arrow-down"></i></div>
+            <?php if ( is_front_page() == TRUE ) : ?>
+                <div id="homepage-header__welcome">
+                    <h1>#GRILLWITHIT</h1>
+                    <p>
+                        Sezonowana wołowina,</br>
+                        świeże owoce morza</br> 
+                        i delikatesy.</br>
+                    </p>
+                    <a href="#" class="btn btn-primary btn-lg">Sprawdź menu</a>
+                </div>
+                <div id="homepage-header__reservation">
+                    <a href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
+                </div>
+                <div class="next-section"><i class="icon-arrow-down"></i></div>
+            <?php else : ?>
+                <div id="page-header__title">
+                    <h1>Tytuł strony</h1>
+                </div>
+            <?php endif; ?>
         </header>
-        <?php endif; ?>
 
         <div id="inner-wrap">
         
