@@ -3107,6 +3107,44 @@ button.pswp__button--close:hover {
   background-position: 0 -100px;
 }
 
+/* line 32, sass/src/_magnific-popup.scss */
+.black-popup {
+  position: relative;
+  background: #000;
+  width: auto;
+  padding: 10px;
+}
+/* line 38, sass/src/_magnific-popup.scss */
+.black-popup > div {
+  border: solid 1px rgba(255, 226, 166, 0.5);
+  margin: 0px auto;
+  padding: 50px;
+}
+/* line 44, sass/src/_magnific-popup.scss */
+.black-popup .mfp-close {
+  border: solid 1px rgba(255, 226, 166, 0.5);
+  border-right: none;
+  border-top: none;
+  top: 10px;
+  right: 10px;
+}
+/* line 51, sass/src/_magnific-popup.scss */
+.black-popup .cell {
+  vertical-align: top;
+}
+/* line 55, sass/src/_magnific-popup.scss */
+.black-popup .content {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 61, sass/src/_magnific-popup.scss */
+.black-popup .img-wrap {
+  width: 10%;
+}
+
 /* line 1, sass/src/_ajax-loader.scss */
 #ajax-loader {
   position: fixed;
