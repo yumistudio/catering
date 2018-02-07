@@ -2967,6 +2967,16 @@ i {
   line-height: 1.1em;
 }
 
+/* line 19, sass/src/_woocommerce.scss */
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summ {
+  width: auto;
+  float: none;
+  text-align: center;
+}
+
 /* ---- grid ---- */
 /* line 3, sass/src/_isotope-grid.scss */
 .grid {

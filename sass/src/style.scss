@@ -1199,10 +1199,9 @@ lable.es_shortcode_form_email {
 
             @include breakpoint($sm) {
                 position: absolute;
-                
                 top: 120px;
-                left: -120px;
-
+                right: 0;
+                width: 133.333333%;
                 padding: 50px 40px;
                 
                 .title {

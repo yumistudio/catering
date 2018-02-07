@@ -15,3 +15,12 @@
 	float: none;
 	line-height: 1.1em;
 }
+
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summ {
+	width: auto;
+	float: none;
+	text-align: center;	
+}
