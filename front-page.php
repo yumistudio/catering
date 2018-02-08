@@ -44,59 +44,110 @@ $events = get_posts( $args );
 //print($wpdb->last_query);
 //exit();
 ?>
+<section id="meetcargo" class="pattern-section text-center cf divider-top divider-bottom padding-section">
+		<h1 class="text-dark">Poznaj Cargo</h1>
+		<p class="text-semi text-md">
+			Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
+		</p>
+		<p class="text-md">
+			Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
+		</p>
+		<p class="text-md">
+			Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
+		</p>
+		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+</section>
 
-<section id="home-slider">
-	<div id="home-top-swiper" class="swiper-container add-next-scroll">
-		<div class="swiper-wrapper">
-		<?php 
-		$slides = get_field('slides');
-		
-		foreach ($slides as $slide) : ?>
-			<div class="swiper-slide" style="background-image: url('<?php echo $slide['url']?>');">
-				<div class="slide-title max-width">
-					<h1><?php echo $slide['caption']; ?></h1>
-					<div class=""><?php echo $slide['description']; ?></div>
+<section id="recommend" class="padding-section">
+	<h1 class="text-center">Szczególnie polecamy</h1>
+	<div class="container">
+		<div class="cards">
+
+			<div class="card">
+				<h2 class="text-dark text-center">Menu a'la carte</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Zuppa Del Pescatore</div>
+						<div class="price">29zł</div>
+					</div>
+					<div class="card-row__disc">w opcji z rybą, krewetką i mulami</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Grillowany stek z miecznika</div>
+						<div class="price">49zł</div>
+					</div>
+					<div class="card-row__disc">w marynacie chermoula z sosem salsa</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Żeberka Jacob’s ladder</div>
+						<div class="price">39zł</div>
+					</div>
+					<div class="card-row__disc">podawane z kolbą gotowanej kukurydzy</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz pełne menu</a>
 				</div>
 			</div>
-		<?php endforeach; ?>
+
+			<div class="card">
+				<h2 class="text-dark text-center">Karta Win</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2012 Monte Tondo</div>
+						<div class="price">62zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2015 Mount Riley Noir</div>
+						<div class="price">27zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2016 Yangarra Viognier</div>
+						<div class="price">42zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz kartę win</a>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h2 class="text-dark text-center">DELIkatesy</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Karkówka</div>
+						<div class="price">50zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Łopatka</div>
+						<div class="price">25zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Polędwica wołowa</div>
+						<div class="price">18zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
+				</div>
+			</div>
 		</div>
-		<div class="swiper-pagination max-width"></div>
-		<div class="max-width">
-		<div class="swiper-button-next btn btn-nav"><i class="icon-navigate-right"></i></div>
-    	<div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
 	</div>
-<script>
-(function( $ ) {
-	$(function() {
-		var slider = new Swiper('#home-top-swiper', {
-		 	slidesPerView : 1,
-	      	loop : false,
-	      	//effect: 'fade',
-	      	//spaceBetween: 5,
-			pagination: {
-	        	el: '.swiper-pagination',
-	      	},
-	      	navigation: {
-		        nextEl: '.swiper-button-next',
-		        prevEl: '.swiper-button-prev',
-		    },
-			/*
-			autoplay: {
-		        delay: 8000,
-		    	disableOnInteraction: true,
-		    },
-		    */
-		});
-
-		var $swiperContainer = $('#home-top-swiper');
-		$swiperContainer.height($(window).height() - 46);
-		$(window).resize(function() {
-			$swiperContainer.height($(window).height() - 46);
-		});
-	});
-})( jQuery );
-</script>
-
 </section>
 
 <section id="home-events" class="section-padding">
