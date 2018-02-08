@@ -4,31 +4,6 @@
 	}
 }
 
-.pswp__button {
-	i {
-		display: none;
-		pointer-events: none;
-	}
-}
-
-.pswp--open {
-	.pswp__button {
-		i {
-			display: inline-block;
-		}
-	}
-}
-
-.pswp__button:focus,
-.pswp__button:hover {
-    //opacity: 0;
-}
-
-.pswp__button--close,
-button.pswp__button--close:hover {
-    background-position: 0 -100px;
-}
-
 .black-popup {
 	position: relative;
 	background: #000;
@@ -45,7 +20,7 @@ button.pswp__button--close:hover {
 		border: solid 1px $gold50;
 		border-right: none;
 		border-top: none;
-		top: 10px; right: 10px;
+		top: 11px; right: 11px;
 	}
 
 	.cell {
@@ -60,5 +35,44 @@ button.pswp__button--close:hover {
 
 	.img-wrap {
 		width: 10%;
+	}
+}
+
+
+.mfp-bg {
+
+	// overlay at start */
+	&.mfp-fade {
+		opacity: 0;
+		@include transition(all .3s ease-out);
+
+		// overlay animate in */
+		&.mfp-ready {
+			opacity: 0.8;
+		}
+		// overlay animate out */
+		&.mfp-removing {
+		  opacity: 0;
+		}
+	}
+}
+
+// content at start */
+.mfp-wrap {
+	&.mfp-fade {
+		.mfp-content {
+			opacity: 0;
+			@include transition(all .3s ease-out);
+		}
+
+		// content animate it */
+		&.mfp-ready .mfp-content {
+		  opacity: 1;
+		}
+
+		// content animate out
+		&.mfp-removing .mfp-content {
+		  opacity: 0;
+		}
 	}
 }

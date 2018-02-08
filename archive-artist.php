@@ -81,23 +81,34 @@ get_template_part( 'template-parts/page/content', 'header' );
 (function($) {
 	$(document).ready(function() {
         
+		var $contentElements = $('#artists-grid .content')
+		
+		/*
+		$contentElements.niceScroll({
+			cursorcolor: '#ffe2a680',
+			cursorborder: '1px solid #ffe2a680',
+		});
+		*/
+
         $('#artists-grid').magnificPopup({
 			delegate: 'div.content-box',
 			disableOn: 700,
 			type: 'inline',
 			closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
-			inline: {
-			},
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
 			callbacks: {
 			    open: function() {
-			      // Will fire when this exact popup is opened
-			      // this - is Magnific Popup object
-			      var container = $(this.content.get()).find('.content');
-			      container.niceScroll({
-			      	cursorcolor: '#ffe2a680',
-			      	cursorborder: '1px solid #ffe2a680',
-			      });
-
+					var container = $(this.content.get()).find('.content');
+					
+					container.getNiceScroll()
+					container.niceScroll({
+						cursorcolor: '#ffe2a680',
+						cursorborder: '1px solid #ffe2a680',
+					});
+					//container.getNiceScroll().resize();
+					//console.log(container.width() + ' / ' + container.height());
+					//console.log(container.getNiceScroll());
 			    },
 			},
 			/*
