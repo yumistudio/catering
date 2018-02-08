@@ -27,6 +27,7 @@
 }
 
 body {
+    background-image: url('assets/images/pattern-bg.jpg');
     @include type-layout(m, 1.5);
     @include breakpoint($sm) {
         @include type-layout(m-d, 1.5);
@@ -40,6 +41,7 @@ h1 {
         @include type-layout(xxl-d, 2.7);
     }
     color: #fff;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -2601,7 +2603,7 @@ div.wpcf7 {
             left: 50%;
             transform: translateX(-50%);
             content: '';
-            width: 101%;
+            width: 100%;
             height: 31px;
             background-image: url('assets/images/divider_black.png');
             background-repeat: no-repeat;
@@ -2611,6 +2613,13 @@ div.wpcf7 {
 }
 
 #meetcargo {
+    background-image: url('assets/images/home_bg_section_01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    h1 {
+        margin-bottom: 3rem;
+    }
     .btn {
         margin-top: 1.75rem;
     }
