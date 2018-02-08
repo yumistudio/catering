@@ -37,7 +37,7 @@ wp_head();
     </div>
     <div id="outer-wrap">
         
-        <header <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
+        <header style="background-image: url('<?php the_post_thumbnail_url(); ?>');" <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
             <div id="main-navigation" class="">
 
 
@@ -46,11 +46,12 @@ wp_head();
                     <div class="row">
                         <div id="main-nav__left" class="col-md-5 text-right no-gutters">
                             <nav>
-                                <ul>
-                                    <li><a href="#">O nas</a></li>
-                                    <li><a href="#">Menu & deli</a></li>
-                                    <li><a href="#">Galeria</a></li>
-                                </ul>
+                                <?php wp_nav_menu( array(
+                                    //'theme_location' => 'top',
+                                    'menu'           => 'top-menu-left',
+                                    //'menu_id'        => 'sticky-menu',
+                                    'menu_class'     => 'navigation',
+                                ) ); ?>
                             </nav>
                             </div>
                         <div id="main-nav__logo" class="col-md-2">
@@ -81,11 +82,10 @@ wp_head();
                    <div class="row">
                        <div id="main-nav__left" class="col-md-5 text-right">
                            <nav>
-                               <ul>
-                                   <li><a href="#">O nas</a></li>
-                                   <li><a href="#">Menu & deli</a></li>
-                                   <li><a href="#">Galeria</a></li>
-                               </ul>
+                               <?php wp_nav_menu( array(
+                                    'menu'           => 'top-menu-left' ,
+                                    'menu_class'     => 'navigation',
+                                ) ); ?>
                            </nav>
                         </div>
                        <div id="main-nav__logo" class="col-md-2">
@@ -93,11 +93,10 @@ wp_head();
                        </div>
                        <div id="main-nav__right" class="col-md-5 text-left">
                             <nav>
-                               <ul>
-                                   <li><a href="<?php echo get_site_url(); ?>/rezerwacja">Rezerwacja</a></li>
-                                   <li><a href="#">Oferta</a></li>
-                                   <li><a href="#">Kontakt</a></li>
-                               </ul>
+                               <?php wp_nav_menu( array(
+                                    'menu'           => 'top-menu-right',
+                                    'menu_class'     => 'navigation',
+                                ) ); ?>
                            </nav>
                        </div>
                    </div>
