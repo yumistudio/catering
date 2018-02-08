@@ -74,8 +74,8 @@ wp_head();
 
                 <div id="top-navigation-bar" class="container-fluid">
                     <div class="container no-gutters">
-                        <div id="top-navigation-bar__address" class="pull-left"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H, Kraków</div>
-                        <div id="top-navigation-bar__phone" class="pull-right"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
+                        <div id="top-navigation-bar__address" class="text-left col-md-6"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H, Kraków</div>
+                        <div id="top-navigation-bar__phone" class="text-right col-md-6"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
                     </div>
                 </div>
                 <div id="main-nav" class="container">
