@@ -95,6 +95,26 @@ $xl: min-width 1440px;
     }
 }
 
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    
+    &:after {
+        clear: both;
+    }
+    
+    /**
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+    & {
+        *zoom: 1;
+    }
+}
+
 @import "swiper";
 	
 
@@ -209,6 +229,7 @@ img.responsive-img,
     }
 }
 
+
 //Utilities
 
 .no-gutters {
@@ -222,4 +243,39 @@ img.responsive-img,
 
 .text-right {
     text-align: right !important;
+}
+
+.text-dark {
+    color: $black !important;
+}
+
+.text-semi {
+    font-weight: 600 !important;
+}
+
+.text-md {
+    font-size: 1.125rem !important;
+    line-height: 2rem !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
