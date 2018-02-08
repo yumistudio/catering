@@ -12,34 +12,221 @@
  * @version 1.0
  */
 
-get_header(); ?>
+get_header();
+
+$objects = get_posts( array(
+    'post_parent' => 121,
+    'post_type'    => 'page',
+    'posts_per_page' => -1,
+) );
+
+$args = array(
+    'post_type'			=> 'tribe_events',
+    'posts_per_page'	=> 500,
+    'meta_key' => '_EventStartDate',
+    'orderby' => '_EventStartDate',
+    'order'	=> 'asc',
+    
+    'meta_query' => array(
+       array(
+           'key' => '_EventStartDate',
+           'value' => date("Y-m-d H:i:s"),
+           'compare' => '>',
+       )
+   	)
+   	
+);
+
+
+$events = get_posts( $args );
+
+//global $wpdb; 
+//print($wpdb->last_query);
+//exit();
+?>
+<section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
+	<h1 class="text-dark">Poznaj Cargo</h1>
+	<p class="text-semi text-md">
+		Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
+	</p>
+	<p class="text-md">
+		Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
+	</p>
+	<p class="text-md">
+		Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
+	</p>
+	<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+</section>
+
+<section id="recommend" class="padding-section">
+	<h1 class="text-center">Szczególnie polecamy</h1>
+	<div class="container">
+		<div class="cards">
+
+			<div class="card">
+				<h2 class="text-dark text-center">Menu a'la carte</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Zuppa Del Pescatore</div>
+						<div class="price">29zł</div>
+					</div>
+					<div class="card-row__disc">w opcji z rybą, krewetką i mulami</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Grillowany stek z miecznika</div>
+						<div class="price">49zł</div>
+					</div>
+					<div class="card-row__disc">w marynacie chermoula z sosem salsa</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Żeberka Jacob’s ladder</div>
+						<div class="price">39zł</div>
+					</div>
+					<div class="card-row__disc">podawane z kolbą gotowanej kukurydzy</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz pełne menu</a>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2 class="text-dark text-center">Karta Win</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2012 Monte Tondo</div>
+						<div class="price">62zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2015 Mount Riley Noir</div>
+						<div class="price">27zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">2016 Yangarra Viognier</div>
+						<div class="price">42zł <span class="sub">/ 10cl</span></div>
+					</div>
+					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz kartę win</a>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h2 class="text-dark text-center">DELIkatesy</h2>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Karkówka</div>
+						<div class="price">50zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Łopatka</div>
+						<div class="price">25zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
+				</div>
+				<div class="card-row">
+					<div class="card-row__container">
+						<div class="title">Polędwica wołowa</div>
+						<div class="price">18zł <span class="sub">/ 100g</span></div>
+					</div>
+					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
+				</div>
+				<div class="card-button">
+					<a href="#" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="gallery" class="padding-section pattern-section divider-black">
+	<h1 class="text-dark text-center">Galeria</h1>
+</section>
+
+<section id="home-events" class="section-padding">
+	<div class="section-header">
+		<h1 class="decor"><span>Wydarzenia</span></h1>
+		<div class="section-intro"><?php the_field('events-section-subtitle'); ?></div>
+	</div>
+	<div class="container-fluid max-width events-list">
+        <?php $i=0; foreach($events as $post) :
+        	global $post;
+        	$eventMeta = get_post_meta($post->ID);
+			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $eventMeta['_EventEndDate'][0]);
+			if ($i == 0) : ?>
+			<div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 col-lg-offset-0 col-lg-4">
+				<?php the_post_thumbnail() ?>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="col-xs-12 event first">
+					<a class="event-content" href="<?php echo get_permalink($post->ID); ?>">
+						<span><?php echo date_i18n( 'l, d M Y @ G:i', date_timestamp_get($dt), false ); ?></span>
+						<span class="title"><?php echo the_title(); ?></span>
+						<span class="more-lnk">Weź Udział</span>
+						<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-lg-5 rest">
+			<?php else : ?>
+				<div class="col-sm-4 col-lg-12 event">
+					<a class="event-content" href="<?php echo get_permalink($post->ID); ?>">
+						<span class="date"><?php echo date_i18n( 'l, d M Y @ G:i', date_timestamp_get($dt), false ); ?></span>
+						<span class="title"><?php echo the_title(); ?></span>
+						<span class="more-lnk">Weź Udział</span>
+						<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+					</a>
+				</div>
+			<?php endif;
+			if ($i == (count($events) -1)) echo '</div>';
+			?>
+
+		<?php $i++; endforeach ?>
+
+	</div>
+	<div class="container-fluid max-width">
+		<a href="/wydarzenia/" class="btn frame-btn" >Przelądaj Kalendarz</a> 
+	</div>
+</section>
 
 <?php while ( have_posts() ) : the_post(); ?>
 <section id="home-about" style="background-image: url('<?php echo wp_get_attachment_url(get_field('place_section_bg')); ?>');">
 	<div class="container-fluid max-width">
-		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
+		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding content-wrap">
 			<div class="section-header">
-				<h1>Poznaj Cargo</h1>
+				<h1 class="decor"><span>Miejsce</span></h1>
+				<div class="section-intro"><?php the_field('place-section-subtitle'); ?></div>
 			</div>
 			<div class="content">
 				<?php the_content(); ?>
-				<a href="/miejsce/" class="btn frame-btn">Dowedz się więcej</a>
+				<a href="/miejsce/" class="btn frame-btn">Czytaj więcej</a>
 			</div>
 		</div>
 	</div>
 </section>
 <?php endwhile; ?>
 
-<section id="home-people" class="section-padding" style="background-image: url('<?php the_field(); ?>');">
+<section id="home-artists" class="section-padding">
 	<div class="section-header">
-		<h1>Nasz Zespół</h1>
+		<h1 class="decor"><span>Artyści sceny54</span></h1>
 		<div class="section-intro"><?php the_field('artists-section-subtitle'); ?></div>
 	</div>
 	<div class="container-fluid max-width">
-		<div class="people-slider">
+		<div class="artists-slider">
 	        <?php $artists = get_posts( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>
 	                
-	        <div id="people-swiper" class="swiper-container">
+	        <div id="artists-swiper" class="swiper-container">
 				<div class="swiper-wrapper">
 					<?php foreach ($artists as $post) : global $post; ?>
 					<div class="swiper-slide artist-box">
@@ -73,7 +260,7 @@ get_header(); ?>
 (function( $ ) {
 	$(function() {
 
-		var swiper = new Swiper('#people-swiper', {
+		var swiper = new Swiper('#artists-swiper', {
 			slidesPerView : 4,
 			spaceBetween: 30,
 			/*
