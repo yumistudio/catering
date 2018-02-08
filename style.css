@@ -9184,6 +9184,7 @@ button.pswp__button--close:hover {
 
 /* line 29, sass/src/style.scss */
 body {
+  background-image: url("assets/images/pattern-bg.jpg");
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
@@ -9195,49 +9196,48 @@ body {
   }
 }
 
-/* line 36, sass/src/style.scss */
+/* line 37, sass/src/style.scss */
 h1 {
   font-family: Rust, sans-serif;
   font-size: 1.625rem;
   line-height: 0;
   color: #fff;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  /* line 36, sass/src/style.scss */
+  /* line 37, sass/src/style.scss */
   h1 {
     font-size: 3rem;
     line-height: 2.7rem;
   }
 }
 
-/* line 45, sass/src/style.scss */
+/* line 47, sass/src/style.scss */
 h2 {
   font-family: Rust, sans-serif;
-  letter-spacing: 0.1em;
   font-size: 1.25rem;
   line-height: 2rem;
   color: #fff;
 }
 @media (min-width: 768px) {
-  /* line 45, sass/src/style.scss */
+  /* line 47, sass/src/style.scss */
   h2 {
     font-size: 1.625rem;
     line-height: 2.7rem;
   }
 }
 
-/* line 55, sass/src/style.scss */
+/* line 56, sass/src/style.scss */
 h3 {
   font-family: Gabriele, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: #fff;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 @media (min-width: 768px) {
-  /* line 55, sass/src/style.scss */
+  /* line 56, sass/src/style.scss */
   h3 {
     font-size: 1.125rem;
     line-height: 1.7rem;
@@ -11978,35 +11978,46 @@ div.wpcf7 {
   left: 50%;
   transform: translateX(-50%);
   content: '';
-  width: 101%;
+  width: 100%;
   height: 31px;
   background-image: url("assets/images/divider_black.png");
   background-repeat: no-repeat;
   z-index: 1;
 }
 
-/* line 2616, sass/src/style.scss */
+/* line 2615, sass/src/style.scss */
+#meetcargo {
+  background-image: url("assets/images/home_bg_section_01.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+/* line 2620, sass/src/style.scss */
+#meetcargo h1 {
+  margin-bottom: 3rem;
+}
+/* line 2623, sass/src/style.scss */
 #meetcargo .btn {
   margin-top: 1.75rem;
 }
 
-/* line 2621, sass/src/style.scss */
+/* line 2628, sass/src/style.scss */
 section#recommend {
   position: relative;
   background-image: url("assets/images/recommend-bg.jpg");
   background-position: 50% 50%;
   background-size: cover;
 }
-/* line 2626, sass/src/style.scss */
+/* line 2633, sass/src/style.scss */
 section#recommend h1 {
   margin-bottom: 5rem;
 }
-/* line 2629, sass/src/style.scss */
+/* line 2636, sass/src/style.scss */
 section#recommend .cards {
   width: 100%;
   display: inline-flex;
 }
-/* line 2632, sass/src/style.scss */
+/* line 2639, sass/src/style.scss */
 section#recommend .cards .card {
   background: #ffffff;
   margin: 0 15px;
@@ -12015,50 +12026,50 @@ section#recommend .cards .card {
   border: solid 6px #ffffff;
   padding: 4px;
 }
-/* line 2639, sass/src/style.scss */
+/* line 2646, sass/src/style.scss */
 section#recommend .cards .card h2 {
   font-family: Gabriele;
   margin: 45px 0px 35px 0px;
 }
-/* line 2644, sass/src/style.scss */
+/* line 2651, sass/src/style.scss */
 section#recommend .cards .card-row {
-  margin: 0 35px 20px 35px;
+  margin: 0 20px 20px 20px;
   padding-top: 5px;
   padding-bottom: 20px;
   border-bottom: 1px solid #dadada;
   border-style: dashed;
 }
-/* line 2650, sass/src/style.scss */
+/* line 2657, sass/src/style.scss */
 section#recommend .cards .card-row__disc {
   margin-top: 3px;
   font-size: 1rem;
   color: #646464;
 }
-/* line 2656, sass/src/style.scss */
+/* line 2663, sass/src/style.scss */
 section#recommend .cards .card-row__container {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
-/* line 2660, sass/src/style.scss */
+/* line 2667, sass/src/style.scss */
 section#recommend .cards .card-row__container .title {
   width: auto;
 }
-/* line 2663, sass/src/style.scss */
+/* line 2670, sass/src/style.scss */
 section#recommend .cards .card-row__container .price {
   width: auto;
 }
-/* line 2665, sass/src/style.scss */
+/* line 2672, sass/src/style.scss */
 section#recommend .cards .card-row__container .price .sub {
   font-size: 0.875rem;
   color: #646464;
 }
-/* line 2670, sass/src/style.scss */
+/* line 2677, sass/src/style.scss */
 section#recommend .cards .card-row__container .title, section#recommend .cards .card-row__container .price {
   font-size: 1.125rem;
   font-weight: 500;
 }
-/* line 2678, sass/src/style.scss */
+/* line 2685, sass/src/style.scss */
 section#recommend .cards .card-button {
   text-align: center;
   margin: 35px 0px;
