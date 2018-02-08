@@ -40,11 +40,11 @@ h1 {
         @include type-layout(xxl-d, 2.7);
     }
     color: #fff;
-    margin-bottom: 2.125rem;
 }
 
 h2 {
     font-family: Rust, sans-serif;
+    letter-spacing: 0.1em;
     @include type-layout(xl, 2);
     @include breakpoint($sm) {
         @include type-layout(xxl, 2.7);
@@ -56,6 +56,7 @@ h3 {
     font-family: Gabriele, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: #fff;
     @include type-layout(l, 1.5);
 
@@ -220,31 +221,8 @@ input[type=button] {
     font-weight: 300;
 }
 
-.decor {
-    position: relative;
-    span {
-        position: relative; 
-        z-index: 1;
-    }
-    &:before {
-        display: block;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 10px;
-        background-image: url('assets/images/decor.png');
-        left: 0;
-        top: calc(50% - 5px);
-        background-position: center center;
-        opacity: 0.5;
-    }
-}
-
 .max-width {
-    //box-sizing: content-box;
     max-width: 1170px;
-    //padding-left: 30px;
-    //padding-right: 30px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -268,19 +246,10 @@ input[type=button] {
     text-align: right;
 }
 
-.bg-gold {
-    background-color: $gold;
-}
-
 .clear-left {
     clear: left;
 }
 
-.page-subtitle {
-    text-align: center;
-    padding: 0 15px;
-    line-height: 3em;
-}
 .gallery {
     @include pie-clearfix;
 }
@@ -478,6 +447,12 @@ input[type=button] {
     font-size: 1rem !important;
 }
 
+.btn-outline {
+    padding: 10px 25px !important;
+    border: 4px solid;
+    background: transparent !important;
+}
+
 .btn-primary {
     background: $color-pallete-gold;
     &:hover {
@@ -499,28 +474,6 @@ input[type=button] {
     color: $color-pallete-gold !important;
     &:hover {
         mask-image: none;
-    }
-}
-
-.btn-primary-outline {
-    padding: 10px 25px !important;
-    border: 4px solid $color-pallete-gold;
-    background: transparent;
-    color: $color-pallete-gold;
-    &:hover {
-        color: $black;
-        background: $color-pallete-gold;
-    }
-}
-
-.btn-secondary-outline {
-    padding: 10px 25px !important;
-    border: 4px solid $color-pallete-red;
-    background: transparent;
-    color: $color-pallete-red;
-    &:hover {
-        color: $white;
-        background: $color-pallete-red;
     }
 }
 
@@ -922,7 +875,7 @@ input[type=button] {
         font-size: 0.875rem;
         color: $white;
     }
-    
+
     &::after {
         position: absolute;
         top: 0;
@@ -1087,7 +1040,7 @@ input[type=button] {
     position: fixed;
     overflow: hidden;
     background-color: $color-pallete-red;
-    z-index: 999;
+    z-index: 666;
     width: 100%; height: 0;
     opacity: 0;
     text-align: center;
@@ -1453,15 +1406,6 @@ lable.es_shortcode_form_email {
     
     @include pie-clearfix;
 
-    .content-wrap {
-        padding: 50px 0;
-        background-color: rgba(0,0,0,.7);
-        text-align: center;
-        @include breakpoint($sm) {
-            background-color: rgba(0,0,0,.9);
-        }
-    }
-
     .content {
         padding: 0 15px;
         @include breakpoint($sm) {
@@ -1524,10 +1468,11 @@ lable.es_shortcode_form_email {
     }
 }
 
-#home-artists {
+#home-people {
+    
     background-color: $darkgrey;
 
-    .artists-slider {
+    .people-slider {
         position: relative;
         height: 400px;
     }

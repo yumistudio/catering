@@ -199,34 +199,34 @@ $events = get_posts( $args );
 		<a href="/wydarzenia/" class="btn frame-btn" >Przelądaj Kalendarz</a> 
 	</div>
 </section>
+get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 <section id="home-about" style="background-image: url('<?php echo wp_get_attachment_url(get_field('place_section_bg')); ?>');">
 	<div class="container-fluid max-width">
-		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding content-wrap">
+		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
 			<div class="section-header">
-				<h1 class="decor"><span>Miejsce</span></h1>
-				<div class="section-intro"><?php the_field('place-section-subtitle'); ?></div>
+				<h1>Poznaj Cargo</h1>
 			</div>
 			<div class="content">
 				<?php the_content(); ?>
-				<a href="/miejsce/" class="btn frame-btn">Czytaj więcej</a>
+				<a href="/miejsce/" class="btn frame-btn">Dowedz się więcej</a>
 			</div>
 		</div>
 	</div>
 </section>
 <?php endwhile; ?>
 
-<section id="home-artists" class="section-padding">
+<section id="home-people" class="section-padding">
 	<div class="section-header">
-		<h1 class="decor"><span>Artyści sceny54</span></h1>
+		<h1>Artyści sceny54</h1>
 		<div class="section-intro"><?php the_field('artists-section-subtitle'); ?></div>
 	</div>
 	<div class="container-fluid max-width">
-		<div class="artists-slider">
+		<div class="people-slider">
 	        <?php $artists = get_posts( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>
 	                
-	        <div id="artists-swiper" class="swiper-container">
+	        <div id="people-swiper" class="swiper-container">
 				<div class="swiper-wrapper">
 					<?php foreach ($artists as $post) : global $post; ?>
 					<div class="swiper-slide artist-box">
@@ -260,7 +260,7 @@ $events = get_posts( $args );
 (function( $ ) {
 	$(function() {
 
-		var swiper = new Swiper('#artists-swiper', {
+		var swiper = new Swiper('#people-swiper', {
 			slidesPerView : 4,
 			spaceBetween: 30,
 			/*

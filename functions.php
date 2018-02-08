@@ -285,37 +285,37 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-function custom_post_artist() {
+function custom_post_our_people() {
 	$labels = array(
-		'name'               => _x( 'Artyści', 'post type general name' ),
-		'singular_name'      => _x( 'Artysta', 'post type singular name' ),
+		'name'               => _x( 'Nasz Zespół', 'post type general name' ),
+		'singular_name'      => _x( 'Osoba', 'post type singular name' ),
 		'add_new'            => _x( 'Nowy', 'Person' ),
-		'add_new_item'       => __( 'Nowy Artysta' ),
+		'add_new_item'       => __( 'Nowa Osoba' ),
 		'edit_item'          => __( 'Edytuj' ),
-		'new_item'           => __( 'Nowy Artysta' ),
-		'all_items'          => __( 'Wszyscy artyści' ),
+		'new_item'           => __( 'Nowa Osoba' ),
+		'all_items'          => __( 'Wszyscy' ),
 		'view_item'          => __( 'Zobacz' ),
 		'search_items'       => __( 'Search Persons' ),
 		'not_found'          => __( 'No client found' ),
 		'not_found_in_trash' => __( 'No client found in the Trash' ), 
 		'parent_item_colon'  => '',
-		'menu_name'          => 'Artyści'
+		'menu_name'          => 'Nasz Zespół'
 	);
 	$args = array(
 		'labels'        => $labels,
-		'description'   => 'Holds our artists',
+		'description'   => 'Holds our people',
 		'public'        => true,
 		'menu_position' => 36,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'hierarchical'  => false,
 		'has_archive'   => true,
-		'rewrite' => array( 'slug' => 'artysci' ),
+		'rewrite' => array( 'slug' => 'nasz-zespol' ),
 	);
 	register_post_type( 'artist', $args );
 }
-add_action( 'init', 'custom_post_artist' );
+add_action( 'init', 'custom_post_our_people' );
  
-function custom_taxonomy_artist_category() {
+function custom_taxonomy_our_people_category() {
  
 // Labels part for the GUI
  
@@ -334,7 +334,7 @@ function custom_taxonomy_artist_category() {
 		'separate_items_with_commas' => __( 'Separate roles with commas' ),
 		'add_or_remove_items' => __( 'Add or remove roles' ),
 		'choose_from_most_used' => __( 'Choose from the most used roles' ),
-		'menu_name' => __( 'Kategorie' ),
+		'menu_name' => __( 'Roles' ),
 	); 
  
 // Now register the non-hierarchical taxonomy like tag
@@ -349,7 +349,7 @@ function custom_taxonomy_artist_category() {
 		//'rewrite' => array( 'slug' => 'per' ),
 	));
 }
-add_action( 'init', 'custom_taxonomy_artist_category', 0 );
+add_action( 'init', 'custom_taxonomy_our_people_category', 0 );
 
 function custom_post_menu_item() {
 	$labels = array(
