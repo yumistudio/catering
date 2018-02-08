@@ -44,18 +44,18 @@ $events = get_posts( $args );
 //print($wpdb->last_query);
 //exit();
 ?>
-<section id="meetcargo" class="pattern-section text-center cf divider-top divider-bottom padding-section">
-		<h1 class="text-dark">Poznaj Cargo</h1>
-		<p class="text-semi text-md">
-			Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
-		</p>
-		<p class="text-md">
-			Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
-		</p>
-		<p class="text-md">
-			Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
-		</p>
-		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+<section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
+	<h1 class="text-dark">Poznaj Cargo</h1>
+	<p class="text-semi text-md">
+		Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
+	</p>
+	<p class="text-md">
+		Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
+	</p>
+	<p class="text-md">
+		Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
+	</p>
+	<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
 </section>
 
 <section id="recommend" class="padding-section">
@@ -148,6 +148,10 @@ $events = get_posts( $args );
 			</div>
 		</div>
 	</div>
+</section>
+
+<section id="gallery" class="padding-section pattern-section divider-black">
+	<h1 class="text-dark text-center">Galeria</h1>
 </section>
 
 <section id="home-events" class="section-padding">
