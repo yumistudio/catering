@@ -2642,6 +2642,20 @@ div.wpcf7 {
             z-index: 1;
         }
     }
+    &-black {
+        &::after {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            width: 101%;
+            height: 31px;
+            background-image: url('assets/images/divider_black.png');
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+    }
 }
 
 #meetcargo {
@@ -2713,4 +2727,7 @@ section#recommend {
             }
         }
     }
+}
+
+section#gallery {
 }
