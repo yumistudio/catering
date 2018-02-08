@@ -30,16 +30,16 @@ get_header(); ?>
 </section>
 <?php endwhile; ?>
 
-<section id="home-artists" class="section-padding">
+<section id="home-people" class="section-padding">
 	<div class="section-header">
 		<h1>Artyści sceny54</h1>
 		<div class="section-intro"><?php the_field('artists-section-subtitle'); ?></div>
 	</div>
 	<div class="container-fluid max-width">
-		<div class="artists-slider">
+		<div class="people-slider">
 	        <?php $artists = get_posts( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>
 	                
-	        <div id="artists-swiper" class="swiper-container">
+	        <div id="people-swiper" class="swiper-container">
 				<div class="swiper-wrapper">
 					<?php foreach ($artists as $post) : global $post; ?>
 					<div class="swiper-slide artist-box">
