@@ -26,6 +26,7 @@
 <?php
 
 wp_head();
+
 ?>
 
 </head>
@@ -36,7 +37,7 @@ wp_head();
     </div>
     <div id="outer-wrap">
         
-        <header <?php if ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
+        <header <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
             <div id="main-navigation" class="">
 
 
@@ -88,12 +89,12 @@ wp_head();
                            </nav>
                         </div>
                        <div id="main-nav__logo" class="col-md-2">
-                           <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav.png" alt="logo cargo"/>
+                           <a href="<?php echo get_site_url(); ?>"><img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav.png" alt="logo cargo"/></a>
                        </div>
                        <div id="main-nav__right" class="col-md-5 text-left">
                             <nav>
                                <ul>
-                                   <li><a href="#">Rezerwacja</a></li>
+                                   <li><a href="<?php echo get_site_url(); ?>/rezerwacja">Rezerwacja</a></li>
                                    <li><a href="#">Oferta</a></li>
                                    <li><a href="#">Kontakt</a></li>
                                </ul>
@@ -103,7 +104,14 @@ wp_head();
                 </div><!-- .container -->
             </div><!-- .navigation-top -->
 
-            <?php if ( is_front_page() == TRUE ) : ?>
+            <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>
+                <div id="reservation-header__title">
+                    <h1>Zarezerwuj stolik</h1>
+                    <p>Zaplanuj wyjątkowe spotkanie wypełniając</br>poniższy formularz lub dzwoniąc do nas</p>
+                    <a href="tel: 12 686 55 22"><i class="icon icon-phone-outline"></i>12 686 55 22</a>
+                </div>
+
+            <?php elseif ( is_front_page() == TRUE ) : ?>
                 <div id="homepage-header__welcome">
                     <h1>#GRILLWITHIT</h1>
                     <p>

@@ -5,7 +5,6 @@
 
 @import "base";
 @import "swiper";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,800,900&subset=latin-ext');
 @import "compass/css3/images";
 @import "icoMoon";
 @import "events";
@@ -745,16 +744,61 @@ input[type=button] {
     //     }
     // }
 }
+#homepage-header, #page-header, #reservation-header {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+} 
 
+#page-header {
+    height: 390px;
+    width: 100%;
+    background-image: url('assets/images/homepage-header-bg.png');
+    &__title {
+        position: absolute;
+        top: calc(50% + 75px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+#reservation-header {
+    height: 530px;
+    width: 100%;
+    background-image: url('assets/images/homepage-header-bg.png');
+    &__title {
+        position: absolute;
+        top: calc(50% + 75px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        p {
+            font-size: 1.25rem;
+            font-family: Gabriele, sans-serif;
+            color: $white;
+            line-height: 36px;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        a {
+            font-size: 2.25rem;
+            font-weight: 500;
+            i {
+                margin-bottom: 6px;
+                margin-right: 20px;
+                font-size: 3.5rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
 
 #homepage-header {
     height: 100vh;
     width: 100%;
     background-image: url('assets/images/homepage-header-bg.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
 
     &__welcome {
         position: absolute;
