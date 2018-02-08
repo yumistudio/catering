@@ -30,9 +30,9 @@ get_header(); ?>
 </section>
 <?php endwhile; ?>
 
-<section id="home-people" class="section-padding">
+<section id="home-people" class="section-padding" style="background-image: url('<?php the_field(); ?>');">
 	<div class="section-header">
-		<h1>Artyści sceny54</h1>
+		<h1>Nasz Zespół</h1>
 		<div class="section-intro"><?php the_field('artists-section-subtitle'); ?></div>
 	</div>
 	<div class="container-fluid max-width">

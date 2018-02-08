@@ -681,8 +681,8 @@ input[type=button] {
 }
 
 #inner-wrap {
-    
-    //padding-top: 60px;
+
+    background-image: url('assets/images/bg-main.jpg');
 
     @include breakpoint($md) {
         padding-top: 0;
@@ -1469,8 +1469,6 @@ lable.es_shortcode_form_email {
 }
 
 #home-people {
-    
-    background-color: $darkgrey;
 
     .people-slider {
         position: relative;
