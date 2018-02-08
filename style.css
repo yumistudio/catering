@@ -5974,21 +5974,21 @@ div.wpcf7 {
   color: #fff;
 }
 
-/* line 2547, sass/src/style.scss */
+/* line 2542, sass/src/style.scss */
 .pattern-section {
   background-image: url("assets/images/pattern-bg.jpg");
 }
 
-/* line 2551, sass/src/style.scss */
+/* line 2546, sass/src/style.scss */
 .padding-section {
   padding: 5rem 0;
 }
 
-/* line 2557, sass/src/style.scss */
+/* line 2552, sass/src/style.scss */
 .divider-top h1 {
   margin-top: 0;
 }
-/* line 2560, sass/src/style.scss */
+/* line 2555, sass/src/style.scss */
 .divider-top::before {
   mask: url("assets/images/divider_mask_top.png");
   mask-position: top center;
@@ -6002,7 +6002,7 @@ div.wpcf7 {
   height: 10px;
   background-image: url("assets/images/pattern-bg.jpg");
 }
-/* line 2575, sass/src/style.scss */
+/* line 2570, sass/src/style.scss */
 .divider-bottom::after {
   mask: url("assets/images/divider_mask_bottom.png");
   mask-position: top center;
@@ -6017,7 +6017,7 @@ div.wpcf7 {
   background-image: url("assets/images/pattern-bg.jpg");
   z-index: 1;
 }
-/* line 2591, sass/src/style.scss */
+/* line 2586, sass/src/style.scss */
 .divider-black::after {
   position: absolute;
   bottom: -10px;
@@ -6031,28 +6031,28 @@ div.wpcf7 {
   z-index: 1;
 }
 
-/* line 2607, sass/src/style.scss */
+/* line 2602, sass/src/style.scss */
 #meetcargo .btn {
   margin-top: 1.75rem;
 }
 
-/* line 2612, sass/src/style.scss */
+/* line 2607, sass/src/style.scss */
 section#recommend {
   position: relative;
   background-image: url("assets/images/recommend-bg.jpg");
   background-position: 50% 50%;
   background-size: cover;
 }
-/* line 2617, sass/src/style.scss */
+/* line 2612, sass/src/style.scss */
 section#recommend h1 {
   margin-bottom: 5rem;
 }
-/* line 2620, sass/src/style.scss */
+/* line 2615, sass/src/style.scss */
 section#recommend .cards {
   width: 100%;
   display: inline-flex;
 }
-/* line 2623, sass/src/style.scss */
+/* line 2618, sass/src/style.scss */
 section#recommend .cards .card {
   background: #ffffff;
   margin: 0 15px;
@@ -6061,12 +6061,12 @@ section#recommend .cards .card {
   border: solid 6px #ffffff;
   padding: 4px;
 }
-/* line 2630, sass/src/style.scss */
+/* line 2625, sass/src/style.scss */
 section#recommend .cards .card h2 {
   font-family: Gabriele;
   margin: 45px 0px 35px 0px;
 }
-/* line 2635, sass/src/style.scss */
+/* line 2630, sass/src/style.scss */
 section#recommend .cards .card-row {
   margin: 0 35px 20px 35px;
   padding-top: 5px;
@@ -6074,37 +6074,37 @@ section#recommend .cards .card-row {
   border-bottom: 1px solid #dadada;
   border-style: dashed;
 }
-/* line 2641, sass/src/style.scss */
+/* line 2636, sass/src/style.scss */
 section#recommend .cards .card-row__disc {
   margin-top: 3px;
   font-size: 1rem;
   color: #646464;
 }
-/* line 2647, sass/src/style.scss */
+/* line 2642, sass/src/style.scss */
 section#recommend .cards .card-row__container {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
-/* line 2651, sass/src/style.scss */
+/* line 2646, sass/src/style.scss */
 section#recommend .cards .card-row__container .title {
   width: auto;
 }
-/* line 2654, sass/src/style.scss */
+/* line 2649, sass/src/style.scss */
 section#recommend .cards .card-row__container .price {
   width: auto;
 }
-/* line 2656, sass/src/style.scss */
+/* line 2651, sass/src/style.scss */
 section#recommend .cards .card-row__container .price .sub {
   font-size: 0.875rem;
   color: #646464;
 }
-/* line 2661, sass/src/style.scss */
+/* line 2656, sass/src/style.scss */
 section#recommend .cards .card-row__container .title, section#recommend .cards .card-row__container .price {
   font-size: 1.125rem;
   font-weight: 500;
 }
-/* line 2669, sass/src/style.scss */
+/* line 2664, sass/src/style.scss */
 section#recommend .cards .card-button {
   text-align: center;
   margin: 35px 0px;
