@@ -73,7 +73,7 @@ get_header(); ?>
 (function( $ ) {
 	$(function() {
 
-		var swiper = new Swiper('#artists-swiper', {
+		var swiper = new Swiper('#people-swiper', {
 			slidesPerView : 4,
 			spaceBetween: 30,
 			/*
