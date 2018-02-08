@@ -12,146 +12,14 @@
  * @version 1.0
  */
 
-get_header();
-
-$objects = get_posts( array(
-    'post_parent' => 121,
-    'post_type'    => 'page',
-    'posts_per_page' => -1,
-) );
-
-$args = array(
-    'post_type'			=> 'tribe_events',
-    'posts_per_page'	=> 500,
-    'meta_key' => '_EventStartDate',
-    'orderby' => '_EventStartDate',
-    'order'	=> 'asc',
-    
-    'meta_query' => array(
-       array(
-           'key' => '_EventStartDate',
-           'value' => date("Y-m-d H:i:s"),
-           'compare' => '>',
-       )
-   	)
-   	
-);
-
-
-$events = get_posts( $args );
-
-//global $wpdb; 
-//print($wpdb->last_query);
-//exit();
-?>
-
-<section id="home-slider">
-	<div id="home-top-swiper" class="swiper-container add-next-scroll">
-		<div class="swiper-wrapper">
-		<?php 
-		$slides = get_field('slides');
-		
-		foreach ($slides as $slide) : ?>
-			<div class="swiper-slide" style="background-image: url('<?php echo $slide['url']?>');">
-				<div class="slide-title max-width">
-					<h1><?php echo $slide['caption']; ?></h1>
-					<div class=""><?php echo $slide['description']; ?></div>
-				</div>
-			</div>
-		<?php endforeach; ?>
-		</div>
-		<div class="swiper-pagination max-width"></div>
-		<div class="max-width">
-		<div class="swiper-button-next btn btn-nav"><i class="icon-navigate-right"></i></div>
-    	<div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
-	</div>
-<script>
-(function( $ ) {
-	$(function() {
-		var slider = new Swiper('#home-top-swiper', {
-		 	slidesPerView : 1,
-	      	loop : false,
-	      	//effect: 'fade',
-	      	//spaceBetween: 5,
-			pagination: {
-	        	el: '.swiper-pagination',
-	      	},
-	      	navigation: {
-		        nextEl: '.swiper-button-next',
-		        prevEl: '.swiper-button-prev',
-		    },
-			/*
-			autoplay: {
-		        delay: 8000,
-		    	disableOnInteraction: true,
-		    },
-		    */
-		});
-
-		var $swiperContainer = $('#home-top-swiper');
-		$swiperContainer.height($(window).height() - 46);
-		$(window).resize(function() {
-			$swiperContainer.height($(window).height() - 46);
-		});
-	});
-})( jQuery );
-</script>
-
-</section>
-
-<section id="home-events" class="section-padding">
-	<div class="section-header">
-		<h1 class="decor"><span>Wydarzenia</span></h1>
-		<div class="section-intro"><?php the_field('events-section-subtitle'); ?></div>
-	</div>
-	<div class="container-fluid max-width events-list">
-        <?php $i=0; foreach($events as $post) :
-        	global $post;
-        	$eventMeta = get_post_meta($post->ID);
-			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $eventMeta['_EventEndDate'][0]);
-			if ($i == 0) : ?>
-			<div class="col-xs-12 col-sm-6 col-md-offset-2 col-md-5 col-lg-offset-0 col-lg-4">
-				<?php the_post_thumbnail() ?>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="col-xs-12 event first">
-					<a class="event-content" href="<?php echo get_permalink($post->ID); ?>">
-						<span><?php echo date_i18n( 'l, d M Y @ G:i', date_timestamp_get($dt), false ); ?></span>
-						<span class="title"><?php echo the_title(); ?></span>
-						<span class="more-lnk">Weź Udział</span>
-						<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
-					</a>
-				</div>
-			</div>
-			<div class="col-xs-12 col-lg-5 rest">
-			<?php else : ?>
-				<div class="col-sm-4 col-lg-12 event">
-					<a class="event-content" href="<?php echo get_permalink($post->ID); ?>">
-						<span class="date"><?php echo date_i18n( 'l, d M Y @ G:i', date_timestamp_get($dt), false ); ?></span>
-						<span class="title"><?php echo the_title(); ?></span>
-						<span class="more-lnk">Weź Udział</span>
-						<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
-					</a>
-				</div>
-			<?php endif;
-			if ($i == (count($events) -1)) echo '</div>';
-			?>
-
-		<?php $i++; endforeach ?>
-
-	</div>
-	<div class="container-fluid max-width">
-		<a href="/wydarzenia/" class="btn frame-btn" >Przelądaj Kalendarz</a> 
-	</div>
-</section>
+get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 <section id="home-about" style="background-image: url('<?php echo wp_get_attachment_url(get_field('place_section_bg')); ?>');">
 	<div class="container-fluid max-width">
-		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding content-wrap">
+		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
 			<div class="section-header">
-				<h1 class="decor"><span>Miejsce</span></h1>
-				<div class="section-intro"><?php the_field('place-section-subtitle'); ?></div>
+				<h1>Poznaj Cargo</h1>
 			</div>
 			<div class="content">
 				<?php the_content(); ?>
@@ -164,7 +32,7 @@ $events = get_posts( $args );
 
 <section id="home-artists" class="section-padding">
 	<div class="section-header">
-		<h1 class="decor"><span>Artyści sceny54</span></h1>
+		<h1>Artyści sceny54</h1>
 		<div class="section-intro"><?php the_field('artists-section-subtitle'); ?></div>
 	</div>
 	<div class="container-fluid max-width">
