@@ -54,7 +54,7 @@ wp_head();
                             </nav>
                             </div>
                         <div id="main-nav__logo" class="col-md-2">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav-white.png" alt="logo cargo"/>
+                            <a href="<?php echo get_site_url(); ?>"><img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav-white.png" alt="logo cargo"/></a>
                         </div>
                         <div id="main-nav__right" class="col-md-5 text-left no-gutters">
                             <nav>
