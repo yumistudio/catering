@@ -23,7 +23,7 @@ get_header(); ?>
 			</div>
 			<div class="content">
 				<?php the_content(); ?>
-				<a href="/miejsce/" class="btn frame-btn">Czytaj więcej</a>
+				<a href="/miejsce/" class="btn frame-btn">Dowedz się więcej</a>
 			</div>
 		</div>
 	</div>
