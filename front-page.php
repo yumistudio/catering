@@ -34,83 +34,48 @@ get_header(); ?>
 
 			<div class="card">
 				<h2 class="text-dark text-center">Menu a'la carte</h2>
+				<?php if( have_rows('menu_ala_carte') ):
+				    while ( have_rows('menu_ala_carte') ) : the_row(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
-						<div class="title">Zuppa Del Pescatore</div>
-						<div class="price">29zł</div>
+						<div class="title"><?php the_sub_field('name'); ?></div>
+						<div class="price"><?php the_sub_field('cena'); ?></div>
 					</div>
-					<div class="card-row__disc">w opcji z rybą, krewetką i mulami</div>
+					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">Grillowany stek z miecznika</div>
-						<div class="price">49zł</div>
-					</div>
-					<div class="card-row__disc">w marynacie chermoula z sosem salsa</div>
-				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">Żeberka Jacob’s ladder</div>
-						<div class="price">39zł</div>
-					</div>
-					<div class="card-row__disc">podawane z kolbą gotowanej kukurydzy</div>
-				</div>
+				<?php endwhile; endif; ?>
 				<div class="card-button">
 					<a href="#" class="btn btn-secondary-outline">Zobacz pełne menu</a>
 				</div>
 			</div>
-
 			<div class="card">
 				<h2 class="text-dark text-center">Karta Win</h2>
+				<?php if( have_rows('wine_card') ):
+				    while ( have_rows('wine_card') ) : the_row(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
-						<div class="title">2012 Monte Tondo</div>
-						<div class="price">62zł <span class="sub">/ 10cl</span></div>
+						<div class="title"><?php the_sub_field('name'); ?></div>
+						<div class="price"><?php the_sub_field('cena'); ?><span class="sub">/ <?php the_sub_field('measure_unit'); ?></span></div>
 					</div>
-					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">2015 Mount Riley Noir</div>
-						<div class="price">27zł <span class="sub">/ 10cl</span></div>
-					</div>
-					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
-				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">2016 Yangarra Viognier</div>
-						<div class="price">42zł <span class="sub">/ 10cl</span></div>
-					</div>
-					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
-				</div>
+				<?php endwhile; endif; ?>
 				<div class="card-button">
 					<a href="#" class="btn btn-secondary-outline">Zobacz kartę win</a>
 				</div>
 			</div>
-			
 			<div class="card">
 				<h2 class="text-dark text-center">DELIkatesy</h2>
+				<?php if( have_rows('deli') ):
+				    while ( have_rows('deli') ) : the_row(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
-						<div class="title">Karkówka</div>
-						<div class="price">50zł <span class="sub">/ 100g</span></div>
+						<div class="title"><?php the_sub_field('name'); ?></div>
+						<div class="price"><?php the_sub_field('cena'); ?><span class="sub">/ <?php the_sub_field('measure_unit'); ?></span></div>
 					</div>
-					<div class="card-row__disc">Amarone della Valpolicella, Corvina blend</div>
+					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">Łopatka</div>
-						<div class="price">25zł <span class="sub">/ 100g</span></div>
-					</div>
-					<div class="card-row__disc">Marlbourough, Pinot Noir</div>
-				</div>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title">Polędwica wołowa</div>
-						<div class="price">18zł <span class="sub">/ 100g</span></div>
-					</div>
-					<div class="card-row__disc">Mc Laren Vale, Viognier</div>
-				</div>
+				<?php endwhile; endif; ?>
 				<div class="card-button">
 					<a href="#" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
 				</div>
