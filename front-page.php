@@ -84,6 +84,115 @@ get_header(); ?>
 	</div>
 </section>
 
+<section id="home-artists" class="padding-section divider-top divider-black">
+	<div class="section-header">
+		<h1 class="text-dark"><span>Nasz zespół</span></h1>
+		<div class="section-intro"></div>
+	</div>
+	<div class="container-fluid max-width">
+		<div class="artists-slider">
+	        	                
+	        <div id="artists-swiper" class="swiper-container swiper-container-horizontal">
+				<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1170px, 0px, 0px);">
+										<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Karina Kraśko</h4>
+	            			<div class="category">Muzyk</div>	            			<div class="excerpt">
+	            				<p>Scena54 wychodzi naprzeciw oczekiwaniom gości powyżej 30 roku życia, lubującym się w wysublimowanej rozrywce. To spełnienie marzenia wyrafinowanego klubowicza o … </p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/mmkobylacz.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Mariusz ‚Mario’ Kobylacz</h4>
+	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
+	            				<p>Pellentesque imperdiet tristique felis.</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-sl ide content-box" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/rmtrzebinski.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Robert Marek Trzebiński</h4>
+	            			<div class="category">Muzyk</div>	            			<div class="excerpt">
+	            				<p>Class aptent taciti sociosqu ad litora .</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box swiper-slide-prev" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/gryfnesynki.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Gryfne Synki</h4>
+	            			<div class="category">DJ Band</div>	            			<div class="excerpt">
+	            				<p>Duis pharetra eget elit sed semper.</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box swiper-slide-active" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/scanditanoche.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Scandalita Noche</h4>
+	            			<div class="category">Zespół</div>	            			<div class="excerpt">
+	            				<p>Luis ac ex faucibus ante vestibulum sagittis.</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box swiper-slide-next" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/sszczebrzeszynski.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Seweryn Szczebrzeszyński</h4>
+	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
+	            				<p>Curabitur id erat et ex laoreet egestas.</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/mwalczaknowakowska.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Monika Walczak-Nowakowska</h4>
+	            			<div class="category">Burlesque</div>	            			<div class="excerpt">
+	            				<p>In pellentesque, nisl in aliquet.</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
+						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/atrojanowski.jpg');"></div>
+	            		<div class="gradient-cover"></div>
+	            		<div class="content">
+	            			<h4>Andrzej Trojanowski</h4>
+	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
+	            				<p>Lorem ipsum dolor sit amet</p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            		            </div>
+	        </div>
+
+	        <div class="swiper-button-next btn btn-nav swiper-button-disabled"><i class="icon-navigate-right"></i></div>
+    		<div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
+
+		</div>
+	</div>
+
+</section>
+
 <section id="gallery" class="padding-section pattern-section divider-black">
 	<h1 class="text-dark text-center">Galeria</h1>
 </section>
