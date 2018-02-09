@@ -84,12 +84,60 @@ get_header(); ?>
 	</div>
 </section>
 
-<section id="home-artists" class="padding-section divider-top divider-black">
+<section id="home-people" class="padding-section divider-top divider-black">
 	<div class="section-header">
 		<h1 class="text-dark"><span>Nasz zespół</span></h1>
 		<div class="section-intro"></div>
 	</div>
-	<div class="container-fluid max-width">
+	<div id="home-people__carousel" class="swiper-container">
+		<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
+		</div>
+		</div>
+		<div class="max-width">
+			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
+			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
+		</div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+  
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('#home-people__carousel', {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.swiper-nav-next',
+        prevEl: '.swiper-nav-prev',
+      },
+    });
+  </script>
+	<!-- <div class="container-fluid max-width">
 		<div class="artists-slider">
 	        	                
 	        <div id="artists-swiper" class="swiper-container swiper-container-horizontal">
@@ -185,33 +233,204 @@ get_header(); ?>
 	            		            </div>
 	        </div>
 
-	        <div class="swiper-button-next btn btn-nav swiper-button-disabled"><i class="icon-navigate-right"></i></div>
+	        <div class="swiper-button-next btn btn-nav"><i class="icon-navigate-right"></i></div>
     		<div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
 
 		</div>
-	</div>
+	</div> -->
 
 </section>
 
-<section id="gallery" class="padding-section pattern-section divider-black">
+<section id="gallery" class="padding-section pattern-section divider-bottom">
 	<h1 class="text-dark text-center">Galeria</h1>
+	<div class="btn-toolbar filters">
+		<div data-toggle="buttons" class="btn-group">
+			<label class="btn on">
+				<input name="filter" value="*" checked="checked" type="radio">
+				Wnętrza
+			</label>
+			<label class="btn">
+				<input name="filter" value="burlesque" type="radio">
+				Menu a’la carte	
+			</label>
+			<label class="btn">
+				<input name="filter" value="dj-band" type="radio">
+				Delikatesy	
+			</label>
+			<label class="btn">
+			<input name="filter" value="muzyk" type="radio">
+				Wydarzenia	
+			</label>
+			<label class="btn">
+			<input name="filter" value="muzyk" type="radio">
+				Wina i cocktaile
+			</label>
+		</div>
+	</div>	
+<div class="container-fluid">
+	<div id="artists-grid" class="row" style="position: relative; height: 760px;">
+		<div class="col-xs-12 col-sm-4 col-md-3 artist-item muzyk" style="position: absolute; left: 0px; top: 0px;">
+		<div id="test-popup-153" class="black-popup max-width mfp-hide">
+		  	<div>
+			  	<div class="table">
+			  		<div class="cell img-wrap"><img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg 270w, http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko-203x300.jpg 203w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" width="270" height="399"></div>
+					</div>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+</div>
+	<script>
+	(function($) {
+		
+		var $grid = jQuery('#artists-grid');
+		$grid.isotope({
+		// options
+		itemSelector: '.artist-item',
+		layoutMode: 'masonry'
+		});
+
+		$('.filters input').change(function() {
+			$(this).parent().siblings().removeClass('on');
+			$(this).parent().toggleClass('on');
+			var value = $(this).val();
+			if ( value != '*' ) value = '.' + value;
+			$grid.isotope({ filter: value });
+		});
+
+	})(jQuery);
+
+
+	(function($) {
+		$(document).ready(function() {
+			
+			var $contentElements = $('#artists-grid .content')
+			
+			/*
+			$contentElements.niceScroll({
+				cursorcolor: '#ffe2a680',
+				cursorborder: '1px solid #ffe2a680',
+			});
+			console.log($contentElements.getNiceScroll());
+			*/
+
+			// $('#artists-grid').magnificPopup({
+			// 	delegate: 'div.content-box',
+			// 	disableOn: 700,
+			// 	type: 'inline',
+			// 	closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
+			// 	mainClass: 'mfp-fade',
+			// 	removalDelay: 160,
+			// 	callbacks: {
+			// 		open: function() {
+			// 			var container = $(this.content.get()).find('.content');
+						
+			// 			container.niceScroll({
+			// 				cursorcolor: '#ffe2a680',
+			// 				cursorborder: '1px solid #ffe2a680',
+			// 			});
+						
+			// 			container.getNiceScroll().resize();
+			// 			console.log(container.width() + ' / ' + container.height());
+			// 			console.log(container.getNiceScroll());
+			// 		},
+			// 	},
+			// 	/*
+			// 	mainClass: 'mfp-fade',
+			// 	removalDelay: 160,
+			// 	preloader: false,
+			// 	fixedContentPos: false,
+			// 	*/
+			// });
+
+			
+			
+			$('#artists-grid').magnificPopup({
+				delegate: 'a',
+				disableOn: 700,
+				type: 'iframe',
+				mainClass: 'mfp-fade',
+				removalDelay: 160,
+				preloader: false,
+				fixedContentPos: false,
+				
+
+				iframe: {
+					markup: '<div class="mfp-iframe-scaler">'+
+								'<div class="mfp-title"></div>'+
+								'<div class="mfp-close"></div>'+
+								'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+							'</div>',
+				},
+
+				callbacks: {
+					markupParse: function(template, values, item) {
+
+						values.title = '<h4>' + item.el.attr('title') + '</h4>' +
+										'<span class="date">'+item.el.find('.date').text()+'</span>'; 
+					},
+				},
+				closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>'
+			});
+
+			
+		});
+	})(jQuery);
+	</script>
 </section>
 
 <?php while ( have_posts() ) : the_post(); ?>
-<section id="home-about" style="background-image: url('<?php echo wp_get_attachment_url(get_field('place_section_bg')); ?>');">
+<section id="home-about" class="divider-black" style="">
 	<div class="container-fluid max-width">
 		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
 			<div class="section-header">
-				<h1>Poznaj Cargo</h1>
+				<h1>Zarezerwuj stolik</h1>
 			</div>
-			<div class="content">
-				<?php the_content(); ?>
-				<a href="/miejsce/" class="btn frame-btn">Dowedz się więcej</a>
+			<div class="content text-center">
+				<p>Nie czekaj i już dzisiaj rozkoszuj się naszymi</br>wspaniałymi daniami na miejscu.</p>
+			</div>
+			<div id="home-about__cta" class="text-center">
+				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone-outline"></i>12 686 55 22</a>
+				<div class="or">lub</div>
+				<a href="/miejsce/" class="btn btn-primary">Zarezerwuj online</a>
 			</div>
 		</div>
 	</div>
 </section>
 <?php endwhile; ?>
+
+<section id="home-insta" class="padding-section pattern-section divider-black">
+<div id="home-insta__carousel" class="swiper-container">
+    <div id="instafeed" class="swiper-wrapper">
+      <div class="swiper-slide col-md-3">Slide 1</div>
+      <div class="swiper-slide col-md-3">Slide 2</div>
+      <div class="swiper-slide col-md-3">Slide 3</div>
+      <div class="swiper-slide col-md-3">Slide 4</div>
+      <div class="swiper-slide col-md-3">Slide 2</div>
+      <div class="swiper-slide col-md-3">Slide 3</div>
+      <div class="swiper-slide col-md-3">Slide 4</div>
+      <div class="swiper-slide col-md-3">Slide 2</div>
+      <div class="swiper-slide col-md-3">Slide 3</div>
+      <div class="swiper-slide col-md-3">Slide 4</div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+  
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('#home-insta__carousel', {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      centeredSlides: true,
+	  loop: true,
+	  autoplay: true,
+    });
+  </script>
+</section>
 
 <section id="home-people" class="section-padding" style="background-image: url('<?php the_field(); ?>');">
 	<div class="section-header">
