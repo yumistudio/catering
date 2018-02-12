@@ -89,32 +89,79 @@ get_header(); ?>
 		<h1 class="text-dark"><span>Nasz zespół</span></h1>
 		<div class="section-intro"></div>
 	</div>
-	<div id="home-people__carousel" class="swiper-container">
+	<div id="home-people__carousel" class="swiper-container carousel-one">
 		<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" />
-		</div>
+			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+				<div class="swiper-slide__wrapper">
+					<div class="title">
+						<h2>Maciej Piórkowski</h2>
+						<h3>Szef kuchni</h3>
+					</div>
+					<div class="hidden">
+						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<a href="#" class="btn">Więcej</a>
+					</div>
+					
+				</div>
+				<div class="swiper-slide__overlay"></div>
+			</div>
+			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+				<div class="swiper-slide__wrapper">
+					<div class="title">
+						<h2>Maciej Piórkowski</h2>
+						<h3>Szef kuchni</h3>
+					</div>
+					<div class="hidden">
+						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<a href="#" class="btn">Więcej</a>
+					</div>
+					
+				</div>
+				<div class="swiper-slide__overlay"></div>
+			</div>
+			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+				<div class="swiper-slide__wrapper">
+					<div class="title">
+						<h2>Maciej Piórkowski</h2>
+						<h3>Szef kuchni</h3>
+					</div>
+					<div class="hidden">
+						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<a href="#" class="btn">Więcej</a>
+					</div>
+					
+				</div>
+				<div class="swiper-slide__overlay"></div>
+			</div>
+			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+				<div class="swiper-slide__wrapper">
+					<div class="title">
+						<h2>Maciej Piórkowski</h2>
+						<h3>Szef kuchni</h3>
+					</div>
+					<div class="hidden">
+						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<a href="#" class="btn">Więcej</a>
+					</div>
+					
+				</div>
+				<div class="swiper-slide__overlay"></div>
+			</div>
+			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+				<div class="swiper-slide__wrapper">
+					<div class="title">
+						<h2>Maciej Piórkowski</h2>
+						<h3>Szef kuchni</h3>
+					</div>
+					<div class="hidden">
+						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<a href="#" class="btn">Więcej</a>
+					</div>
+					
+				</div>
+				<div class="swiper-slide__overlay"></div>
+			</div>
+			
 		</div>
 		<div class="max-width">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
@@ -131,6 +178,7 @@ get_header(); ?>
       slidesPerView: 6,
       spaceBetween: 30,
       centeredSlides: true,
+	  loop: true,
       navigation: {
         nextEl: '.swiper-nav-next',
         prevEl: '.swiper-nav-prev',
