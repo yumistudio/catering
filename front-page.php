@@ -315,18 +315,45 @@ get_header(); ?>
 			</label>
 		</div>
 	</div>	
-<div class="container-fluid">
-	<div id="artists-grid" class="row" style="position: relative; height: 760px;">
-		<div class="col-xs-12 col-sm-4 col-md-3 artist-item muzyk" style="position: absolute; left: 0px; top: 0px;">
-		<div id="test-popup-153" class="black-popup max-width mfp-hide">
-		  	<div>
-			  	<div class="table">
-			  		<div class="cell img-wrap"><img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg 270w, http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko-203x300.jpg 203w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" width="270" height="399"></div>
+	<div class="container-fluid">
+		
+		<div id="artists-grid" class="row max-width">
+			<div class="artist-item muzyk">
+				<div>
+					<div class="table">
+						<div class="cell img-wrap"><img src="http://via.placeholder.com/350x150"></div>
 					</div>
-			  	</div>
+				</div>
+			</div>
+			<div class="artist-item muzyk">
+				<div>
+					<div class="table">
+						<div class="cell img-wrap"><img src="http://via.placeholder.com/350x150"></div>
+					</div>
+				</div>
+			</div>
+			<div class="artist-item muzyk">
+				<div>
+					<div class="table">
+						<div class="cell img-wrap"><img src="http://via.placeholder.com/350x150"></div>
+					</div>
+				</div>
+			</div>
+			<div class="artist-item muzyk">
+				<div>
+					<div class="table">
+						<div class="cell img-wrap"><img src="http://via.placeholder.com/350x150"></div>
+					</div>
+				</div>
+			</div>
+			<div class="artist-item muzyk">
+				<div>
+					<div class="table">
+						<div class="cell img-wrap"><img src="http://via.placeholder.com/350x150"></div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 
 	</div>
 </div>
@@ -337,7 +364,10 @@ get_header(); ?>
 		$grid.isotope({
 		// options
 		itemSelector: '.artist-item',
-		layoutMode: 'masonry'
+		layoutMode: 'masonry',
+		masonry: {
+			columnWidth: 25
+		}
 		});
 
 		$('.filters input').change(function() {
