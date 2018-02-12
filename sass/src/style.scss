@@ -14,6 +14,7 @@
 @import "magnific-popup";
 @import "ajax-loader";
 @import "fonts";
+@import "utilities";
 
 @font-face {
     font-family: icons;
@@ -2020,6 +2021,24 @@ lable.es_shortcode_form_email {
         }
         .hours {
             color: #343434;
+        }
+        .here {
+            position: relative;
+            &::before {
+                font-family: 'cargo-ui-icons';
+                position: absolute;
+                content: $icon-arrow-left;
+                opacity: .2;
+            }
+        }
+        .open {
+            position: relative;
+            &::before {
+                font-family: 'cargo-ui-icons';
+                position: absolute;
+                content: $icon-arrow-left;
+                opacity: .2;
+            }
         }
     }
 }
