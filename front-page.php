@@ -91,77 +91,25 @@ get_header(); ?>
 	</div>
 	<div id="home-people__carousel" class="swiper-container carousel-one">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
+			<?php $artists = get_posts( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>
+	                
+	        
+			<?php foreach ($artists as $post) : global $post; ?>
+        	<div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 				<div class="swiper-slide__wrapper">
 					<div class="title">
-						<h2>Maciej Piórkowski</h2>
-						<h3>Szef kuchni</h3>
+						<h2<?php the_title(); ?></h2>
+						<h3><?php foreach (get_the_terms($post->ID, 'artist_categories') as $cat) echo $cat->name; ?></h3>
 					</div>
 					<div class="hidden">
-						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
+						<p><?php the_excerpt(); ?></p>
 						<a href="#" class="btn">Więcej</a>
 					</div>
 					
 				</div>
 				<div class="swiper-slide__overlay"></div>
 			</div>
-			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
-				<div class="swiper-slide__wrapper">
-					<div class="title">
-						<h2>Maciej Piórkowski</h2>
-						<h3>Szef kuchni</h3>
-					</div>
-					<div class="hidden">
-						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-						<a href="#" class="btn">Więcej</a>
-					</div>
-					
-				</div>
-				<div class="swiper-slide__overlay"></div>
-			</div>
-			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
-				<div class="swiper-slide__wrapper">
-					<div class="title">
-						<h2>Maciej Piórkowski</h2>
-						<h3>Szef kuchni</h3>
-					</div>
-					<div class="hidden">
-						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-						<a href="#" class="btn">Więcej</a>
-					</div>
-					
-				</div>
-				<div class="swiper-slide__overlay"></div>
-			</div>
-			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
-				<div class="swiper-slide__wrapper">
-					<div class="title">
-						<h2>Maciej Piórkowski</h2>
-						<h3>Szef kuchni</h3>
-					</div>
-					<div class="hidden">
-						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-						<a href="#" class="btn">Więcej</a>
-					</div>
-					
-				</div>
-				<div class="swiper-slide__overlay"></div>
-			</div>
-			<div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
-				<div class="swiper-slide__wrapper">
-					<div class="title">
-						<h2>Maciej Piórkowski</h2>
-						<h3>Szef kuchni</h3>
-					</div>
-					<div class="hidden">
-						<p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-						<a href="#" class="btn">Więcej</a>
-					</div>
-					
-				</div>
-				<div class="swiper-slide__overlay"></div>
-			</div>
-			
+        	<?php endforeach; wp_reset_postdata(); ?>
 		</div>
 		<div class="max-width">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
@@ -169,264 +117,100 @@ get_header(); ?>
 		</div>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-  
   <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('#home-people__carousel', {
-      slidesPerView: 6,
-      spaceBetween: 30,
-      centeredSlides: true,
-	  loop: true,
-      navigation: {
-        nextEl: '.swiper-nav-next',
-        prevEl: '.swiper-nav-prev',
-      },
-    });
-  </script>
-	<!-- <div class="container-fluid max-width">
-		<div class="artists-slider">
-	        	                
-	        <div id="artists-swiper" class="swiper-container swiper-container-horizontal">
-				<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1170px, 0px, 0px);">
-										<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Karina Kraśko</h4>
-	            			<div class="category">Muzyk</div>	            			<div class="excerpt">
-	            				<p>Scena54 wychodzi naprzeciw oczekiwaniom gości powyżej 30 roku życia, lubującym się w wysublimowanej rozrywce. To spełnienie marzenia wyrafinowanego klubowicza o … </p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/mmkobylacz.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Mariusz ‚Mario’ Kobylacz</h4>
-	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
-	            				<p>Pellentesque imperdiet tristique felis.</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-sl ide content-box" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/rmtrzebinski.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Robert Marek Trzebiński</h4>
-	            			<div class="category">Muzyk</div>	            			<div class="excerpt">
-	            				<p>Class aptent taciti sociosqu ad litora .</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box swiper-slide-prev" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/gryfnesynki.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Gryfne Synki</h4>
-	            			<div class="category">DJ Band</div>	            			<div class="excerpt">
-	            				<p>Duis pharetra eget elit sed semper.</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box swiper-slide-active" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/scanditanoche.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Scandalita Noche</h4>
-	            			<div class="category">Zespół</div>	            			<div class="excerpt">
-	            				<p>Luis ac ex faucibus ante vestibulum sagittis.</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box swiper-slide-next" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/sszczebrzeszynski.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Seweryn Szczebrzeszyński</h4>
-	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
-	            				<p>Curabitur id erat et ex laoreet egestas.</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/mwalczaknowakowska.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Monika Walczak-Nowakowska</h4>
-	            			<div class="category">Burlesque</div>	            			<div class="excerpt">
-	            				<p>In pellentesque, nisl in aliquet.</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            						<div class="swiper-slide content-box" style="width: 262.5px; margin-right: 30px;">
-						<div class="bg" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/atrojanowski.jpg');"></div>
-	            		<div class="gradient-cover"></div>
-	            		<div class="content">
-	            			<h4>Andrzej Trojanowski</h4>
-	            			<div class="category">Stand-Up</div>	            			<div class="excerpt">
-	            				<p>Lorem ipsum dolor sit amet</p>
-	            			</div>
-	            			
-	            		</div>
-	            	</div>
-	            		            </div>
-	        </div>
-
-	        <div class="swiper-button-next btn btn-nav"><i class="icon-navigate-right"></i></div>
-    		<div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
-
-		</div>
-	</div> -->
+<script>
+(function($) {
+	$(document).ready(function() {		
+		var swiper = new Swiper('#home-people__carousel', {
+	      slidesPerView: 6,
+	      spaceBetween: 30,
+	      centeredSlides: true,
+		  loop: true,
+	      navigation: {
+	        nextEl: '.swiper-nav-next',
+	        prevEl: '.swiper-nav-prev',
+	      },
+	    });
+	});
+})(jQuery);
+</script>
 
 </section>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">
 	<h1 class="text-dark text-center">Galeria</h1>
+
+<?php
+$heights = array(
+	0 => 'grid-item--height-reg',
+	1 => 'grid-item--height-small',
+	2 => 'grid-item--height-small',
+	3 => 'grid-item--height-reg',
+	4 => 'grid-item--height-reg',
+	5 => 'grid-item--height-small',
+	6 => 'grid-item--height-small',
+);
+$widths = array(
+	0 => '',
+	1 => 'grid-item--width-double',
+	2 => '',
+	3 => '',
+	4 => '',
+	5 => '',
+	6 => 'grid-item--height-double',
+);
+
+$gallery = get_field('gallery');
+$all_terms = array();
+foreach ($gallery as $key => $image) {
+	if ( $term = get_field('kategoria', $image['ID']))
+		$all_terms[$term->slug] = $term->name;
+
+	$gallery[$key]['term'] = $term;
+}
+?>
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
 				<input name="filter" value="*" checked="checked" type="radio">
-				Wnętrza
+				Wszystkie
 			</label>
-			<label class="btn">
-				<input name="filter" value="burlesque" type="radio">
-				Menu a’la carte	
+			<?php foreach ($all_terms as $slug => $name) : ?>
+			<label class="btn on">
+				<input name="filter" value="<?php echo $slug; ?>" type="radio">
+				<?php echo $name; ?>
 			</label>
-			<label class="btn">
-				<input name="filter" value="dj-band" type="radio">
-				Delikatesy	
-			</label>
-			<label class="btn">
-			<input name="filter" value="muzyk" type="radio">
-				Wydarzenia	
-			</label>
-			<label class="btn">
-			<input name="filter" value="muzyk" type="radio">
-				Wina i cocktaile
-			</label>
+			<?php endforeach; ?>
 		</div>
 	</div>	
-<div class="container-fluid">
-	<div id="artists-grid" class="row" style="position: relative; height: 760px;">
-		<div class="col-xs-12 col-sm-4 col-md-3 artist-item muzyk" style="position: absolute; left: 0px; top: 0px;">
-		<div id="test-popup-153" class="black-popup max-width mfp-hide">
-		  	<div>
-			  	<div class="table">
-			  		<div class="cell img-wrap"><img src="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg 270w, http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko-203x300.jpg 203w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" width="270" height="399"></div>
-					</div>
-			  	</div>
+	
+	<div class="grid-wrap">
+		<div id="gallery-grid" class="grid image">
+			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
+			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $image['term']->slug; ?>">
+				<a href="<?php echo $image['sizes']['yumi-thumbnail']; ?>" data-size="1920x1080" class="<?php echo $heights[$key]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+					<div class="overlay"><i class="icon-search"></i></div>
+				</a>
 			</div>
+			<?php endforeach; // End of the loop. ?>
 		</div>
 	</div>
-
-	</div>
-</div>
-	<script>
-	(function($) {
-		
-		var $grid = jQuery('#artists-grid');
+</section>
+<script>
+(function($) {
+	$(document).ready(function() {
+		var $grid = jQuery('#gallery-grid');
 		$grid.isotope({
-		// options
-		itemSelector: '.artist-item',
-		layoutMode: 'masonry'
+		  // options
+		  itemSelector: '.grid-item',
+		  layoutMode: 'masonry'
 		});
+	});
+})(jQuery);
+</script>
 
-		$('.filters input').change(function() {
-			$(this).parent().siblings().removeClass('on');
-			$(this).parent().toggleClass('on');
-			var value = $(this).val();
-			if ( value != '*' ) value = '.' + value;
-			$grid.isotope({ filter: value });
-		});
-
-	})(jQuery);
-
-
-	(function($) {
-		$(document).ready(function() {
-			
-			var $contentElements = $('#artists-grid .content')
-			
-			/*
-			$contentElements.niceScroll({
-				cursorcolor: '#ffe2a680',
-				cursorborder: '1px solid #ffe2a680',
-			});
-			console.log($contentElements.getNiceScroll());
-			*/
-
-			// $('#artists-grid').magnificPopup({
-			// 	delegate: 'div.content-box',
-			// 	disableOn: 700,
-			// 	type: 'inline',
-			// 	closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
-			// 	mainClass: 'mfp-fade',
-			// 	removalDelay: 160,
-			// 	callbacks: {
-			// 		open: function() {
-			// 			var container = $(this.content.get()).find('.content');
-						
-			// 			container.niceScroll({
-			// 				cursorcolor: '#ffe2a680',
-			// 				cursorborder: '1px solid #ffe2a680',
-			// 			});
-						
-			// 			container.getNiceScroll().resize();
-			// 			console.log(container.width() + ' / ' + container.height());
-			// 			console.log(container.getNiceScroll());
-			// 		},
-			// 	},
-			// 	/*
-			// 	mainClass: 'mfp-fade',
-			// 	removalDelay: 160,
-			// 	preloader: false,
-			// 	fixedContentPos: false,
-			// 	*/
-			// });
-
-			
-			
-			$('#artists-grid').magnificPopup({
-				delegate: 'a',
-				disableOn: 700,
-				type: 'iframe',
-				mainClass: 'mfp-fade',
-				removalDelay: 160,
-				preloader: false,
-				fixedContentPos: false,
-				
-
-				iframe: {
-					markup: '<div class="mfp-iframe-scaler">'+
-								'<div class="mfp-title"></div>'+
-								'<div class="mfp-close"></div>'+
-								'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-							'</div>',
-				},
-
-				callbacks: {
-					markupParse: function(template, values, item) {
-
-						values.title = '<h4>' + item.el.attr('title') + '</h4>' +
-										'<span class="date">'+item.el.find('.date').text()+'</span>'; 
-					},
-				},
-				closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>'
-			});
-
-			
-		});
-	})(jQuery);
-	</script>
+</div>
+	
 </section>
 
 <?php while ( have_posts() ) : the_post(); ?>
