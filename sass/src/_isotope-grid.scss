@@ -1,7 +1,14 @@
 /* ---- grid ---- */
 
+
+.grid-wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
 .grid {
   @include pie-clearfix;
+  margin-right: -30px;
 }
 
 /* clear fix */
@@ -16,12 +23,16 @@
 .grid-item {
     float: left;
     position: relative;
+    padding-right: 30px;
+    padding-bottom: 30px;
 
-    width: 33.33333%;
+    width: 25%;
     
     & > a {
         display: block;
-        position: relative;
+        position: absolute;
+        top: 0; left: 0;
+        right: 30px; bottom: 30px;
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -71,14 +82,13 @@
 }
 
 .grid-item--height-small {
-    padding-top: 50%;   
+    padding-top: 15.38462%;
 }
 
 .grid-item--height-reg {
-    padding-top: 100%;
+    padding-top: 35.04274%;
 }
 
-.grid-item--height-big {
-    padding-top: 150%;
+.grid-item--width-double {
+    width: 50%;
 }
-

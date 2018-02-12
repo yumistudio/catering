@@ -144,7 +144,7 @@ get_header(); ?>
 $heights = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
-	2 => 'grid-item--height-small',
+	2 => 'grid-item--height-reg',
 	3 => 'grid-item--height-reg',
 	4 => 'grid-item--height-reg',
 	5 => 'grid-item--height-small',
@@ -187,15 +187,15 @@ foreach ($gallery as $key => $image) {
 	<div class="grid-wrap">
 		<div id="gallery-grid" class="grid image">
 			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
-			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $image['term']->slug; ?>">
-				<a href="<?php echo $image['sizes']['yumi-thumbnail']; ?>" data-size="1920x1080" class="<?php echo $heights[$key]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $heights[$key]; ?> <?php echo $image['term']->slug; ?>">
+				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="1920x1080" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
+	
 			</div>
 			<?php endforeach; // End of the loop. ?>
 		</div>
-	</div>
-</section>
+
 <script>
 (function($) {
 	$(document).ready(function() {
@@ -208,9 +208,6 @@ foreach ($gallery as $key => $image) {
 	});
 })(jQuery);
 </script>
-
-</div>
-	
 </section>
 
 <?php while ( have_posts() ) : the_post(); ?>
@@ -333,44 +330,6 @@ foreach ($gallery as $key => $image) {
 })( jQuery );
 </script>
 
-<?php
-$grid = array(
-	0 => 'grid-item--height-small',
-	1 => 'grid-item--height-reg',
-	2 => 'grid-item--height-small',
-	3 => 'grid-item--height-reg',
-	4 => 'grid-item--height-reg',
-	5 => 'grid-item--height-small',
-);
-
-?>
-<section id="home-gallery">
-	<div id="gallery-grid" class="grid image">
-		<?php
-		$gallery = get_field('gallery');
-		foreach ($gallery as $key => $image) : //print_r($image);
-			print_r(get_category($image['ID']));
-			print 'aaaaaaa'; print_r(get_field('category', $image['ID'])); print 'bbbbbbbbbb'; ?>
-		<div class="grid-item photoswipe-item">
-			<a href="<?php echo $image['sizes']['yumi-full-hd']; ?>" data-size="1920x1080" class="<?php echo $grid[$key]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
-				<div class="overlay"><i class="icon-search"></i></div>
-			</a>
-		</div>
-		<?php endforeach; // End of the loop. ?>
-	</div>
-</section>
-<script>
-(function($) {
-	
-	var $grid = jQuery('#gallery-grid');
-	$grid.isotope({
-	  // options
-	  itemSelector: '.grid-item',
-	  layoutMode: 'masonry'
-	});
-})(jQuery);
-</script>
-
 <section id="home-menu" class="section-padding">
 	<div class="section-header">
 		<h1 class="decor"><span>Menu</span></h1>
@@ -395,7 +354,6 @@ $grid = array(
 			<?php endforeach; ?>
 		</div>
 	</div>
-
 </section>
 
 <section id="home-reservation" class="section-padding">

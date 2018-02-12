@@ -67,16 +67,6 @@ $md: min-width 992px;
 $lg: min-width 1200px;
 $xl: min-width 1440px;
 
-@mixin margin-y($value) {
-    margin-top: $value;
-    margin-bottom: $value;
-}
-
-@mixin margin-x($value) {
-    margin-left: $value;
-    margin-right: $value;
-}
-
 @mixin white-text {
     color: #fff;
     a {
@@ -92,26 +82,6 @@ $xl: min-width 1440px;
 
     a.more-lnk:hover {
         color: #fff;
-    }
-}
-
-@mixin clearfix() {
-    &:before,
-    &:after {
-        content: " "; /* 1 */
-        display: table; /* 2 */
-    }
-    
-    &:after {
-        clear: both;
-    }
-    
-    /**
-     * For IE 6/7 only
-     * Include this rule to trigger hasLayout and contain floats.
-     */
-    & {
-        *zoom: 1;
     }
 }
 
@@ -202,80 +172,3 @@ img.responsive-img,
     height: auto;
 }
 
-//Container
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    @include breakpoint($xxs) {
-        max-width: 390px;
-    }
-    @include breakpoint($xs) {
-        max-width: 450px;
-    }
-    @include breakpoint($sm) {
-        max-width: 720px;
-    }
-    @include breakpoint($md) {
-        max-width: 960px;
-    }
-    @include breakpoint($lg) {
-        max-width: 1170px;
-    }
-    @include breakpoint($xl) {
-        max-width: 1170px;
-    }
-}
-
-
-//Utilities
-
-.no-gutters {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.text-left {
-    text-align: left !important;
-}
-
-.text-right {
-    text-align: right !important;
-}
-
-.text-dark {
-    color: $black !important;
-}
-
-.text-semi {
-    font-weight: 600 !important;
-}
-
-.text-md {
-    font-size: 1.125rem !important;
-    line-height: 2rem !important;
-}
-
-.text-center {
-    text-align: center !important;
-}
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
-}

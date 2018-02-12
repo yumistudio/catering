@@ -27,18 +27,13 @@ function yumi_setup() {
 	add_theme_support( 'title-tag' );
 
 	add_theme_support( 'post-thumbnails' );
-
 	add_image_size( 'yumi-profile-size', 100, 100, true );
-
 	add_image_size( 'yumi-timepoint', 60, 60, true );
+	add_image_size( 'yumi-gallery-item', 500, 0, true );
+	add_image_size( 'yumi-full-hd', 1920, 1080, true );
+	
 
-	add_image_size( 'yumi-post-thumbnail', 200, 120, true );
-
-	add_image_size( 'yumi-partner-logo', 260, 260, true );
-
-	add_image_size( 'yumi-featured-image', 2600, 900, true );
-
-	add_image_size( 'yumi-object-list-pdf', 400, 300, true );
+	
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -380,6 +375,37 @@ function custom_post_menu_item() {
 	register_post_type( 'menu_item', $args );
 }
 add_action( 'init', 'custom_post_menu_item' );
+
+
+function custom_post_gallery() {
+	$labels = array(
+		'name'               => _x( 'Nasze Galerie', 'post type general name' ),
+		'singular_name'      => _x( 'Osoba', 'post type singular name' ),
+		'add_new'            => _x( 'Nowy', 'Person' ),
+		'add_new_item'       => __( 'Nowa Osoba' ),
+		'edit_item'          => __( 'Edytuj' ),
+		'new_item'           => __( 'Nowa Osoba' ),
+		'all_items'          => __( 'Wszyscy' ),
+		'view_item'          => __( 'Zobacz' ),
+		'search_items'       => __( 'Search Persons' ),
+		'not_found'          => __( 'No client found' ),
+		'not_found_in_trash' => __( 'No client found in the Trash' ), 
+		'parent_item_colon'  => '',
+		'menu_name'          => 'Galerie'
+	);
+	$args = array(
+		'labels'        => $labels,
+		'description'   => 'Holds our people',
+		'public'        => true,
+		'menu_position' => 36,
+		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'hierarchical'  => false,
+		'has_archive'   => true,
+		'rewrite' => array( 'slug' => 'nasz-zespol' ),
+	);
+	register_post_type( 'artist', $args );
+}
+add_action( 'init', 'custom_post_gallery' );
 
 function wpb_disable_feed() {
 	wp_die( __('No feed available,please visit our <a href="'. get_bloginfo('url') .'">homepage</a>!') );
