@@ -1,12 +1,3 @@
-@mixin margin-y($value) {
-    margin-top: $value;
-    margin-bottom: $value;
-}
-
-@mixin margin-x($value) {
-    margin-left: $value;
-    margin-right: $value;
-}
 //Container
 .container {
     padding-right: 15px;

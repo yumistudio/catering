@@ -67,16 +67,6 @@ $md: min-width 992px;
 $lg: min-width 1200px;
 $xl: min-width 1440px;
 
-@mixin margin-y($value) {
-    margin-top: $value;
-    margin-bottom: $value;
-}
-
-@mixin margin-x($value) {
-    margin-left: $value;
-    margin-right: $value;
-}
-
 @mixin white-text {
     color: #fff;
     a {
