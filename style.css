@@ -2844,7 +2844,7 @@ img.responsive-img,
 #single-event .tribe-events-meta-group-details dl {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #single-event .tribe-events-meta-group-details dl:after {
   content: "";
   display: table;
@@ -2894,7 +2894,7 @@ img.responsive-img,
   margin-bottom: 30px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #single-event .box.row:after {
   content: "";
   display: table;
@@ -2910,7 +2910,7 @@ img.responsive-img,
   position: relative;
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #event-artists:after {
   content: "";
   display: table;
@@ -2961,7 +2961,7 @@ img.responsive-img,
   margin: 45px 0;
   padding: 40px;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .tribe-events-list .row:after {
   content: "";
   display: table;
@@ -3054,11 +3054,18 @@ img.responsive-img,
 }
 
 /* ---- grid ---- */
-/* line 3, sass/src/_isotope-grid.scss */
+/* line 4, sass/src/_isotope-grid.scss */
+.grid-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 9, sass/src/_isotope-grid.scss */
 .grid {
   *zoom: 1;
+  margin-right: -30px;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .grid:after {
   content: "";
   display: table;
@@ -3066,7 +3073,7 @@ img.responsive-img,
 }
 
 /* clear fix */
-/* line 8, sass/src/_isotope-grid.scss */
+/* line 15, sass/src/_isotope-grid.scss */
 .grid:after {
   content: '';
   display: block;
@@ -3074,13 +3081,15 @@ img.responsive-img,
 }
 
 /* ---- .grid-item ---- */
-/* line 16, sass/src/_isotope-grid.scss */
+/* line 23, sass/src/_isotope-grid.scss */
 .grid-item {
   float: left;
   position: relative;
-  width: 33.33333%;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  width: 25%;
 }
-/* line 22, sass/src/_isotope-grid.scss */
+/* line 31, sass/src/_isotope-grid.scss */
 .grid-item > a {
   display: block;
   position: relative;
@@ -3089,7 +3098,7 @@ img.responsive-img,
   background-size: cover;
   background-color: #000;
 }
-/* line 31, sass/src/_isotope-grid.scss */
+/* line 40, sass/src/_isotope-grid.scss */
 .grid-item .tile-title {
   position: absolute;
   bottom: 0;
@@ -3098,7 +3107,7 @@ img.responsive-img,
   color: #fff;
   text-align: left;
 }
-/* line 40, sass/src/_isotope-grid.scss */
+/* line 49, sass/src/_isotope-grid.scss */
 .grid-item .date {
   displlay: block;
   color: #858585;
@@ -3108,7 +3117,7 @@ img.responsive-img,
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 46, sass/src/_isotope-grid.scss */
+/* line 55, sass/src/_isotope-grid.scss */
 .grid-item .title {
   display: block;
   color: #fff;
@@ -3118,7 +3127,7 @@ img.responsive-img,
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 53, sass/src/_isotope-grid.scss */
+/* line 62, sass/src/_isotope-grid.scss */
 .grid-item .overlay {
   position: absolute;
   top: 0;
@@ -3132,28 +3141,37 @@ img.responsive-img,
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-/* line 63, sass/src/_isotope-grid.scss */
+/* line 72, sass/src/_isotope-grid.scss */
 .grid-item:hover .title, .grid-item:hover .date {
   color: #000;
 }
-/* line 66, sass/src/_isotope-grid.scss */
+/* line 75, sass/src/_isotope-grid.scss */
 .grid-item:hover .overlay {
   opacity: .8;
 }
 
-/* line 73, sass/src/_isotope-grid.scss */
+/* line 82, sass/src/_isotope-grid.scss */
 .grid-item--height-small {
-  padding-top: 50%;
+  padding-top: 85.18519%;
 }
 
-/* line 77, sass/src/_isotope-grid.scss */
+/* line 86, sass/src/_isotope-grid.scss */
 .grid-item--height-reg {
-  padding-top: 100%;
+  padding-top: 151.851852%;
 }
 
-/* line 81, sass/src/_isotope-grid.scss */
+/* line 90, sass/src/_isotope-grid.scss */
 .grid-item--height-big {
   padding-top: 150%;
+}
+
+/* line 94, sass/src/_isotope-grid.scss */
+.grid-item--width-double {
+  width: 50%;
+}
+/* line 96, sass/src/_isotope-grid.scss */
+.grid-item--width-double .grid-item--height-small {
+  padding-top: 38.333333%;
 }
 
 /* line 3, sass/src/_parallax.scss */
@@ -3543,7 +3561,7 @@ input[type=button]:focus {
 .gallery {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .gallery:after {
   content: "";
   display: table;
@@ -3691,7 +3709,7 @@ input[type=button]:focus {
   background-repeat: no-repeat;
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .twoColumnGroup .column:after, .twoColumnGroup > div:after {
   content: "";
   display: table;
@@ -3979,7 +3997,7 @@ input[type=button]:focus {
 
 /* line 706, sass/src/style.scss */
 #inner-wrap {
-  background-image: url("assets/images/bg-main.jpg");
+  /* background-image: url('assets/images/bg-main.jpg'); */
 }
 @media (min-width: 992px) {
   /* line 706, sass/src/style.scss */
@@ -4697,7 +4715,7 @@ lable.es_shortcode_form_email {
   font-size: 1.125rem;
   line-height: 2.5rem;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .events-list:after {
   content: "";
   display: table;
@@ -4750,7 +4768,7 @@ lable.es_shortcode_form_email {
   *zoom: 1;
   background-image: url("assets/images/reservation.jpg");
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #home-about:after {
   content: "";
   display: table;
@@ -5531,7 +5549,7 @@ div.wpcf7 {
 #instafeed {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #instafeed:after {
   content: "";
   display: table;
@@ -5700,7 +5718,7 @@ div.wpcf7 {
 .buy-ticket-container .buy-ticket {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .buy-ticket-container .buy-ticket:after {
   content: "";
   display: table;
@@ -6134,7 +6152,7 @@ div.wpcf7 {
   position: relative;
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .scattered-blocks:after {
   content: "";
   display: table;
@@ -6150,7 +6168,7 @@ div.wpcf7 {
 .scattered-blocks > div {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .scattered-blocks > div:after {
   content: "";
   display: table;
@@ -6199,7 +6217,7 @@ div.wpcf7 {
   border: solid 1px #1a1d25;
   margin-bottom: 30px;
 }
-/* line 38, ../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .scattered-row:after {
   content: "";
   display: table;
