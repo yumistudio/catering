@@ -146,7 +146,7 @@ $heights = array(
 	1 => 'grid-item--height-small',
 	2 => 'grid-item--height-reg',
 	3 => 'grid-item--height-reg',
-	4 => 'grid-item--height-reg',
+	4 => 'grid-item--height-small',
 	5 => 'grid-item--height-small',
 	6 => 'grid-item--height-small',
 );
@@ -156,8 +156,8 @@ $widths = array(
 	2 => '',
 	3 => '',
 	4 => '',
-	5 => '',
-	6 => 'grid-item--height-double',
+	6 => '',
+	5 => 'grid-item--width-double',
 );
 
 $gallery = get_field('gallery');
