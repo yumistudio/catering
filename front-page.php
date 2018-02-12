@@ -205,6 +205,14 @@ foreach ($gallery as $key => $image) {
 		  itemSelector: '.grid-item',
 		  layoutMode: 'masonry'
 		});
+
+		$('.filters input').change(function() {
+			$(this).parent().siblings().removeClass('on');
+			$(this).parent().toggleClass('on');
+			var value = $(this).val();
+			if ( value != '*' ) value = '.' + value;
+			$grid.isotope({ filter: value });
+		});
 	});
 })(jQuery);
 </script>
