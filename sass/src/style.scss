@@ -15,6 +15,7 @@
 @import "ajax-loader";
 @import "fonts";
 @import "utilities";
+@import "forms";
 
 @font-face {
     font-family: icons;
@@ -121,72 +122,67 @@ i {
     position: relative;
 }
 
-textarea,
-input[type=text],
-input[type=number],
-input[type=email],
-input[type=tel],
-input[type=submit],
-select {
-    background: none;
-    border: solid 1px $gold50;
-    padding: 7px 10px;
-    height: 40px;
-    font-size: 14px;
-    @include transition(border-color .3s);
+// textarea,
+// input[type=text],
+// input[type=number],
+// input[type=email],
+// input[type=tel],
+// input[type=submit],
+// select {
+//     background: none;
+//     padding: 7px 10px;
+//     height: 40px;
+//     font-size: 14px;
+//     @include transition(border-color .3s);
 
-    outline: none;
-    color: $lightgrey;
+//     outline: none;
+//     color: $lightgrey;
+// }
 
-    &:focus {
-        border-color: $gold;
-    }
-}
+// input[type=button] {
+//     &:focus {
+//         border: none;
+//     }   
+// }
 
-input[type=button] {
-    &:focus {
-        border: none;
-    }   
-}
-
-.text-field {
-    input[type=text],
-    input[type=email],
-    input[type=tel],
-    textarea {
-        width: 100%;
-    }
-    margin-bottom: 20px;
+// .text-field {
+//     input[type=text],
+//     input[type=email],
+//     input[type=tel],
+//     textarea {
+//         width: 100%;
+//     }
+//     margin-bottom: 20px;
     
-    i {
-        position: absolute;
-        color: $gold;
-        pointer-events: none;
-    }
-    .selector-arrow {
-        font-size: 20px;
-        top: 11px;
-        right: 20px;
-    }
+//     i {
+//         position: absolute;
+//         color: $gold;
+//         pointer-events: none;
+//     }
+//     .selector-arrow {
+//         font-size: 20px;
+//         top: 11px;
+//         right: 20px;
+//     }
 
-    &.hint-icon {
-        input[type=text],
-        input[type=email],
-        input[type=tel],
-        textarea {
-            padding-left: 60px;
-            padding-right: 60px;
-        }
+//     &.hint-icon {
+//         input[type=text],
+//         input[type=email],
+//         input[type=tel],
+//         textarea {
+//             padding-left: 60px;
+//             padding-right: 60px;
+//         }
 
-        i.hint-icon {
-            font-size: 30px;
-            position: absolute;
-            top: 5px;
-            left: 10px;
-            opacity: .5;
-        }
-    }
-}
+//         i.hint-icon {
+//             font-size: 30px;
+//             position: absolute;
+//             top: 5px;
+//             left: 10px;
+//             opacity: .5;
+//         }
+//     }
+// }
 
 .page-title {
     text-align: center;
@@ -301,7 +297,7 @@ input[type=button] {
         font-size: 30px;
         top: 50%;
         transform: translateY(-50%);
-        color: #000;
+        color: $white;
         font-size: 50px;
         @include transition(color .3s, opacity .3s);
     }
@@ -1205,39 +1201,6 @@ input[type=button] {
     }
 }
 
-#footer {
-    background-color: $darkgrey;
-
-    p {
-        line-height: 1.5em;
-        font-size: 16px;
-    }
-
-    .group-info {
-        text-align: center;
-        margin-bottom: 30px;
-
-        span {
-            display: block;
-            font-size: 14px;
-            margin: 10px 0 10px 0;
-        }
-    }
-
-    input[type=text] {
-        height: 40px;
-    }
-
-    .signup {
-        text-align: center;
-        margin-top: 40px;
-
-        @include breakpoint($lg) {
-            text-align: left;
-            margin-top: 0;
-        }
-    }
-}
 
 .es_shortcode_form {
 
@@ -1251,19 +1214,77 @@ lable.es_shortcode_form_email {
     display: none;
 }
 
-#footer {
-    .es_shortcode_form {
-        & > div {
-            display: inline-block;
+footer {
+    background-color: #141414;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    h5 {
+        color: #545454;
+        font-family: Hind, sans-serif;
+        font-weight: 400;
+        font-size: 0.875rem;
+    }
+    p {
+        font-size: 1rem;
+        color: #949494;
+        line-height: 25px;
+    }
+    .footer-menu {
+        ul, li {
+            padding: 0;
+            list-style: none;
         }
-
-        & > .es_lablebox {
-            display: none;
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #949494;
+            transition: all .3s ease-in-out;
+            &:hover {
+                text-decoration: none;
+                color: $white; 
+            }
         }
     }
-    .es_button {
+    ul.footer-social {
         padding: 0;
-        margin-left: 10px;
+        margin: 0;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        li {
+            a {
+                transition: all .3s ease-in-out;
+                color: #949494;
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+            i {
+                font-size: 43px;
+            }
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    form {
+        input {
+            color: $white;
+            border-bottom-color: #545454 !important;
+            &:focus {
+                .active {
+                    color: $white !important;
+                }
+            }
+        }
+        .active {
+            color: #545454 !important;
+        }
+        button {
+            background: #b4b4b4 !important;
+            margin-top: 5px;
+        }
     }
 }
 
@@ -2022,22 +2043,28 @@ lable.es_shortcode_form_email {
         .hours {
             color: #343434;
         }
-        .here {
+
+        .here, .open {
+            padding-top: 1rem;
             position: relative;
             &::before {
                 font-family: 'cargo-ui-icons';
                 position: absolute;
-                content: $icon-arrow-left;
-                opacity: .2;
+                opacity: .1;
+                font-size: 55px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .here {
+            &::before {
+                content: $icon-map-outline;
             }
         }
         .open {
-            position: relative;
             &::before {
-                font-family: 'cargo-ui-icons';
-                position: absolute;
-                content: $icon-arrow-left;
-                opacity: .2;
+                content: $icon-clock-outline;
             }
         }
     }
@@ -2925,9 +2952,13 @@ section#gallery {
     position: relative;
     background-image: url('assets/images/home_bg_section_03.png');
     background-position: 50% top;
-    background-size: cover;
+    background-size: auto;
+    background-repeat: no-repeat;
     padding-bottom: 9rem;
     min-height: 800px;
+    .grid-item > a {
+        box-shadow: 3px 4px 28.5px 1.5px rgba(0, 0, 0, 0.25);
+    }
     .filters {
         padding-top: 1rem;
         label {

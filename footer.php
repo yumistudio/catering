@@ -13,33 +13,64 @@
  */
 
 ?>
-			<div id="footer" class="section-padding">
-				<div id="footer-top" class="container-fluid max-width">
-					<div class="col-xs-12 col-sm-5 col-lg-2 group-info">
-						<span>Scena54 jest częścią</span>
-						<a href="http://lescandale.pl" target="_blank">
-							<img class="responsive-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-scandale.png" />
-						</a>
+			<footer class="container-fluid">
+				<div class="container">
+					<div class="col-md-3">
+						<h5>Kontakt</h5>
+						<p>
+							Cargo Grill & Deli</br>
+							Dolnych Młynów 10/2H</br>
+							31-400 Kraków
+						</p>
+						<p>
+							12 686 55 22
+						</p>
+						<p>
+							kontakt@cargo.pl
+						</p>
 					</div>
-
-					<div class="col-xs-12 col-sm-7 col-lg-4">
-						<?php wp_nav_menu( array(
-                            'theme_location' => '',
-                            'menu_id'        => 'footer-menu',
-                            'menu_class'     => 'navigation',
-                        ) ); ?>
+					<div class="col-md-3">
+						<h5>Cargo grill & deli</h5>
+						<nav class="footer-menu">
+                            <ul>
+								<li><a href="#">Strona Główna</a></li>
+								<li><a href="#">O nas</a></li>
+								<li><a href="#">Menu</a></li>
+								<li><a href="#">Galeria</a></li>
+								<li><a href="#">Rezerwacja</a></li>
+								<li><a href="#">Oferta</a></li>
+								<li><a href="#">Kontakt</a></li>
+							</ul>
+						</nav>
 					</div>
+					<div class="col-md-4">
+						<h5>Newsletter</h5>
+						<p>
+							Zapisz się do naszego newslettera, aby być zawsze na bieżąco z promocjami w Cargo.
+						</p>
 
-					<div class="col-xs-12 col-lg-offset-1 col-lg-4 signup">
-						<h3>Newsletter</h3>
-						<p>Zapisz się do newslettera aby być na bieżąco z wydarzeniami sceny54.</p>
-						<?php es_subbox($namefield = "NO", $desc = "", $group = "Public"); ?>
+
+						<form>
+							<div class="md-form col-md-8 no-gutters">
+								<input type="text" id="defaultForm-email" class="form-control">
+								<label for="defaultForm-email">Adres e-mail</label>
+							</div>
+							<div class="col-md-4">
+							<button class="btn btn-primary">Zapisz</button>
+							</div>
+						</form>
+
+					</div>
+					<div class="col-md-2">
+						<h5>Znajdź nas na</h5>
+						<ul class="footer-social">
+							<li><a href="#"><i class="icon icon-social-facebook"></i></a></li>
+							<li><a href="#"><i class="icon icon-social-instagram"></i></a></li>
+							<li><a href="#"><i class="icon icon-social-tripadvisor"></i></a></li>
+						</ul>
 					</div>
 				</div>
-			</div>
-			<div id="copyright-info">
-				<?php echo ot_get_option( 'copyright_info' ); ?>
-			</div>
+			</footer>
 		</div><!-- End: inner-wrap -->
 	</div><!-- End: outer-wrap -->
 	<?php wp_footer(); ?>

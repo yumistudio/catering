@@ -64,7 +64,7 @@
         position: absolute;
         top: 0; left: 0;
         bottom: 0; right: 0;
-        background-color: $gold;
+        background-color: $color-pallete-red;
         opacity: 0;
         @include transition(opacity .3s);
     }
@@ -74,7 +74,7 @@
             color: #000;
         }
         .overlay {
-            opacity: .8;
+            opacity: .6;
         }
     }
 
