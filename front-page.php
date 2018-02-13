@@ -13,19 +13,16 @@
  */
 
 get_header(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 <section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
 	<h1 class="text-dark">Poznaj Cargo</h1>
-	<p class="text-semi text-md">
-		Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
-	</p>
-	<p class="text-md">
-		Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
-	</p>
-	<p class="text-md">
-		Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
-	</p>
-	<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+		<?php the_content(); ?>
+
+		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+	</div>
 </section>
+<?php endwhile; ?>
 
 <section id="recommend" class="padding-section">
 	<h1 class="text-center">Szczególnie polecamy</h1>
@@ -218,7 +215,6 @@ foreach ($gallery as $key => $image) {
 </script>
 </section>
 
-<?php while ( have_posts() ) : the_post(); ?>
 <section id="home-about" class="divider-black" style="">
 	<div class="container-fluid max-width">
 		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
@@ -236,7 +232,6 @@ foreach ($gallery as $key => $image) {
 		</div>
 	</div>
 </section>
-<?php endwhile; ?>
 
 <section id="home-insta" class="padding-section pattern-section divider-black">
 <div id="home-insta__carousel" class="swiper-container">
@@ -292,80 +287,37 @@ foreach ($gallery as $key => $image) {
 			<div class="item">
 				<h3 class="here">Tu jesteśmy</h3>
 				<p>
-				ul. Dolnych Młynów 10/2H </br>
-				31-394 Kraków
+					<?php echo ot_get_option( 'address' ); ?>
 				</p>
-				<a href="#" class="btn">Wskazówki dojazdu</a>
+				<a href="<?php echo ot_get_option( 'drive_directions' ); ?>" target="_blank" class="btn">Wskazówki dojazdu</a>
 			</div>
 			<div class="item">
 				<h3 class="open">Godziny otwarcia</h3>
+				<?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
+					$lineArr = explode('|', $item);
+				?>
 				<div class="col-sm-6 text-right">
-					<span class="day">Pon – Śr</span>
+					<span class="day"><?php echo $lineArr[0]; ?></span>
 				</div>
 				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 22.30</span>
+					<span class="hours"><?php echo $lineArr[1]; ?></span>
 				</div>
-
-				<div class="col-sm-6 text-right">
-					<span class="day">Czw – So</span>
-				</div>
-				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 23.30</span>
-				</div>
-
-				<div class="col-sm-6 text-right">
-					<span class="day">Niedziela</span>
-				</div>
-				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 22.30</span>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
 
 	<div id="map"></div>
 	<script src="http://maps.google.com/maps/api/js?callback=initMap&key=AIzaSyCXp5fjmZoq-92myOehWAd_MQ_fcIyAvRQ" async=""></script>
-	<script>
+<script>
 	var getMapCenter = function() {
-		
-		if( screen.width > 767 )
-			return {lat: 50.064806, lng: 19.924};
-		else
-			return {lat: 50.064806, lng: 19.926007};
+		   
+	    if( screen.width > 767 )
+	        return {lat: 50.064806, lng: 19.927};
+	    else
+	        return {lat: 50.064806, lng: 19.926007};
 	}
-	var map, marker;
-	function initMap() {
-
-		// map options
-		var mapOptions = {
-			zoom: 17,
-			scrollwheel: false,
-			center: getMapCenter(),
-			disableDefaultUI: true,
-			zoomControl: true,
-			
-		};
-
-		map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		var image = 'http://' + window.location.hostname + '/wp-content/themes/funktional/assets/images/marker.png';
-
-		marker = new google.maps.Marker({
-			position: {lat: 50.064806, lng: 19.926007},
-			map: map,
-			icon: image,
-		});
-
-		
-		google.maps.event.addDomListener(window, 'resize', function() {
-			map.setCenter( getMapCenter() );
-		});
-
-		var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });    
-		map.mapTypes.set('tehgrayz', mapType);
-		map.setMapTypeId('tehgrayz');
-
-	}
+	<?php get_template_part( 'template-parts/page/content', 'google-map' ); ?>
 	</script>
 </section>
 
