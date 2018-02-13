@@ -16,10 +16,12 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
 	<h1 class="text-dark">Poznaj Cargo</h1>
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+	<div class="cf text-md text-center">
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
 		<?php the_content(); ?>
 
 		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+	</div>
 	</div>
 </section>
 <?php endwhile; ?>
@@ -233,7 +235,9 @@ foreach ($gallery as $key => $image) {
 	</div>
 </section>
 
-<section id="home-insta" class="padding-section pattern-section divider-black">
+<section id="home-insta" class="padding-section pattern-section divider-black text-center">
+	<h1 class="text-dark">Instagram</h1>
+	<p id="home-insta__findus">@cargokrk</p>
 <div id="home-insta__carousel" class="swiper-container">
     <div id="instafeed" class="swiper-wrapper">
       <div class="swiper-slide col-md-3">Slide #</div>
@@ -246,22 +250,15 @@ foreach ($gallery as $key => $image) {
       <div class="swiper-slide col-md-3">Slide 2</div>
       <div class="swiper-slide col-md-3">Slide 3</div>
       <div class="swiper-slide col-md-3">Slide 4</div>
-    </div>
+	</div>
+	<div id="home-insta__follow">
+		<a href="#" class="btn btn-secondary-outline">Obserwuj nas</a>
+	</div>
   </div>
 
   <!-- Swiper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-  
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('#home-insta__carousel', {
-      slidesPerView: 6,
-      spaceBetween: 30,
-      centeredSlides: true,
-	  loop: true,
-	  autoplay: true,
-    });
-  </script>
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
   	<script type="text/javascript">
@@ -278,6 +275,16 @@ foreach ($gallery as $key => $image) {
 	});
 	userFeed.run();
 	</script>
+	<!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('#home-insta__carousel', {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      centeredSlides: true,
+	  loop: true,
+	  autoplay: true,
+    });
+  </script>
 </section>
 
 <section id="home-map" class="divider-black-top">

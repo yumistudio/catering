@@ -1526,6 +1526,23 @@ footer {
 }
 
 #home-insta {
+    background-image: url('assets/images/home_bg_section_04.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    &__findus {
+        font-size: 1.25rem;
+        font-family: Gabriele, sans-serif;
+        color: $black;
+        line-height: 36px;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__follow {
+        margin-top: 3rem;
+    }
+
     &__carousel {
 
     }
@@ -2879,6 +2896,14 @@ div.wpcf7 {
     }
     .btn {
         margin-top: 1.75rem;
+    }
+
+    p {
+        font-size: 1.125rem !important;
+        line-height: 2rem !important;
+        &:first-child {
+            font-weight: 600;
+        }
     }
 }
 

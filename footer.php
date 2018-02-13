@@ -52,7 +52,7 @@
 
 						<form>
 							<div class="md-form col-md-8 no-gutters">
-								<input type="text" id="defaultForm-email" class="form-control">
+								<input type="email" id="defaultForm-email" class="form-control">
 								<label for="defaultForm-email">Adres e-mail</label>
 							</div>
 							<div class="col-md-4">
