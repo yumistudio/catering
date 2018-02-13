@@ -292,80 +292,37 @@ foreach ($gallery as $key => $image) {
 			<div class="item">
 				<h3 class="here">Tu jesteśmy</h3>
 				<p>
-				ul. Dolnych Młynów 10/2H </br>
-				31-394 Kraków
+					<?php echo ot_get_option( 'address' ); ?>
 				</p>
-				<a href="#" class="btn">Wskazówki dojazdu</a>
+				<a href="<?php echo ot_get_option( 'drive_directions' ); ?>" target="_blank" class="btn">Wskazówki dojazdu</a>
 			</div>
 			<div class="item">
 				<h3 class="open">Godziny otwarcia</h3>
+				<?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
+					$lineArr = explode('|', $item);
+				?>
 				<div class="col-sm-6 text-right">
-					<span class="day">Pon – Śr</span>
+					<span class="day"><?php echo $lineArr[0]; ?></span>
 				</div>
 				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 22.30</span>
+					<span class="hours"><?php echo $lineArr[1]; ?></span>
 				</div>
-
-				<div class="col-sm-6 text-right">
-					<span class="day">Czw – So</span>
-				</div>
-				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 23.30</span>
-				</div>
-
-				<div class="col-sm-6 text-right">
-					<span class="day">Niedziela</span>
-				</div>
-				<div class="col-sm-6 text-left">
-					<span class="hours">12.00 – 22.30</span>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
 
 	<div id="map"></div>
 	<script src="http://maps.google.com/maps/api/js?callback=initMap&key=AIzaSyCXp5fjmZoq-92myOehWAd_MQ_fcIyAvRQ" async=""></script>
-	<script>
+<script>
 	var getMapCenter = function() {
-		
-		if( screen.width > 767 )
-			return {lat: 50.064806, lng: 19.924};
-		else
-			return {lat: 50.064806, lng: 19.926007};
+		   
+	    if( screen.width > 767 )
+	        return {lat: 50.064806, lng: 19.927};
+	    else
+	        return {lat: 50.064806, lng: 19.926007};
 	}
-	var map, marker;
-	function initMap() {
-
-		// map options
-		var mapOptions = {
-			zoom: 17,
-			scrollwheel: false,
-			center: getMapCenter(),
-			disableDefaultUI: true,
-			zoomControl: true,
-			
-		};
-
-		map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		var image = 'http://' + window.location.hostname + '/wp-content/themes/funktional/assets/images/marker.png';
-
-		marker = new google.maps.Marker({
-			position: {lat: 50.064806, lng: 19.926007},
-			map: map,
-			icon: image,
-		});
-
-		
-		google.maps.event.addDomListener(window, 'resize', function() {
-			map.setCenter( getMapCenter() );
-		});
-
-		var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });    
-		map.mapTypes.set('tehgrayz', mapType);
-		map.setMapTypeId('tehgrayz');
-
-	}
+	<?php get_template_part( 'template-parts/page/content', 'google-map' ); ?>
 	</script>
 </section>
 
