@@ -13,19 +13,16 @@
  */
 
 get_header(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 <section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
 	<h1 class="text-dark">Poznaj Cargo</h1>
-	<p class="text-semi text-md">
-		Cargo to miejsce, w którym niezobowiązująca i ustronna atmosfera</br>spotyka się z prosta, lecz niepozbawioną kunsztu kuchnią.
-	</p>
-	<p class="text-md">
-		Miejsce, w którym odpoczniesz do wielkomiejskiego zgiełku...</br>nie wyjeżdżając nawet z centrum Krakowa!
-	</p>
-	<p class="text-md">
-		Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy</br>i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić</br>je swoim najbliższym.
-	</p>
-	<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+		<?php the_content(); ?>
+
+		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+	</div>
 </section>
+<?php endwhile; ?>
 
 <section id="recommend" class="padding-section">
 	<h1 class="text-center">Szczególnie polecamy</h1>
@@ -218,7 +215,6 @@ foreach ($gallery as $key => $image) {
 </script>
 </section>
 
-<?php while ( have_posts() ) : the_post(); ?>
 <section id="home-about" class="divider-black" style="">
 	<div class="container-fluid max-width">
 		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8 section-padding">
@@ -236,7 +232,6 @@ foreach ($gallery as $key => $image) {
 		</div>
 	</div>
 </section>
-<?php endwhile; ?>
 
 <section id="home-insta" class="padding-section pattern-section divider-black">
 <div id="home-insta__carousel" class="swiper-container">
