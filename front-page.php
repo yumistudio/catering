@@ -184,7 +184,7 @@ foreach ($gallery as $key => $image) {
 		</div>
 	</div>	
 	
-	<div class="grid-wrap">
+	<div class="grid-wrap max-width">
 		<div id="gallery-grid" class="grid image">
 			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
 			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $heights[$key]; ?> <?php echo $image['term']->slug; ?>">
