@@ -1217,7 +1217,7 @@ lable.es_shortcode_form_email {
 footer {
     background-color: #141414;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     h5 {
         color: #545454;
         font-family: Hind, sans-serif;
@@ -1284,6 +1284,20 @@ footer {
         button {
             background: #b4b4b4 !important;
             margin-top: 5px;
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #242424;
+        color: #747474;
+        font-size: 0.875rem;
+        img {
+            margin-top: 6px;
+        }
+        .copy {
+            line-height: 3.5;
         }
     }
 }
@@ -1396,6 +1410,74 @@ footer {
     }
 
     @include pie-clearfix;
+}
+
+.text-section {
+    h1 {
+        margin-bottom: 3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .btn {
+        margin: 2rem 1rem 0 1rem;
+    }
+    & + .photo-carousel-section {
+        padding-top: 0 !important;
+    }
+}
+
+.photo-carousel-section {
+    [class^="swiper-button-next"] {
+        right: -26px;
+    }
+
+    [class^="swiper-button-prev"] {
+        left: -25px;
+    }
+
+    .max-width {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 4;
+        display: flex;
+        justify-content: space-between;
+
+        [class^="swiper-nav-next"] {
+            right: -24px;
+        }
+        [class^="swiper-nav-prev"] {
+            left: -24px;
+        }
+
+        [class^="swiper-nav-next"], [class^="swiper-nav-prev"] {
+            opacity: 1;
+            cursor: pointer;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: $color-pallete-red;
+            mask-size: auto 100%;
+            mask-repeat: no-repeat;
+            -webkit-mask-image: url(assets/images/button-bg.svg);
+            mask-image: url(assets/images/button-bg.svg);
+            transition: all .35s ease-in-out;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                font-size: 24px;
+                color: $white;
+            }
+        }
+        .swiper-button-disabled {
+            opacity: 0;
+        }
+    }
 }
 
 #home-events {
@@ -1608,7 +1690,7 @@ footer {
     }
 
     .swiper-button-next {
-        right: -25px;
+        right: -26px;
     }
 
     .swiper-button-prev {
@@ -2983,6 +3065,10 @@ section#gallery {
     min-height: 800px;
     .grid-item > a {
         box-shadow: 3px 4px 28.5px 1.5px rgba(0, 0, 0, 0.25);
+    }
+    #gallery__load-more {
+        text-align: center;
+        margin: 2rem 0;
     }
     .filters {
         padding-top: 1rem;
