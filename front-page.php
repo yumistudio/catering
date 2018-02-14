@@ -236,56 +236,41 @@ foreach ($gallery as $key => $image) {
 	</div>
 </section>
 
-<section id="home-insta" class="padding-section pattern-section divider-black text-center">
-	<h1 class="text-dark">Instagram</h1>
-	<p id="home-insta__findus">@cargokrk</p>
+<section id="home-insta" class="padding-section pattern-section divider-black">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 <div id="home-insta__carousel" class="swiper-container">
     <div id="instafeed" class="swiper-wrapper">
-      <div class="swiper-slide col-md-3">Slide #</div>
-      <div class="swiper-slide col-md-3">Slide 2</div>
-      <div class="swiper-slide col-md-3">Slide 3</div>
-      <div class="swiper-slide col-md-3">Slide 4</div>
-      <div class="swiper-slide col-md-3">Slide 2</div>
-      <div class="swiper-slide col-md-3">Slide 3</div>
-      <div class="swiper-slide col-md-3">Slide 4</div>
-      <div class="swiper-slide col-md-3">Slide 2</div>
-      <div class="swiper-slide col-md-3">Slide 3</div>
-      <div class="swiper-slide col-md-3">Slide 4</div>
+
+<script type="text/javascript">
+var userFeed = new Instafeed({
+	get: 'user',
+	userId: '623597756', //6246393452 //302456276897634
+	clientId: '02b47e1b98ce4f04adc271ffbd26611d',
+	accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
+	resolution: 'low_resolution',
+	template: '<div class="swiper-slide col-md-3"><a href="{{link}}" target="_blank" id="{{id}}" style="background-image: url(\'{{image}}\')"><div class="overlay"><i class="icon-social-instagram"></div></i></a></div>',
+	sortBy: 'most-recent',
+	limit: 12,
+	links: false
+});
+userFeed.run();
+</script>
+
 	</div>
-	<div id="home-insta__follow">
-		<a href="#" class="btn btn-secondary-outline">Obserwuj nas</a>
-	</div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
-  	<script type="text/javascript">
-	var userFeed = new Instafeed({
-		get: 'user',
-		userId: '623597756', //6246393452 //302456276897634
-		clientId: '02b47e1b98ce4f04adc271ffbd26611d',
-		accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
-		resolution: 'low_resolution',
-		template: '<a href="{{link}}" target="_blank" id="{{id}}" style="background-image: url(\'{{image}}\')"><div class="overlay"><i class="icon-social-instagram"></div></i></a>',
-		sortBy: 'most-recent',
-		limit: 12,
-		links: false
+ </div>
+<script>
+(function($) {
+	$(function() {	
+		var swiper = new Swiper('#home-insta__carousel', {
+	      slidesPerView: 6,
+	      spaceBetween: 30,
+	      centeredSlides: true,
+		  loop: true,
+		  autoplay: true,
+	    });
 	});
-	userFeed.run();
-	</script>
-	<!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('#home-insta__carousel', {
-      slidesPerView: 6,
-      spaceBetween: 30,
-      centeredSlides: true,
-	  loop: true,
-	  autoplay: true,
-    });
-  </script>
+})(jQuery);
+</script>  	
 </section>
 
 <section id="home-map" class="divider-black-top">
