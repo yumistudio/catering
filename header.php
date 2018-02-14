@@ -37,7 +37,7 @@ wp_head();
     </div>
     <div id="outer-wrap">
         
-        <header style="background-image: url('<?php the_post_thumbnail_url(); ?>');" <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header"<?php endif; ?>>
+        <header style="background-image: url('<?php the_post_thumbnail_url(); ?>');" <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header" class="divider-black"<?php endif; ?>>
             <div id="main-navigation" class="">
 
 

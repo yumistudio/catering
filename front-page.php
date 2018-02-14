@@ -194,7 +194,8 @@ foreach ($gallery as $key => $image) {
 			</div>
 			<?php endforeach; // End of the loop. ?>
 		</div>
-
+	</div>
+	
 <script>
 (function($) {
 	$(document).ready(function() {

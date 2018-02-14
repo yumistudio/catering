@@ -14,7 +14,7 @@
 
 ?>
 			<footer class="container-fluid">
-				<div class="container">
+				<div class="container cf no-gutters">
 					<div class="col-md-3">
 						<h5>Kontakt</h5>
 						<p>
@@ -68,6 +68,20 @@
 							<li><a href="#"><i class="icon icon-social-instagram"></i></a></li>
 							<li><a href="#"><i class="icon icon-social-tripadvisor"></i></a></li>
 						</ul>
+					</div>
+
+				</div>
+				<div class="container">
+					<div class="footer-bottom">
+						<div class="col-md-1 no-gutters">
+							<img class="responsive-img" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-scandale.png">
+						</div>
+						<div class="col-md-3">
+							Cargo Grill & Deli</br>jest częścią Grupy Scandale
+						</div>	
+						<div class="col-md-offset-6 col-md-2 text-right copy no-gutters">
+							© Grupa Scandale 2018
+						</div>
 					</div>
 				</div>
 			</footer>
