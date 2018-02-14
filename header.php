@@ -27,6 +27,7 @@
 
 wp_head();
 
+$subtitle = get_field('page_subtitle');
 ?>
 
 </head>
@@ -113,12 +114,8 @@ wp_head();
             <?php elseif ( is_front_page() == TRUE ) : ?>
                 <div id="homepage-header__welcome">
                     <h1>#GRILLWITHIT</h1>
-                    <p>
-                        Sezonowana wołowina,</br>
-                        świeże owoce morza</br> 
-                        i delikatesy.</br>
-                    </p>
-                    <a href="#" class="btn btn-primary btn-lg">Sprawdź menu</a>
+                    <p><?php echo nl2br($subtitle); ?></p>
+                    <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
                 </div>
                 <div id="homepage-header__reservation">
                     <a href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
@@ -126,7 +123,8 @@ wp_head();
                 <div class="next-section"><i class="icon-arrow-down"></i></div>
             <?php else : ?>
                 <div id="page-header__title">
-                    <h1>Tytuł strony</h1>
+                    <h1><?php the_title(); ?></h1>
+                    <p><?php echo nl2br($subtitle); ?></p>
                 </div>
             <?php endif; ?>
         </header>
