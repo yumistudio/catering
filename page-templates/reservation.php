@@ -13,6 +13,7 @@ if($initDate = filter_input( INPUT_GET, 'date' )) {
 else {
 	$dt = new DateTime();
 	$date = date_i18n( 'l, d F Y', date_timestamp_get($dt), false );
+	$initDate = date_i18n( 'Y-m-d', date_timestamp_get($dt), false );
 }
 
 if(isset($_POST['date']))
@@ -63,19 +64,10 @@ window.ticketPrice = 0;
 			<div class="col-xs-12 col-sm-3">
 				<div class="label required">Liczba Osób</div>
 			</div>
-			<div class="col-xs-12 col-sm-3">
-				<div class="lbl"><i class="icon-female"></i>Kobiety:</div>
-				<div id="qty-women-selector" class="qty-selector women glow">
+			<div class="col-xs-12 col-sm-6">
+				<div id="qty-men-selector" class="qty-selector women glow">
 					<div class="btn-nav decrease"><i class="icon-minus"></i></div>
-					<input id="quantity_women" name="quantity_women" type="number" min="0" value="0"/>
-					<div class="btn-nav increase"><i class="icon-plus"></i></div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<div class="lbl"><i class="icon-male"></i>Mężczyźni</div>
-				<div id="qty-men-selector" class="qty-selector men glow">
-					<div class="btn-nav decrease"><i class="icon-minus"></i></div>
-					<input id="quantity_men" name="quantity_men" type="number" min="0" value="0"/>
+					<input id="quantity_women" name="quantity_women" type="number" min="1" value="1"/>
 					<div class="btn-nav increase"><i class="icon-plus"></i></div>
 				</div>
 			</div>
@@ -119,7 +111,7 @@ window.ticketPrice = 0;
 		<div class="container-fluid field-row">
 			<div id="zone-selector">
 				<div class="col-xs-12 col-sm-3">
-					<div class="label">Preferowana strefa</div>
+					<div class="label required">Preferowana strefa</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<ul class="switch">

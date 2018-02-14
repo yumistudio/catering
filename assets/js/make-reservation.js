@@ -4,8 +4,7 @@
 	var $timeFld = jQuery('#reservation_time');
 	var $dateHint = jQuery('#date-selector').find('.hint');
 	var $priceHint = jQuery('#quantity-selector').find('.hint');
-	var $womenFld = jQuery('#qty-women-selector input');
-	var $menFld = jQuery('#qty-men-selector input');
+	var $menQty = jQuery('#qty-men-selector input');
 	var $ticketFld = jQuery('#date-selector #ticket-id');
 	var $eventFld = jQuery('#date-selector #event-id');
 	var $typeFld = jQuery('input[name=seat_type]');
@@ -30,20 +29,23 @@
 	$('.btn-switch').click(function() {
 		//$(this).toggleClass('on')
 		$(this).siblings('input[type=radio]').attr('checked', 'checked');
+		updateCost();
 	});
 
 	$('.btn-switch-type').click(function() {
 		$('#zone-selector input[type=radio]').attr('checked', false);
+		updateCost();
 	});
 
 	$('.btn-switch-zone').click(function() {
 		var seatType = ($('input[name=seat_type]:checked').val());
 		$(this).siblings('input[data-type="'+seatType+'"]').attr('checked', 'checked');
 		$(this).siblings('input[name=attribute_pa_strefa]').attr('checked', 'checked');
+		updateCost();
 	});
 
 	var updateCost = function() {
-		var quantity = parseInt($womenFld.val()) + parseInt($menFld.val());
+		var quantity = parseInt($menQty.val());
 		var total = quantity * window.ticketPrice;
 		
 		if (total) {
@@ -76,7 +78,7 @@
 		sumDate.text($dateFld.val());
 		sumHour.text($timeFld.val());
 		
-		var qty = parseInt($womenFld.val()) + parseInt($menFld.val());
+		var qty = parseInt($menQty.val());
 		if (qty) sumQty.text(qty);
 		else sumQty.empty();
 		
@@ -202,7 +204,7 @@
 			$dateHint.text(event.title);
 			$dateHint.addClass('on');
 			window.ticketPrice = event.ticket_price;
-			var cost = ( parseInt($womenFld.val()) + parseInt($menFld.val()) ) * event.ticket_price;
+			var cost = parseInt($menQty.val()) * event.ticket_price;
 
 			if ( event.ticket_price && cost ) {
 				//$priceHint.addClass('on');
@@ -216,6 +218,7 @@
 	}
 	
 	var ct = new Date($('#reservation_date').val());
+	console.log(ct);
 	loadEventData(ct);
 	
 	jQuery('#datePicker1').datetimepicker({

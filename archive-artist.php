@@ -88,6 +88,7 @@ get_template_part( 'template-parts/page/content', 'header' );
 			cursorcolor: '#ffe2a680',
 			cursorborder: '1px solid #ffe2a680',
 		});
+		console.log($contentElements.getNiceScroll());
 		*/
 
         $('#artists-grid').magnificPopup({
@@ -101,14 +102,14 @@ get_template_part( 'template-parts/page/content', 'header' );
 			    open: function() {
 					var container = $(this.content.get()).find('.content');
 					
-					container.getNiceScroll()
 					container.niceScroll({
 						cursorcolor: '#ffe2a680',
 						cursorborder: '1px solid #ffe2a680',
 					});
-					//container.getNiceScroll().resize();
-					//console.log(container.width() + ' / ' + container.height());
-					//console.log(container.getNiceScroll());
+					
+					container.getNiceScroll().resize();
+					console.log(container.width() + ' / ' + container.height());
+					console.log(container.getNiceScroll());
 			    },
 			},
 			/*

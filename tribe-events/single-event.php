@@ -112,7 +112,7 @@ global $eventsPageId;
 					<h4><?php echo $a->post_title; ?></h4>
 					<?php foreach (get_the_terms($a->ID, 'artist_categories') as $cat) echo '<div class="category">'.$cat->name.'</div>'; ?>
 					<div class="excerpt">
-						<?php echo apply_filters('the_content', $a->post_content); ?>
+						<?php the_excerpt(); ?>
 					</div>
 				</div>
 			</div>
