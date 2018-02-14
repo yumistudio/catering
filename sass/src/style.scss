@@ -764,10 +764,7 @@ input[type=button] {
         color: $lightgrey;
         margin-right: 30px;
         i {
-            color: #ffe2a6;
-            font-size: 30px;
-            line-height: 0px;
-            position: relative;
+            top: 8px;
         }
     }
 
@@ -1109,6 +1106,10 @@ lable.es_shortcode_form_email {
         transform: translateX(-50%);
         bottom: 20px;
     }
+}
+
+#home-top-swiper {
+    height: calc( 100vh - 46px );
 }
 
 #home-gallery {

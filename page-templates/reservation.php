@@ -151,7 +151,7 @@ window.ticketPrice = 0;
 			<div class="col-xs-12 col-sm-3">
 				<div class="label">Początek rezerwacji</div>
 			</div>
-			<div class="col-xs-12 col-sm-3	">
+			<div class="col-xs-12 col-sm-6">
 				<div class="text-field glow hint-icon">
 					<input id="reservation_time" name="reservation_time" type="text" class="select"/>
 					<i class="icon-clock hint-icon"></i>
