@@ -74,7 +74,7 @@ global $post;
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
         <p>Wykorzystaj czas, gdy przygotowujemy dla Ciebie zamówione dania  i zapoznaj sięz ofertą naszych DELIkatesów. Znajdziesz tam rarytasy, które tylko czekają, aż wskażesz je palcem.</p>
 		<p>Nasza obsługa zapakuje dla Ciebie dowolnej grubości stek z sezonowanej na sucho, polskiej wołowiny, kawałek aromatycznego, dojrzewającego sera lub świeżą rybę. Możesz cieszyć się ich smakiem w domowym zaciszu, z najbliższymi osobami.</p>
-		<p>Zaproponujemy Ci również świeże, domowe sosy, masła oraz inne dodatki, które robimy sami,a także aromatyzowane oliwy produkowane specjalnie dla nas.</p>
+		<p>Zaproponujemy Ci również świeże, domowe sosy, masła oraz inne dodatki, które robimy sami, a także aromatyzowane oliwy produkowane specjalnie dla nas.</p>
 		<a href="#" class="btn btn-secondary-outline">Poznaj ofertę</a>
 	</div>
 	</div>
@@ -82,7 +82,7 @@ global $post;
 
 <section class="padding-section photo-carousel-section">
 <div class="photo-carousel-2 swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-wrapper-1">
       <div class="swiper-slide col-md-3">Slide #</div>
       <div class="swiper-slide col-md-3">Slide 2</div>
       <div class="swiper-slide col-md-3">Slide 3</div>
@@ -116,13 +116,10 @@ global $post;
 			prevEl: '.swiper-nav-prev-2',
 		},
     });
-
-	(function($) {
-		$(document).ready(function() {	
-			console.log('asdsad');
-			$('.btn').css("height", "100px");
-		});
-	});
+	
   </script>
 </section>
+
+<?php get_template_part( 'template-parts/page/content', 'reservation' ); ?>
+
 <?php get_footer(); ?>

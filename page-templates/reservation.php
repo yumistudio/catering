@@ -22,7 +22,6 @@ if(isset($_GET['seat_type']))
 	$seat_type = sanitize_key( $_GET['seat_type'] );
 
 get_header();
-get_template_part( 'template-parts/page/content', 'header' );
 
 wp_enqueue_script( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.full.min.js' ), array( 'jquery' ), '1.0', true );
 wp_enqueue_style( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.min.css' ) );
