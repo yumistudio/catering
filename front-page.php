@@ -235,7 +235,9 @@ foreach ($gallery as $key => $image) {
 	</div>
 </section>
 
-<section id="home-insta" class="padding-section pattern-section divider-black">
+<section id="home-insta" class="padding-section pattern-section divider-black text-center">
+	<h1 class="text-dark">Instagram</h1>
+	<p id="home-insta__findus">@cargokrk</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 <div id="home-insta__carousel" class="swiper-container">
     <div id="instafeed" class="swiper-wrapper">
@@ -247,28 +249,31 @@ var userFeed = new Instafeed({
 	clientId: '02b47e1b98ce4f04adc271ffbd26611d',
 	accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
 	resolution: 'low_resolution',
-	template: '<div class="swiper-slide col-md-3"><a href="{{link}}" target="_blank" id="{{id}}" style="background-image: url(\'{{image}}\')"><div class="overlay"><i class="icon-social-instagram"></div></i></a></div>',
+	template: '<div class="swiper-slide insta-slide col-md-2"><a href="{{link}}" target="_blank" id="{{id}}" style="background-image: url(\'{{image}}\')"></i></a></div>',
 	sortBy: 'most-recent',
 	limit: 12,
 	links: false
 });
 userFeed.run();
 </script>
-
 	</div>
  </div>
+ 	<div id="home-insta__follow">
+		<a href="#" class="btn btn-secondary-outline">Obserwuj nas</a>
+	</div>
 <script>
 (function($) {
-	$(function() {	
+	$(function() {
 		var swiper = new Swiper('#home-insta__carousel', {
-	      slidesPerView: 6,
-	      spaceBetween: 30,
-	      centeredSlides: true,
-		  loop: true,
-		  autoplay: true,
+			slidesPerView: 6,
+			spaceBetween: 30,
+			centeredSlides: true,
+			loop: true,
+			autoplay: true,
 	    });
 	});
 })(jQuery);
+
 </script>  	
 </section>
 

@@ -38,7 +38,32 @@ window.ticketPrice = 0;
 	<form id="reservation" action="/">
 		<div id="date-selector" class="container-fluid field-row">
 			<div class="col-xs-12 col-sm-3">
-				<div class="label required">Data</div>
+				<div class="form-label"><h2>Szczegóły</br>rezerwacji</h2></div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="md-form">
+					<i class="icon icon-calendar prefix"></i>
+					<input value="<?php echo $date; ?>" id="datePicker1" type="text" class="select form-control" readonly/>
+					<input id="reservation_date" name="reservation_date" type="hidden" value="<?php echo $initDate; ?>" />
+					<input id="ticket-id" name="ticket-id" type="hidden" value="" />
+					<input id="event-id" name="event-id" type="hidden" value="" />
+					<label for="datePicker1">Wybierz datę</label>
+				</div>
+
+				<div class="md-form">
+					<i class="icon icon-clock prefix"></i>
+					<input id="reservation_time" name="reservation_time" type="text" class="select form-control w-50"/>
+					<i class="icon-dropdown selector-arrow"></i>
+					<label for="reservation_time">Wybierz godzinę</label>
+				</div>
+                
+			</div>
+		</div>
+		<div class="separator-line"></div>
+
+		<div id="date-selector" class="container-fluid field-row">
+			<div class="col-xs-12 col-sm-3">
+				<div class="label required">Szczegóły</br>rezerwacji</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<div class="text-field glow hint-icon">
