@@ -1529,7 +1529,7 @@ footer {
     text-transform: uppercase;
 }
 
-#home-about { // GALERIA
+#home-reservation { // GALERIA
     position: relative;
     padding: 3rem 0;
     @include pie-clearfix;
@@ -3100,4 +3100,73 @@ section#gallery {
             }
         }
     }
+}
+
+#contact {
+    h2 {
+        color: $black;
+        font-size: 1.75rem;
+        text-transform: none;
+        font-family: Gabriele;
+
+        & + .info {
+            margin-top: 2.5rem;
+        }
+    }
+    .mr-top {
+        margin-top: 1.5rem;
+    }
+    form, .btn {
+        margin-top: 1.5rem;
+    }
+    .info {
+        margin-top: 3px;
+        margin-bottom: 12px;
+        @include pie-clearfix;
+        width: 100%;
+        display: block;
+        &__icon {
+            margin-top: -3px;
+            float: left;
+            margin-right: 10px;
+            color: #545454;
+        }
+        &__text {
+            float: left;
+            line-height: 1.8;
+        }
+    }
+
+    .social {
+        ul {
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            width: 100%;
+            li {
+                margin-left: -4px;
+                margin-right: 30px;
+                a {
+                    transition: all .3s ease-in-out;
+                    color: $color-pallete-red;
+                    &:hover {
+                        color: #ffffff;
+                    }
+                }
+                i {
+                    font-size: 50px;
+                }
+                padding: 0;
+                list-style: none;
+            }
+        }
+    }
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: lefts !important;
 }
