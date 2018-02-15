@@ -36,6 +36,11 @@ body {
     }
 }
 
+section h1 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+}
+
 h1 {
     font-family: Rust, sans-serif;
     @include type-layout(xxl, 0);
@@ -415,8 +420,8 @@ i {
 .separator-line {
     display: block;
     height: 0;
-    border-top: solid 1px $darkgrey;
-    margin: 30px 0;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+    margin: 60px 0;
 }
 
 .btn, .btn > input[type=submit] {
@@ -1413,7 +1418,8 @@ footer {
 }
 
 .text-section {
-    h1 {
+    h1, h2, h3, h4 {
+        color: $black !important;
         margin-bottom: 3rem;
     }
     p {
@@ -1626,7 +1632,16 @@ footer {
     }
 
     &__carousel {
-
+        .swiper-slide {
+            margin: 0 15px;
+            padding: 0 !important;
+            a {
+                padding-top: 100%;
+                display: block;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
     }
 }
 
@@ -2532,231 +2547,250 @@ div.wpcf7 {
 }
 
 #reservation-form {
-
-    & > form:not(#checkout) {
-        .text-field {
-            margin-bottom: 0;
-        }
-        .field-row {
-            margin-bottom: 50px;
-        }
+    form {
+        padding-top: 50px;
     }
-
-    .submit {
-        text-align: center;
-    }
-
-    .label {
-        display: block;
-        float: right;
+    .form-label {
+        padding-right: 2rem;
         text-align: right;
-        font-size: 18px;
-        font-family: Raleway, sans-serif;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: #fff;
-        max-width: 180px;
-
-
-        & > div {
-            max-width: 200px;
-        }
-
-        &.required {
-            &:after {
-                display: inline;
-                content: '*';
-                color: $gold;
-            }
+        h2 {
+            color: $black;
+            font-size: 1.75rem;
+            font-family: Gabriele, sans-serif;
+            text-transform: none;
+            line-height: 2.225rem;
+            margin: 0;
         }
     }
-
-    .lbl {
-        i {
-            font-size: 40px;
-            color: #ffe2a6;
-            opacity: .5;
-            float: left;
-            left: -10px;
-            position: relative;
-            width: 25px;
-        }
-        color: #fff;
-        line-height: 40px;
-        margin-top: -10px;
+    .selector-arrow {
+        margin-left: -30px;
+        font-size: .8rem;
+        top: 2px;
     }
+    // & > form:not(#checkout) {
+    //     .text-field {
+    //         margin-bottom: 0;
+    //     }
+    //     .field-row {
+    //         margin-bottom: 50px;
+    //     }
+    // }
 
-    input[type=radio] {
-        visibility: hidden;
-        position: absolute;
-        z-index: -1;
-    }
+    // .submit {
+    //     text-align: center;
+    // }
 
-    input[type=radio]:checked ~ div.btn-switch,
-    input[type=radio]:checked ~ div.btn-switch-zone {
-        background-color: $gold;
-        color: #000;
-        span { color: #000; }
+    // .label {
+    //     display: block;
+    //     float: right;
+    //     text-align: right;
+    //     font-size: 18px;
+    //     font-family: Raleway, sans-serif;
+    //     font-weight: 800;
+    //     text-transform: uppercase;
+    //     color: #fff;
+    //     max-width: 180px;
 
-        .glow-cover {
-            display: none;
-        }
-    }
 
-    input#reservation_time {
-        text-align: center;
-    }
+    //     & > div {
+    //         max-width: 200px;
+    //     }
 
-    textarea {
-        height: 160px;
-    }
+    //     &.required {
+    //         &:after {
+    //             display: inline;
+    //             content: '*';
+    //             color: $gold;
+    //         }
+    //     }
+    // }
 
-    .hint {
-        position: absolute;
-        width: 100%;
-        min-height: 100%;
-        opacity: 0;
-        @include transition(opacity .3s);
-        background-color: $darkgrey;
-        padding: 15px 25px;
-        font-size: 14px;
+    // .lbl {
+    //     i {
+    //         font-size: 40px;
+    //         color: #ffe2a6;
+    //         opacity: .5;
+    //         float: left;
+    //         left: -10px;
+    //         position: relative;
+    //         width: 25px;
+    //     }
+    //     color: #fff;
+    //     line-height: 40px;
+    //     margin-top: -10px;
+    // }
 
-        &.on {
-            opacity: 1;
-        }
+    // input[type=radio] {
+    //     visibility: hidden;
+    //     position: absolute;
+    //     z-index: -1;
+    // }
 
-        &:before {
-            display: block;
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: -5px;
-            transform: rotate(45deg);
-            background-color: $darkgrey;
-            width: 10px;
-            height: 10px;
-        }
-    }
+    // input[type=radio]:checked ~ div.btn-switch,
+    // input[type=radio]:checked ~ div.btn-switch-zone {
+    //     background-color: $gold;
+    //     color: #000;
+    //     span { color: #000; }
 
-    ul.switch {
-        list-style: none;
-        position: relative;
-        display: table;
-        padding: 0;
-        margin: 0;
-        width: 100%;
+    //     .glow-cover {
+    //         display: none;
+    //     }
+    // }
 
-        #attribute_pa_strefa-error {
-            position: absolute;
-            bottom: -20px;
-        }
-        li {
+    // input#reservation_time {
+    //     text-align: center;
+    // }
 
-            display: table-cell;
-            padding-right: 30px;
-            padding-left: 0;
-            width: 1%;
-            &:last-child {
-                padding-right: 0;
-            }
+    // textarea {
+    //     height: 160px;
+    // }
+
+    // .hint {
+    //     position: absolute;
+    //     width: 100%;
+    //     min-height: 100%;
+    //     opacity: 0;
+    //     @include transition(opacity .3s);
+    //     background-color: $darkgrey;
+    //     padding: 15px 25px;
+    //     font-size: 14px;
+
+    //     &.on {
+    //         opacity: 1;
+    //     }
+
+    //     &:before {
+    //         display: block;
+    //         content: '';
+    //         position: absolute;
+    //         top: 30px;
+    //         left: -5px;
+    //         transform: rotate(45deg);
+    //         background-color: $darkgrey;
+    //         width: 10px;
+    //         height: 10px;
+    //     }
+    // }
+
+    // ul.switch {
+    //     list-style: none;
+    //     position: relative;
+    //     display: table;
+    //     padding: 0;
+    //     margin: 0;
+    //     width: 100%;
+
+    //     #attribute_pa_strefa-error {
+    //         position: absolute;
+    //         bottom: -20px;
+    //     }
+    //     li {
+
+    //         display: table-cell;
+    //         padding-right: 30px;
+    //         padding-left: 0;
+    //         width: 1%;
+    //         &:last-child {
+    //             padding-right: 0;
+    //         }
             
-            & > div {
-                display: block;
-                padding: 15px 5px;
-            }
-        }
-    }
+    //         & > div {
+    //             display: block;
+    //             padding: 15px 5px;
+    //         }
+    //     }
+    // }
 
-    #date-selector {
-        padding-top: 13px;
+    // #date-selector {
+    //     padding-top: 13px;
 
-        .hint{
-            min-height: 40px;
-            padding: 10px 25px;
-            &:before {
-                top: 15px;
-            }
-            color: $lightergrey;
-        }
-    }
+    //     .hint{
+    //         min-height: 40px;
+    //         padding: 10px 25px;
+    //         &:before {
+    //             top: 15px;
+    //         }
+    //         color: $lightergrey;
+    //     }
+    // }
 
-    #quantity-selector {
-        .hint {
-            display: table;
-            & > div {
-                display: table-cell;
-                vertical-align: middle;
-            }
+    // #quantity-selector {
+    //     .hint {
+    //         display: table;
+    //         & > div {
+    //             display: table-cell;
+    //             vertical-align: middle;
+    //         }
 
-            span {
-                display: block;
-                text-align: right;
-            }
+    //         span {
+    //             display: block;
+    //             text-align: right;
+    //         }
 
-            .price {
-                font-size: 20px;
-                color: $lightergrey;
-            }
-        }
-    }
+    //         .price {
+    //             font-size: 20px;
+    //             color: $lightergrey;
+    //         }
+    //     }
+    // }
 
-    #zone-selector {
-        img {
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-    }
+    // #zone-selector {
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //         margin-top: 20px;
+    //     }
+    // }
 
-    .btn-switch-type {
+    // .btn-switch-type {
 
-        display: block;
-        padding: 18px 60px 18px 100px;
+    //     display: block;
+    //     padding: 18px 60px 18px 100px;
 
-        .label { 
-            padding-top: 45px;
-        }
+    //     .label { 
+    //         padding-top: 45px;
+    //     }
 
-        i {
-            display: block;
-            font-size: 60px;
-            position: absolute;
-            left: 35px; top: 8px;
-        }
+    //     i {
+    //         display: block;
+    //         font-size: 60px;
+    //         position: absolute;
+    //         left: 35px; top: 8px;
+    //     }
 
-        span {
-            display: block;
-            font-weight: 400;
-            font-family: Open Sans, sans-serif;
-            @include transition(color .3s);
-            color: $lightgrey;
-        }
+    //     span {
+    //         display: block;
+    //         font-weight: 400;
+    //         font-family: Open Sans, sans-serif;
+    //         @include transition(color .3s);
+    //         color: $lightgrey;
+    //     }
 
-        &:hover {
-            span {
-                color: #000;
-            }
-        }
-    }
+    //     &:hover {
+    //         span {
+    //             color: #000;
+    //         }
+    //     }
+    // }
 
-    dl {
-        display: table;
-        margin-top: 0;
-        dt, dd {
-            display: table-cell;
-            width: 250px;
-        }
+    // dl {
+    //     display: table;
+    //     margin-top: 0;
+    //     dt, dd {
+    //         display: table-cell;
+    //         width: 250px;
+    //     }
 
-        dt {
+    //     dt {
             
-        }
-    }
+    //     }
+    // }
 
-    #customer-data {
-        separator-line {
-            margin: 10px 0;
-        }
-    }
+    // #customer-data {
+    //     separator-line {
+    //         margin: 10px 0;
+    //     }
+    // }
 
     div.submit {
         margin-top: 50px;
@@ -3168,5 +3202,5 @@ section#gallery {
 }
 
 .pull-left {
-    float: lefts !important;
+    float: left !important;
 }

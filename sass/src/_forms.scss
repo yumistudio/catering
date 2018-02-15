@@ -140,7 +140,7 @@ textarea.md-textarea {
   &:disabled,
   &[readonly] {
     background-color: transparent;
-    border-bottom: 1px solid #bdbdbd;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
 // Input + label wrapper styles
@@ -260,4 +260,8 @@ textarea {
 
 .orange-gradient{
   background: linear-gradient(40deg, #FFD86F, #FC6262);
+}
+
+.w-50 {
+  width: 50% !important;
 }
