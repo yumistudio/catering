@@ -179,6 +179,10 @@ function yumi_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( is_post_type_archive( 'tribe_events' ) ) {
+		wp_enqueue_script( 'yumi-event-tooltips', get_theme_file_uri( '/assets/js/event-tooltips.js' ), array( 'jquery' ), '1.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'yumi_scripts' );
 
