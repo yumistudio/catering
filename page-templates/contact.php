@@ -42,9 +42,9 @@ global $post;
 
             <div class="social">
                 <ul>
-                    <li><a href="#"><i class="icon icon-social-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon icon-social-instagram"></i></a></li>
-                    <li><a href="#"><i class="icon icon-social-tripadvisor"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank"><i class="icon icon-social-facebook"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank"><i class="icon icon-social-instagram"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank"><i class="icon icon-social-tripadvisor"></i></a></li>
                 </ul>
             </div>
         </div>
