@@ -46,7 +46,6 @@ while ( have_posts() ) : the_post(); ?>
 				prevEl: '.swiper-nav-prev-1',
 			},
 	    });
-		$('.btn').css("height", "100px");
 	});
 });
 </script>

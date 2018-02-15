@@ -13,13 +13,42 @@ global $post;
 ?>
 <section id="contact" class="cf padding-section">
     <div class="max-width">
-        <div class="col-md-3">
+        <div class="col-md-3 no-gutters">
             <h2>Informacje</h2>
-            <div><span><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H </br>31-400 Kraków</span></div>
-            <div><span><i class="icon icon-phone-outline"></i>12 686 55 22</span></div>
-            <div><span><i class="icon icon-mail-outline"></i>kontakt@cargo.pl</span></div>
+            <div class="info">
+                <div class="info__icon">
+                    <i class="icon icon-map-outline"></i>
+                </div>
+                <div class="info__text">
+                    Dolnych Młynów 10/2H</br>31-400 Kraków
+                </div>
+            </div>
+            <div class="info">
+                <div class="info__icon">
+                    <i class="icon icon-phone-outline"></i>
+                </div>
+                <div class="info__text">
+                    12 686 55 22
+                </div>
+            </div>
+            <div class="info">
+                <div class="info__icon">
+                    <i class="icon icon-mail-outline"></i>
+                </div>
+                <div class="info__text">
+                    kontakt@cargo.pl
+                </div>
+            </div>
+
+            <div class="social">
+                <ul>
+                    <li><a href="#"><i class="icon icon-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon icon-social-instagram"></i></a></li>
+                    <li><a href="#"><i class="icon icon-social-tripadvisor"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4 col-md-offset-1 no-gutters">
             <h2>Napisz do nas</h2>
             <form>
                 <div class="md-form">
@@ -43,8 +72,25 @@ global $post;
                 </div>
             </form>
         </div>
-        <div class="col-md-3 col-md-offset-1">
+        <div class="col-md-3 col-md-offset-1 no-gutters">
             <h2>Godziny otwarcia</h2>
+            <div class="col-md-6 no-gutters mr-top">
+                <div class="info">
+                    <div class="info__icon">
+                        <i class="icon icon-clock-outline"></i>
+                    </div>
+                    <div class="info__text">
+                        Pon – Śr</br>Czw – So</br>Niedziela
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-gutters mr-top">
+                <div class="info">
+                    <div class="info__text pull-right">
+                        <strong>12.00 - 22.30</strong></br><strong>12.00 - 23.30</strong></br><strong>12.00 - 22.30</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
