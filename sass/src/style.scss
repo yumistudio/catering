@@ -2381,40 +2381,39 @@ div.wpcf7 {
 .qty-selector {
     position: relative;
     height: 50px;
-
+    width: 50%;
+    margin-left: 48px;
     & > div:not(.glow-cover) {
         position: absolute;
         top: 0;
         border-top: none;
         border-bottom: none;
-        background-color: #000;
         top: 1px;
         height: 48px;
-        width: 49px;
+        width: 40px;
         @include transition(color .3s);
         cursor: pointer;
-
+        color: $color-pallete-red;
         &:hover {
-            color: $gold;
+            color: ligten($color-pallete-red, 20%);
         }
+    }
+
+    i {
+        font-size: .8rem;
     }
 
     .increase {
         right: 1px;
-        border-left: solid 1px $gold50;
     }
 
     .decrease {
         left: 1px;
-        border-right: solid 1px $gold50;
     }
 
     input {
         width: 100%;
-        padding: 14px 10px 14px 20px;
-        height: 50px;
         text-align: center;
-        background-color: $darkergrey;
     }
 }
 
@@ -2645,32 +2644,34 @@ div.wpcf7 {
     //     height: 160px;
     // }
 
-    // .hint {
-    //     position: absolute;
-    //     width: 100%;
-    //     min-height: 100%;
-    //     opacity: 0;
-    //     @include transition(opacity .3s);
-    //     background-color: $darkgrey;
-    //     padding: 15px 25px;
-    //     font-size: 14px;
+    .hint {
+        position: absolute;
+        width: 100%;
+        min-height: auto;
+        @include transition(opacity .3s);
+        background-color: #242424;
+        padding: 25px 35px;
+        font-size: 16px;
+        color: $white;
+        text-align: center;
+        line-height: 30px; 
+        
+        &.on {
+            opacity: 1;
+        }
 
-    //     &.on {
-    //         opacity: 1;
-    //     }
-
-    //     &:before {
-    //         display: block;
-    //         content: '';
-    //         position: absolute;
-    //         top: 30px;
-    //         left: -5px;
-    //         transform: rotate(45deg);
-    //         background-color: $darkgrey;
-    //         width: 10px;
-    //         height: 10px;
-    //     }
-    // }
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: -9px;
+            transform: rotate(45deg);
+            background-color: #242424;
+            width: 20px;
+            height: 20px;
+        }
+    }
 
     // ul.switch {
     //     list-style: none;
@@ -2793,7 +2794,11 @@ div.wpcf7 {
     // }
 
     div.submit {
-        margin-top: 50px;
+        margin: 50px 0;
+        .btn {
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+        } 
     }
 }
 
