@@ -46,8 +46,11 @@ while ( have_posts() ) : the_post(); ?>
 				prevEl: '.swiper-nav-prev-1',
 			},
 	    });
+
+		var slides = $('.swiper-slide');
+		slides.css("height", slides.width()+60);
 	});
-});
+})(jQuery);
 </script>
 </section>
 
@@ -87,9 +90,8 @@ while ( have_posts() ) : the_post(); ?>
 				prevEl: '.swiper-nav-prev-2',
 			},
 	    });
-		$('.btn').css("height", "100px");
 	});
-});
+})(jQuery);
 </script>
 </section>
 <?php endwhile; ?>
