@@ -28,6 +28,24 @@
 	
 	var date = new Date('Y.m.D');
 
+	jQuery('#datePicker1').datetimepicker({
+	 	lang: 'de',
+	 	format:'l, d F Y',
+	 	//value: '2018/02/14',
+		minDate: date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate(),
+		onSelectDate: function(ct, $i) {
+			var date = ct.getFullYear() + '-' + (ct.getMonth()+1).pad() + '-' + ct.getDate();
+			$i.siblings('input[name=reservation_date]').val(date);
+		},
+		//opened: true,
+		theme:'dark',
+		dayOfWeekStart:1,
+		timepicker: false,
+		scrollMonth: false,
+		scrollInput: false,
+	});
+	$.datetimepicker.setLocale('pl');
+
 	jQuery('#reservation_time').datetimepicker({
 		minTime: '16:00',
 		maxTime: '24:00',
@@ -44,6 +62,8 @@
 
 	var submitQuote = function() {
 
+
+		console.log('Submitting quote...');
 		var data = new FormData( $('form#checkout')[0] );
 
 		$.ajax({
@@ -51,7 +71,7 @@
 	        type: 'POST',
 	        // Form data
 	        data: data,
-	        async: false,
+	        async: true,
 	        //Options to tell jQuery not to process data or worry about content-type.
 	        cache: false,
             contentType: false,
@@ -66,7 +86,7 @@
 	var addToQuote = function() {
 		
 		// 1. Submit the quote
-		var data = new FormData( $('form#reservation')[0] );
+		var data = new FormData( $('form#checkout')[0] );
         data.append('is_quote', 1);
 
 		$.ajax({
@@ -74,7 +94,7 @@
             type: 'POST',
             // Form data
             data: data,
-            async: false,
+            async: true,
             success: function(response){
             	console.log('Submitting your quote.');
                	submitQuote();
@@ -86,23 +106,6 @@
             dataType: 'json'
         });
 	}
-	
-	var ct = new Date($dateFld.val());
-
-	jQuery('#datePicker1').datetimepicker({
-	 	lang: 'de',
-	 	format:'l, d F Y',
-	 	//value: '2018/02/14',
-		minDate: date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate(),
-		
-		//opened: true,
-		theme:'dark',
-		dayOfWeekStart:1,
-		timepicker: false,
-		scrollMonth: false,
-		scrollInput: false,
-	});
-	$.datetimepicker.setLocale('pl');
 
 	$('form#checkout').validate({
 		lang: 'pl',	
@@ -125,8 +128,8 @@
 		
 		console.log('Validating form...');
 		
-		if ( $('form#chekckout').valid() )
-				addToQuote();
+		if ( $(this).valid() )
+			addToQuote();
 	});
 
 })( jQuery );

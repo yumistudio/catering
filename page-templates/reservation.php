@@ -6,26 +6,15 @@
  * @since vilicon 1.0
  */
 
-if($initDate = filter_input( INPUT_GET, 'date' )) {
-	$dt = DateTime::createFromFormat('Y-m-d', $initDate);
-	$date = date_i18n( 'l, d F Y', date_timestamp_get($dt), false );
-}
-else {
-	$dt = new DateTime();
-	$date = date_i18n( 'l, d F Y', date_timestamp_get($dt), false );
-}
-
-if(isset($_POST['date']))
-	$date = sanitize_key( $_POST['date'] );
-
-if(isset($_GET['seat_type']))
-	$seat_type = sanitize_key( $_GET['seat_type'] );
+$dt = new DateTime();
+$date = date_i18n( 'l, d F Y', date_timestamp_get($dt), false );
+$initDate = date_i18n( 'Y-m-d', date_timestamp_get($dt), false );
 
 get_header();
 
 wp_enqueue_script( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.full.min.js' ), array( 'jquery' ), '1.0', true );
 wp_enqueue_style( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.min.css' ) );
-wp_enqueue_script( 'validate', get_theme_file_uri( '/assets/js/jquery-validation-1.17.0/dist/jquery.validate.min.js' ), array(), '', true );
+wp_enqueue_script( 'validate', get_theme_file_uri( '/assets/js/jquery-validation-1.17.0/dist/jquery.validate.js' ), array(), '', true );
 wp_enqueue_script( 'validate-pl', get_theme_file_uri( '/assets/js/jquery-validation-1.17.0/dist/localization/messages_pl.min.js' ), array(), '', true );
 wp_enqueue_script( 'yumi-reservation', get_theme_file_uri( '/assets/js/make-reservation.js' ), array( 'jquery' ), '1.0', true );
 ?>
@@ -46,6 +35,7 @@ window.ticketPrice = 0;
 					<input value="<?php echo $date; ?>" id="datePicker1" type="text" class="select form-control" readonly/>
 					<input id="reservation_date" name="reservation_date" type="hidden" value="<?php echo $initDate; ?>" />
 					<label for="datePicker1">Wybierz datę</label>
+					<input id="product-id" name="product-id" type="hidden" value="460" />
 				</div>
 
 				<div class="md-form">
@@ -58,7 +48,7 @@ window.ticketPrice = 0;
                 <div class="md-form">
 	                <div id="qty-selector" class="qty-selector">
 						<div class="btn-nav decrease"><i class="icon-minus"></i></div>
-						<input id="quantity_men" name="quantity_men" type="number" min="1" value="1" required/>
+						<input id="quantity" name="quantity" type="number" min="1" value="1" required/>
 						<div class="btn-nav increase"><i class="icon-plus"></i></div>
 					</div>
 				</div>

@@ -429,76 +429,15 @@ function wpdocs_custom_excerpt_length( $length ) {
 		return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-/*
- * Add columns to exhibition post list
- */
- function add_acf_columns ( $columns ) {
-	 return array_merge ( $columns, array ( 
-		 'branch' => __ ( 'Branch Or Global' ),
-	 ) );
- }
-
-/**
- * Add items to cart on loading checkout page.
- */
-function yumi_add_to_cart() {
-
-		if ( ! is_page( 'checkout' ) ) {
-				return;
-		}
- 
-		if ( ! WC()->cart->is_empty() ) {
-				return;
-		}
- 
-		WC()->cart->add_to_cart( 54, 1 );
-		WC()->cart->add_to_cart( 22, 2 );
-}
  
 //add_action( 'wp', 'yumi_add_to_cart' );
 
 
-function show_event_on_product_page() {
 
-}
-add_action('woocommerce_before_add_to_cart_form', 'show_event_on_product_page');
 
 
 /**
- * Output engraving field.
- */
-function yumi_output_seat_place_field() {
-	global $product;
-	if($_GET['event-id'])
-		$eventId = $_GET['event-id'];
-	
-	if (isTableOrLodge($product->ID)) : ?>
-	<div class="event-date">
-		<label for="reservation-date">Data:</label>
-		<input id="reservation-date" name="reservation-date" type="text" placeholder="date" />
-		<input id="reservation-time" name="reservation-date" type="text" placeholder="time" />
-	</div>
-	<?php else : ?>
-	<div class="iconic-engraving-field">
-		<input value="<?php echo $eventId; ?>" type="hidden" id="event-id" name="event-id" maxlength="10">
-	</div>
-	<?php endif;
-}
-
-add_action( 'woocommerce_before_add_to_cart_button', 'yumi_output_seat_place_field', 10 );
-
-function isTableOrLodge(&$product) {
-	$terms = get_the_terms( $product->ID, 'product_cat' );
-	
-	foreach ($terms as $term)
-		if (in_array($term->term_id, array(21, ))) return true;
-
-	return false;
-}
-
-/**
- * Add engraving text to cart item.
+ * Add cart item data - date/time and nuber of people
  *
  * @param array $cart_item_data
  * @param int   $product_id
@@ -509,39 +448,17 @@ function isTableOrLodge(&$product) {
 function yumi_add_item_to_cart_or_quote( $cart_item_data, $product_id, $variation_id ) {
 	
 	global $woocommerce;
-	//$woocommerce->cart->empty_cart();
-
-	if(!($eventId = filter_input( INPUT_GET, 'event-id' )))
-		$eventId = filter_input( INPUT_POST, 'event-id' );
-
-	if ( !empty( $eventId ) ) {
-		
-		$ticket = get_field('relation', $eventId);
-		if ( ($event = get_post($eventId)) && ($product_id == $ticket->ID) ) {
-			
-			$eventMeta = get_post_meta($event->ID);
-
-			$dt = DateTime::createFromFormat('Y-m-d H:i:s', $eventMeta['_EventEndDate'][0]);
-			$startTime = date_i18n( 'd M Y @ H:i', date_timestamp_get($dt), false );
-			
-			$cart_item_data['event'] = "\n\r$event->post_title\n\r$startTime";
-		}
-	}
 
 	$date = filter_input( INPUT_POST, 'reservation_date' );
+	$time = filter_input( INPUT_POST, 'reservation_time' );	
 	
-	if ($variation_id && $date) {
+	if ($date) {
 
-		$time = filter_input( INPUT_POST, 'reservation_time' );
-		$qtyW = filter_input( INPUT_POST, 'quantity_women' );
-		$qtyM = filter_input( INPUT_POST, 'quantity_men' );
+		$qty = filter_input( INPUT_POST, 'quantity' );
 
 		$dt = DateTime::createFromFormat('Y-m-d H:i:s', $date.' '.$time.':00');
 		$cart_item_data['reservation'] = date_i18n( 'd M Y @ H:i', date_timestamp_get($dt), false );
-		$cart_item_data['qtyW'] = $qtyW;
-		$cart_item_data['qtyM'] = $qtyM;
-
-		//print_r($cart_item_data);
+		$cart_item_data['qty'] = $qty;
 	}
 
 	return $cart_item_data;
@@ -551,7 +468,7 @@ add_filter( 'woocommerce_add_cart_item_data', 'yumi_add_item_to_cart_or_quote', 
 
 
 /**
- * Display engraving text in the cart.
+ * Display reservation data text in the cart.
  *
  * @param array $item_data
  * @param array $cart_item
@@ -559,14 +476,6 @@ add_filter( 'woocommerce_add_cart_item_data', 'yumi_add_item_to_cart_or_quote', 
  * @return array
  */
 function yumi_show_event_on_ticket_item_in_cart( $item_data, $cart_item ) {
-	
-	if ( !empty( $cart_item['event'] ) ) {
-		$item_data[] = array(
-			'key'     => __( 'Wydarzenie', 'yumi' ),
-			'value'   => nl2br($cart_item['event']),
-			'display' => '',
-		);	
-	} 
 
 	if ( $cart_item['reservation'] ) {
 		$item_data[] = array(
@@ -574,16 +483,10 @@ function yumi_show_event_on_ticket_item_in_cart( $item_data, $cart_item ) {
 			'value'   => wc_clean($cart_item['reservation']),
 			'display' => '',
 		);
-		if ($cart_item['qtyW']) 
+		if ($cart_item['qty']) 
 			$item_data[] = array(
-				'key'     => __( 'Kobiety', 'yumi' ),
-				'value'   => wc_clean($cart_item['qtyW']),
-				'display' => '',
-			);
-		if ($cart_item['qtyM'])
-			$item_data[] = array(
-				'key'     => __( 'Mężczyźni', 'yumi' ),
-				'value'   => wc_clean($cart_item['qtyM']),
+				'key'     => __( 'Liczba osób', 'yumi' ),
+				'value'   => wc_clean($cart_item['qty']),
 				'display' => '',
 			);
 	}
@@ -592,7 +495,7 @@ function yumi_show_event_on_ticket_item_in_cart( $item_data, $cart_item ) {
 add_filter( 'woocommerce_get_item_data', 'yumi_show_event_on_ticket_item_in_cart', 10, 2 );
 
 /**
- * Add engraving text to order.
+ * Add reservation data text to order.
  *
  * @param WC_Order_Item_Product $item
  * @param string                $cart_item_key
@@ -600,25 +503,23 @@ add_filter( 'woocommerce_get_item_data', 'yumi_show_event_on_ticket_item_in_cart
  * @param WC_Order              $order
  */
 function yumi_show_event_on_order_items( $item, $cart_item_key, $values, $order ) {
-	
-	print $cart_item_key;
-	print_r($item);
-	print_r($values);
-	print_r($order);
-
-	if ( !empty( $values['event'] ) ) {
-		$item->add_meta_data( __( 'Wydarzenie', 'yumi' ), $values['event'] );
-	}
 
 	if ( !empty( $values['reservation'] ) ) {
 		$item->add_meta_data( __( 'Data i czas', 'yumi' ), $values['reservation'] );
-		$item->add_meta_data( __( 'Kobiety', 'yumi' ), $values['qtyW'] );
-		$item->add_meta_data( __( 'Mężczyźni', 'yumi' ), $values['qtyM'] );
+		$item->add_meta_data( __( 'Liczba osób', 'yumi' ), $values['qty'] );
 	}
 
 }
 add_action( 'woocommerce_checkout_create_order_line_item', 'yumi_show_event_on_order_items', 10, 4 );
 
+/**
+ * Remove unnecessary fields from the backend
+ *
+ * @param WC_Order_Item_Product $item
+ * @param string                $cart_item_key
+ * @param array                 $values
+ * @param WC_Order              $order
+ */
 function wpb_custom_billing_fields( $fields = array() ) {
 	unset($fields['billing_company']);
 	unset($fields['billing_address_1']);
@@ -635,18 +536,6 @@ add_filter('woocommerce_billing_fields','wpb_custom_billing_fields');
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 
-add_filter( 'tribe_rest_events_archive_data', 'yumi_add_ticket_info' );
-function yumi_add_ticket_info( array $event_data ) {
-
-	foreach($event_data['events'] as $idx => $event) {
-		if ($t = get_field('relation', $event['id'])) {
-			$ticket = wc_get_product( $t->ID );
-			$event_data['events'][$idx]['ticket_id'] = $t->ID;
-			$event_data['events'][$idx]['ticket_price'] = $ticket->get_regular_price();
-		}
-	}
-	return $event_data;
-}
 
 if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 		/*
@@ -658,113 +547,25 @@ if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 
 		WC_Adq()->quote->remove_all_quote_item();
 
-		$product_id = 0;
-		if(isset($_POST['ticket-id']))
-			$product_id = sanitize_key( $_POST['ticket-id'] );
-
-		if(isset($_POST['seat-type']))
-			$seat_type = sanitize_key( $_POST['seat-type'] );
-
-		if(isset($_POST['zone']))
-			$zone = sanitize_key( $_POST['zone'] );
-
-		if(isset($_POST['quantity_men']))
-			$qM = sanitize_key( $_POST['quantity_men'] );
-
-		if(isset($_POST['quantity_women']))
-			$qW = sanitize_key( $_POST['quantity_women'] );
-
-		$variation_id = false;
-        if(isset($_POST['variation_id']))
-            $variation_id = sanitize_key( $_POST['variation_id'] );
+		$product_id = filter_input( INPUT_POST, 'product-id' );
 		
 		$response = 0;
-		
-		$all_variations_set = true;
-		$was_added_to_cart = false;
-		$variations = array();   
-
-
-		// Adding tickets
-		if ($product_id) {
-			$quantity = wc_stock_amount( $qM + $qW );
-			$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
-			
-			if ( $passed_validation ) {                 
-				$response = WC_Adq()->quote->add_to_quote( $product_id, $quantity );
-				if( !$response )  {
-					$message = StaticAdqQuoteRequest::get_error_notice($product_id, true);            
-					adq_add_notice( $message, 'error' ); 
-				}
-			}
-		}
-		
-		// adding seats
-		if($seat_type == 'lodge')	$product_id=17;
-		else 						$product_id=52;
-
 		$quantity = 1;
-		$adding_to_cart = wc_get_product( $product_id );
-		$attributes = $adding_to_cart->get_attributes();
-		$missing_attributes = array();
-		$variations         = array();
 		
 
-		if( $variation_id )
-            $variation  = wc_get_product( $variation_id );
+		$quantity = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
 
-		// Verify all attributes
-		foreach ( $attributes as $attribute ) {
-			if ( ! $attribute['is_variation'] ) {
-				continue;
-			}
+        // Add to cart validation
+        $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
 
-			$taxonomy = 'attribute_' . sanitize_title( $attribute['name'] );
-			if ( isset( $_REQUEST[ $taxonomy ] ) ) {
+        if ( $passed_validation ) {
+                $response = WC_Adq()->quote->add_to_quote( $product_id, $quantity );
+                if( !$response )  {
+                    $message = StaticAdqQuoteRequest::get_error_notice($product_id, true);            
+                    adq_add_notice( $message, 'error' ); 
+                }
+        }
 
-				// Get value from post data
-				if ( $attribute['is_taxonomy'] ) {
-					// Don't use wc_clean as it destroys sanitized characters
-					$value = sanitize_title( stripslashes( $_REQUEST[ $taxonomy ] ) );
-				} else {
-					$value = wc_clean( stripslashes( $_REQUEST[ $taxonomy ] ) );
-				}
-
-				// Get valid value from variation
-				$valid_value = $variation->variation_data[ $taxonomy ];
-
-				// Allow if valid
-				if ( '' === $valid_value || $valid_value === $value ) {
-					$variations[ $taxonomy ] = $value;
-					continue;
-				}
-
-			} else {
-				$missing_attributes[] = wc_attribute_label( $attribute['name'] );
-			}
-		}
-
-		if ( $missing_attributes ) {
-			wc_add_notice( sprintf( _n( '%s is a required field', '%s are required fields', sizeof( $missing_attributes ), 'woocommerce' ), wc_format_list_of_items( $missing_attributes ) ), 'error' );
-			return;
-		} elseif ( empty( $variation_id ) ) {
-			wc_add_notice( __( 'Please choose product options&hellip;', 'woocommerce' ), 'error' );
-			return;
-		} else {
-			// Add to cart validation
-			$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations );
-
-			if ( $passed_validation ) {
-
-				$response = WC_Adq()->quote->add_to_quote($product_id, $quantity, $variation_id, $variations);                                
-
-				if( !$response )  {
-					$message = StaticAdqQuoteRequest::get_error_notice($product_id, true);            
-					adq_add_notice( $message, 'error' ); 
-				}
-			}
-		}
-					
 		$messages = '';
 		if( $response && get_option('adq_redirect_quote_page') === "show" ) {
 						wc_clear_notices();
