@@ -35,7 +35,7 @@ window.ticketPrice = 0;
 
 <section id="reservation-form" class="section-padding max-width">
 	
-	<form id="reservation" action="/">
+	<form id="checkout" class="checkout adq-billing" enctype="multipart/form-data" action="/quote-list/" method="post" name="checkout">
 		<div id="date-selector" class="container-fluid field-row">
 			<div class="col-xs-12 col-sm-3">
 				<div class="form-label"><h2>Szczegóły</br>rezerwacji</h2></div>
@@ -45,14 +45,12 @@ window.ticketPrice = 0;
 					<i class="icon icon-calendar prefix"></i>
 					<input value="<?php echo $date; ?>" id="datePicker1" type="text" class="select form-control" readonly/>
 					<input id="reservation_date" name="reservation_date" type="hidden" value="<?php echo $initDate; ?>" />
-					<input id="ticket-id" name="ticket-id" type="hidden" value="" />
-					<input id="event-id" name="event-id" type="hidden" value="" />
 					<label for="datePicker1">Wybierz datę</label>
 				</div>
 
 				<div class="md-form">
 					<i class="icon icon-clock prefix"></i>
-					<input id="reservation_time" name="reservation_time" type="text" class="select form-control w-50"/>
+					<input id="reservation_time" name="reservation_time" type="text" class="select form-control w-50" required/>
 					<i class="icon-dropdown selector-arrow"></i>
 					<label for="reservation_time">Wybierz godzinę</label>
 				</div>
@@ -60,27 +58,24 @@ window.ticketPrice = 0;
                 <div class="md-form">
 	                <div id="qty-selector" class="qty-selector women glow">
 						<div class="btn-nav decrease"><i class="icon-minus"></i></div>
-						<input id="quantity_men" name="quantity_men" type="number" min="1" value="1"/>
+						<input id="quantity_men" name="quantity_men" type="number" min="1" value="1" required/>
 						<div class="btn-nav increase"><i class="icon-plus"></i></div>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-3">
 				<div class="hint">
-					
+					<?php the_field('reservation_hint'); ?>
 				</div>
 			</div>
 		</div>
-	</form>
+	
+		<div class="separator-line"></div>
 
-	<div class="separator-line"></div>
-
-	<form id="checkout" class="checkout adq-billing" enctype="multipart/form-data" action="/quote-list/" method="post" name="checkout">
-		
 		<div class="customer-data">
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3">
-					<div class="label requitred">Twoje Dane</div>
+					<div class="label required">Twoje Dane</div>
 				</div>
 				<div class="col-xs-6 col-sm-3">
 					<div class="text-field glow">
@@ -121,12 +116,9 @@ window.ticketPrice = 0;
 					<textarea rows="3" placeholder="Powiedz nam co chciałbyś aby czekało na Ciebie przy stoliku..." id="order_comments" class="input-text" name="order_comments"></textarea>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-3">
-				<div class="hint on"><?php the_field('hint_client_comment'); ?></div>
-			</div>	
 		</div>
 		<div class="container-fluid field-row submit">
-			<a id="" class="btn frame-btn glow submit"><span class="frame"></span>Wyślij prośbę o rezerwację</a>
+			<button type="submit">Wyślij prośbę o rezerwację</button>
 		</div>
 	</form>
 <?php
