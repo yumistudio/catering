@@ -3209,3 +3209,240 @@ section#gallery {
 .pull-left {
     float: left !important;
 }
+
+.offer-meetings, .offer-spaces, .offer-compositions, .offer-contact {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.offer-meetings {
+    background-image: url('assets/images/background-sections/offer_bg_section_01.png');
+    background-position: top center;
+
+    .offer-people-right {
+        padding-top: 3rem;
+        h2 {
+            color: $color-pallete-red !important;
+            font-size: 2.75rem;
+            margin-bottom: 0;
+        }
+        h3 {
+            text-transform: none;
+            font-size: 1.375rem;
+            margin-bottom: 14px;
+            margin-top: 0;
+        }
+        transform: translateY(25px);
+    }
+}
+
+.offer-spaces {
+    background-image: url('assets/images/background-sections/offer_bg_section_02.png');
+    background-position: bottom center;
+
+    padding-top: 0 !important;
+    h1 {
+        font-size: 1.875rem;
+        font-family: 'Gabriele';
+        text-transform: none;
+        margin-bottom: 2rem;
+        margin-top: 0;
+    }
+    .offer-people-left {
+        @include breakpoint($md) {
+            transform: translateY(-160px);
+        }
+        .red {
+            font-family: Rust;
+            color: $color-pallete-red !important;
+            font-size: 2.75rem;
+        }
+        p {
+            text-align: center;
+            font-size: 1.375rem;
+            font-family: 'Gabriele';
+        }
+    }
+}
+
+.offer-features {
+    text-align: center;
+    background-color: #242424;
+    p {
+        color: #d4d4d4;
+        font-size: .95rem;
+        line-height: 1.5rem;
+    }
+
+    &__feature {
+        i {
+            font-size: 75px;
+            color: $white;
+            & + p {
+                margin-top: 3px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.offer-compositions {
+    background-image: url('assets/images/background-sections/offer_bg_section_03.png');
+    background-position: top center;
+    p {
+        font-size: 1rem;
+    }
+    .carousel-two {
+        position: relative;
+    
+        .fix-padding {
+            padding-bottom: 46px;
+        }
+    
+        .swiper-slide {
+            margin-top: 3rem;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0;
+            height: 400px;
+            box-shadow: 3px 4px 28.5px 1.5px rgba(0, 0, 0, 0.25);
+            &__price-label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: $color-pallete-red;
+                font-size: 1.125rem;
+                color: $white;
+                padding: 1.3rem 1.25rem 1.1rem 1.25rem;
+                transform: translate(-10px, -10px);
+                z-index: 5;
+                .value {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+            }
+            &__overlay {
+                position: absolute;
+                bottom: 0px;
+                background: #ad124a;
+                opacity: .0;
+                width: 100%;
+                height: 100%;
+                transition-delay: 400ms;
+                transition: all 250ms ease-in-out;
+            }
+    
+            &__wrapper:hover + .swiper-slide__overlay {
+                opacity: .6;
+            }
+    
+            &__wrapper {
+                position: absolute;
+                bottom: -44px;
+                left: 50%;
+                background: $white;
+                width: 85%;
+                transform: translate(-50%, 0%);
+                text-align: center;
+                transition: width 250ms ease-in-out;
+                transition-delay: 150ms;
+                box-shadow: 1px 2px 23.75px 1.25px rgba(0, 0, 0, 0.1); 
+                z-index: 2;
+                &:hover {
+                    width: 100%;
+                }
+    
+                .hidden {
+                    text-align: center;
+                    max-height: 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;      
+                    transition: max-height 500ms ease-in-out;
+                    transition-delay: 400ms;
+    
+                    p {
+                        padding-top: 20px;
+                        margin-top: 0;
+                        border-top: 1px dashed #dadada;
+                        width: 300px;
+                        font-size: 1rem;
+                        color: #343434;
+                        line-height: 25px;
+                        margin-bottom: 10px;
+                    }
+    
+                    .btn {
+                        margin-bottom: 20px;
+                        color: $color-pallete-red;
+                    }
+                }
+    
+                .title {
+                    padding: 7px 0;
+                    h2 {
+                        line-height: 1.4;
+                        margin-bottom: 0; 
+                        color: #343434;
+                        font-size: 1.125rem;
+                        font-family: Hind;
+                    }
+        
+                    h3 {
+                        line-height: 1.4;
+                        margin-top: 0; 
+                        text-transform: uppercase;
+                        color: #646464;
+                        font-size: 0.875rem;
+                        font-family: Hind;
+                        font-weight: 400;
+                    }
+                }
+    
+                &:hover {
+                    .hidden {
+                        max-height: 300px;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+p.p-outline {
+    padding: 30px;
+    margin: 80px 0;
+    width: 100%;
+    font-weight: 600;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.offer-contact {
+    background-image: url('assets/images/background-sections/offer_bg_section_04.png');
+    background-position: bottom center;
+    padding: 7rem 0;
+    h1 {
+        color: $black;
+        font-size: 2.875rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    &__phone {
+        margin-top: 2rem;
+        a {
+            color: $color-pallete-red;
+            font-size: 2.25rem;
+            font-weight: 500;
+            i {
+                margin-bottom: 6px;
+                margin-right: 20px;
+                font-size: 3.5rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}

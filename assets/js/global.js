@@ -365,7 +365,25 @@
 	
 		$(text_area_selector).each(textarea_auto_resize);
 		$('body').on('keyup keydown', text_area_selector, textarea_auto_resize);
-	  });
+		});
+		
+		jQuery(function($) {
+			function fixDiv() {
+				var $cache = $('#getFixed');
+				if ($(window).scrollTop() > 100)
+					$cache.css({
+						'position': 'fixed',
+						'top': '10px'
+					});
+				else
+					$cache.css({
+						'position': 'relative',
+						'top': 'auto'
+					});
+			}
+			$(window).scroll(fixDiv);
+			fixDiv();
+		});
 
 })( jQuery );
 
