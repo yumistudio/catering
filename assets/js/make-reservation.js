@@ -14,27 +14,7 @@
 	var $timeFld = jQuery('#reservation_time');
 	var $menFld = jQuery('#qty-selector input');
 
-	var submitQuote = function() {
-
-		var data = new FormData( $('form#checkout')[0] );
-        //data.append('is_quote', 1);
-
-		$.ajax({
-	        url: 'http://' + window.location.hostname + '/quote-list/',
-	        type: 'POST',
-	        // Form data
-	        data: data,
-	        async: false,
-	        //Options to tell jQuery not to process data or worry about content-type.
-	        cache: false,
-            contentType: false,
-            processData: false,
-            dataType: 'json',
-            success: function(response) {
-
-            }
-	    });
-	}
+	
 
 	$('.qty-selector input').change(function() {
 		$(this).val(parseInt($(this).val()));
@@ -62,7 +42,26 @@
 
 	//var initDate = date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate();
 
-	
+	var submitQuote = function() {
+
+		var data = new FormData( $('form#checkout')[0] );
+
+		$.ajax({
+	        url: 'http://' + window.location.hostname + '/quote-list/',
+	        type: 'POST',
+	        // Form data
+	        data: data,
+	        async: false,
+	        //Options to tell jQuery not to process data or worry about content-type.
+	        cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'json',
+            success: function(response) {
+
+            }
+	    });
+	}
 	
 	var addToQuote = function() {
 		

@@ -56,7 +56,7 @@ window.ticketPrice = 0;
 				</div>
                 
                 <div class="md-form">
-	                <div id="qty-selector" class="qty-selector women glow">
+	                <div id="qty-selector" class="qty-selector">
 						<div class="btn-nav decrease"><i class="icon-minus"></i></div>
 						<input id="quantity_men" name="quantity_men" type="number" min="1" value="1" required/>
 						<div class="btn-nav increase"><i class="icon-plus"></i></div>
@@ -78,12 +78,12 @@ window.ticketPrice = 0;
 					<div class="label required">Twoje Dane</div>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<div class="text-field glow">
+					<div class="text-field">
 						<input type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="Imię" value="" required>
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-3">
-					<div class="text-field glow">
+					<div class="text-field">
 						<input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Nazwisko" value="" required>
 					</div>
 				</div>
@@ -91,7 +91,7 @@ window.ticketPrice = 0;
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3"></div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="text-field glow">
+					<div class="text-field">
 						<input type="tel" class="input-text " name="billing_phone" id="billing_phone" placeholder="Telefon" value="" required>
 					</div>
 				</div>
@@ -99,7 +99,7 @@ window.ticketPrice = 0;
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3"></div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="text-field glow">
+					<div class="text-field">
 						<input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Email" required>
 					</div>
 				</div>
@@ -112,7 +112,7 @@ window.ticketPrice = 0;
 				<div class="label requitred">Specjalne życzenia</div>
 			</div>
 			<div class="col-xs-6 col-sm-6">
-				<div class="text-field glow">
+				<div class="text-field">
 					<textarea rows="3" placeholder="Powiedz nam co chciałbyś aby czekało na Ciebie przy stoliku..." id="order_comments" class="input-text" name="order_comments"></textarea>
 				</div>
 			</div>
