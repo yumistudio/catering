@@ -10,34 +10,8 @@
 		$(this).siblings('input').val((parseInt(value) + 1));
 	});
 
-	$('.buy-ticket a.buy-link').click(function(e) {
-		e.preventDefault();
-		var url = $(this).attr('href');
-		url = url + '&quantity=' + $(this).parent().siblings('.qty-selector').find('input[name=quantity]').val();
-		window.location.href = url;
-	});
-
-
-	$('.btn-switch').click(function() {
-		//$(this).toggleClass('on')
-		$(this).siblings('input[type=radio]').attr('checked', 'checked');
-	});
-
-	$('.btn-switch-type').click(function() {
-		$('#zone-selector input[type=radio]').attr('checked', false);
-	});
-
-	$('.btn-switch-zone').click(function() {
-		var seatType = ($('input[name=seat_type]:checked').val());
-		$(this).siblings('input[data-type="'+seatType+'"]').attr('checked', 'checked');
-		$(this).siblings('input[name=attribute_pa_strefa]').attr('checked', 'checked');
-	});
-
 	var $dateFld = jQuery('#reservation_date');
 	var $timeFld = jQuery('#reservation_time');
-	var $dateHint = jQuery('#date-selector').find('.hint');
-	var $priceHint = jQuery('#quantity-selector').find('.hint');
-	var $womenFld = jQuery('#qty-women-selector input');
 	var $menFld = jQuery('#qty-men-selector input');
 	var $ticketFld = jQuery('#date-selector #ticket-id');
 	var $eventFld = jQuery('#date-selector #event-id');

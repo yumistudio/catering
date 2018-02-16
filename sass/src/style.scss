@@ -127,68 +127,6 @@ i {
     position: relative;
 }
 
-// textarea,
-// input[type=text],
-// input[type=number],
-// input[type=email],
-// input[type=tel],
-// input[type=submit],
-// select {
-//     background: none;
-//     padding: 7px 10px;
-//     height: 40px;
-//     font-size: 14px;
-//     @include transition(border-color .3s);
-
-//     outline: none;
-//     color: $lightgrey;
-// }
-
-// input[type=button] {
-//     &:focus {
-//         border: none;
-//     }   
-// }
-
-// .text-field {
-//     input[type=text],
-//     input[type=email],
-//     input[type=tel],
-//     textarea {
-//         width: 100%;
-//     }
-//     margin-bottom: 20px;
-    
-//     i {
-//         position: absolute;
-//         color: $gold;
-//         pointer-events: none;
-//     }
-//     .selector-arrow {
-//         font-size: 20px;
-//         top: 11px;
-//         right: 20px;
-//     }
-
-//     &.hint-icon {
-//         input[type=text],
-//         input[type=email],
-//         input[type=tel],
-//         textarea {
-//             padding-left: 60px;
-//             padding-right: 60px;
-//         }
-
-//         i.hint-icon {
-//             font-size: 30px;
-//             position: absolute;
-//             top: 5px;
-//             left: 10px;
-//             opacity: .5;
-//         }
-//     }
-// }
-
 .page-title {
     text-align: center;
 }
@@ -2400,21 +2338,17 @@ div.wpcf7 {
     }
 
     .increase {
-        right: 1px;
-        border-left: solid 1px $gold50;
+        right: 0;
     }
 
     .decrease {
-        left: 1px;
-        border-right: solid 1px $gold50;
+        left: 0;
     }
 
     input {
         width: 100%;
         padding: 14px 10px 14px 20px;
-        height: 50px;
         text-align: center;
-        background-color: $darkergrey;
     }
 }
 
