@@ -42,14 +42,15 @@ global $post;
 
             <div class="social">
                 <ul>
-                    <li><a href="#"><i class="icon icon-social-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon icon-social-instagram"></i></a></li>
-                    <li><a href="#"><i class="icon icon-social-tripadvisor"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank"><i class="icon icon-social-facebook"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank"><i class="icon icon-social-instagram"></i></a></li>
+                    <li><a href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank"><i class="icon icon-social-tripadvisor"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="col-md-4 col-md-offset-1 no-gutters">
             <h2>Napisz do nas</h2>
+            <?php echo do_shortcode('[contact-form-7 id="31" title="Contact form 1"]'); ?>
             <form>
                 <div class="md-form">
                     <input type="text" id="defaultForm-name" class="form-control">

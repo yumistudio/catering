@@ -90,15 +90,14 @@ get_header(); ?>
 	</div>
 	<div id="home-people__carousel" class="swiper-container carousel-one">
 		<div class="swiper-wrapper">
-			<?php $artists = get_posts( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>
-	                
+			<?php $query = new WP_Query( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>    
 	        
-			<?php foreach ($artists as $post) : global $post; ?>
+			<?php while ($query->have_posts()) : $query->the_post(); ?>
         	<div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 				<div class="swiper-slide__wrapper">
 					<div class="title">
-						<h2<?php the_title(); ?></h2>
-						<h3><?php foreach (get_the_terms($post->ID, 'artist_categories') as $cat) echo $cat->name; ?></h3>
+						<h2><?php the_title(); ?></h2>
+						<h3><?php foreach (get_the_terms(get_the_ID(), 'artist_categories') as $cat) echo $cat->name; ?></h3>
 					</div>
 					<div class="hidden">
 						<p><?php the_excerpt(); ?></p>
@@ -108,7 +107,7 @@ get_header(); ?>
 				</div>
 				<div class="swiper-slide__overlay"></div>
 			</div>
-        	<?php endforeach; wp_reset_postdata(); ?>
+        	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
 		<div class="max-width">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
@@ -285,7 +284,7 @@ userFeed.run();
 			<div class="item">
 				<h3 class="here">Tu jesteśmy</h3>
 				<p>
-					<?php echo ot_get_option( 'address' ); ?>
+					<?php echo nl2br(ot_get_option( 'address' )); ?>
 				</p>
 				<a href="<?php echo ot_get_option( 'drive_directions' ); ?>" target="_blank" class="btn">Wskazówki dojazdu</a>
 			</div>
