@@ -551,9 +551,6 @@ if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 		
 		$response = 0;
 		$quantity = 1;
-		
-
-		$quantity = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
 
         // Add to cart validation
         $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );

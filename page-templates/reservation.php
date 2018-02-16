@@ -94,7 +94,7 @@ window.ticketPrice = 0;
 					</div>
 				</div>
 			</div>
-			<input type="hidden" data-value="Prześlij zapytanie o wycenę" value="Prześlij zapytanie o wycenę" id="quote_place_order" name="adq_quote_place_order" class="btn frame-btn button alt">
+			
 		</div>
 		<div class="separator-line"></div>
 		<div class="container-fluid field-row">

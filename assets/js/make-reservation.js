@@ -58,13 +58,12 @@
 		scrollMonth:false,
 	});
 
-	//var initDate = date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate();
-
 	var submitQuote = function() {
 
 
 		console.log('Submitting quote...');
 		var data = new FormData( $('form#checkout')[0] );
+		data.append('adq_quote_place_order', 1);
 
 		$.ajax({
 	        url: 'http://' + window.location.hostname + '/quote-list/',
@@ -78,7 +77,8 @@
             processData: false,
             dataType: 'json',
             success: function(response) {
-
+            	window.location.href= 'http://' + window.location.hostname + '/dziekujemy/';
+            	//$ajaxLoader.removeClass('on');
             }
 	    });
 	}
