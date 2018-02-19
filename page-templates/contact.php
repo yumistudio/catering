@@ -20,7 +20,7 @@ global $post;
                     <i class="icon icon-map-outline"></i>
                 </div>
                 <div class="info__text">
-                    Dolnych Młynów 10/2H</br>31-400 Kraków
+                    <?php echo str_replace("\r\n", '<br />', ot_get_option( 'address' )); ?>
                 </div>
             </div>
             <div class="info">
@@ -28,7 +28,7 @@ global $post;
                     <i class="icon icon-phone-outline"></i>
                 </div>
                 <div class="info__text">
-                    12 686 55 22
+                    <?php echo ot_get_option( 'phone' ); ?>
                 </div>
             </div>
             <div class="info">
@@ -36,7 +36,7 @@ global $post;
                     <i class="icon icon-mail-outline"></i>
                 </div>
                 <div class="info__text">
-                    kontakt@cargo.pl
+                    <a href="<?php echo ot_get_option( 'email' ); ?>"><?php echo ot_get_option( 'email' ); ?></a>
                 </div>
             </div>
 
@@ -75,20 +75,39 @@ global $post;
         </div>
         <div class="col-md-3 col-md-offset-1 no-gutters">
             <h2>Godziny otwarcia</h2>
+            
+            <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
+                    $lineArr = explode('|', $item);
+            ?>
+            <div class="col-sm-6 text-right">
+                <span class="day"><?php echo $lineArr[0]; ?></span>
+            </div>
+            <div class="col-sm-6 text-left">
+                <span class="hours"><?php echo $lineArr[1]; ?></span>
+            </div>
+            <?php endforeach; ?>
             <div class="col-md-6 no-gutters mr-top">
                 <div class="info">
                     <div class="info__icon">
                         <i class="icon icon-clock-outline"></i>
                     </div>
                     <div class="info__text">
-                        Pon – Śr</br>Czw – So</br>Niedziela
+                    <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
+                        $lineArr = explode('|', $item);
+                    ?>
+                        <?php echo $lineArr[0]. '</br>'; ?>
+                    <?php endforeach; ?>   
                     </div>
                 </div>
             </div>
             <div class="col-md-6 no-gutters mr-top">
                 <div class="info">
                     <div class="info__text pull-right">
-                        <strong>12.00 - 22.30</strong></br><strong>12.00 - 23.30</strong></br><strong>12.00 - 22.30</strong>
+                        <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
+                            $lineArr = explode('|', $item);
+                        ?>
+                        <strong><?php echo $lineArr[1]. '</br>'; ?></strong>
+                        <?php endforeach; ?>   
                     </div>
                 </div>
             </div>

@@ -10,124 +10,15 @@
 		$(this).siblings('input').val((parseInt(value) + 1));
 	});
 
-	$('.buy-ticket a.buy-link').click(function(e) {
-		e.preventDefault();
-		var url = $(this).attr('href');
-		url = url + '&quantity=' + $(this).parent().siblings('.qty-selector').find('input[name=quantity]').val();
-		window.location.href = url;
-	});
-
-
-	$('.btn-switch').click(function() {
-		//$(this).toggleClass('on')
-		$(this).siblings('input[type=radio]').attr('checked', 'checked');
-	});
-
-	$('.btn-switch-type').click(function() {
-		$('#zone-selector input[type=radio]').attr('checked', false);
-	});
-
-	$('.btn-switch-zone').click(function() {
-		var seatType = ($('input[name=seat_type]:checked').val());
-		$(this).siblings('input[data-type="'+seatType+'"]').attr('checked', 'checked');
-		$(this).siblings('input[name=attribute_pa_strefa]').attr('checked', 'checked');
-	});
-
 	var $dateFld = jQuery('#reservation_date');
 	var $timeFld = jQuery('#reservation_time');
-	var $dateHint = jQuery('#date-selector').find('.hint');
-	var $priceHint = jQuery('#quantity-selector').find('.hint');
-	var $womenFld = jQuery('#qty-women-selector input');
-	var $menFld = jQuery('#qty-men-selector input');
-	var $ticketFld = jQuery('#date-selector #ticket-id');
-	var $eventFld = jQuery('#date-selector #event-id');
-	var $typeFld = jQuery('input[name=seat_type]');
-	var $zoneFld = jQuery('input[name=zone]');
-	var sumDate = jQuery('#date-val');
-	var sumHour = jQuery('#hour-val');
-	var sumQty = jQuery('#qty-val');
-	var sumZone = jQuery('#zone-val');
-	var sumType = jQuery('#type-val');
-	var sumTotal = jQuery('#cost-val');
+	var $menFld = jQuery('#qty-selector input');
 
-	var submitQuote = function() {
-
-		var data = new FormData( $('form#checkout')[0] );
-        //data.append('is_quote', 1);
-
-		$.ajax({
-	        url: 'http://' + window.location.hostname + '/quote-list/',
-	        type: 'POST',
-	        // Form data
-	        data: data,
-	        async: false,
-	        //Options to tell jQuery not to process data or worry about content-type.
-	        cache: false,
-            contentType: false,
-            processData: false,
-            dataType: 'json',
-            success: function(response) {
-
-            }
-	    });
-	}
-
-	var updateCost = function() {
-		var quantity = parseInt($womenFld.val()) + parseInt($menFld.val());
-		var total = quantity * window.ticketPrice;
-		
-		if (total) {
-			$priceHint.find('.price').text( total + 'zł');
-			$priceHint.find('.tickets').text( quantity + ' x ' + window.ticketPrice + 'zł');
-			$priceHint.addClass('on');
-		} else {
-			$priceHint.removeClass('on');
-		}
-		updateSummary();
-	}
 	
-	$('#quantity-selector .qty-selector').click(function() {
-		updateCost();	
-	});
-
-	$('#quantity-selector input').change(function() {
-		updateCost();
-	});
 
 	$('.qty-selector input').change(function() {
 		$(this).val(parseInt($(this).val()));
 	});
-
-	var updateSummary = function() {
-
-		var $typeFld = jQuery('input[name=seat_type]:checked');
-		var $zoneFld = jQuery('input[name=attribute_pa_strefa]:checked');
-
-		sumDate.text($dateFld.val());
-		sumHour.text($timeFld.val());
-		
-		var qty = parseInt($womenFld.val()) + parseInt($menFld.val());
-		if (qty) sumQty.text(qty);
-		else sumQty.empty();
-		
-		if($typeFld.val() == 'table')
-			sumType.text('Stolik');
-		else
-			sumType.text('Loża');
-
-		sumZone.text($zoneFld.val());
-		
-		var total = 0;
-		var ticketPrice = $priceHint.find('.price').text();
-		var lodgePrice = $('#lodge-btn .price').text();
-		
-		if (ticketPrice)
-			total = parseInt(ticketPrice);
-		if (lodgePrice && $typeFld.val() == 'lodge')
-			total = total + parseInt(lodgePrice);
-		
-		sumTotal.text(total + 'zł');
-	}
 
 	Number.prototype.pad = function(size) {
 	    var s = String(this);
@@ -151,7 +42,26 @@
 
 	//var initDate = date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate();
 
-	
+	var submitQuote = function() {
+
+		var data = new FormData( $('form#checkout')[0] );
+
+		$.ajax({
+	        url: 'http://' + window.location.hostname + '/quote-list/',
+	        type: 'POST',
+	        // Form data
+	        data: data,
+	        async: false,
+	        //Options to tell jQuery not to process data or worry about content-type.
+	        cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'json',
+            success: function(response) {
+
+            }
+	    });
+	}
 	
 	var addToQuote = function() {
 		
@@ -176,52 +86,8 @@
             dataType: 'json'
         });
 	}
-
-	var loadEventData = function(ct,$i=null){
-		
-		//console.log('Loading event data...');
-		//console.log($i);
-
-		var date = ct.getFullYear() + '-' + (ct.getMonth()+1).pad() + '-' + ct.getDate();
-		var cost = 0;
-
-		if ($i != null)
-			$i.siblings('input[name=reservation_date]').val(date);
-		
-		var eventUrl = 'http://' + window.location.hostname + '/wp-json/tribe/events/v1/events/?start_date='+date+'&end_date='+date;
-		
-		$dateHint.removeClass('on');
-		$priceHint.removeClass('on');
-		$ticketFld.val('');
-		$eventFld.val('');
-
-		window.ticketPrice = 0;
-		$.getJSON( eventUrl, function( data ) {
-			var event = data.events[0];
-			
-			$eventFld.val(event.id);
-			$ticketFld.val(event.ticket_id);
-			$timeFld.val(event.start_date.substring(11, 16));			
-
-			$dateHint.text(event.title);
-			$dateHint.addClass('on');
-			window.ticketPrice = event.ticket_price;
-			var cost = ( parseInt($womenFld.val()) + parseInt($menFld.val()) ) * event.ticket_price;
-
-			if ( event.ticket_price && cost ) {
-				//$priceHint.addClass('on');
-				//$priceHint.children('.price').text( cost + 'zł');
-				updateCost();
-			}
-
-			updateSummary();
-
-		});
-	}
 	
 	var ct = new Date($dateFld.val());
-	loadEventData(ct);
-	//$dateFld.change(loadEventData(new Date($dateFld.val())));
 
 	jQuery('#datePicker1').datetimepicker({
 	 	lang: 'de',
@@ -235,39 +101,11 @@
 		timepicker: false,
 		scrollMonth: false,
 		scrollInput: false,
-		onSelectDate: loadEventData,
-		/*
-		i18n:{
-			pl:{
-				months:[
-					'styczeń','luty','marzec','kwiecień',
-					'maj','czerwiec','lipiec','sierpień',
-					'wrzesień','październik','listopad','grudzień',
-				],
-				dayOfWeek:[
-					"nie", "pon", "wto", "śro",
-					"czw", "pią", "sob",
-				]
-			}
-		},
-		*/
 	});
 	$.datetimepicker.setLocale('pl');
 
-
-
-
-
-	$('form#reservation > .field-row').each(function() {
-		$(this).equalBoxes();
-	});
-
-	args1 = {
-		lang: 'pl',
-		rules: {
-			'attribute_pa_strefa' : { required : true }
-		},
-		
+	$('form#checkout').validate({
+		lang: 'pl',	
 		focusInvalid: false,
 	    invalidHandler: function(form, validator) {
 
@@ -279,24 +117,15 @@
 	        }, 500);
 
 	    },
-		debug: true,
-	}
-	$('form#reservation').validate(args1);
+		debug: false,
+	});
 	
-	/*
-	args2 = {
-		debug:true,
-		lang: 'pl',
-	}
-	$('form#checkout').validate(args2);
-	*/
-	$('form#checkout a.submit').click(function(e) {
+	$('form#checkout').submit(function(e) {
 		e.preventDefault();
 		
 		console.log('Validating form...');
 		
-		if ( $('form#reservation').valid() )
-			//if ( $('form#checkout').valid() )
+		if ( $('form#chekckout').valid() )
 				addToQuote();
 	});
 
