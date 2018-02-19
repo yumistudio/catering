@@ -5,9 +5,11 @@
  * @package WordPress
  * @since vilicon 1.0
  */
+
 $dt = new DateTime();
 $date = date_i18n( 'l, d F Y', date_timestamp_get($dt), false );
 $initDate = date_i18n( 'Y-m-d', date_timestamp_get($dt), false );
+
 get_header();
 wp_enqueue_script( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.full.min.js' ), array( 'jquery' ), '1.0', true );
 wp_enqueue_style( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepicker/build/jquery.datetimepicker.min.css' ) );
