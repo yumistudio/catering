@@ -1,91 +1,105 @@
 <?php
-/**
- * Template Name: O nas
- *
- * @package WordPress
- * @since vilicon 1.0
- */
+/*
+function print_filters_for( $hook = '' ) {
+    global $wp_filter;
+    if( empty( $hook ) || !isset( $wp_filter[$hook] ) )
+        return;
 
-get_header();
+    print '<pre>';
+    print_r( $wp_filter[$hook] );
+    print '</pre>';
+}
+print_filters_for( 'the_content' );
+*/
 
-?>
-<section class="text-section pattern-section text-center cf divider-black padding-section">
-	<h1 class="text-dark">Witaj w CARGO</h1>
-	<div class="cf text-center">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
-        <p>Witaj w miejscu, gdzie z najwyższą starannością wybieramy składniki do podawanych potraw. Sezonowana na sucho, polska wołowina, świeże ryby i owoce morza przyjeżdżające tu z największych targów Europy oraz rozbudowana selekcja win. To tylko niektóre specjały, które spotkasz w nowej, jesienno-zimowej karcie. </p>
-        <p>Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić je swoim najbliższym.</p>
-	</div>
-	</div>
-</section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="https://www.rencontres-arles.com/files/media_file_2106.jpg" style="min-height: 350px;">
-    </div>
-</section>
-<section class="text-section pattern-section text-center cf divider-black padding-section">
-	<h1 class="text-dark">Delikatesy</h1>
-	<div class="cf text-center">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
-        <p>Wykorzystaj czas, gdy przygotowujemy dla Ciebie zamówione dania i zapoznaj się z ofertą naszych DELIkatesów. Znajdziesz tam rarytasy, które tylko czekają, aż wskażesz je palcem.</p>
-        <p>Nasza obsługa zapakuje dla Ciebie dowolnej grubości stek z sezonowanej na sucho, polskiej wołowiny, kawałek aromatycznego, dojrzewającego sera lub świeżą rybę. Możesz cieszyć się ich smakiem w domowym zaciszu, z najbliższymi osobami.</p>
-        <p>Zaproponujemy Ci również świeże, domowe sosy, masła oraz inne dodatki, które  robimy sami, a także aromatyzowane oliwy produkowane specjalnie dla nas.</p>
-        <a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
-	</div>
-	</div>
-</section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="https://www.rencontres-arles.com/files/media_file_2106.jpg" style="min-height: 350px;">
-    </div>
-</section>
-<section id="home-people" class="padding-section divider-top">
-	<div class="section-header">
-		<h1 class="text-dark"><span>Nasz zespół</span></h1>
-		<div class="section-intro"></div>
-	</div>
-	<div id="home-people__carousel" class="swiper-container carousel-one">
-		<div class="swiper-wrapper">
-			<?php $query = new WP_Query( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>    
-	        
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
-        	<div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
-				<div class="swiper-slide__wrapper">
-					<div class="title">
-						<h2><?php the_title(); ?></h2>
-						<h3><?php foreach (get_the_terms(get_the_ID(), 'artist_categories') as $cat) echo $cat->name; ?></h3>
+
+
+global $post;
+$qPost = get_queried_object();
+
+$grid = array(
+	0 => 'grid-item--height-reg',
+	1 => 'grid-item--height-small',
+	2 => 'grid-item--height-reg',
+	3 => 'grid-item--height-small',
+	4 => 'grid-item--height-small',
+	5 => 'grid-item--height-reg',
+	6 => 'grid-item--height-small',
+	7 => 'grid-item--height-reg',
+	8 => 'grid-item--height-small',
+	9 => 'grid-item--height-reg',
+	10 => 'grid-item--height-reg',
+	11 => 'grid-item--height-small',
+	12 => 'grid-item--height-small',
+	13 => 'grid-item--height-reg',
+	14 => 'grid-item--height-small',
+	15 => 'grid-item--height-reg',
+	16 => 'grid-item--height-small',
+	17 => 'grid-item--height-reg',
+	18 => 'grid-item--height-small',
+	19 => 'grid-item--height-reg',
+);
+
+wp_enqueue_style( 'photoswipe-css', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.css' ) );
+wp_enqueue_style( 'photoswipe-default-skin', get_theme_file_uri( '/assets/js/photoswipe/dist/default-skin/default-skin.css' ) );
+wp_enqueue_script( 'photoswipe-main', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.min.js' ), array(), '', false );
+wp_enqueue_script( 'photoswipe-ui', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe-ui-default.min.js' ), array(), '', false );
+
+get_header(); ?>
+
+<section id="gallery" class="">
+
+<?php
+$args = array(
+	'post_type' => 'post',
+);
+$query = new WP_Query($args);
+$i = 0;
+while ( $query->have_posts() ) : $query->the_post(); global $post; ?>
+	
+		<div id="gallery-grid" class="grid photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery">
+			<?php $i=0; foreach( get_field('image_gallery', $post->ID ) as $image) : //print_r($image); ?>
+			
+			<?php if ($i==3) : ?>
+			<div class="grid-item">
+				<div class="<?php echo $grid[$i]; $i++; ?>">
+					<div class="frame-box gallery-title">
+						<div>
+							<a href="/galeria/foto/">
+							<i class="icon-arrow-left"></i>
+							 Wszystkie galerie</a>
+							<h4><?php the_title(); ?></h4>
+							<span><?php echo date_i18n( 'l, d M Y', date_timestamp_get($dt), false ); ?></span>
+						</div>
 					</div>
-					<div class="hidden">
-						<p><?php the_excerpt(); ?></p>
-						<a href="#" class="btn">Więcej</a>
-					</div>
-					
 				</div>
-				<div class="swiper-slide__overlay"></div>
 			</div>
-        	<?php endwhile; wp_reset_postdata(); ?>
+			<?php endif; ?>
+			<div class="grid-item photoswipe-item">
+				<a href="<?php echo $image['sizes']['yumi-full-hd']; ?>" data-size="1920x1080" class="<?php echo $grid[($i%20)]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+					<div class="overlay"><i class="icon-search"></i></div>
+				</a>
+			</div>
+			<?php $i++; endforeach; ?>
 		</div>
-		<div class="max-width">
-			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
-			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
-		</div>
-  </div>
-
-  <!-- Initialize Swiper -->
+	</div>
+<?php	endwhile; // End of the loop. ?>
+<?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
+</section>
 <script>
 (function($) {
-	$(document).ready(function() {		
-		var swiper = new Swiper('#home-people__carousel', {
-	      slidesPerView: 6,
-	      spaceBetween: 30,
-	      centeredSlides: true,
-		  loop: true,
-	      navigation: {
-	        nextEl: '.swiper-nav-next',
-	        prevEl: '.swiper-nav-prev',
-	      },
-	    });
+	
+	var $grid = jQuery('#gallery-grid');
+	$grid.isotope({
+	  // options
+	  itemSelector: '.grid-item',
+	  layoutMode: 'masonry'
 	});
+
+	$('.frame-box a').click(function() {
+		window.location.href = $(this).attr('href');
+	});
+
 })(jQuery);
 </script>
-
-</section>
 <?php get_footer(); ?>

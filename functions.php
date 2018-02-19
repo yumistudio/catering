@@ -379,7 +379,7 @@ add_action( 'init', 'custom_post_menu_item' );
 
 function custom_post_gallery() {
 	$labels = array(
-		'name'               => _x( 'Nasze Galerie', 'post type general name' ),
+		'name'               => _x( 'Nasi ludzie', 'post type general name' ),
 		'singular_name'      => _x( 'Osoba', 'post type singular name' ),
 		'add_new'            => _x( 'Nowy', 'Person' ),
 		'add_new_item'       => __( 'Nowa Osoba' ),
@@ -391,7 +391,7 @@ function custom_post_gallery() {
 		'not_found'          => __( 'No client found' ),
 		'not_found_in_trash' => __( 'No client found in the Trash' ), 
 		'parent_item_colon'  => '',
-		'menu_name'          => 'Galerie'
+		'menu_name'          => 'Nasi ludzie'
 	);
 	$args = array(
 		'labels'        => $labels,

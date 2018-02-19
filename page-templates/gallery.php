@@ -1,18 +1,34 @@
 <?php
 /**
- * Template Name: Galeria
+ * Template Name: Strona Galerii
  *
  * @package WordPress
  * @since vilicon 1.0
  */
 
-get_header();
+$grid = array(
+	0 => 'grid-item--height-reg',
+	1 => 'grid-item--height-small',
+	2 => 'grid-item--height-reg',
+	3 => 'grid-item--height-small',
+	4 => 'grid-item--height-small',
+	5 => 'grid-item--height-reg',
+	6 => 'grid-item--height-small',
+	7 => 'grid-item--height-reg',
+	8 => 'grid-item--height-small',
+	9 => 'grid-item--height-reg',
+	10 => 'grid-item--height-reg',
+	11 => 'grid-item--height-small',
+	12 => 'grid-item--height-small',
+	13 => 'grid-item--height-reg',
+	14 => 'grid-item--height-small',
+	15 => 'grid-item--height-reg',
+	16 => 'grid-item--height-small',
+	17 => 'grid-item--height-reg',
+	18 => 'grid-item--height-small',
+	19 => 'grid-item--height-reg',
+);
 
-?>
-<section id="gallery" class="padding-section pattern-section divider-bottom">
-	<h1 class="text-dark text-center">Galeria</h1>
-
-<?php
 $heights = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
@@ -32,15 +48,33 @@ $widths = array(
 	5 => 'grid-item--width-double',
 );
 
-$gallery = get_field('gallery');
-$all_terms = array();
-foreach ($gallery as $key => $image) {
-	if ( $term = get_field('kategoria', $image['ID']))
-		$all_terms[$term->slug] = $term->name;
+wp_enqueue_style( 'photoswipe-css', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.css' ) );
+wp_enqueue_style( 'photoswipe-default-skin', get_theme_file_uri( '/assets/js/photoswipe/dist/default-skin/default-skin.css' ) );
+wp_enqueue_script( 'photoswipe-main', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.min.js' ), array(), '', false );
+wp_enqueue_script( 'photoswipe-ui', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe-ui-default.min.js' ), array(), '', false );
 
-	$gallery[$key]['term'] = $term;
+get_header();
+
+$args = array(
+	'post_type' => 'post',
+);
+
+$query = new WP_Query($args);
+
+$all_terms = array();
+$i = 0;
+foreach ($query->posts as $key => $post) {
+	$terms = get_the_category($post->ID);
+	foreach( $terms as $term ) {
+		$all_terms[$term->slug] = $term->name;
+	}
+	$post->filter = $terms;
+	$i++;
 }
 ?>
+
+<section id="gallery" class="padding-section pattern-section divider-bottom">
+	<h1 class="text-dark text-center">Galeria</h1>
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
@@ -54,23 +88,27 @@ foreach ($gallery as $key => $image) {
 			</label>
 			<?php endforeach; ?>
 		</div>
-	</div>	
-	
+	</div>
 	<div class="grid-wrap max-width">
-		<div id="gallery-grid" class="grid image">
-			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
-			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $heights[$key]; ?> <?php echo $image['term']->slug; ?>">
-				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="1920x1080" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+		<div id="gallery-grid" class="grid photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery">
+			<?php $i=0; while ( $query->have_posts() ) : $query->the_post(); global $post;
+				
+				$classesStr = '';
+				foreach ($post->filter as $term)
+					$classesStr .= ' '.$term->slug;
+			?>
+	
+			<div class="grid-item photoswipe-item <?php echo $widths[$i]; ?> <?php echo $heights[$i]; ?> <?php echo $classesStr; ?>">
+				<a href="<?php the_post_thumbnail_url('yumi-full-hd'); ?>" data-size="1920x1080" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
-	
 			</div>
-			<?php endforeach; // End of the loop. ?>
+			<?php $i++; endwhile; // End of the loop. ?>	
 		</div>
-    </div>
-    <div id="gallery__load-more">
-        <a href="#" class="btn btn-secondary-outline">Załaduj więcej zdjęć</a>
-    </div>
+	</div>
+
+<?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
+
 <script>
 (function($) {
 	$(document).ready(function() {

@@ -60,12 +60,11 @@ $subtitle = get_field('page_subtitle');
                         </div>
                         <div id="main-nav__right" class="col-md-5 text-left no-gutters">
                             <nav>
-                                <ul>
-                                    <li><a href="#">Rezerwacja</a></li>
-                                    <li><a href="#">Oferta</a></li>
-                                    <li><a href="#">Kontakt</a></li>
-                                </ul>
-                            </nav>
+                               <?php wp_nav_menu( array(
+                                    'menu'           => 'top-menu-right',
+                                    'menu_class'     => 'navigation',
+                                ) ); ?>
+                           </nav>
                         </div>
                     </div>
                     </div>
