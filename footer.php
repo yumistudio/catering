@@ -15,7 +15,7 @@
 ?>
 			<footer class="container-fluid">
 				<div class="container cf no-gutters">
-					<div class="col-md-3">
+					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Kontakt</h5>
 						<p>
 							Cargo Grill & Deli</br>
@@ -29,7 +29,7 @@
 							kontakt@cargo.pl
 						</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Cargo grill & deli</h5>
 						<nav class="footer-menu">
                             <ul>
@@ -43,7 +43,7 @@
 							</ul>
 						</nav>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-6 col-ld-4">
 						<h5>Newsletter</h5>
 						<p>
 							Zapisz się do naszego newslettera, aby być zawsze na bieżąco z promocjami w Cargo.

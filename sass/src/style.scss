@@ -783,6 +783,9 @@ i {
     }
 
     &__left {
+        @include breakpoint(992px 1200px) {
+            padding-right: 20px;
+        }
         padding-right: 35px;
     }
 
@@ -817,7 +820,13 @@ i {
             list-style: none;
             li {
                 display: inline-flex;
-                margin: 30px;
+                @include breakpoint(992px 1200px) {
+                    margin: 30px 15px;
+                }
+                @include breakpoint(1201px 2550px) {
+                    margin: 30px;
+                }
+                
                 padding: 0;
                 a {
                     color: $white;

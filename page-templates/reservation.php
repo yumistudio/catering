@@ -28,7 +28,7 @@ window.ticketPrice = 0;
 			<div class="col-xs-12 col-sm-3">
 				<div class="form-label"><h2>Szczegóły</br>rezerwacji</h2></div>
 			</div>
-			<div class="col-xs-12 col-sm-6">
+			<div class="col-xs-12 col-sm-5">
 				<div id="#date-selector" class="md-form">
 					<i class="icon icon-calendar prefix"></i>
 					<input value="<?php echo $date; ?>" id="datePicker1" type="text" class="select form-control" readonly/>
@@ -45,14 +45,16 @@ window.ticketPrice = 0;
 				</div>
                 
                 <div class="md-form">
+				<i class="icon icon-group prefix"></i>
 	                <div id="qty-selector" class="qty-selector">
 						<div class="btn-nav decrease"><i class="icon-minus"></i></div>
 						<input id="quantity" name="quantity" type="number" min="1" value="1" required/>
 						<div class="btn-nav increase"><i class="icon-plus"></i></div>
+						<label for="quantity" class="active">Liczba osób</label>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-3">
+			<div class="col-xs-12 col-sm-offset-1 col-sm-3">
 				<div class="hint">
 					<?php the_field('reservation_hint'); ?>
 				</div>
@@ -64,18 +66,20 @@ window.ticketPrice = 0;
 		<div class="customer-data">
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3">
-					<div class="label required">Twoje Dane</div>
+					<div class="form-label"><h2>Twoje</br>dane</h2></div>
 				</div>
-				<div class="col-xs-6 col-sm-3">
-					<div class="text-field">
-						<input type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="Imię" value="" required>
+				<div class="col-xs-12 col-sm-5">
+					<div class="text-field md-form">
+						<i class="icon icon-person prefix"></i>
+						<input type="text" class="input-text from-control" name="billing_first_name" id="billing_first_name" value="" required>
+						<label for="billing_first_name">Imię i nazwisko</label>
 					</div>
 				</div>
-				<div class="col-xs-6 col-sm-3">
+				<!-- <div class="col-xs-12 col-sm-5">
 					<div class="text-field">
 						<input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Nazwisko" value="" required>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3"></div>
@@ -98,16 +102,18 @@ window.ticketPrice = 0;
 		<div class="separator-line"></div>
 		<div class="container-fluid field-row">
 			<div class="col-xs-12 col-sm-3">
-				<div class="label requitred">Specjalne życzenia</div>
+				<div class="form-label"><h2>Dodatkowe</br>uwagi</h2></div>
 			</div>
 			<div class="col-xs-6 col-sm-6">
-				<div class="text-field">
-					<textarea rows="3" placeholder="Powiedz nam co chciałbyś aby czekało na Ciebie przy stoliku..." id="order_comments" class="input-text" name="order_comments"></textarea>
+				<div class="text-field md-form">
+				<i class="prefix"></i>
+					<textarea rows="5" id="order_comments" class="input-text md-textarea" name="order_comments"></textarea>
+					<label for="form8">Specjalne prośby (np. butelka szampana)</label>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid field-row submit">
-			<button type="submit">Wyślij prośbę o rezerwację</button>
+		<div class="container-fluid field-row submit text-center">
+			<button class="btn btn-secondary" type="submit">Wyślij</button>
 		</div>
 	</form>
 <?php
