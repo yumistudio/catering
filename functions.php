@@ -1351,5 +1351,14 @@ add_filter('tribe_events_title', 'yumi_get_events_title',10,1);
 
 		return preg_replace('/(<a[^>]*)>(.*)(<\/a>)/', '$1 class="btn btn-nav"><i class="icon-navigate-right"></i>$3', $html);
 	}
-	add_filter('tribe_events_the_next_month_link', 'yumi_events_next_month_link_add_icon', 1, 1)
+	add_filter('tribe_events_the_next_month_link', 'yumi_events_next_month_link_add_icon', 1, 1);
+
+
+	//Delete spans from WPCF7
+
+	add_filter('wpcf7_form_elements', function($content) {
+		$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+	
+		return $content;
+	});
 ?>

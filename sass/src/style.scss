@@ -3393,3 +3393,30 @@ p.p-outline {
         }
     }
 }
+
+#wpcf7-f31-o1 {
+    .wpcf7-submit {
+        background: #ac1249;
+        color: #ffffff;
+    }
+    .wpcf7-submit, .wpcf7-submit > input[type="submit"] {
+        margin-top: 2rem;
+        position: relative;
+        font-family: Hind, sans-serif;
+        font-weight: 800;
+        font-size: 0.875rem;
+        padding: 14px 25px;
+        color: #ffffff;
+        border-radius: 5px;
+        text-transform: uppercase;
+        mask-size: auto 100%;
+        mask-repeat: no-repeat;
+        -webkit-mask-image: url(assets/images/button-bg.svg);
+        mask-image: url(assets/images/button-bg.svg);
+        display: inline-block;
+        transition: all .35s ease-in-out;
+    }
+    .ajax-loader {
+        display: none;
+    }
+}
