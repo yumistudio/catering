@@ -77,7 +77,7 @@ global $post;
     </div>
     <div class="max-width">
         <div id="home-people__carousel" class="swiper-container carousel-two">
-            <div class="fix-padding col-md-4">
+            <div class="fix-padding col-sm-6 col-md-4">
                 <div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
                     <div class="swiper-slide__price-label">
                         od <span class="value">75 zł</span>
@@ -96,7 +96,7 @@ global $post;
                     <div class="swiper-slide__overlay"></div>
                 </div>
             </div>
-            <div class="fix-padding col-md-4">
+            <div class="fix-padding col-sm-6 col-md-4">
                 <div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
                     <div class="swiper-slide__price-label">
                         od <span class="value">75 zł</span>
@@ -115,7 +115,7 @@ global $post;
                     <div class="swiper-slide__overlay"></div>
                 </div>
             </div>
-            <div class="fix-padding col-md-4">
+            <div class="fix-padding col-md-4 hidden-sm">
                 <div class="swiper-slide" style="background-image: url('http://scena54.yumistudio.pl/wp-content/uploads/2018/01/kkrasko.jpg')">
                     <div class="swiper-slide__price-label">
                         od <span class="value">75 zł</span>

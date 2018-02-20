@@ -288,10 +288,10 @@ userFeed.run();
 				<?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
 					$lineArr = explode('|', $item);
 				?>
-				<div class="col-sm-6 text-right">
+				<div class="col-xs-6 text-right">
 					<span class="day"><?php echo $lineArr[0]; ?></span>
 				</div>
-				<div class="col-sm-6 text-left">
+				<div class="col-xs-6 text-left">
 					<span class="hours"><?php echo $lineArr[1]; ?></span>
 				</div>
 				<?php endforeach; ?>

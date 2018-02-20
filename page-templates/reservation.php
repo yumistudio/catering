@@ -21,8 +21,8 @@ wp_enqueue_script( 'yumi-reservation', get_theme_file_uri( '/assets/js/make-rese
 window.ticketPrice = 0;
 </script>
 
-<section id="reservation-form" class="section-padding max-width">
-	
+<section id="reservation-form" class="section-padding">
+	<div class="max-width">
 	<form id="checkout" class="checkout adq-billing" enctype="multipart/form-data" action="/quote-list/" method="post" name="checkout">
 		<div id="date-selector" class="container-fluid field-row">
 			<div class="col-xs-12 col-sm-3">
@@ -138,6 +138,7 @@ endwhile; // End of the loop.
 ?>
 <script>
 </script>
+</div>
 </section>
 
 <?php get_footer(); ?>
