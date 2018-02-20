@@ -43,7 +43,7 @@
 							</ul>
 						</nav>
 					</div>
-					<div class="col-md-6 col-ld-4">
+					<div class="col-md-6 col-lg-4">
 						<h5>Newsletter</h5>
 						<p>
 							Zapisz się do naszego newslettera, aby być zawsze na bieżąco z promocjami w Cargo.
@@ -61,7 +61,7 @@
 						</form>
 
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-2 col-lg-2">
 						<h5>Znajdź nas na</h5>
 						<ul class="footer-social">
 							<li><a href="#"><i class="icon icon-social-facebook"></i></a></li>
