@@ -96,7 +96,7 @@ window.ticketPrice = 0;
 						<div class="md-form">
 							<i class="icon icon-mail prefix"></i>
 							<input type="email" class="input-text form-control" name="billing_email" id="billing_email" value="" required/>
-							<label for="billing_last_name">Adres e-mail</label>
+							<label for="billing_email">Adres e-mail</label>
 						</div>
 					</div>
 				</div>
