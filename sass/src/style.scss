@@ -2364,11 +2364,28 @@ div.wpcf7 {
     }
 
     input {
+        &::-webkit-inner-spin-button, 
+        &::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
         width: 100%;
-        padding: 14px 10px 14px 20px;
+        padding: 10px 0px;
         text-align: center;
     }
 }
+
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield !important;;
+}
+
 
 .buy-ticket-container {
     

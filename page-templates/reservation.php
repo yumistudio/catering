@@ -69,35 +69,50 @@ window.ticketPrice = 0;
 					<div class="form-label"><h2>Twoje</br>dane</h2></div>
 				</div>
 				<div class="col-xs-12 col-sm-5">
-					<div class="text-field md-form">
-						<i class="icon icon-person prefix"></i>
-						<input type="text" class="input-text from-control" name="billing_first_name" id="billing_first_name" value="" required>
-						<label for="billing_first_name">Imię i nazwisko</label>
+					<div class="col-md-6 no-gutters">
+						<div class="text-field">
+							<div class="md-form">
+								<i class="icon icon-person prefix"></i>
+								<input type="text" class="input-text form-control" name="billing_first_name" id="billing_first_name" value="" required/>
+								<label for="billing_first_name">Imię</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 no-gutters">
+						<div class="text-field">
+							<div class="md-form">
+								<i class="icon prefix"></i>
+								<input type="text" class="input-text form-control" name="billing_last_name" id="billing_last_name" value="" required/>
+								<label for="billing_last_name">Nazwisko</label>
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- <div class="col-xs-12 col-sm-5">
-					<div class="text-field">
-						<input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Nazwisko" value="" required>
-					</div>
-				</div> -->
 			</div>
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3"></div>
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-5">
 					<div class="text-field">
-						<input type="tel" class="input-text " name="billing_phone" id="billing_phone" placeholder="Telefon" value="" required>
+						<div class="md-form">
+							<i class="icon icon-mail prefix"></i>
+							<input type="email" class="input-text form-control" name="billing_email" id="billing_email" value="" required/>
+							<label for="billing_last_name">Adres e-mail</label>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="container-fluid field-row">
 				<div class="col-xs-12 col-sm-3"></div>
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-5">
 					<div class="text-field">
-						<input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="Email" required>
+						<div class="md-form">
+							<i class="icon icon-phone prefix"></i>
+							<input type="tel" class="input-text form-control" name="billing_phone" id="billing_phone" value="" required/>
+							<label for="billing_phone">Telefon</label>
+						</div>
 					</div>
 				</div>
 			</div>
-			
 		</div>
 		<div class="separator-line"></div>
 		<div class="container-fluid field-row">
