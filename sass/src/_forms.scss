@@ -263,5 +263,19 @@ textarea {
 }
 
 .w-50 {
-  width: 50% !important;
+  @include breakpoint($sm) {
+    width: 50% !important;
+  }
+  //width: 92% !important;
+  + i.selector-arrow {
+    @include breakpoint($sm) {
+      top: 2px;
+      position: inherit;
+      right: 30px;
+    }
+    font-size: .8rem;
+    top: 18px;
+    position: absolute;
+    right: 15px;
+  }
 }

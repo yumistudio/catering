@@ -119,7 +119,7 @@ window.ticketPrice = 0;
 			<div class="col-xs-12 col-sm-3">
 				<div class="form-label"><h2>Dodatkowe</br>uwagi</h2></div>
 			</div>
-			<div class="col-xs-6 col-sm-5">
+			<div class="col-xs-12 col-sm-5">
 				<div class="text-field md-form">
 				<i class="prefix"></i>
 					<textarea rows="5" id="order_comments" class="input-text md-textarea" name="order_comments"></textarea>

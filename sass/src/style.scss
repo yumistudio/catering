@@ -2328,8 +2328,11 @@ div.wpcf7 {
 .qty-selector {
     position: relative;
     height: 50px;
-    width: 50%;
+    max-width: 100%;
     margin-left: 48px;
+    @include breakpoint($sm) {
+        max-width: 50% !important;
+    }
     & > div:not(.glow-cover) {
         position: absolute;
         top: 0;
@@ -2520,8 +2523,13 @@ input[type="number"] {
         padding-top: 50px;
     }
     .form-label {
+        @include breakpoint($sm) {
+            text-align: right;
+            padding-bottom: 0em;
+        }
         padding-right: 2rem;
-        text-align: right;
+        padding-bottom: 3em;
+        text-align: center;
         h2 {
             color: $black;
             font-size: 1.75rem;
@@ -2531,11 +2539,11 @@ input[type="number"] {
             margin: 0;
         }
     }
-    .selector-arrow {
-        margin-left: -30px;
-        font-size: .8rem;
-        top: 2px;
-    }
+    // .selector-arrow {
+    //     margin-left: -30px;
+    //     font-size: .8rem;
+    //     top: 2px;
+    // }
     // & > form:not(#checkout) {
     //     .text-field {
     //         margin-bottom: 0;
@@ -2615,8 +2623,12 @@ input[type="number"] {
     // }
 
     .hint {
-        position: absolute;
-        width: 100%;
+        @include breakpoint($sm) {
+            position: absolute;
+            margin-top: 0;
+        }
+        margin-top: 1.75rem;
+        position: relative;
         min-height: auto;
         @include transition(opacity .3s);
         background-color: #242424;
@@ -2630,16 +2642,18 @@ input[type="number"] {
             opacity: 1;
         }
 
-        &:before {
-            display: block;
-            content: '';
-            position: absolute;
-            top: 4px;
-            left: -9px;
-            transform: rotate(45deg);
-            background-color: #242424;
-            width: 20px;
-            height: 20px;
+        @include breakpoint($sm) {
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: -9px;
+                transform: rotate(45deg);
+                background-color: #242424;
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
