@@ -174,6 +174,8 @@ function yumi_scripts() {
 	wp_enqueue_style( 'swiper', get_theme_file_uri( '/lib/swiper/dist/css/swiper.min.css' ) );
 	wp_enqueue_script( 'swiper', get_theme_file_uri( '/lib/swiper/dist/js/swiper.min.js' ), array(), '', true );
 
+	wp_enqueue_script( 'parallax', get_theme_file_uri( '/assets/js/parallax.js-1.5.0/parallax.min.js' ), array(), '', true );
+
 	//wp_enqueue_script( 'nicescroll', get_theme_file_uri( '/assets/js/nicescroll/dist/jquery.nicescroll.js' ), array(), '', true );
 	//wp_enqueue_script( 'visible', get_theme_file_uri( '/assets/js/jquery.visible.js' ), array(), '', true );
 	//wp_enqueue_script( 'masonry1', get_theme_file_uri( '/assets/js/masonry.pkgd.js' ), array( 'jquery' ), '1.0', false );
