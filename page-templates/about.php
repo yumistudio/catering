@@ -9,7 +9,7 @@
 get_header();
 
 ?>
-<section class="text-section pattern-section text-center cf divider-black padding-section">
+<section id="about-welcome" class="text-section text-center cf divider-bottom padding-section">
 	<h1 class="text-dark">Witaj w CARGO</h1>
 	<div class="cf text-center">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
@@ -18,11 +18,11 @@ get_header();
 	</div>
 	</div>
 </section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="https://www.rencontres-arles.com/files/media_file_2106.jpg" style="min-height: 350px;">
+<section id="parallax-1" class="divider-top divider-black">
+    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/p-aboutus.jpg" style="min-height: 400px;">
     </div>
 </section>
-<section class="text-section pattern-section text-center cf divider-black padding-section">
+<section id="about-deli" class="text-section pattern-section text-center cf padding-section divider-bottom">
 	<h1 class="text-dark">Delikatesy</h1>
 	<div class="cf text-center">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
@@ -33,8 +33,8 @@ get_header();
 	</div>
 	</div>
 </section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="https://www.rencontres-arles.com/files/media_file_2106.jpg" style="min-height: 350px;">
+<section id="parallax-1" class="divider-top divider-black">
+    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/p2-aboutus.jpg" style="min-height: 400px;">
     </div>
 </section>
 <section id="home-people" class="padding-section divider-top">
@@ -63,7 +63,7 @@ get_header();
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
-		<div class="max-width">
+		<div class="max-width hidden-xs hidden-sm">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
 			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
 		</div>
@@ -77,6 +77,28 @@ get_header();
 	      slidesPerView: 6,
 	      spaceBetween: 30,
 	      centeredSlides: true,
+		  breakpoints: {
+			1440: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				}
+			},
 		  loop: true,
 	      navigation: {
 	        nextEl: '.swiper-nav-next',

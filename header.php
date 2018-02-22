@@ -43,6 +43,20 @@ $subtitle = get_field('page_subtitle');
 
 
                 <div id="sticky-navigation" class="">
+
+                    <div id="menu-mobile" class="hidden-lg hidden-md">
+                        <nav>
+                            <?php wp_nav_menu( array(
+                                'menu'           => 'top-menu-left' ,
+                                'menu_class'     => '',
+                            ) ); ?>
+                            <?php wp_nav_menu( array(
+                                'menu'           => 'top-menu-right' ,
+                                'menu_class'     => '',
+                            ) ); ?>
+                        </nav>
+                    </div>
+                
                     <div id="main-nav" class="container">
                     <div class="row">
                         <div id="main-nav__left" class="col-md-5 text-right no-gutters">
@@ -74,8 +88,8 @@ $subtitle = get_field('page_subtitle');
 
                 <div id="top-navigation-bar" class="container-fluid">
                     <div class="container no-gutters">
-                        <div id="top-navigation-bar__address" class="text-left col-md-6"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H, Kraków</div>
-                        <div id="top-navigation-bar__phone" class="text-right col-md-6"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
+                        <div id="top-navigation-bar__address" class="text-left col-xs-6"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H<span class="hidden-xs">, Kraków</span></div>
+                        <div id="top-navigation-bar__phone" class="text-right col-xs-6"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
                     </div>
                 </div>
                 <div id="main-nav" class="container">
@@ -117,7 +131,7 @@ $subtitle = get_field('page_subtitle');
                     <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
                 </div>
                 <div id="homepage-header__reservation">
-                    <a href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
+                    <a id="res-btn" href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
                 </div>
                 <div class="next-section"><i class="icon-arrow-down"></i></div>
             <?php else : ?>

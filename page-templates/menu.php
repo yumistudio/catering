@@ -8,7 +8,7 @@
  */
 get_header();
 while ( have_posts() ) : the_post(); ?>
-<section class="text-section pattern-section text-center cf padding-section">
+<section id="menu-flavors" class="text-section pattern-section text-center cf padding-section">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 		<?php the_content(); ?>
 		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('coctails_card') ?>">Zobacz Menu a’la carte</a>
@@ -25,7 +25,7 @@ while ( have_posts() ) : the_post(); ?>
 		</div>
     	<?php endforeach; ?>
 	</div>
-	<div class="max-width">
+	<div class="max-width hidden-xs">
 		<div class="swiper-nav-prev-1"><i class="icon-navigate-left"></i></div>
 		<div class="swiper-nav-next-1"><i class="icon-navigate-right"></i></div>
 	</div>
@@ -38,6 +38,20 @@ while ( have_posts() ) : the_post(); ?>
 		var swiper = new Swiper('.photo-carousel-1', {
 			slidesPerView: 6,
 			spaceBetween: 30,
+			breakpoints: {
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				}
+			},
 			centeredSlides: true,
 			loop: true,
 			autoplay: true,
@@ -49,12 +63,16 @@ while ( have_posts() ) : the_post(); ?>
 
 		var slides = $('.swiper-slide');
 		slides.css("height", slides.width()+60);
+		window.addEventListener('resize', () => { 
+			var slides = $('.swiper-slide');
+			slides.css("height", slides.width()+60);
+		});
 	});
 })(jQuery);
 </script>
 </section>
 
-<section class="text-section pattern-section text-center cf padding-section">
+<section id="menu-deli" class="text-section pattern-section text-center cf padding-section">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
         <?php echo apply_filters('the_content', get_field('content_2')); ?>
 		<a href="#" class="btn btn-secondary-outline">Poznaj ofertę</a>
@@ -70,7 +88,7 @@ while ( have_posts() ) : the_post(); ?>
 		</div>
     	<?php endforeach; ?>
 	</div>
-	<div class="max-width">
+	<div class="max-width hidden-xs">
 		<div class="swiper-nav-prev-2"><i class="icon-navigate-left"></i></div>
 		<div class="swiper-nav-next-2"><i class="icon-navigate-right"></i></div>
 	</div>
@@ -82,6 +100,20 @@ while ( have_posts() ) : the_post(); ?>
 		var swiper = new Swiper('.photo-carousel-2', {
 			slidesPerView: 6,
 			spaceBetween: 30,
+			breakpoints: {
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				}
+			},
 			centeredSlides: true,
 			loop: true,
 			autoplay: true,

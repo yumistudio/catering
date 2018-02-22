@@ -69,7 +69,7 @@ global $post;
         </div>
     </div>
 </section>
-<section class="offer-compositions pattern-section text-center cf padding-section divider-top divider-black-bottom">
+<section class="offer-compositions pattern-section text-center cf padding-section divider-top divider-black">
 	<h1 class="text-dark">Przykładowe kompozycje</h1>
 	<div class="cf text-center">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
@@ -146,8 +146,8 @@ global $post;
     </div>
 </div>
 </section>
-<section id="parallax-1" class="section-padding divider-black divider-black-top">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="https://www.rencontres-arles.com/files/media_file_2106.jpg" style="min-height: 350px;">
+<section id="parallax-1" class="divider-top divider-black">
+    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/p-offer.jpg" style="min-height: 400px;">
     </div>
 </section>
 <section class="text-center offer-contact">

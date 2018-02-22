@@ -63,7 +63,7 @@ get_header(); ?>
 					<a href="#" class="btn btn-secondary-outline">Zobacz kartę win</a>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card hidden-md">
 				<h2 class="text-dark text-center">DELIkatesy</h2>
 				<?php if( have_rows('deli') ):
 				    while ( have_rows('deli') ) : the_row(); ?>
@@ -109,7 +109,7 @@ get_header(); ?>
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
-		<div class="max-width">
+		<div class="max-width hidden-xs">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
 			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
 		</div>
@@ -123,6 +123,28 @@ get_header(); ?>
 	      slidesPerView: 6,
 	      spaceBetween: 30,
 	      centeredSlides: true,
+		  breakpoints: {
+			1440: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				}
+			},
 		  loop: true,
 	      navigation: {
 	        nextEl: '.swiper-nav-next',
@@ -268,6 +290,25 @@ userFeed.run();
 		  autoplay: true,
 	    });
 	});
+
+//   function fixDiv() {
+//     var $cache = $('#res-btn');
+//     if ($(window).scrollTop() > 100)
+//       $cache.css({
+//         'position': 'fixed',
+//         'bottom': '30px',
+// 		'right' : '30px',
+//       });
+//     else
+//       $cache.css({
+//         'position': 'relative',
+//         'bottom': '0px',
+// 		'right' : '0px',
+//       });
+//   }
+//   $(window).scroll(fixDiv);
+//   fixDiv();
+
 })(jQuery);
 </script>  	
 </section>
