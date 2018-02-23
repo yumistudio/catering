@@ -20,7 +20,7 @@ get_header(); ?>
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
 		<?php the_content(); ?>
 
-		<a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+		<a href="<?php echo get_permalink('89'); ?>" class="btn btn-secondary-outline">Dowiedz się więcej</a>
 	</div>
 	</div>
 </section>
@@ -44,7 +44,7 @@ get_header(); ?>
 				</div>
 				<?php endwhile; endif; ?>
 				<div class="card-button">
-					<a href="#" class="btn btn-secondary-outline">Zobacz pełne menu</a>
+					<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte', 95) ?>">Zobacz pełne menu</a>
 				</div>
 			</div>
 			<div class="card">
@@ -60,7 +60,7 @@ get_header(); ?>
 				</div>
 				<?php endwhile; endif; ?>
 				<div class="card-button">
-					<a href="#" class="btn btn-secondary-outline">Zobacz kartę win</a>
+					<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('wine_card', 95) ?>">Zobacz kartę win</a>
 				</div>
 			</div>
 			<div class="card hidden-md">
@@ -76,7 +76,7 @@ get_header(); ?>
 				</div>
 				<?php endwhile; endif; ?>
 				<div class="card-button">
-					<a href="#" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
+					<a href="<?php echo get_permalink(97); ?>" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
 				</div>
 			</div>
 		</div>
@@ -251,7 +251,7 @@ foreach ($gallery as $key => $image) {
 			<div id="home-reservation__cta" class="text-center">
 				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone-outline"></i>12 686 55 22</a>
 				<div class="or">lub</div>
-				<a href="/miejsce/" class="btn btn-primary">Zarezerwuj online</a>
+				<a href="/rezerwacja/" class="btn btn-primary">Zarezerwuj online</a>
 			</div>
 		</div>
 	</div>
