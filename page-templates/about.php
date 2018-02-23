@@ -55,7 +55,9 @@ get_header();
 					</div>
 					<div class="hidden">
 						<p><?php the_excerpt(); ?></p>
-						<a href="#" class="btn">Więcej</a>
+						<div class="col-xs-12">
+							<a href="#" class="btn">Więcej</a>
+						</div>
 					</div>
 					
 				</div>

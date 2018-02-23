@@ -89,7 +89,9 @@ global $post;
                         </div>
                         <div class="hidden">
                             <p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-                            <a href="#" class="btn">Zobacz menu</a>
+                            <div class="col-xs-12">
+                                <a href="#" class="btn">Więcej</a>
+                            </div>
                         </div>
                         
                     </div>
@@ -108,7 +110,9 @@ global $post;
                         </div>
                         <div class="hidden">
                             <p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-                            <a href="#" class="btn">Zobacz menu</a>
+                            <div class="col-xs-12">
+                                <a href="#" class="btn">Więcej</a>
+                            </div>
                         </div>
                         
                     </div>
@@ -127,7 +131,9 @@ global $post;
                         </div>
                         <div class="hidden">
                             <p>Całe życie zawodowe spędził w restauracjach i hotelach w Polsce, Anglii, Turcji i Izraelu...</p>
-                            <a href="#" class="btn">Zobacz menu</a>
+                            <div class="col-xs-12">
+                                <a href="#" class="btn">Więcej</a>
+                            </div>
                         </div>
                         
                     </div>
