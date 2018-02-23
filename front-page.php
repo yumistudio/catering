@@ -118,7 +118,7 @@ get_header(); ?>
   <!-- Initialize Swiper -->
 <script>
 (function($) {
-	$(document).ready(function() {		
+	$(document).ready(function() {
 		var swiper = new Swiper('#home-people__carousel', {
 	      slidesPerView: 6,
 	      spaceBetween: 30,
