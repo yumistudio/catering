@@ -131,7 +131,7 @@ $subtitle = get_field('page_subtitle');
                     <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
                 </div>
                 <div id="homepage-header__reservation">
-                    <a id="res-btn" href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
+                    <a id="res-btn" href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i><span class="text">Rezerwacja</span></a>
                 </div>
                 <div class="next-section"><i class="icon-arrow-down"></i></div>
             <?php else : ?>
