@@ -39,8 +39,8 @@ $subtitle = get_field('page_subtitle');
     <div id="outer-wrap">
         
         <header style="background-image: url('<?php the_post_thumbnail_url(); ?>');" <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header" class="divider-black"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header" class="divider-black"<?php endif; ?>>
+            
             <div id="main-navigation" class="">
-
 
                 <div id="sticky-navigation" class="">
 
@@ -131,7 +131,7 @@ $subtitle = get_field('page_subtitle');
                     <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
                 </div>
                 <div id="homepage-header__reservation">
-                    <a id="res-btn" href="#" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
+                    <a id="res-btn" href="<?php echo get_permalink('212'); ?>" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
                 </div>
                 <div class="next-section"><i class="icon-arrow-down"></i></div>
             <?php else : ?>

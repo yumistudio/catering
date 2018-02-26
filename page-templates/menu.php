@@ -11,8 +11,8 @@ while ( have_posts() ) : the_post(); ?>
 <section id="menu-flavors" class="text-section pattern-section text-center cf padding-section">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 		<?php the_content(); ?>
-		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('coctails_card') ?>">Zobacz Menu a’la carte</a>
-		<a href="#" class="btn btn-secondary-outline" data-file-id="<?php the_field('tapas_card') ?>">Zobacz kartę win</a>
+		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte') ?>">Zobacz Menu a’la carte</a>
+		<a href="#" class="btn btn-secondary-outline" data-file-id="<?php the_field('wine_card') ?>">Zobacz kartę win</a>
 	</div>
 </section>
 

@@ -1,19 +1,4 @@
 <?php
-/*
-function print_filters_for( $hook = '' ) {
-    global $wp_filter;
-    if( empty( $hook ) || !isset( $wp_filter[$hook] ) )
-        return;
-
-    print '<pre>';
-    print_r( $wp_filter[$hook] );
-    print '</pre>';
-}
-print_filters_for( 'the_content' );
-*/
-
-
-
 global $post;
 $qPost = get_queried_object();
 
