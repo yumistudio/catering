@@ -744,7 +744,7 @@ i {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-
+        width: 80%;
         p {
             @include type-layout(xl-d, 0);
             font-family: Gabriele, sans-serif;
@@ -768,6 +768,13 @@ i {
         transform: translateX(-50%);
         bottom: 40px;
         color: $white !important;
+    }
+}
+
+#res-btn {
+    transition: all .5s ease-in-out;
+    span.text {
+        display: none;
     }
 }
 
