@@ -645,8 +645,6 @@ i {
 
 #inner-wrap {
 
-    background-image: url('assets/images/bg-main.jpg');
-
     @include breakpoint($md) {
         padding-top: 0;
     }
