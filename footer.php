@@ -17,17 +17,9 @@
 				<div class="container cf no-gutters">
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Kontakt</h5>
-						<p>
-							Cargo Grill & Deli</br>
-							Dolnych Młynów 10/2H</br>
-							31-400 Kraków
-						</p>
-						<p>
-							12 686 55 22
-						</p>
-						<p>
-							kontakt@cargo.pl
-						</p>
+						<p><?php echo nl2br(ot_get_option( 'address' )); ?></p>
+						<p><?php echo ot_get_option( 'phone' ); ?></p>
+						<p><?php echo ot_get_option( 'email' ); ?></p>
 					</div>
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Cargo grill & deli</h5>
