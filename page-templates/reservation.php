@@ -22,6 +22,11 @@ if(isset($_POST['date']))
 if(isset($_GET['seat_type']))
 	$seat_type = sanitize_key( $_GET['seat_type'] );
 
+if(isset($_GET['quantity']))
+	$quantity = sanitize_key( $_GET['quantity'] );
+else 
+	$quantity = 1;
+
 get_header();
 get_template_part( 'template-parts/page/content', 'header' );
 
@@ -30,7 +35,7 @@ wp_enqueue_style( 'datetimepicker', get_theme_file_uri( '/assets/js/datetimepick
 wp_enqueue_script( 'validate', get_theme_file_uri( '/assets/js/jquery-validation-1.17.0/dist/jquery.validate.min.js' ), array(), '', true );
 wp_enqueue_script( 'validate-pl', get_theme_file_uri( '/assets/js/jquery-validation-1.17.0/dist/localization/messages_pl.min.js' ), array(), '', true );
 wp_enqueue_script( 'yumi-reservation', get_theme_file_uri( '/assets/js/make-reservation.js' ), array( 'jquery' ), '1.0', true );
-
+wp_enqueue_script( 'yumi-event-tooltips', get_theme_file_uri( '/assets/js/event-tooltips.js' ), array( 'jquery' ), '1.0', true );
 ?>
 <script>
 window.ticketPrice = 0;
@@ -66,9 +71,9 @@ window.ticketPrice = 0;
 				<div class="label required">Liczba Osób</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<div id="qty-men-selector" class="qty-selector women glow">
+				<div id="qty-selector" class="qty-selector glow">
 					<div class="btn-nav decrease"><i class="icon-minus"></i></div>
-					<input id="quantity_women" name="quantity_women" type="number" min="1" value="1"/>
+					<input id="quantity" name="quantity" type="number" min="1" value="<?php echo $quantity; ?>"/>
 					<div class="btn-nav increase"><i class="icon-plus"></i></div>
 				</div>
 			</div>
@@ -93,7 +98,7 @@ window.ticketPrice = 0;
 				<div class="btn btn-switch btn-switch-type glow">
 					<i class="icon-table"></i>
 					Stolik
-					<span>darmowy</span>
+					<!--span>darmowy</span-->
 				</div>
 			</div>
 
@@ -102,7 +107,7 @@ window.ticketPrice = 0;
 				<div id="lodge-btn" class="btn btn-switch btn-switch-type glow">
 					<i class="icon-lodge"></i>
 					Loża
-					<span class="price">420zł</span>
+					<!--span class="price">420zł</span-->
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-3">
@@ -119,19 +124,16 @@ window.ticketPrice = 0;
 						<li class="btn-wrap">
 							<input type="radio" name="attribute_pa_strefa" value="A" class="required"/>
 							<input type="radio" data-type="lodge" name="variation_id" value="232" />
-							<input type="radio" data-type="table" name="variation_id" value="236" />
 							<div class="btn btn-switch btn-switch-zone glow">A</div>
 						</li>
 						<li class="btn-wrap">
 							<input type="radio" name="attribute_pa_strefa" value="B" />
 							<input type="radio" data-type="lodge" name="variation_id" value="233" />
-							<input type="radio" data-type="table" name="variation_id" value="237" />
 							<div class="btn btn-switch btn-switch-zone glow">B</div>
 						</li>
 						<li class="btn-wrap">
 							<input type="radio" name="attribute_pa_strefa" value="C" />
 							<input type="radio" data-type="lodge" name="variation_id" value="234" />
-							<input type="radio" data-type="table" name="variation_id" value="238" />
 							<div class="btn btn-switch btn-switch-zone glow">C</div>
 						</li>
 						<li class="btn-wrap">
@@ -252,6 +254,20 @@ window.ticketPrice = 0;
 				</div>
 			</div>
 		</div>
+
+		<div class="separator-line"></div>
+
+		<div class="container-fluid">
+			<div class="col-xs-2 col-sm-3 center">
+				<i class="icon-warning hint-icon"></i>
+			</div>
+			<div class="col-xs-10 col-sm-6 center">
+				<p><?php the_field('order_info'); ?></p>
+			</div>
+		</div>
+
+		<div class="separator-line"></div>
+
 		<div class="container-fluid field-row submit">
 			<a id="" class="btn frame-btn glow submit"><span class="frame"></span>Wyślij prośbę o rezerwację</a>
 		</div>

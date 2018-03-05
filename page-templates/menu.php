@@ -28,7 +28,8 @@ global $post;
 		</a>
 	</div>
 </div>
-
+</section>
+<section id="menu-carousel">
 <div id="menu-slider" class="section-padding">
 	
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -39,10 +40,13 @@ global $post;
 				$gallery = get_field('item_gallery');
 				foreach ($gallery as $image) : ?>
 				<div class="swiper-slide contnet-box">
-					<img src="<?php echo $image['sizes']['yumi-slider-image']; ?>');" />
+					<img src="<?php echo $image['sizes']['yumi-slider-image']; ?>');" width="<?php echo $image['sizes']['yumi-slider-image-width']; ?>" height="<?php echo $image['sizes']['yumi-slider-image-height']; ?>"/>
 	        	</div>
         	<?php endforeach; wp_reset_postdata(); ?>
         </div>
+
+        <div class="swiper-button-next btn btn-nav"><i class="icon-navigate-right"></i></div>
+	    <div class="swiper-button-prev btn btn-nav"><i class="icon-navigate-left"></i></div>
     </div>
 	
 	<?php endwhile; // End of the loop.?>

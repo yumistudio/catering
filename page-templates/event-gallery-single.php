@@ -97,7 +97,13 @@ while ( $query->have_posts() ) : $query->the_post();
 			</div>
 			<?php endif; ?>
 			<div class="grid-item photoswipe-item">
-				<a href="<?php echo $image['sizes']['yumi-full-hd']; ?>" data-size="1920x1080" class="<?php echo $grid[($i%20)]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+				<?php
+					$src = $image['sizes']['yumi-full-hd'];
+					$width = $image['sizes']['yumi-full-hd-width'];
+					$height = $image['sizes']['yumi-full-hd-height'];
+
+				?>
+				<a href="<?php echo $src; ?>" data-size="<?php echo $width; ?>x<?php echo $height; ?>" class="<?php echo $grid[($i%20)]; ?>" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
 			</div>

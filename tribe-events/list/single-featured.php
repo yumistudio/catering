@@ -44,7 +44,7 @@ $terms = get_the_terms($post->ID, 'tribe_events_cat');
 		</h4>
 		<?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
-		<?php foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+		<?php if($terms)  foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
 
 	</div>
 	<div class="col-xs-12 col-sm-5 col-lg-6">

@@ -33,8 +33,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'tribe_events_after_header' ) ?>
 
 	<!-- Month Grid -->
+	<div class="month-grid-container">
 	<?php tribe_get_template_part( 'month/loop', 'grid' ) ?>
-
+	</div>
+	
 	<!-- Month Footer -->
 	<?php do_action( 'tribe_events_before_footer' ) ?>
 	<div id="tribe-events-footer">

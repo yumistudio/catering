@@ -29,7 +29,7 @@ function yumi_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'yumi-gallery-item', 500, 0, true );
-	add_image_size( 'yumi-full-hd', 1920, 1080, true );
+	add_image_size( 'yumi-full-hd', 1920, 1080, false );
 	add_image_size( 'yumi-video-thumbnal', 370, 280, true );
 	add_image_size( 'yumi-slider-image', 270, 270, true );
 
@@ -401,31 +401,11 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 /*
  * Add columns to exhibition post list
  */
- function add_acf_columns ( $columns ) {
+function add_acf_columns ( $columns ) {
 	 return array_merge ( $columns, array ( 
 		 'branch' => __ ( 'Branch Or Global' ),
 	 ) );
- }
-
-/**
- * Add items to cart on loading checkout page.
- */
-function yumi_add_to_cart() {
-
-		if ( ! is_page( 'checkout' ) ) {
-				return;
-		}
- 
-		if ( ! WC()->cart->is_empty() ) {
-				return;
-		}
- 
-		WC()->cart->add_to_cart( 54, 1 );
-		WC()->cart->add_to_cart( 22, 2 );
 }
- 
-//add_action( 'wp', 'yumi_add_to_cart' );
-
 
 function show_event_on_product_page() {
 
@@ -501,13 +481,11 @@ function yumi_add_item_to_cart_or_quote( $cart_item_data, $product_id, $variatio
 	if ($variation_id && $date) {
 
 		$time = filter_input( INPUT_POST, 'reservation_time' );
-		$qtyW = filter_input( INPUT_POST, 'quantity_women' );
-		$qtyM = filter_input( INPUT_POST, 'quantity_men' );
+		$qtyP = filter_input( INPUT_POST, 'quantity' );
 
 		$dt = DateTime::createFromFormat('Y-m-d H:i:s', $date.' '.$time.':00');
 		$cart_item_data['reservation'] = date_i18n( 'd M Y @ H:i', date_timestamp_get($dt), false );
-		$cart_item_data['qtyW'] = $qtyW;
-		$cart_item_data['qtyM'] = $qtyM;
+		$cart_item_data['qtyP'] = $qtyP;
 
 		//print_r($cart_item_data);
 	}
@@ -542,16 +520,10 @@ function yumi_show_event_on_ticket_item_in_cart( $item_data, $cart_item ) {
 			'value'   => wc_clean($cart_item['reservation']),
 			'display' => '',
 		);
-		if ($cart_item['qtyW']) 
+		if ($cart_item['qtyP']) 
 			$item_data[] = array(
-				'key'     => __( 'Kobiety', 'yumi' ),
-				'value'   => wc_clean($cart_item['qtyW']),
-				'display' => '',
-			);
-		if ($cart_item['qtyM'])
-			$item_data[] = array(
-				'key'     => __( 'Mężczyźni', 'yumi' ),
-				'value'   => wc_clean($cart_item['qtyM']),
+				'key'     => __( 'Ilość osób', 'yumi' ),
+				'value'   => wc_clean($cart_item['qtyP']),
 				'display' => '',
 			);
 	}
@@ -569,10 +541,10 @@ add_filter( 'woocommerce_get_item_data', 'yumi_show_event_on_ticket_item_in_cart
  */
 function yumi_show_event_on_order_items( $item, $cart_item_key, $values, $order ) {
 	
-	print $cart_item_key;
-	print_r($item);
-	print_r($values);
-	print_r($order);
+	//print $cart_item_key;
+	//print_r($item);
+	//print_r($values);
+	//print_r($order);
 
 	if ( !empty( $values['event'] ) ) {
 		$item->add_meta_data( __( 'Wydarzenie', 'yumi' ), $values['event'] );
@@ -580,8 +552,7 @@ function yumi_show_event_on_order_items( $item, $cart_item_key, $values, $order 
 
 	if ( !empty( $values['reservation'] ) ) {
 		$item->add_meta_data( __( 'Data i czas', 'yumi' ), $values['reservation'] );
-		$item->add_meta_data( __( 'Kobiety', 'yumi' ), $values['qtyW'] );
-		$item->add_meta_data( __( 'Mężczyźni', 'yumi' ), $values['qtyM'] );
+		$item->add_meta_data( __( 'Ilość osób', 'yumi' ), $values['qtyP'] );
 	}
 
 }
@@ -616,6 +587,28 @@ function yumi_add_ticket_info( array $event_data ) {
 	return $event_data;
 }
 
+/**
+ * Hook: Empty cart before adding a new product to cart WITHOUT throwing woocommerce_cart_is_empty
+ */
+/*
+function yumi_empty_cart_before_add() {
+    global $woocommerce;
+
+	$woocommerce->cart->empty_cart();
+	$woocommerce->cart->add_to_cart($product_id,$qty);
+}
+add_action ('woocommerce_add_to_cart', 'yumi_empty_cart_before_add', 0);
+*/
+
+add_action( 'init', 'woocommerce_clear_cart_url' );
+function woocommerce_clear_cart_url() {
+	if ( isset( $_GET['clear-cart'] ) ) {
+		global $woocommerce;
+		$woocommerce->cart->empty_cart();
+	}
+}
+
+
 if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 		/*
 		 *  Add product to Quote List With Variables
@@ -636,11 +629,9 @@ if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 		if(isset($_POST['zone']))
 			$zone = sanitize_key( $_POST['zone'] );
 
-		if(isset($_POST['quantity_men']))
-			$qM = sanitize_key( $_POST['quantity_men'] );
+		if(isset($_POST['quantity']))
+			$q = sanitize_key( $_POST['quantity'] );
 
-		if(isset($_POST['quantity_women']))
-			$qW = sanitize_key( $_POST['quantity_women'] );
 
 		$variation_id = false;
         if(isset($_POST['variation_id']))
@@ -655,7 +646,7 @@ if( !function_exists( 'yumi_ajax_add_to_quote' ) ) {
 
 		// Adding tickets
 		if ($product_id) {
-			$quantity = wc_stock_amount( $qM + $qW );
+			$quantity = wc_stock_amount( $q );
 			$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
 			
 			if ( $passed_validation ) {                 

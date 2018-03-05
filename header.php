@@ -62,7 +62,7 @@ wp_head();
                 <span id="call-us-link">
                     <a href="tel:<?php echo ot_get_option( 'phone' ); ?>">
                         <i class="icon-phone"></i>
-                        <?php echo ot_get_option(    'phone' ); ?>
+                        <span><?php echo ot_get_option( 'phone' ); ?></span>
                     </a>
                 </span>
                 <span class="reservation-link"><a href="/rezerwacja/">Rezerwacja</a></span>

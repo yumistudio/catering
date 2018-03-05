@@ -1,17 +1,19 @@
+@import "variables";
+
 @font-face {
-  font-family: 's54-ui-icons';
-  src:  url('#{$icomoon-font-path}/s54-ui-icons.eot?ws1r8i');
-  src:  url('#{$icomoon-font-path}/s54-ui-icons.eot?ws1r8i#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/s54-ui-icons.ttf?ws1r8i') format('truetype'),
-    url('#{$icomoon-font-path}/s54-ui-icons.woff?ws1r8i') format('woff'),
-    url('#{$icomoon-font-path}/s54-ui-icons.svg?ws1r8i#s54-ui-icons') format('svg');
+  font-family: 'scena54-ui-icons';
+  src:  url('#{$icomoon-font-path}/scena54-ui-icons.eot?b473mo');
+  src:  url('#{$icomoon-font-path}/scena54-ui-icons.eot?b473mo#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/scena54-ui-icons.ttf?b473mo') format('truetype'),
+    url('#{$icomoon-font-path}/scena54-ui-icons.woff?b473mo') format('woff'),
+    url('#{$icomoon-font-path}/scena54-ui-icons.svg?b473mo#scena54-ui-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-i {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 's54-ui-icons' !important;
+  font-family: 'scena54-ui-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,174 +26,179 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-s54-logo {
+.icon-info {
   &:before {
-    content: $icon-s54-logo;
+    content: $icon-info; 
   }
 }
-.icon-navigate-left {
+.icon-warning {
   &:before {
-    content: $icon-navigate-left;
-  }
-}
-.icon-navigate-right {
-  &:before {
-    content: $icon-navigate-right;
-  }
-}
-.icon-navigate-up {
-  &:before {
-    content: $icon-navigate-up;
-  }
-}
-.icon-navigate-down {
-  &:before {
-    content: $icon-navigate-down;
-  }
-}
-.icon-arrow-left {
-  &:before {
-    content: $icon-arrow-left;
-  }
-}
-.icon-arrow-right {
-  &:before {
-    content: $icon-arrow-right;
-  }
-}
-.icon-arrow-up {
-  &:before {
-    content: $icon-arrow-up;
+    content: $icon-warning; 
   }
 }
 .icon-arrow-down {
   &:before {
-    content: $icon-arrow-down;
+    content: $icon-arrow-down; 
   }
 }
-.icon-search {
+.icon-arrow-left {
   &:before {
-    content: $icon-search;
+    content: $icon-arrow-left; 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right; 
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up; 
   }
 }
 .icon-calendar {
   &:before {
-    content: $icon-calendar;
+    content: $icon-calendar; 
   }
 }
 .icon-clock {
   &:before {
-    content: $icon-clock;
-  }
-}
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-.icon-menu {
-  &:before {
-    content: $icon-menu;
-  }
-}
-.icon-plus {
-  &:before {
-    content: $icon-plus;
-  }
-}
-.icon-minus {
-  &:before {
-    content: $icon-minus;
-  }
-}
-.icon-play {
-  &:before {
-    content: $icon-play;
-  }
-}
-.icon-grid {
-  &:before {
-    content: $icon-grid;
-  }
-}
-.icon-info {
-  &:before {
-    content: $icon-info;
-  }
-}
-.icon-female {
-  &:before {
-    content: $icon-female;
-  }
-}
-.icon-male {
-  &:before {
-    content: $icon-male;
-  }
-}
-.icon-map-placeholder {
-  &:before {
-    content: $icon-map-placeholder;
-  }
-}
-.icon-phone {
-  &:before {
-    content: $icon-phone;
-  }
-}
-.icon-mail {
-  &:before {
-    content: $icon-mail;
+    content: $icon-clock; 
   }
 }
 .icon-clock-full {
   &:before {
-    content: $icon-clock-full;
+    content: $icon-clock-full; 
   }
 }
-.icon-ticket {
+.icon-close {
   &:before {
-    content: $icon-ticket;
-  }
-}
-.icon-table {
-  &:before {
-    content: $icon-table;
-  }
-}
-.icon-lodge {
-  &:before {
-    content: $icon-lodge;
-  }
-}
-.icon-paper {
-  &:before {
-    content: $icon-paper;
+    content: $icon-close; 
   }
 }
 .icon-cocktail {
   &:before {
-    content: $icon-cocktail;
+    content: $icon-cocktail; 
+  }
+}
+.icon-female {
+  &:before {
+    content: $icon-female; 
+  }
+}
+.icon-grid {
+  &:before {
+    content: $icon-grid; 
+  }
+}
+.icon-lodge {
+  &:before {
+    content: $icon-lodge; 
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail; 
+  }
+}
+.icon-male {
+  &:before {
+    content: $icon-male; 
+  }
+}
+.icon-map-placeholder {
+  &:before {
+    content: $icon-map-placeholder; 
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu; 
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus; 
+  }
+}
+.icon-navigate-down {
+  &:before {
+    content: $icon-navigate-down; 
+  }
+}
+.icon-navigate-left {
+  &:before {
+    content: $icon-navigate-left; 
+  }
+}
+.icon-navigate-right {
+  &:before {
+    content: $icon-navigate-right; 
+  }
+}
+.icon-navigate-up {
+  &:before {
+    content: $icon-navigate-up; 
+  }
+}
+.icon-paper {
+  &:before {
+    content: $icon-paper; 
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone; 
+  }
+}
+.icon-play {
+  &:before {
+    content: $icon-play; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-s54-logo {
+  &:before {
+    content: $icon-s54-logo; 
   }
 }
 .icon-sandwich {
   &:before {
-    content: $icon-sandwich;
+    content: $icon-sandwich; 
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search; 
   }
 }
 .icon-social-facebook {
   &:before {
-    content: $icon-social-facebook;
+    content: $icon-social-facebook; 
   }
 }
 .icon-social-instagram {
   &:before {
-    content: $icon-social-instagram;
+    content: $icon-social-instagram; 
   }
 }
 .icon-social-tripadvisor {
   &:before {
-    content: $icon-social-tripadvisor;
+    content: $icon-social-tripadvisor; 
+  }
+}
+.icon-table {
+  &:before {
+    content: $icon-table; 
+  }
+}
+.icon-ticket {
+  &:before {
+    content: $icon-ticket; 
   }
 }
 

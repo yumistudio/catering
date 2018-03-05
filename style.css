@@ -2146,7 +2146,7 @@ template {
 .swiper-slide {
   /* text-align: center; */
   background: #000;
-  padding: 30px;
+  /* padding: 30px; */
   /* Center slide text vertically */
   /*
   display: -webkit-box;
@@ -2334,16 +2334,16 @@ img.responsive-img,
 }
 
 @font-face {
-  font-family: 's54-ui-icons';
-  src: url("assets/fonts/s54-ui-icons.eot?ws1r8i");
-  src: url("assets/fonts/s54-ui-icons.eot?ws1r8i#iefix") format("embedded-opentype"), url("assets/fonts/s54-ui-icons.ttf?ws1r8i") format("truetype"), url("assets/fonts/s54-ui-icons.woff?ws1r8i") format("woff"), url("assets/fonts/s54-ui-icons.svg?ws1r8i#s54-ui-icons") format("svg");
+  font-family: 'scena54-ui-icons';
+  src: url("assets/fonts/scena54-ui-icons.eot?b473mo");
+  src: url("assets/fonts/scena54-ui-icons.eot?b473mo#iefix") format("embedded-opentype"), url("assets/fonts/scena54-ui-icons.ttf?b473mo") format("truetype"), url("assets/fonts/scena54-ui-icons.woff?b473mo") format("woff"), url("assets/fonts/scena54-ui-icons.svg?b473mo#scena54-ui-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-/* line 12, sass/src/_icoMoon.scss */
-i {
+/* line 14, sass/src/_icoMoon.scss */
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 's54-ui-icons' !important;
+  font-family: 'scena54-ui-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -2355,174 +2355,179 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 28, sass/src/_icoMoon.scss */
-.icon-s54-logo:before {
-  content: "";
-}
-
-/* line 33, sass/src/_icoMoon.scss */
-.icon-navigate-left:before {
+/* line 30, sass/src/_icoMoon.scss */
+.icon-info:before {
   content: "";
 }
 
-/* line 38, sass/src/_icoMoon.scss */
-.icon-navigate-right:before {
-  content: "";
+/* line 35, sass/src/_icoMoon.scss */
+.icon-warning:before {
+  content: "";
 }
 
-/* line 43, sass/src/_icoMoon.scss */
-.icon-navigate-up:before {
-  content: "";
-}
-
-/* line 48, sass/src/_icoMoon.scss */
-.icon-navigate-down:before {
+/* line 40, sass/src/_icoMoon.scss */
+.icon-arrow-down:before {
   content: "";
 }
 
-/* line 53, sass/src/_icoMoon.scss */
+/* line 45, sass/src/_icoMoon.scss */
 .icon-arrow-left:before {
   content: "";
 }
 
-/* line 58, sass/src/_icoMoon.scss */
+/* line 50, sass/src/_icoMoon.scss */
 .icon-arrow-right:before {
   content: "";
 }
 
-/* line 63, sass/src/_icoMoon.scss */
+/* line 55, sass/src/_icoMoon.scss */
 .icon-arrow-up:before {
   content: "";
 }
 
-/* line 68, sass/src/_icoMoon.scss */
-.icon-arrow-down:before {
+/* line 60, sass/src/_icoMoon.scss */
+.icon-calendar:before {
   content: "";
 }
 
-/* line 73, sass/src/_icoMoon.scss */
-.icon-search:before {
+/* line 65, sass/src/_icoMoon.scss */
+.icon-clock:before {
   content: "";
 }
 
-/* line 78, sass/src/_icoMoon.scss */
-.icon-calendar:before {
+/* line 70, sass/src/_icoMoon.scss */
+.icon-clock-full:before {
   content: "";
 }
 
-/* line 83, sass/src/_icoMoon.scss */
-.icon-clock:before {
+/* line 75, sass/src/_icoMoon.scss */
+.icon-close:before {
   content: "";
 }
 
-/* line 88, sass/src/_icoMoon.scss */
-.icon-close:before {
+/* line 80, sass/src/_icoMoon.scss */
+.icon-cocktail:before {
   content: "";
 }
 
-/* line 93, sass/src/_icoMoon.scss */
-.icon-menu:before {
+/* line 85, sass/src/_icoMoon.scss */
+.icon-female:before {
   content: "";
 }
 
-/* line 98, sass/src/_icoMoon.scss */
-.icon-plus:before {
+/* line 90, sass/src/_icoMoon.scss */
+.icon-grid:before {
   content: "";
 }
 
-/* line 103, sass/src/_icoMoon.scss */
-.icon-minus:before {
-  content: "";
-}
-
-/* line 108, sass/src/_icoMoon.scss */
-.icon-play:before {
-  content: "";
-}
-
-/* line 113, sass/src/_icoMoon.scss */
-.icon-grid:before {
+/* line 95, sass/src/_icoMoon.scss */
+.icon-lodge:before {
   content: "";
 }
 
-/* line 118, sass/src/_icoMoon.scss */
-.icon-info:before {
+/* line 100, sass/src/_icoMoon.scss */
+.icon-mail:before {
   content: "";
 }
 
-/* line 123, sass/src/_icoMoon.scss */
-.icon-female:before {
+/* line 105, sass/src/_icoMoon.scss */
+.icon-male:before {
   content: "";
 }
 
-/* line 128, sass/src/_icoMoon.scss */
-.icon-male:before {
+/* line 110, sass/src/_icoMoon.scss */
+.icon-map-placeholder:before {
   content: "";
 }
 
-/* line 133, sass/src/_icoMoon.scss */
-.icon-map-placeholder:before {
+/* line 115, sass/src/_icoMoon.scss */
+.icon-menu:before {
   content: "";
 }
 
-/* line 138, sass/src/_icoMoon.scss */
-.icon-phone:before {
+/* line 120, sass/src/_icoMoon.scss */
+.icon-minus:before {
   content: "";
 }
 
-/* line 143, sass/src/_icoMoon.scss */
-.icon-mail:before {
+/* line 125, sass/src/_icoMoon.scss */
+.icon-navigate-down:before {
   content: "";
 }
 
-/* line 148, sass/src/_icoMoon.scss */
-.icon-clock-full:before {
+/* line 130, sass/src/_icoMoon.scss */
+.icon-navigate-left:before {
   content: "";
 }
 
-/* line 153, sass/src/_icoMoon.scss */
-.icon-ticket:before {
+/* line 135, sass/src/_icoMoon.scss */
+.icon-navigate-right:before {
   content: "";
 }
 
-/* line 158, sass/src/_icoMoon.scss */
-.icon-table:before {
+/* line 140, sass/src/_icoMoon.scss */
+.icon-navigate-up:before {
   content: "";
 }
 
-/* line 163, sass/src/_icoMoon.scss */
-.icon-lodge:before {
+/* line 145, sass/src/_icoMoon.scss */
+.icon-paper:before {
   content: "";
 }
 
-/* line 168, sass/src/_icoMoon.scss */
-.icon-paper:before {
+/* line 150, sass/src/_icoMoon.scss */
+.icon-phone:before {
   content: "";
 }
 
-/* line 173, sass/src/_icoMoon.scss */
-.icon-cocktail:before {
+/* line 155, sass/src/_icoMoon.scss */
+.icon-play:before {
   content: "";
 }
 
-/* line 178, sass/src/_icoMoon.scss */
-.icon-sandwich:before {
+/* line 160, sass/src/_icoMoon.scss */
+.icon-plus:before {
   content: "";
 }
 
-/* line 183, sass/src/_icoMoon.scss */
-.icon-social-facebook:before {
+/* line 165, sass/src/_icoMoon.scss */
+.icon-s54-logo:before {
   content: "";
 }
 
-/* line 188, sass/src/_icoMoon.scss */
-.icon-social-instagram:before {
+/* line 170, sass/src/_icoMoon.scss */
+.icon-sandwich:before {
   content: "";
 }
 
-/* line 193, sass/src/_icoMoon.scss */
-.icon-social-tripadvisor:before {
+/* line 175, sass/src/_icoMoon.scss */
+.icon-search:before {
   content: "";
+}
+
+/* line 180, sass/src/_icoMoon.scss */
+.icon-social-facebook:before {
+  content: "";
+}
+
+/* line 185, sass/src/_icoMoon.scss */
+.icon-social-instagram:before {
+  content: "";
+}
+
+/* line 190, sass/src/_icoMoon.scss */
+.icon-social-tripadvisor:before {
+  content: "";
+}
+
+/* line 195, sass/src/_icoMoon.scss */
+.icon-table:before {
+  content: "";
+}
+
+/* line 200, sass/src/_icoMoon.scss */
+.icon-ticket:before {
+  content: "";
 }
 
 /* line 2, sass/src/_events.scss */
@@ -2547,16 +2552,22 @@ i {
 #tribe-events-content .tribe-events-calendar td div[id*=tribe-events-daynum-] {
   font-family: Open Sans, sans-serif;
   font-weight: 300;
-  font-size: 30px;
-  margin: 30px 0 0 30px;
+  font-size: 20px;
 }
-/* line 26, sass/src/_events.scss */
+@media (min-width: 768px) {
+  /* line 19, sass/src/_events.scss */
+  #tribe-events-content .tribe-events-calendar td div[id*=tribe-events-daynum-] {
+    font-size: 30px;
+    margin: 30px 0 0 30px;
+  }
+}
+/* line 29, sass/src/_events.scss */
 #tribe-events-content .tribe-events-calendar td,
 #tribe-events-content table.tribe-events-calendar {
   border-color: #1a1d25;
 }
 
-/* line 34, sass/src/_events.scss */
+/* line 37, sass/src/_events.scss */
 .tribe-events-calendar th {
   background-color: #1a1d25;
   padding: 22px 10px;
@@ -2566,65 +2577,83 @@ i {
   border-right: solid 1px #30333c;
   font-weight: 400;
 }
-/* line 43, sass/src/_events.scss */
+/* line 46, sass/src/_events.scss */
 .tribe-events-calendar th:last-child {
   border-right-color: #1a1d25;
 }
 
-/* line 49, sass/src/_events.scss */
+/* line 52, sass/src/_events.scss */
 .tribe-events-sub-nav {
   float: left;
   font-size: 30px;
   color: #ffe2a6;
   padding-left: 0;
 }
-/* line 55, sass/src/_events.scss */
+/* line 58, sass/src/_events.scss */
 .tribe-events-sub-nav li {
   padding-left: 0;
   margin: 0 0 0 0 !important;
 }
-/* line 59, sass/src/_events.scss */
+/* line 62, sass/src/_events.scss */
 .tribe-events-sub-nav li a, .tribe-events-sub-nav li span {
   border: solid 1px #ffe2a6;
   width: 40px;
   height: 40px;
   line-height: 40px;
 }
-/* line 65, sass/src/_events.scss */
+/* line 68, sass/src/_events.scss */
 .tribe-events-sub-nav li span {
   opacity: 0.35;
 }
-/* line 70, sass/src/_events.scss */
+/* line 73, sass/src/_events.scss */
 .tribe-events-sub-nav i {
   line-height: 40px !important;
 }
-/* line 74, sass/src/_events.scss */
+/* line 77, sass/src/_events.scss */
 .tribe-events-sub-nav .tribe-events-nav-previous {
   padding-left: 0;
 }
-/* line 78, sass/src/_events.scss */
+/* line 81, sass/src/_events.scss */
 .tribe-events-sub-nav .tribe-events-nav-next {
   padding-left: 0;
 }
 
-/* line 83, sass/src/_events.scss */
+/* line 86, sass/src/_events.scss */
 .tribe-events-month .tribe-events-page-title {
   float: left;
   margin: 12px;
 }
 
-/* line 88, sass/src/_events.scss */
+/* line 91, sass/src/_events.scss */
 .tribe-bar-disabled {
   position: relative;
-  float: right;
   z-index: 1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  /* line 91, sass/src/_events.scss */
+  .tribe-bar-disabled {
+    float: right;
+  }
 }
 
-/* line 95, sass/src/_events.scss */
+/* line 103, sass/src/_events.scss */
+#tribe-events-bar label {
+  display: none;
+  margin-right: 20px;
+}
+@media (min-width: 768px) {
+  /* line 103, sass/src/_events.scss */
+  #tribe-events-bar label {
+    display: inline-block;
+  }
+}
+/* line 112, sass/src/_events.scss */
 #tribe-events-bar ul {
   list-style: none;
+  padding-left: 0;
 }
-/* line 99, sass/src/_events.scss */
+/* line 117, sass/src/_events.scss */
 #tribe-events-bar li {
   font-family: Raleway, sans-serif;
   font-weight: 900;
@@ -2639,15 +2668,15 @@ i {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-/* line 110, sass/src/_events.scss */
+/* line 128, sass/src/_events.scss */
 #tribe-events-bar li:hover, #tribe-events-bar li.on {
   background-color: #ffe2a6;
 }
-/* line 113, sass/src/_events.scss */
+/* line 131, sass/src/_events.scss */
 #tribe-events-bar li:hover a, #tribe-events-bar li.on a {
   color: #000;
 }
-/* line 118, sass/src/_events.scss */
+/* line 136, sass/src/_events.scss */
 #tribe-events-bar li a {
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -2656,18 +2685,18 @@ i {
   letter-spacing: .2em;
 }
 
-/* line 125, sass/src/_events.scss */
+/* line 143, sass/src/_events.scss */
 #tribe-events-header {
   margin-bottom: 30px;
 }
 
-/* line 133, sass/src/_events.scss */
+/* line 151, sass/src/_events.scss */
 .tribe-bar-views-list {
   display: inline-block;
   margin: 5px 0 0 0;
 }
 
-/* line 138, sass/src/_events.scss */
+/* line 156, sass/src/_events.scss */
 .recurring-info-tooltip,
 .tribe-events-calendar .tribe-events-tooltip,
 .tribe-events-shortcode.view-week .tribe-events-tooltip,
@@ -2676,7 +2705,7 @@ i {
   color: #858585;
 }
 
-/* line 146, sass/src/_events.scss */
+/* line 164, sass/src/_events.scss */
 .recurring-info-tooltip,
 .tribe-events-calendar .tribe-events-tooltip,
 .tribe-events-shortcode.view-week .tribe-events-tooltip,
@@ -2684,7 +2713,7 @@ i {
   width: auto;
   border-color: rgba(255, 226, 166, 0.5);
 }
-/* line 154, sass/src/_events.scss */
+/* line 172, sass/src/_events.scss */
 .recurring-info-tooltip p,
 .tribe-events-calendar .tribe-events-tooltip p,
 .tribe-events-shortcode.view-week .tribe-events-tooltip p,
@@ -2692,7 +2721,7 @@ i {
   font-size: 14px;
   line-height: 16px;
 }
-/* line 159, sass/src/_events.scss */
+/* line 177, sass/src/_events.scss */
 .recurring-info-tooltip .tribe-events-arrow,
 .tribe-events-calendar .tribe-events-tooltip .tribe-events-arrow,
 .tribe-events-shortcode.view-week .tribe-events-tooltip .tribe-events-arrow,
@@ -2709,7 +2738,7 @@ i {
   transform: rotate(45deg);
   z-index: -1;
 }
-/* line 174, sass/src/_events.scss */
+/* line 192, sass/src/_events.scss */
 .recurring-info-tooltip.tribe-events-tooltip-flipdown .tribe-events-arrow,
 .tribe-events-calendar .tribe-events-tooltip.tribe-events-tooltip-flipdown .tribe-events-arrow,
 .tribe-events-shortcode.view-week .tribe-events-tooltip.tribe-events-tooltip-flipdown .tribe-events-arrow,
@@ -2718,14 +2747,14 @@ i {
   bottom: auto;
   top: -7px;
 }
-/* line 182, sass/src/_events.scss */
+/* line 200, sass/src/_events.scss */
 .recurring-info-tooltip .tribe-events-event-thumb img,
 .tribe-events-calendar .tribe-events-tooltip .tribe-events-event-thumb img,
 .tribe-events-shortcode.view-week .tribe-events-tooltip .tribe-events-event-thumb img,
 .tribe-events-week .tribe-events-tooltip .tribe-events-event-thumb img {
   width: 100%;
 }
-/* line 186, sass/src/_events.scss */
+/* line 204, sass/src/_events.scss */
 .recurring-info-tooltip .tribe-event-description,
 .tribe-events-calendar .tribe-events-tooltip .tribe-event-description,
 .tribe-events-shortcode.view-week .tribe-events-tooltip .tribe-event-description,
@@ -2733,20 +2762,25 @@ i {
   display: none;
 }
 
-/* line 191, sass/src/_events.scss */
+/* line 209, sass/src/_events.scss */
+.month-grid-container {
+  overflow-x: auto;
+}
+
+/* line 213, sass/src/_events.scss */
 #events-calendar {
   margin-top: 80px;
 }
 
-/* line 195, sass/src/_events.scss */
+/* line 217, sass/src/_events.scss */
 #single-event {
   position: relative;
 }
-/* line 199, sass/src/_events.scss */
+/* line 221, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details {
   margin-top: 55px;
 }
-/* line 203, sass/src/_events.scss */
+/* line 225, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details i {
   color: #ffe2a6;
   opacity: 50%;
@@ -2754,7 +2788,7 @@ i {
   line-height: 15px;
   opacity: .5;
 }
-/* line 211, sass/src/_events.scss */
+/* line 233, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details dl {
   *zoom: 1;
 }
@@ -2764,19 +2798,19 @@ i {
   display: table;
   clear: both;
 }
-/* line 215, sass/src/_events.scss */
+/* line 237, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details dd {
   font-size: 20px;
 }
-/* line 218, sass/src/_events.scss */
+/* line 240, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details dd:last-child {
   font-size: 16px;
 }
-/* line 223, sass/src/_events.scss */
+/* line 245, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details dt {
   clear: left;
 }
-/* line 227, sass/src/_events.scss */
+/* line 249, sass/src/_events.scss */
 #single-event .tribe-events-meta-group-details dt, #single-event .tribe-events-meta-group-details dd {
   float: left;
   margin-bottom: 15px;
@@ -2784,24 +2818,24 @@ i {
   text-transform: uppercase;
   height: 20px;
 }
-/* line 237, sass/src/_events.scss */
+/* line 259, sass/src/_events.scss */
 #single-event .buy-ticket-container.bottom {
   text-align: center;
 }
-/* line 239, sass/src/_events.scss */
+/* line 261, sass/src/_events.scss */
 #single-event .buy-ticket-container.bottom .tribe-events-meta-group-details {
   margin-top: 0;
 }
-/* line 241, sass/src/_events.scss */
+/* line 263, sass/src/_events.scss */
 #single-event .buy-ticket-container.bottom .tribe-events-meta-group-details dt {
   display: none;
 }
-/* line 244, sass/src/_events.scss */
+/* line 266, sass/src/_events.scss */
 #single-event .buy-ticket-container.bottom .tribe-events-meta-group-details dd {
   float: none;
   margin-bottom: 0;
 }
-/* line 251, sass/src/_events.scss */
+/* line 273, sass/src/_events.scss */
 #single-event .box.row {
   position: relative;
   border: solid 1px #1a1d25;
@@ -2814,12 +2848,12 @@ i {
   display: table;
   clear: both;
 }
-/* line 257, sass/src/_events.scss */
+/* line 279, sass/src/_events.scss */
 #single-event .box.row > div:last-child {
   padding: 30px;
 }
 
-/* line 263, sass/src/_events.scss */
+/* line 285, sass/src/_events.scss */
 #event-artists {
   position: relative;
   *zoom: 1;
@@ -2830,13 +2864,13 @@ i {
   display: table;
   clear: both;
 }
-/* line 267, sass/src/_events.scss */
+/* line 289, sass/src/_events.scss */
 #event-artists .image-holder {
   padding-top: 125%;
   background-position: center center;
 }
 @media (min-width: 768px) {
-  /* line 267, sass/src/_events.scss */
+  /* line 289, sass/src/_events.scss */
   #event-artists .image-holder {
     padding-top: 0;
     height: 100%;
@@ -2844,35 +2878,34 @@ i {
   }
 }
 @media (min-width: 768px) {
-  /* line 278, sass/src/_events.scss */
+  /* line 300, sass/src/_events.scss */
   #event-artists .frame-box {
     width: 28%;
   }
-  /* line 280, sass/src/_events.scss */
+  /* line 302, sass/src/_events.scss */
   #event-artists .frame-box > div {
     padding: 60px;
   }
 }
 
-/* line 289, sass/src/_events.scss */
+/* line 311, sass/src/_events.scss */
 .tribe-events-event-image img {
   width: 100% !important;
   height: auto !important;
 }
 
-/* line 296, sass/src/_events.scss */
+/* line 318, sass/src/_events.scss */
 .tribe-events-list ~ .tribe-bar-disabled #tribe-events-bar li {
   background-color: #ffe2a6;
 }
-/* line 298, sass/src/_events.scss */
+/* line 320, sass/src/_events.scss */
 .tribe-events-list ~ .tribe-bar-disabled #tribe-events-bar li a {
   color: #000;
 }
-/* line 303, sass/src/_events.scss */
+/* line 325, sass/src/_events.scss */
 .tribe-events-list .row {
   border: solid 1px #1a1d25;
   *zoom: 1;
-  margin: 45px 0;
   padding: 40px;
 }
 /* line 38, ../../../../../../../Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -2881,59 +2914,83 @@ i {
   display: table;
   clear: both;
 }
-/* line 310, sass/src/_events.scss */
+@media (min-width: 768px) {
+  /* line 325, sass/src/_events.scss */
+  .tribe-events-list .row {
+    margin: 45px 0;
+  }
+}
+/* line 335, sass/src/_events.scss */
 .tribe-events-list .tribe-events-loop .tribe-events-event-meta dd {
   margin: 0;
 }
-/* line 314, sass/src/_events.scss */
+/* line 339, sass/src/_events.scss */
 .tribe-events-list .tribe-events-loop .tribe-events-event-meta dt {
   display: none;
 }
-/* line 318, sass/src/_events.scss */
+/* line 343, sass/src/_events.scss */
 .tribe-events-list .tribe-events-event-image img {
   display: block;
   position: relative;
-  margin: -70px -25px -70px;
 }
-/* line 324, sass/src/_events.scss */
+@media (min-width: 768px) {
+  /* line 343, sass/src/_events.scss */
+  .tribe-events-list .tribe-events-event-image img {
+    margin: -70px -25px -70px;
+  }
+}
+/* line 352, sass/src/_events.scss */
 .tribe-events-list .tribe-events-event-meta:first-child {
   border-top: none;
 }
-/* line 328, sass/src/_events.scss */
-.tribe-events-list h4 {
-  margin-top: 0;
+/* line 356, sass/src/_events.scss */
+.tribe-events-list .tribe-events-list-separator-month {
+  text-align: center;
+  display: block;
 }
-/* line 332, sass/src/_events.scss */
+@media (min-width: 768px) {
+  /* line 356, sass/src/_events.scss */
+  .tribe-events-list .tribe-events-list-separator-month {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  /* line 364, sass/src/_events.scss */
+  .tribe-events-list h4 {
+    margin-top: 0;
+  }
+}
+/* line 370, sass/src/_events.scss */
 .tribe-events-list .btn {
   float: right;
   width: 175px;
 }
 
-/* line 340, sass/src/_events.scss */
+/* line 378, sass/src/_events.scss */
 #featured-events h2 {
   margin: 50px 0 30px 0;
 }
 
 @media (min-width: 992px) {
-  /* line 345, sass/src/_events.scss */
+  /* line 383, sass/src/_events.scss */
   #event-gallery {
     margin-top: 130px;
   }
 }
-/* line 350, sass/src/_events.scss */
+/* line 388, sass/src/_events.scss */
 #event-gallery .gallery-title {
   text-transform: uppercase;
 }
-/* line 353, sass/src/_events.scss */
+/* line 391, sass/src/_events.scss */
 #event-gallery .gallery-title > div {
   padding: 30px;
 }
-/* line 357, sass/src/_events.scss */
+/* line 395, sass/src/_events.scss */
 #event-gallery .gallery-title h4 {
   text-transform: none;
   margin-top: 20px;
 }
-/* line 362, sass/src/_events.scss */
+/* line 400, sass/src/_events.scss */
 #event-gallery .gallery-title i {
   color: #ffe2a6;
   position: relative;
@@ -2942,7 +2999,7 @@ i {
   line-height: 0;
   top: 5px;
 }
-/* line 371, sass/src/_events.scss */
+/* line 409, sass/src/_events.scss */
 #event-gallery .gallery-title a {
   display: inline !important;
   position: static !important;
@@ -2998,13 +3055,46 @@ i {
 }
 
 /* ---- .grid-item ---- */
-/* line 16, sass/src/_isotope-grid.scss */
+/* line 15, sass/src/_isotope-grid.scss */
 .grid-item {
   float: left;
   position: relative;
-  width: 33.33333%;
+  width: 100%;
 }
-/* line 22, sass/src/_isotope-grid.scss */
+/* line 20, sass/src/_isotope-grid.scss */
+.grid-item a {
+  padding-top: 75%;
+}
+@media (min-width: 480px) {
+  /* line 15, sass/src/_isotope-grid.scss */
+  .grid-item {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  /* line 15, sass/src/_isotope-grid.scss */
+  .grid-item {
+    width: 33.33333%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 34, sass/src/_isotope-grid.scss */
+  .grid-item--height-small {
+    padding-top: 50% !important;
+  }
+
+  /* line 38, sass/src/_isotope-grid.scss */
+  .grid-item--height-reg {
+    padding-top: 100% !important;
+  }
+
+  /* line 42, sass/src/_isotope-grid.scss */
+  .grid-item--height-big {
+    padding-top: 150% !important;
+  }
+}
+/* line 49, sass/src/_isotope-grid.scss */
 .grid-item > a {
   display: block;
   position: relative;
@@ -3013,7 +3103,7 @@ i {
   background-size: cover;
   background-color: #000;
 }
-/* line 31, sass/src/_isotope-grid.scss */
+/* line 58, sass/src/_isotope-grid.scss */
 .grid-item .tile-title {
   position: absolute;
   bottom: 0;
@@ -3022,7 +3112,7 @@ i {
   color: #fff;
   text-align: left;
 }
-/* line 40, sass/src/_isotope-grid.scss */
+/* line 67, sass/src/_isotope-grid.scss */
 .grid-item .date {
   displlay: block;
   color: #858585;
@@ -3032,7 +3122,7 @@ i {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 46, sass/src/_isotope-grid.scss */
+/* line 73, sass/src/_isotope-grid.scss */
 .grid-item .title {
   display: block;
   color: #fff;
@@ -3042,7 +3132,7 @@ i {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 53, sass/src/_isotope-grid.scss */
+/* line 80, sass/src/_isotope-grid.scss */
 .grid-item .overlay {
   position: absolute;
   top: 0;
@@ -3056,28 +3146,13 @@ i {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-/* line 63, sass/src/_isotope-grid.scss */
+/* line 90, sass/src/_isotope-grid.scss */
 .grid-item:hover .title, .grid-item:hover .date {
   color: #000;
 }
-/* line 66, sass/src/_isotope-grid.scss */
+/* line 93, sass/src/_isotope-grid.scss */
 .grid-item:hover .overlay {
   opacity: .8;
-}
-
-/* line 73, sass/src/_isotope-grid.scss */
-.grid-item--height-small {
-  padding-top: 50%;
-}
-
-/* line 77, sass/src/_isotope-grid.scss */
-.grid-item--height-reg {
-  padding-top: 100%;
-}
-
-/* line 81, sass/src/_isotope-grid.scss */
-.grid-item--height-big {
-  padding-top: 150%;
 }
 
 /* line 3, sass/src/_parallax.scss */
@@ -3218,7 +3293,7 @@ button.pswp__button--close:hover {
 
 @font-face {
   font-family: icons;
-  src: url(assets/fonts/s54-ui-icons.svg);
+  src: url(assets/fonts/scena54-ui-icons.svg);
 }
 /* line 25, sass/src/style.scss */
 body {
@@ -3528,7 +3603,9 @@ input[type=button]:focus {
 
 /* line 262, sass/src/style.scss */
 .max-width {
-  max-width: 1170px;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -4035,7 +4112,7 @@ input[type=button]:focus {
 }
 /* line 729, sass/src/style.scss */
 #top-navigation-bar #logo-mobile {
-  padding: 10px;
+  padding: 0 10px;
   float: left;
 }
 /* line 733, sass/src/style.scss */
@@ -4073,30 +4150,67 @@ input[type=button]:focus {
 /* line 763, sass/src/style.scss */
 #top-navigation-bar #call-us-link a {
   color: #858585;
-  margin-right: 30px;
+  margin: 0 10px;
 }
-/* line 766, sass/src/style.scss */
+/* line 767, sass/src/style.scss */
 #top-navigation-bar #call-us-link a i {
   top: 8px;
 }
 /* line 771, sass/src/style.scss */
+#top-navigation-bar #call-us-link a span {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 763, sass/src/style.scss */
+  #top-navigation-bar #call-us-link a {
+    margin-right: 30px;
+  }
+  /* line 776, sass/src/style.scss */
+  #top-navigation-bar #call-us-link a span {
+    display: inline;
+  }
+}
+/* line 783, sass/src/style.scss */
 #top-navigation-bar .reservation-link {
   font-weight: bold;
   letter-spacing: .1em;
 }
 
-/* line 777, sass/src/style.scss */
+/* line 789, sass/src/style.scss */
 .social {
   margin-top: 40px;
 }
-/* line 781, sass/src/style.scss */
+/* line 793, sass/src/style.scss */
 .social i {
   display: inline-block;
   font-size: 30px;
   line-height: 50px;
 }
 
-/* line 788, sass/src/style.scss */
+/* line 800, sass/src/style.scss */
+.video-wrap {
+  max-width: 760px;
+  /* margin: 0 auto; */
+}
+
+/* line 805, sass/src/style.scss */
+.video-inner-wrap {
+  position: relative;
+}
+/* line 807, sass/src/style.scss */
+.video-inner-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 814, sass/src/style.scss */
+.video-inner-wrap.on > iframe {
+  visibility: visible !important;
+}
+
+/* line 819, sass/src/style.scss */
 #main-navigation-bar {
   position: absolute;
   width: 100%;
@@ -4105,14 +4219,14 @@ input[type=button]:focus {
   display: none;
 }
 @media (min-width: 992px) {
-  /* line 788, sass/src/style.scss */
+  /* line 819, sass/src/style.scss */
   #main-navigation-bar {
     display: block;
     padding: 30px 70px 0 70px;
   }
 }
 
-/* line 802, sass/src/style.scss */
+/* line 833, sass/src/style.scss */
 #mobile-nav-toggle {
   position: fixed;
   right: 10px;
@@ -4121,19 +4235,23 @@ input[type=button]:focus {
   z-index: 5;
 }
 @media (min-width: 992px) {
-  /* line 802, sass/src/style.scss */
+  /* line 833, sass/src/style.scss */
   #mobile-nav-toggle {
     display: none;
   }
 }
+/* line 844, sass/src/style.scss */
+#mobile-nav-toggle i {
+  font-size: 50px;
+}
 
-/* line 816, sass/src/style.scss */
+/* line 851, sass/src/style.scss */
 .navigation li {
   text-transform: uppercase;
   list-style: none;
   padding: 10px 17px;
 }
-/* line 822, sass/src/style.scss */
+/* line 857, sass/src/style.scss */
 .navigation a {
   color: #fff;
   -moz-transition: color 0.25s;
@@ -4141,37 +4259,37 @@ input[type=button]:focus {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
 }
-/* line 827, sass/src/style.scss */
+/* line 862, sass/src/style.scss */
 .navigation .current-menu-item a,
 .navigation a:hover {
   color: #ffe2a6;
 }
 
-/* line 834, sass/src/style.scss */
+/* line 869, sass/src/style.scss */
 #top-menu,
 #sticky-menu {
   margin: 0;
   padding-left: 0;
 }
 @media (min-width: 992px) {
-  /* line 834, sass/src/style.scss */
+  /* line 869, sass/src/style.scss */
   #top-menu,
   #sticky-menu {
     text-align: right;
   }
-  /* line 842, sass/src/style.scss */
+  /* line 877, sass/src/style.scss */
   #top-menu li,
   #sticky-menu li {
     display: inline-block;
   }
-  /* line 846, sass/src/style.scss */
+  /* line 881, sass/src/style.scss */
   #top-menu .reservation,
   #sticky-menu .reservation {
     display: none;
   }
 }
 
-/* line 852, sass/src/style.scss */
+/* line 887, sass/src/style.scss */
 #sticky-navigation {
   position: fixed;
   overflow: hidden;
@@ -4189,7 +4307,7 @@ input[type=button]:focus {
   transition: opacity 0.3s, height 0s linear 0.3s;
 }
 @media (max-width: 991px) {
-  /* line 865, sass/src/style.scss */
+  /* line 900, sass/src/style.scss */
   #sticky-navigation.on-mobile {
     height: 100%;
     opacity: 1;
@@ -4200,7 +4318,7 @@ input[type=button]:focus {
     transition: opacity 0.3s, height 0s linear 0s;
   }
 }
-/* line 872, sass/src/style.scss */
+/* line 907, sass/src/style.scss */
 #sticky-navigation .menu-top-menu-container {
   position: absolute;
   width: 80%;
@@ -4210,7 +4328,7 @@ input[type=button]:focus {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 881, sass/src/style.scss */
+/* line 916, sass/src/style.scss */
 #sticky-navigation .reservation-link {
   position: absolute;
   right: 70px;
@@ -4221,13 +4339,13 @@ input[type=button]:focus {
   display: none;
 }
 @media (min-width: 992px) {
-  /* line 881, sass/src/style.scss */
+  /* line 916, sass/src/style.scss */
   #sticky-navigation .reservation-link {
     display: block;
   }
 }
 @media (min-width: 992px) {
-  /* line 852, sass/src/style.scss */
+  /* line 887, sass/src/style.scss */
   #sticky-navigation {
     opacity: 1;
     top: -70px;
@@ -4241,16 +4359,16 @@ input[type=button]:focus {
     -webkit-transition: top 0.3s ease-out;
     transition: top 0.3s ease-out;
   }
-  /* line 905, sass/src/style.scss */
+  /* line 940, sass/src/style.scss */
   #sticky-navigation.on {
     top: 0;
   }
-  /* line 909, sass/src/style.scss */
+  /* line 944, sass/src/style.scss */
   #sticky-navigation li {
     padding-top: 8px;
     padding-bottom: 0;
   }
-  /* line 914, sass/src/style.scss */
+  /* line 949, sass/src/style.scss */
   #sticky-navigation .menu-top-menu-container {
     position: static;
     display: inline-block;
@@ -4259,19 +4377,20 @@ input[type=button]:focus {
   }
 }
 
-/* line 923, sass/src/style.scss */
+/* line 958, sass/src/style.scss */
 #sticky-logo {
   display: block;
   float: left;
+  padding-top: 10px;
 }
-/* line 927, sass/src/style.scss */
+/* line 962, sass/src/style.scss */
 #sticky-logo i {
   font-size: 50px;
   line-height: 34px;
   color: #ffe2a6;
 }
 
-/* line 934, sass/src/style.scss */
+/* line 969, sass/src/style.scss */
 #top-menu {
   margin: 0 -30px 0 0;
   font-family: Raleway, sans-serif;
@@ -4279,29 +4398,36 @@ input[type=button]:focus {
   font-size: 14px;
   letter-spacing: 0.2em;
 }
-/* line 943, sass/src/style.scss */
+/* line 978, sass/src/style.scss */
 #top-menu .reservation a {
   color: #ffe2a6;
 }
 @media (min-width: 992px) {
-  /* line 942, sass/src/style.scss */
+  /* line 977, sass/src/style.scss */
   #top-menu .reservation {
     display: none;
   }
 }
 
-/* line 957, sass/src/style.scss */
+/* line 992, sass/src/style.scss */
 #footer-menu {
   margin: 0;
 }
-/* line 959, sass/src/style.scss */
+/* line 994, sass/src/style.scss */
 #footer-menu li {
   float: left;
   width: 50%;
   font-size: 14px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  /* line 994, sass/src/style.scss */
+  #footer-menu li {
+    text-align: left;
+  }
 }
 
-/* line 967, sass/src/style.scss */
+/* line 1007, sass/src/style.scss */
 #header {
   position: relative;
   background-color: #1a1d25;
@@ -4310,18 +4436,18 @@ input[type=button]:focus {
   padding-top: 35%;
 }
 @media (min-width: 768px) {
-  /* line 967, sass/src/style.scss */
+  /* line 1007, sass/src/style.scss */
   #header {
     padding-top: 25%;
   }
 }
 @media (min-width: 992px) {
-  /* line 967, sass/src/style.scss */
+  /* line 1007, sass/src/style.scss */
   #header {
     padding-top: 15%;
   }
 }
-/* line 982, sass/src/style.scss */
+/* line 1022, sass/src/style.scss */
 #header .overlay {
   position: absolute;
   top: 0;
@@ -4338,72 +4464,72 @@ input[type=button]:focus {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73827', endColorstr='#000000', GradientType=0 );
 }
 
-/* line 998, sass/src/style.scss */
+/* line 1038, sass/src/style.scss */
 #footer {
   background-color: #1a1d25;
 }
-/* line 1001, sass/src/style.scss */
+/* line 1041, sass/src/style.scss */
 #footer p {
   line-height: 1.5em;
   font-size: 16px;
 }
-/* line 1006, sass/src/style.scss */
+/* line 1046, sass/src/style.scss */
 #footer .group-info {
   text-align: center;
   margin-bottom: 30px;
 }
-/* line 1010, sass/src/style.scss */
+/* line 1050, sass/src/style.scss */
 #footer .group-info span {
   display: block;
   font-size: 14px;
   margin: 10px 0 10px 0;
 }
-/* line 1017, sass/src/style.scss */
+/* line 1057, sass/src/style.scss */
 #footer input[type=text] {
   height: 40px;
 }
-/* line 1021, sass/src/style.scss */
+/* line 1061, sass/src/style.scss */
 #footer .signup {
   text-align: center;
   margin-top: 40px;
 }
 @media (min-width: 1200px) {
-  /* line 1021, sass/src/style.scss */
+  /* line 1061, sass/src/style.scss */
   #footer .signup {
     text-align: left;
     margin-top: 0;
   }
 }
 
-/* line 1036, sass/src/style.scss */
+/* line 1076, sass/src/style.scss */
 .es_textbox_class {
   width: auto;
 }
 
-/* line 1040, sass/src/style.scss */
+/* line 1080, sass/src/style.scss */
 lable.es_shortcode_form_email {
   display: none;
 }
 
-/* line 1046, sass/src/style.scss */
+/* line 1086, sass/src/style.scss */
 #footer .es_shortcode_form > div {
   display: inline-block;
 }
-/* line 1050, sass/src/style.scss */
+/* line 1090, sass/src/style.scss */
 #footer .es_shortcode_form > .es_lablebox {
   display: none;
 }
-/* line 1054, sass/src/style.scss */
+/* line 1094, sass/src/style.scss */
 #footer .es_button {
   padding: 0;
   margin-left: 10px;
 }
 
-/* line 1060, sass/src/style.scss */
+/* line 1100, sass/src/style.scss */
 .es_button {
   padding: 0;
 }
-/* line 1063, sass/src/style.scss */
+/* line 1103, sass/src/style.scss */
 .es_button input {
   background: none;
   width: 100%;
@@ -4417,7 +4543,7 @@ lable.es_shortcode_form_email {
   letter-spacing: .1em;
 }
 
-/* line 1077, sass/src/style.scss */
+/* line 1117, sass/src/style.scss */
 #copyright-info {
   background-color: #151515;
   font-size: 14px;
@@ -4425,26 +4551,26 @@ lable.es_shortcode_form_email {
   padding: 15px;
 }
 
-/* line 1086, sass/src/style.scss */
+/* line 1126, sass/src/style.scss */
 #home-slider h1 {
   font-weight: 900;
   letter-spacing: 0.1em;
 }
-/* line 1091, sass/src/style.scss */
+/* line 1131, sass/src/style.scss */
 #home-slider .slide-title {
-  position: absolute;
-  top: 67%;
+  position: relative;
+  top: 70%;
   color: #fff;
   font-size: 18px;
   font-weight: 300;
 }
 @media (min-width: 768px) {
-  /* line 1091, sass/src/style.scss */
+  /* line 1131, sass/src/style.scss */
   #home-slider .slide-title {
     font-size: 24px;
   }
 }
-/* line 1103, sass/src/style.scss */
+/* line 1143, sass/src/style.scss */
 #home-slider .next-section {
   position: absolute;
   left: 50%;
@@ -4452,25 +4578,25 @@ lable.es_shortcode_form_email {
   bottom: 20px;
 }
 
-/* line 1111, sass/src/style.scss */
+/* line 1151, sass/src/style.scss */
 #home-top-swiper {
   height: calc( 100vh - 46px );
 }
 
-/* line 1116, sass/src/style.scss */
+/* line 1156, sass/src/style.scss */
 #home-gallery .frame-box > div {
   padding: 0;
 }
-/* line 1120, sass/src/style.scss */
+/* line 1160, sass/src/style.scss */
 #home-gallery h2 {
   margin: 30px 0;
 }
 
-/* line 1125, sass/src/style.scss */
+/* line 1165, sass/src/style.scss */
 .events-list {
   *zoom: 1;
 }
-/* line 1127, sass/src/style.scss */
+/* line 1167, sass/src/style.scss */
 .events-list span.more-lnk {
   position: absolute;
   bottom: 42px;
@@ -4479,27 +4605,27 @@ lable.es_shortcode_form_email {
   font-weight: bold;
   color: #ffe2a6;
 }
-/* line 1136, sass/src/style.scss */
+/* line 1176, sass/src/style.scss */
 .events-list .category {
   margin-top: 20px;
 }
-/* line 1140, sass/src/style.scss */
+/* line 1180, sass/src/style.scss */
 .events-list .event {
   position: relative;
 }
 @media (min-width: 992px) {
-  /* line 1140, sass/src/style.scss */
+  /* line 1180, sass/src/style.scss */
   .events-list .event {
     margin-top: 30px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1140, sass/src/style.scss */
+  /* line 1180, sass/src/style.scss */
   .events-list .event {
     margin-top: 0;
   }
 }
-/* line 1151, sass/src/style.scss */
+/* line 1191, sass/src/style.scss */
 .events-list .event .event-content {
   display: block;
   background-color: #000;
@@ -4514,15 +4640,15 @@ lable.es_shortcode_form_email {
   margin: 0 0 30px 0;
   padding: 30px 40px;
 }
-/* line 1160, sass/src/style.scss */
+/* line 1200, sass/src/style.scss */
 .events-list .event .event-content:hover {
   background-color: #1a1d25;
 }
-/* line 1164, sass/src/style.scss */
+/* line 1204, sass/src/style.scss */
 .events-list .event .event-content span {
   display: block;
 }
-/* line 1171, sass/src/style.scss */
+/* line 1211, sass/src/style.scss */
 .events-list .event .event-content .title {
   margin-top: 10px;
   font-weight: bold;
@@ -4537,7 +4663,7 @@ lable.es_shortcode_form_email {
   clear: both;
 }
 
-/* line 1186, sass/src/style.scss */
+/* line 1226, sass/src/style.scss */
 #home-events .frame-btn {
   display: block;
   clear: both;
@@ -4545,13 +4671,13 @@ lable.es_shortcode_form_email {
   margin: 40px auto 0 auto;
   text-align: center;
 }
-/* line 1194, sass/src/style.scss */
+/* line 1234, sass/src/style.scss */
 #home-events img {
   width: 100%;
   height: auto !important;
 }
 @media (min-width: 768px) {
-  /* line 1200, sass/src/style.scss */
+  /* line 1240, sass/src/style.scss */
   #home-events .event.first .event-content {
     position: absolute;
     top: 120px;
@@ -4559,25 +4685,25 @@ lable.es_shortcode_form_email {
     width: 133.333333%;
     padding: 50px 40px;
   }
-  /* line 1209, sass/src/style.scss */
+  /* line 1249, sass/src/style.scss */
   #home-events .event.first .event-content .title {
     font-size: 1.71428571rem;
     line-height: 2.5rem;
   }
-  /* line 1213, sass/src/style.scss */
+  /* line 1253, sass/src/style.scss */
   #home-events .event.first .event-content .date {
     font-size: 16px;
   }
 }
 
-/* line 1226, sass/src/style.scss */
+/* line 1266, sass/src/style.scss */
 .category {
   display: inline-block;
   color: #858585;
   text-transform: uppercase;
 }
 
-/* line 1232, sass/src/style.scss */
+/* line 1272, sass/src/style.scss */
 #home-about {
   *zoom: 1;
 }
@@ -4587,49 +4713,49 @@ lable.es_shortcode_form_email {
   display: table;
   clear: both;
 }
-/* line 1236, sass/src/style.scss */
+/* line 1276, sass/src/style.scss */
 #home-about .content-wrap {
   padding: 50px 0;
   background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 1236, sass/src/style.scss */
+  /* line 1276, sass/src/style.scss */
   #home-about .content-wrap {
     background-color: rgba(0, 0, 0, 0.9);
   }
 }
-/* line 1245, sass/src/style.scss */
+/* line 1285, sass/src/style.scss */
 #home-about .content {
   padding: 0 15px;
 }
 @media (min-width: 768px) {
-  /* line 1245, sass/src/style.scss */
+  /* line 1285, sass/src/style.scss */
   #home-about .content {
     padding: 0 150px;
   }
 }
 @media (min-width: 992px) {
-  /* line 1252, sass/src/style.scss */
+  /* line 1292, sass/src/style.scss */
   #home-about p {
     line-height: 48px;
     font-size: 16px;
     color: #dadada;
   }
 }
-/* line 1260, sass/src/style.scss */
+/* line 1300, sass/src/style.scss */
 #home-about .frame-btn {
   margin-top: 40px;
 }
 
-/* line 1266, sass/src/style.scss */
+/* line 1306, sass/src/style.scss */
 #artists-list .content-box {
   position: relative;
   height: 350px;
   margin-bottom: 30px;
 }
 
-/* line 1274, sass/src/style.scss */
+/* line 1314, sass/src/style.scss */
 .content-box .bg {
   position: absolute;
   left: 0;
@@ -4643,15 +4769,15 @@ lable.es_shortcode_form_email {
   background: no-repeat center top;
   background-size: cover;
 }
-/* line 1284, sass/src/style.scss */
+/* line 1324, sass/src/style.scss */
 .content-box:hover .bg {
   opacity: 0.5;
 }
-/* line 1288, sass/src/style.scss */
+/* line 1328, sass/src/style.scss */
 .content-box:hover .excerpt {
   max-height: 200px;
 }
-/* line 1293, sass/src/style.scss */
+/* line 1333, sass/src/style.scss */
 .content-box .content {
   position: absolute;
   left: 0;
@@ -4659,7 +4785,7 @@ lable.es_shortcode_form_email {
   width: 100%;
   padding: 30px 20px;
 }
-/* line 1300, sass/src/style.scss */
+/* line 1340, sass/src/style.scss */
 .content-box .excerpt {
   max-height: 0;
   -moz-transition: max-height 0.3s linear;
@@ -4669,45 +4795,45 @@ lable.es_shortcode_form_email {
   overflow-y: hidden;
 }
 
-/* line 1307, sass/src/style.scss */
+/* line 1347, sass/src/style.scss */
 #home-artists {
   background-color: #1a1d25;
 }
-/* line 1310, sass/src/style.scss */
+/* line 1350, sass/src/style.scss */
 #home-artists .artists-slider {
   position: relative;
   height: 400px;
 }
-/* line 1320, sass/src/style.scss */
+/* line 1360, sass/src/style.scss */
 #home-artists .frame-btn {
   display: inline-block;
   margin-top: 50px;
 }
-/* line 1325, sass/src/style.scss */
+/* line 1365, sass/src/style.scss */
 #home-artists .swiper-button-next {
   right: -25px;
 }
-/* line 1329, sass/src/style.scss */
+/* line 1369, sass/src/style.scss */
 #home-artists .swiper-button-prev {
   left: -25px;
 }
 
-/* line 1338, sass/src/style.scss */
+/* line 1378, sass/src/style.scss */
 #home-menu .menu-gallery > div {
   margin-bottom: 30px;
 }
-/* line 1342, sass/src/style.scss */
+/* line 1382, sass/src/style.scss */
 #home-menu .menu-gallery img {
   width: 100% !important;
   height: 100% !important;
 }
 @media (min-width: 1200px) {
-  /* line 1349, sass/src/style.scss */
+  /* line 1389, sass/src/style.scss */
   #home-menu .menu-gallery .col-md-2:nth-child(4n + 1) {
     clear: left;
   }
 }
-/* line 1353, sass/src/style.scss */
+/* line 1393, sass/src/style.scss */
 #home-menu .our-specialties {
   position: absolute;
   top: 50%;
@@ -4717,20 +4843,20 @@ lable.es_shortcode_form_email {
   z-index: 1;
   font-size: 14px;
 }
-/* line 1362, sass/src/style.scss */
+/* line 1402, sass/src/style.scss */
 #home-menu .our-specialties > div {
   text-align: center;
   line-height: 2em;
   color: #dadada;
 }
 @media (min-width: 768px) {
-  /* line 1362, sass/src/style.scss */
+  /* line 1402, sass/src/style.scss */
   #home-menu .our-specialties > div {
     padding: 50px;
   }
 }
 @media (min-width: 768px) {
-  /* line 1353, sass/src/style.scss */
+  /* line 1393, sass/src/style.scss */
   #home-menu .our-specialties {
     right: 0;
     left: auto;
@@ -4739,45 +4865,45 @@ lable.es_shortcode_form_email {
   }
 }
 @media (min-width: 992px) {
-  /* line 1353, sass/src/style.scss */
+  /* line 1393, sass/src/style.scss */
   #home-menu .our-specialties {
     width: 450px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1353, sass/src/style.scss */
+  /* line 1393, sass/src/style.scss */
   #home-menu .our-specialties {
     width: 41.66666%;
   }
 }
-/* line 1389, sass/src/style.scss */
+/* line 1429, sass/src/style.scss */
 #home-menu .frame-btn {
   display: inline-block;
   margin-top: 40px;
 }
-/* line 1394, sass/src/style.scss */
+/* line 1434, sass/src/style.scss */
 #home-menu ul {
   padding-left: 0;
   list-style-position: inside;
 }
-/* line 1399, sass/src/style.scss */
+/* line 1439, sass/src/style.scss */
 #home-menu li {
   padding-left: 0;
 }
 
-/* line 1404, sass/src/style.scss */
+/* line 1444, sass/src/style.scss */
 .frame-box {
   display: block;
   position: relative;
   padding: 10px;
   background-color: #000;
 }
-/* line 1410, sass/src/style.scss */
+/* line 1450, sass/src/style.scss */
 .frame-box > div {
   border: solid 1px rgba(255, 226, 166, 0.5);
   padding: 15px;
 }
-/* line 1415, sass/src/style.scss */
+/* line 1455, sass/src/style.scss */
 .frame-box .section-header {
   text-align: center;
   margin-bottom: 40px;
@@ -4786,48 +4912,48 @@ lable.es_shortcode_form_email {
   transform: translateY(-50%);
   width: 100%;
 }
-/* line 1423, sass/src/style.scss */
+/* line 1463, sass/src/style.scss */
 .frame-box .section-header h2 {
   margin-bottom: 20px;
 }
-/* line 1427, sass/src/style.scss */
+/* line 1467, sass/src/style.scss */
 .frame-box .section-header .intro {
   padding: 10px 30px;
 }
-/* line 1431, sass/src/style.scss */
+/* line 1471, sass/src/style.scss */
 .frame-box .section-header .btn {
   margin-top: 30px;
 }
 
-/* line 1439, sass/src/style.scss */
+/* line 1479, sass/src/style.scss */
 .section-title.frame-box {
   text-align: center;
   z-index: 1;
 }
 @media (min-width: 768px) {
-  /* line 1445, sass/src/style.scss */
+  /* line 1485, sass/src/style.scss */
   .section-title.frame-box {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
   }
-  /* line 1451, sass/src/style.scss */
+  /* line 1491, sass/src/style.scss */
   .section-title.frame-box > div {
     padding: 100px 70px;
   }
 }
-/* line 1457, sass/src/style.scss */
+/* line 1497, sass/src/style.scss */
 .section-title.to-the-right {
   right: 0;
 }
 
-/* line 1463, sass/src/style.scss */
+/* line 1503, sass/src/style.scss */
 #contact-section .container-fluid {
   display: flex;
   align-items: center;
 }
-/* line 1468, sass/src/style.scss */
+/* line 1508, sass/src/style.scss */
 #contact-section .frame-box {
   order: 3;
   left: auto;
@@ -4835,16 +4961,16 @@ lable.es_shortcode_form_email {
   text-align: left;
   width: 30%;
 }
-/* line 1475, sass/src/style.scss */
+/* line 1515, sass/src/style.scss */
 #contact-section .frame-box > div {
   padding: 30px;
 }
-/* line 1480, sass/src/style.scss */
+/* line 1520, sass/src/style.scss */
 #contact-section i {
   top: 9px;
 }
 
-/* line 1488, sass/src/style.scss */
+/* line 1528, sass/src/style.scss */
 .image-section.offer .content {
   position: absolute;
   bottom: 20px;
@@ -4852,24 +4978,24 @@ lable.es_shortcode_form_email {
   color: #ffe2a6;
   font-size: 14px;
 }
-/* line 1496, sass/src/style.scss */
+/* line 1536, sass/src/style.scss */
 .image-section.offer .name {
   color: #fff;
   font-weight: bold;
   font-size: 18px;
 }
 
-/* line 1504, sass/src/style.scss */
+/* line 1544, sass/src/style.scss */
 #home-reservation {
   background-color: #1a1d25;
 }
 
-/* line 1508, sass/src/style.scss */
+/* line 1548, sass/src/style.scss */
 #rsvrn-buttons > div {
   margin-top: 30px;
 }
 
-/* line 1512, sass/src/style.scss */
+/* line 1552, sass/src/style.scss */
 .reservation-btn {
   display: block;
   position: relative;
@@ -4887,16 +5013,16 @@ lable.es_shortcode_form_email {
   padding: 40px 30px;
 }
 @media (min-width: 1200px) {
-  /* line 1512, sass/src/style.scss */
+  /* line 1552, sass/src/style.scss */
   .reservation-btn {
     margin-bottom: 30px;
   }
 }
-/* line 1529, sass/src/style.scss */
+/* line 1569, sass/src/style.scss */
 .reservation-btn .reservation-btn {
   text-align: center;
 }
-/* line 1533, sass/src/style.scss */
+/* line 1573, sass/src/style.scss */
 .reservation-btn h4 {
   display: block;
   color: #ffe2a6;
@@ -4904,14 +5030,14 @@ lable.es_shortcode_form_email {
   display: block;
   margin: 20px auto;
 }
-/* line 1541, sass/src/style.scss */
+/* line 1581, sass/src/style.scss */
 .reservation-btn i {
   display: block;
   font-size: 60px;
   color: #ffe2a6;
   line-height: 40px;
 }
-/* line 1548, sass/src/style.scss */
+/* line 1588, sass/src/style.scss */
 .reservation-btn .btn, .reservation-btn .txt {
   position: absolute;
   -moz-transition: opacity 0.3s;
@@ -4919,14 +5045,14 @@ lable.es_shortcode_form_email {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-/* line 1553, sass/src/style.scss */
+/* line 1593, sass/src/style.scss */
 .reservation-btn .txt {
   bottom: 30px;
   left: 30px;
   right: 30px;
   color: #dadada;
 }
-/* line 1560, sass/src/style.scss */
+/* line 1600, sass/src/style.scss */
 .reservation-btn .btn {
   margin-top: 10px;
   padding: 8px 10px;
@@ -4936,76 +5062,76 @@ lable.es_shortcode_form_email {
   bottom: 50px;
   opacity: 0;
 }
-/* line 1570, sass/src/style.scss */
+/* line 1610, sass/src/style.scss */
 .reservation-btn:hover {
   background-color: #ffe2a6;
   color: #000;
 }
-/* line 1573, sass/src/style.scss */
+/* line 1613, sass/src/style.scss */
 .reservation-btn:hover h4, .reservation-btn:hover i {
   color: #000;
 }
-/* line 1575, sass/src/style.scss */
+/* line 1615, sass/src/style.scss */
 .reservation-btn:hover .btn {
   opacity: 1;
   background-color: #ffe2a6;
   color: #000;
   border-color: #000;
 }
-/* line 1582, sass/src/style.scss */
+/* line 1622, sass/src/style.scss */
 .reservation-btn:hover .txt {
   opacity: 0;
 }
 
-/* line 1588, sass/src/style.scss */
+/* line 1628, sass/src/style.scss */
 #google-map {
   position: relative;
   padding-top: 75%;
 }
 @media (min-width: 768px) {
-  /* line 1588, sass/src/style.scss */
+  /* line 1628, sass/src/style.scss */
   #google-map {
     padding-top: 50%;
   }
 }
 @media (min-width: 992px) {
-  /* line 1588, sass/src/style.scss */
+  /* line 1628, sass/src/style.scss */
   #google-map {
     padding-top: 33%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1588, sass/src/style.scss */
+  /* line 1628, sass/src/style.scss */
   #google-map {
     padding-top: 25%;
   }
 }
 
-/* line 1606, sass/src/style.scss */
+/* line 1646, sass/src/style.scss */
 #home-map {
   position: relative;
   padding-top: 75%;
 }
 @media (min-width: 768px) {
-  /* line 1606, sass/src/style.scss */
+  /* line 1646, sass/src/style.scss */
   #home-map {
     padding-top: 50%;
   }
 }
 @media (min-width: 992px) {
-  /* line 1606, sass/src/style.scss */
+  /* line 1646, sass/src/style.scss */
   #home-map {
     padding-top: 33%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1606, sass/src/style.scss */
+  /* line 1646, sass/src/style.scss */
   #home-map {
     padding-top: 25%;
   }
 }
 @media (min-width: 768px) {
-  /* line 1622, sass/src/style.scss */
+  /* line 1662, sass/src/style.scss */
   #home-map .address-box {
     position: absolute;
     left: 100px;
@@ -5016,36 +5142,36 @@ lable.es_shortcode_form_email {
 }
 
 @media (min-width: 768px) {
-  /* line 1633, sass/src/style.scss */
+  /* line 1673, sass/src/style.scss */
   #home .address-box {
     font-size: 18px;
   }
 }
 
-/* line 1638, sass/src/style.scss */
+/* line 1678, sass/src/style.scss */
 .address-box {
   border-color: #1a1d25;
   line-height: 1.5em;
 }
-/* line 1643, sass/src/style.scss */
+/* line 1683, sass/src/style.scss */
 .address-box > div {
   padding: 35px 70px 40px 38px;
 }
-/* line 1646, sass/src/style.scss */
+/* line 1686, sass/src/style.scss */
 .address-box .item {
   display: inline-block;
   margin-bottom: 10px;
   position: relative;
 }
-/* line 1651, sass/src/style.scss */
+/* line 1691, sass/src/style.scss */
 .address-box .item > div {
   float: left;
 }
-/* line 1655, sass/src/style.scss */
+/* line 1695, sass/src/style.scss */
 .address-box .item a {
   color: #858585;
 }
-/* line 1659, sass/src/style.scss */
+/* line 1699, sass/src/style.scss */
 .address-box .item i {
   font-size: 2em;
   color: #858585;
@@ -5055,26 +5181,26 @@ lable.es_shortcode_form_email {
   top: -5px;
   left: -10px;
 }
-/* line 1670, sass/src/style.scss */
+/* line 1710, sass/src/style.scss */
 .address-box .social {
   text-align: center;
 }
-/* line 1672, sass/src/style.scss */
+/* line 1712, sass/src/style.scss */
 .address-box .social a {
   margin: 0 10px;
 }
 
-/* line 1678, sass/src/style.scss */
+/* line 1718, sass/src/style.scss */
 .newsletter-prompt {
   height: 100%;
   text-align: center;
 }
-/* line 1679, sass/src/style.scss */
+/* line 1719, sass/src/style.scss */
 .newsletter-prompt .image-holder {
   height: 100%;
   float: right;
 }
-/* line 1686, sass/src/style.scss */
+/* line 1726, sass/src/style.scss */
 .newsletter-prompt .gradient {
   opacity: 50%;
   position: absolute;
@@ -5083,23 +5209,23 @@ lable.es_shortcode_form_email {
   height: 100%;
   width: 100%;
 }
-/* line 1693, sass/src/style.scss */
+/* line 1733, sass/src/style.scss */
 .newsletter-prompt .newsletter-form {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 1698, sass/src/style.scss */
+/* line 1738, sass/src/style.scss */
 .newsletter-prompt .newsletter-form .es_textbox {
   margin: 40px 0 10px 0;
 }
 
-/* line 1704, sass/src/style.scss */
+/* line 1744, sass/src/style.scss */
 .image-holder {
   background-size: cover;
 }
 
-/* line 1709, sass/src/style.scss */
+/* line 1749, sass/src/style.scss */
 .gradient-left-right {
   background: black;
   background: -moz-linear-gradient(left, black 0%, transparent 100%);
@@ -5111,7 +5237,7 @@ lable.es_shortcode_form_email {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
 }
 
-/* line 1720, sass/src/style.scss */
+/* line 1760, sass/src/style.scss */
 #map {
   position: absolute;
   left: 0;
@@ -5120,7 +5246,7 @@ lable.es_shortcode_form_email {
   height: 100%;
 }
 
-/* line 1727, sass/src/style.scss */
+/* line 1767, sass/src/style.scss */
 #show-map-btn {
   font-size: 12px;
   padding: 8px 20px;
@@ -5129,7 +5255,7 @@ lable.es_shortcode_form_email {
   max-width: 150px;
 }
 @media (min-width: 1350px) {
-  /* line 1727, sass/src/style.scss */
+  /* line 1767, sass/src/style.scss */
   #show-map-btn {
     position: absolute;
     top: 0;
@@ -5137,30 +5263,30 @@ lable.es_shortcode_form_email {
   }
 }
 
-/* line 1739, sass/src/style.scss */
+/* line 1779, sass/src/style.scss */
 .table {
   padding: 0;
   display: table;
   width: 100%;
 }
-/* line 1745, sass/src/style.scss */
+/* line 1785, sass/src/style.scss */
 .table > .cell, .table > div {
   display: table-cell;
   float: none;
   position: relative;
 }
 
-/* line 1753, sass/src/style.scss */
+/* line 1793, sass/src/style.scss */
 div.wpcf7 {
   text-align: center;
 }
 
-/* line 1758, sass/src/style.scss */
+/* line 1798, sass/src/style.scss */
 .contact-form textarea {
   height: 170px;
 }
 
-/* line 1763, sass/src/style.scss */
+/* line 1803, sass/src/style.scss */
 #instafeed {
   *zoom: 1;
 }
@@ -5170,46 +5296,50 @@ div.wpcf7 {
   display: table;
   clear: both;
 }
-/* line 1771, sass/src/style.scss */
+/* line 1811, sass/src/style.scss */
 #instafeed > a {
   display: block;
   float: left;
-  width: 20%;
-  padding-top: 20%;
+  width: 33.3333%;
+  padding-top: 33.3333%;
   position: relative;
   background-size: cover;
-  font-family: 's54-ui-icons' !important;
+  font-family: 'scena54-ui-icons' !important;
 }
-/* line 1778, sass/src/style.scss */
-#instafeed > a:nth-child(12), #instafeed > a:nth-child(13) {
+/* line 1818, sass/src/style.scss */
+#instafeed > a:nth-child(11), #instafeed > a:nth-child(12), #instafeed > a:nth-child(13) {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 1771, sass/src/style.scss */
+  /* line 1811, sass/src/style.scss */
   #instafeed > a {
     width: 25%;
     padding-top: 25%;
   }
+  /* line 1828, sass/src/style.scss */
+  #instafeed > a:nth-child(11) {
+    display: block;
+  }
 }
 @media (min-width: 1200px) {
-  /* line 1771, sass/src/style.scss */
+  /* line 1811, sass/src/style.scss */
   #instafeed > a {
     width: 16.6666%;
     padding-top: 16.666666%;
   }
 }
 @media (min-width: 1600px) {
-  /* line 1771, sass/src/style.scss */
+  /* line 1811, sass/src/style.scss */
   #instafeed > a {
     width: 14.28571%;
     padding-top: 14.28571%;
   }
-  /* line 1796, sass/src/style.scss */
+  /* line 1841, sass/src/style.scss */
   #instafeed > a:nth-child(12), #instafeed > a:nth-child(13) {
     display: block;
   }
 }
-/* line 1806, sass/src/style.scss */
+/* line 1851, sass/src/style.scss */
 #instafeed > a > div {
   position: absolute;
   left: 0;
@@ -5226,11 +5356,11 @@ div.wpcf7 {
   color: #858585;
   text-align: center;
 }
-/* line 1818, sass/src/style.scss */
+/* line 1863, sass/src/style.scss */
 #instafeed > a:hover > div {
   opacity: .8;
 }
-/* line 1823, sass/src/style.scss */
+/* line 1868, sass/src/style.scss */
 #instafeed .frame-box {
   width: 100%;
   padding-top: 48%;
@@ -5238,27 +5368,27 @@ div.wpcf7 {
   float: left;
 }
 @media (min-width: 768px) {
-  /* line 1823, sass/src/style.scss */
+  /* line 1868, sass/src/style.scss */
   #instafeed .frame-box {
     width: 50%;
     padding-top: 25%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1823, sass/src/style.scss */
+  /* line 1868, sass/src/style.scss */
   #instafeed .frame-box {
     width: 33.3333%;
     padding-top: 16.666666%;
   }
 }
 @media (min-width: 1600px) {
-  /* line 1823, sass/src/style.scss */
+  /* line 1868, sass/src/style.scss */
   #instafeed .frame-box {
     width: 28.57142%;
     padding-top: 14.28571%;
   }
 }
-/* line 1845, sass/src/style.scss */
+/* line 1890, sass/src/style.scss */
 #instafeed .frame-box > div {
   position: absolute;
   top: 10px;
@@ -5269,22 +5399,26 @@ div.wpcf7 {
   padding-right: 0;
 }
 
-/* line 1857, sass/src/style.scss */
+/* line 1902, sass/src/style.scss */
 .filters {
   text-align: center;
   margin-bottom: 30px;
 }
-/* line 1861, sass/src/style.scss */
+/* line 1906, sass/src/style.scss */
 .filters input {
   display: none;
 }
+/* line 1910, sass/src/style.scss */
+.filters label {
+  margin-bottom: 5px;
+}
 
-/* line 1866, sass/src/style.scss */
+/* line 1915, sass/src/style.scss */
 .qty-selector {
   position: relative;
   height: 50px;
 }
-/* line 1870, sass/src/style.scss */
+/* line 1919, sass/src/style.scss */
 .qty-selector > div:not(.glow-cover) {
   position: absolute;
   top: 0;
@@ -5300,21 +5434,21 @@ div.wpcf7 {
   transition: color 0.3s;
   cursor: pointer;
 }
-/* line 1882, sass/src/style.scss */
+/* line 1931, sass/src/style.scss */
 .qty-selector > div:not(.glow-cover):hover {
   color: #ffe2a6;
 }
-/* line 1887, sass/src/style.scss */
+/* line 1936, sass/src/style.scss */
 .qty-selector .increase {
   right: 1px;
   border-left: solid 1px rgba(255, 226, 166, 0.5);
 }
-/* line 1892, sass/src/style.scss */
+/* line 1941, sass/src/style.scss */
 .qty-selector .decrease {
   left: 1px;
   border-right: solid 1px rgba(255, 226, 166, 0.5);
 }
-/* line 1897, sass/src/style.scss */
+/* line 1946, sass/src/style.scss */
 .qty-selector input {
   width: 100%;
   padding: 14px 10px 14px 20px;
@@ -5323,13 +5457,13 @@ div.wpcf7 {
   background-color: #151515;
 }
 
-/* line 1906, sass/src/style.scss */
+/* line 1955, sass/src/style.scss */
 .buy-ticket-container {
   max-width: 992px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1912, sass/src/style.scss */
+/* line 1961, sass/src/style.scss */
 .buy-ticket-container .buy-ticket {
   *zoom: 1;
 }
@@ -5339,103 +5473,103 @@ div.wpcf7 {
   display: table;
   clear: both;
 }
-/* line 1916, sass/src/style.scss */
+/* line 1965, sass/src/style.scss */
 .buy-ticket-container.top {
   display: none;
 }
 @media (min-width: 1200px) {
-  /* line 1916, sass/src/style.scss */
+  /* line 1965, sass/src/style.scss */
   .buy-ticket-container.top {
     display: block;
   }
-  /* line 1923, sass/src/style.scss */
+  /* line 1972, sass/src/style.scss */
   .buy-ticket-container.top .labels {
     width: 20%;
     margin: 0;
   }
-  /* line 1924, sass/src/style.scss */
+  /* line 1973, sass/src/style.scss */
   .buy-ticket-container.top .form {
     width: 40%;
   }
-  /* line 1925, sass/src/style.scss */
+  /* line 1974, sass/src/style.scss */
   .buy-ticket-container.top .reserve {
     width: 40%;
   }
 }
-/* line 1929, sass/src/style.scss */
+/* line 1978, sass/src/style.scss */
 .buy-ticket-container .btn {
   display: block;
   max-width: 220px;
   margin: 0 auto;
 }
-/* line 1935, sass/src/style.scss */
+/* line 1984, sass/src/style.scss */
 .buy-ticket-container .buy-link {
   padding: 15px 10px !important;
 }
-/* line 1939, sass/src/style.scss */
+/* line 1988, sass/src/style.scss */
 .buy-ticket-container .form,
 .buy-ticket-container .reserve {
   text-align: center;
 }
-/* line 1942, sass/src/style.scss */
+/* line 1991, sass/src/style.scss */
 .buy-ticket-container .form {
   padding-right: 40px;
 }
-/* line 1943, sass/src/style.scss */
+/* line 1992, sass/src/style.scss */
 .buy-ticket-container .reserve {
   margin-top: 60px;
 }
 @media (min-width: 768px) {
-  /* line 1943, sass/src/style.scss */
+  /* line 1992, sass/src/style.scss */
   .buy-ticket-container .reserve {
     margin-top: 0;
     padding-left: 40px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 1943, sass/src/style.scss */
+  /* line 1992, sass/src/style.scss */
   .buy-ticket-container .reserve {
     margin-top: 0;
   }
 }
-/* line 1956, sass/src/style.scss */
+/* line 2005, sass/src/style.scss */
 .buy-ticket-container .qty-selector {
   max-width: 220px;
   margin: 0 auto 20px auto;
 }
-/* line 1961, sass/src/style.scss */
+/* line 2010, sass/src/style.scss */
 .buy-ticket-container .label {
   float: left;
   width: 150px;
 }
-/* line 1966, sass/src/style.scss */
+/* line 2015, sass/src/style.scss */
 .buy-ticket-container .label.qty {
   height: 50px;
   margin: 3px 0 35px 0;
 }
-/* line 1971, sass/src/style.scss */
+/* line 2020, sass/src/style.scss */
 .buy-ticket-container .label.qty span:last-child {
   color: #dadada;
   font-size: 14px;
 }
-/* line 1978, sass/src/style.scss */
+/* line 2027, sass/src/style.scss */
 .buy-ticket-container h3 {
   text-align: center;
   margin: 20px 0 30px 0;
 }
-/* line 1983, sass/src/style.scss */
+/* line 2032, sass/src/style.scss */
 .buy-ticket-container .reserve-btn {
   max-width: 300px;
   padding: 40px 10%;
 }
-/* line 1988, sass/src/style.scss */
+/* line 2037, sass/src/style.scss */
 .buy-ticket-container .separator {
   position: absolute;
   bottom: -30px;
   width: 100%;
 }
 @media (min-width: 768px) {
-  /* line 1988, sass/src/style.scss */
+  /* line 2037, sass/src/style.scss */
   .buy-ticket-container .separator {
     /* height: 100%; */
     width: 0;
@@ -5444,7 +5578,7 @@ div.wpcf7 {
     bottom: 0;
   }
 }
-/* line 2001, sass/src/style.scss */
+/* line 2050, sass/src/style.scss */
 .buy-ticket-container .separator span {
   display: block;
   position: absolute;
@@ -5454,7 +5588,7 @@ div.wpcf7 {
   padding: 10px;
   background: #000;
 }
-/* line 2011, sass/src/style.scss */
+/* line 2060, sass/src/style.scss */
 .buy-ticket-container .separator:before {
   display: block;
   content: '';
@@ -5464,7 +5598,7 @@ div.wpcf7 {
   top: 50%;
 }
 @media (min-width: 768px) {
-  /* line 2011, sass/src/style.scss */
+  /* line 2060, sass/src/style.scss */
   .buy-ticket-container .separator:before {
     top: 0;
     bottom: 0;
@@ -5474,52 +5608,57 @@ div.wpcf7 {
     border-left: solid 1px #1a1d25;
   }
 }
-/* line 2029, sass/src/style.scss */
+/* line 2078, sass/src/style.scss */
 .buy-ticket-container .table > div {
   vertical-align: top;
 }
 
-/* line 2037, sass/src/style.scss */
+/* line 2086, sass/src/style.scss */
 #reservation-form > form:not(#checkout) .text-field {
   margin-bottom: 0;
 }
-/* line 2040, sass/src/style.scss */
+/* line 2089, sass/src/style.scss */
 #reservation-form > form:not(#checkout) .field-row {
   margin-bottom: 50px;
 }
-/* line 2045, sass/src/style.scss */
+/* line 2094, sass/src/style.scss */
 #reservation-form .submit {
   text-align: center;
 }
-/* line 2049, sass/src/style.scss */
+/* line 2098, sass/src/style.scss */
 #reservation-form .label {
   display: block;
-  float: right;
-  text-align: right;
   font-size: 18px;
   font-family: Raleway, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   color: #fff;
-  max-width: 180px;
 }
-/* line 2061, sass/src/style.scss */
+@media (min-width: 768px) {
+  /* line 2098, sass/src/style.scss */
+  #reservation-form .label {
+    float: right;
+    text-align: right;
+    max-width: 180px;
+  }
+}
+/* line 2112, sass/src/style.scss */
 #reservation-form .label > div {
   max-width: 200px;
 }
-/* line 2066, sass/src/style.scss */
+/* line 2117, sass/src/style.scss */
 #reservation-form .label.required:after {
   display: inline;
   content: '*';
   color: #ffe2a6;
 }
-/* line 2074, sass/src/style.scss */
+/* line 2125, sass/src/style.scss */
 #reservation-form .lbl {
   color: #fff;
   line-height: 40px;
   margin-top: -10px;
 }
-/* line 2075, sass/src/style.scss */
+/* line 2126, sass/src/style.scss */
 #reservation-form .lbl i {
   font-size: 40px;
   color: #ffe2a6;
@@ -5529,42 +5668,43 @@ div.wpcf7 {
   position: relative;
   width: 25px;
 }
-/* line 2089, sass/src/style.scss */
+/* line 2140, sass/src/style.scss */
 #reservation-form input[type=radio] {
   visibility: hidden;
   position: absolute;
   z-index: -1;
 }
-/* line 2095, sass/src/style.scss */
+/* line 2146, sass/src/style.scss */
 #reservation-form input[type=radio]:checked ~ div.btn-switch,
 #reservation-form input[type=radio]:checked ~ div.btn-switch-zone {
   background-color: #ffe2a6;
   color: #000;
 }
-/* line 2099, sass/src/style.scss */
+/* line 2150, sass/src/style.scss */
 #reservation-form input[type=radio]:checked ~ div.btn-switch span,
 #reservation-form input[type=radio]:checked ~ div.btn-switch-zone span {
   color: #000;
 }
-/* line 2101, sass/src/style.scss */
+/* line 2152, sass/src/style.scss */
 #reservation-form input[type=radio]:checked ~ div.btn-switch .glow-cover,
 #reservation-form input[type=radio]:checked ~ div.btn-switch-zone .glow-cover {
   display: none;
 }
-/* line 2105, sass/src/style.scss */
+/* line 2156, sass/src/style.scss */
 #reservation-form input[type=radio]:checked ~ div.btn-switch i,
 #reservation-form input[type=radio]:checked ~ div.btn-switch-zone i {
   color: #000;
 }
-/* line 2110, sass/src/style.scss */
+/* line 2161, sass/src/style.scss */
 #reservation-form input#reservation_time {
   text-align: center;
 }
-/* line 2114, sass/src/style.scss */
+/* line 2165, sass/src/style.scss */
 #reservation-form textarea {
   height: 160px;
+  resize: none;
 }
-/* line 2118, sass/src/style.scss */
+/* line 2170, sass/src/style.scss */
 #reservation-form .hint {
   position: absolute;
   width: 100%;
@@ -5578,11 +5718,11 @@ div.wpcf7 {
   padding: 15px 25px;
   font-size: 14px;
 }
-/* line 2128, sass/src/style.scss */
+/* line 2180, sass/src/style.scss */
 #reservation-form .hint.on {
   opacity: 1;
 }
-/* line 2132, sass/src/style.scss */
+/* line 2184, sass/src/style.scss */
 #reservation-form .hint:before {
   display: block;
   content: '';
@@ -5594,7 +5734,7 @@ div.wpcf7 {
   width: 10px;
   height: 10px;
 }
-/* line 2145, sass/src/style.scss */
+/* line 2197, sass/src/style.scss */
 #reservation-form ul.switch {
   list-style: none;
   position: relative;
@@ -5603,76 +5743,76 @@ div.wpcf7 {
   margin: 0;
   width: 100%;
 }
-/* line 2153, sass/src/style.scss */
+/* line 2205, sass/src/style.scss */
 #reservation-form ul.switch #attribute_pa_strefa-error {
   position: absolute;
   bottom: -20px;
 }
-/* line 2157, sass/src/style.scss */
+/* line 2209, sass/src/style.scss */
 #reservation-form ul.switch li {
   display: table-cell;
   padding-right: 30px;
   padding-left: 0;
   width: 1%;
 }
-/* line 2163, sass/src/style.scss */
+/* line 2215, sass/src/style.scss */
 #reservation-form ul.switch li:last-child {
   padding-right: 0;
 }
-/* line 2167, sass/src/style.scss */
+/* line 2219, sass/src/style.scss */
 #reservation-form ul.switch li > div {
   display: block;
   padding: 15px 5px;
 }
-/* line 2174, sass/src/style.scss */
+/* line 2226, sass/src/style.scss */
 #reservation-form #date-selector {
   padding-top: 13px;
 }
-/* line 2177, sass/src/style.scss */
+/* line 2229, sass/src/style.scss */
 #reservation-form #date-selector .hint {
   min-height: 40px;
   padding: 10px 25px;
   color: #dadada;
 }
-/* line 2180, sass/src/style.scss */
+/* line 2232, sass/src/style.scss */
 #reservation-form #date-selector .hint:before {
   top: 15px;
 }
-/* line 2188, sass/src/style.scss */
+/* line 2240, sass/src/style.scss */
 #reservation-form #quantity-selector .hint {
   display: table;
 }
-/* line 2190, sass/src/style.scss */
+/* line 2242, sass/src/style.scss */
 #reservation-form #quantity-selector .hint > div {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 2195, sass/src/style.scss */
+/* line 2247, sass/src/style.scss */
 #reservation-form #quantity-selector .hint span {
   display: block;
   text-align: right;
 }
-/* line 2200, sass/src/style.scss */
+/* line 2252, sass/src/style.scss */
 #reservation-form #quantity-selector .hint .price {
   font-size: 20px;
   color: #dadada;
 }
-/* line 2208, sass/src/style.scss */
+/* line 2260, sass/src/style.scss */
 #reservation-form #zone-selector img {
   width: 100%;
   height: auto;
   margin-top: 20px;
 }
-/* line 2215, sass/src/style.scss */
+/* line 2267, sass/src/style.scss */
 #reservation-form .btn-switch-type {
   display: block;
   padding: 18px 60px 18px 100px;
 }
-/* line 2220, sass/src/style.scss */
+/* line 2272, sass/src/style.scss */
 #reservation-form .btn-switch-type .label {
   padding-top: 45px;
 }
-/* line 2224, sass/src/style.scss */
+/* line 2276, sass/src/style.scss */
 #reservation-form .btn-switch-type i {
   display: block;
   font-size: 60px;
@@ -5680,7 +5820,7 @@ div.wpcf7 {
   left: 35px;
   top: 8px;
 }
-/* line 2231, sass/src/style.scss */
+/* line 2283, sass/src/style.scss */
 #reservation-form .btn-switch-type span {
   display: block;
   font-weight: 400;
@@ -5691,39 +5831,39 @@ div.wpcf7 {
   transition: color 0.3s;
   color: #858585;
 }
-/* line 2240, sass/src/style.scss */
+/* line 2292, sass/src/style.scss */
 #reservation-form .btn-switch-type:hover span {
   color: #000;
 }
-/* line 2246, sass/src/style.scss */
+/* line 2298, sass/src/style.scss */
 #reservation-form dl {
   display: table;
   margin-top: 0;
 }
-/* line 2249, sass/src/style.scss */
+/* line 2301, sass/src/style.scss */
 #reservation-form dl dt, #reservation-form dl dd {
   display: table-cell;
   width: 250px;
 }
-/* line 2260, sass/src/style.scss */
+/* line 2312, sass/src/style.scss */
 #reservation-form #customer-data separator-line {
   margin: 10px 0;
 }
-/* line 2265, sass/src/style.scss */
+/* line 2317, sass/src/style.scss */
 #reservation-form div.submit {
   margin-top: 50px;
 }
 
-/* line 2270, sass/src/style.scss */
+/* line 2322, sass/src/style.scss */
 #menu-links {
   text-align: center;
 }
-/* line 2273, sass/src/style.scss */
+/* line 2325, sass/src/style.scss */
 #menu-links a {
   margin: 10px 0;
   width: 300px;
 }
-/* line 2278, sass/src/style.scss */
+/* line 2330, sass/src/style.scss */
 #menu-links i {
   position: absolute;
   left: 20px;
@@ -5732,32 +5872,32 @@ div.wpcf7 {
 }
 
 @media (min-width: 768px) {
-  /* line 2284, sass/src/style.scss */
+  /* line 2336, sass/src/style.scss */
   .coctails-card {
     text-align: right;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 2289, sass/src/style.scss */
+  /* line 2341, sass/src/style.scss */
   .tapas-card {
     text-align: left;
   }
 }
 
-/* line 2295, sass/src/style.scss */
+/* line 2347, sass/src/style.scss */
 .menu-item-box {
   padding-bottom: 60px;
   margin-bottom: 30px;
   position: relative;
   background-color: #000;
 }
-/* line 2301, sass/src/style.scss */
+/* line 2353, sass/src/style.scss */
 .menu-item-box img {
   width: 100%;
   height: auto;
 }
-/* line 2306, sass/src/style.scss */
+/* line 2358, sass/src/style.scss */
 .menu-item-box .content {
   position: absolute;
   bottom: 0;
@@ -5766,7 +5906,7 @@ div.wpcf7 {
   text-align: center;
 }
 
-/* line 2314, sass/src/style.scss */
+/* line 2366, sass/src/style.scss */
 .scattered-blocks {
   position: relative;
   *zoom: 1;
@@ -5778,12 +5918,12 @@ div.wpcf7 {
   clear: both;
 }
 @media (max-width: 767px) {
-  /* line 2318, sass/src/style.scss */
+  /* line 2370, sass/src/style.scss */
   .scattered-blocks > div:first-child {
     height: auto !important;
   }
 }
-/* line 2323, sass/src/style.scss */
+/* line 2375, sass/src/style.scss */
 .scattered-blocks > div {
   *zoom: 1;
 }
@@ -5794,40 +5934,40 @@ div.wpcf7 {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 2328, sass/src/style.scss */
+  /* line 2380, sass/src/style.scss */
   .scattered-blocks .section-title {
     width: 33.33333%;
   }
 }
 
-/* line 2335, sass/src/style.scss */
+/* line 2387, sass/src/style.scss */
 .scattered-rows .image-holder {
   padding-top: 56%;
 }
 @media (min-width: 768px) {
-  /* line 2340, sass/src/style.scss */
+  /* line 2392, sass/src/style.scss */
   .scattered-rows .image-holder {
     padding-top: 0;
   }
-  /* line 2344, sass/src/style.scss */
+  /* line 2396, sass/src/style.scss */
   .scattered-rows div:nth-child(2n+2) .image-holder {
     right: 0;
   }
-  /* line 2347, sass/src/style.scss */
+  /* line 2399, sass/src/style.scss */
   .scattered-rows div:nth-child(2n+2) .content {
     margin-left: 12.33333%;
   }
-  /* line 2352, sass/src/style.scss */
+  /* line 2404, sass/src/style.scss */
   .scattered-rows > div:last-child {
     border-bottom-width: 1px;
   }
 }
 
-/* line 2359, sass/src/style.scss */
+/* line 2411, sass/src/style.scss */
 .image-row .image-holder {
   height: 100%;
 }
-/* line 2362, sass/src/style.scss */
+/* line 2414, sass/src/style.scss */
 .image-row .content {
   position: absolute;
   bottom: 30px;
@@ -5835,7 +5975,7 @@ div.wpcf7 {
   right: 30px;
 }
 
-/* line 2369, sass/src/style.scss */
+/* line 2421, sass/src/style.scss */
 .scattered-row {
   *zoom: 1;
   position: relative;
@@ -5849,72 +5989,72 @@ div.wpcf7 {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 2369, sass/src/style.scss */
+  /* line 2421, sass/src/style.scss */
   .scattered-row {
     margin-bottom: 0;
     border-bottom-width: 0;
   }
-  /* line 2378, sass/src/style.scss */
+  /* line 2430, sass/src/style.scss */
   .scattered-row .image-holder {
     height: 100%;
     position: absolute;
     width: 31%;
   }
 }
-/* line 2385, sass/src/style.scss */
+/* line 2437, sass/src/style.scss */
 .scattered-row > div {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-/* line 2391, sass/src/style.scss */
+/* line 2443, sass/src/style.scss */
 #about-people {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-/* line 2396, sass/src/style.scss */
+/* line 2448, sass/src/style.scss */
 #about-people .section-title {
   width: 30%;
 }
-/* line 2399, sass/src/style.scss */
+/* line 2451, sass/src/style.scss */
 #about-people .artists-slider {
   height: 270px;
 }
-/* line 2402, sass/src/style.scss */
+/* line 2454, sass/src/style.scss */
 #about-people .swiper-slide {
   width: auto;
   padding: 0;
 }
 
-/* line 2408, sass/src/style.scss */
+/* line 2460, sass/src/style.scss */
 #menu-slider {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-/* line 2413, sass/src/style.scss */
+/* line 2465, sass/src/style.scss */
 #menu-slider .section-title {
   width: 30%;
 }
-/* line 2416, sass/src/style.scss */
+/* line 2468, sass/src/style.scss */
 #menu-slider img {
   height: 270px;
 }
-/* line 2419, sass/src/style.scss */
+/* line 2471, sass/src/style.scss */
 #menu-slider .swiper-slide {
   width: auto;
   padding: 0;
 }
 
 /* offer specific styles */
-/* line 2427, sass/src/style.scss */
+/* line 2479, sass/src/style.scss */
 #spaces-section .reservation-btn {
   line-height: 30px;
 }
-/* line 2429, sass/src/style.scss */
+/* line 2481, sass/src/style.scss */
 #spaces-section .reservation-btn div {
   margin-bottom: 30px;
 }
-/* line 2432, sass/src/style.scss */
+/* line 2484, sass/src/style.scss */
 #spaces-section .reservation-btn .text-white {
   font-size: 24px;
   color: #fff;

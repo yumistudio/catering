@@ -9,10 +9,10 @@ $buyTicketURL = get_site_url()."/checkout/?add-to-cart={$tPost->ID}&event-id=".$
 
 //print_r($ticket);
 ?>
-
+<?php if( $ticket ) : ?>
 <div class="buy-ticket">
 	<a class="buy-link btn frame-btn glow" href="<?php echo $buyTicketURL; ?>">Kup bilet</a>
 	<br /><br /><br />
 	<a class="btn glow" href="/rezerwacja/?date=<?php echo substr($post->EventStartDate, 0, 10)?>">Miejsce + Bilet</a>
 </div>
-
+<?php endif; ?>

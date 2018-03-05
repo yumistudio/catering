@@ -38,7 +38,7 @@ global $eventsPageId;
 		<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
 	</div>
 	<div class="col-xs-12 col-sm-5">
-		<?php foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+		<?php if ($terms) foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
 	</div>
 	<div class="col-xs-12 col-sm-3">
 		<!-- Udostępnij: -->
@@ -112,7 +112,7 @@ global $eventsPageId;
 					<h4><?php echo $a->post_title; ?></h4>
 					<?php foreach (get_the_terms($a->ID, 'artist_categories') as $cat) echo '<div class="category">'.$cat->name.'</div>'; ?>
 					<div class="excerpt">
-						<?php the_excerpt(); ?>
+						<p><?php echo apply_filters('get_the_excerpt', $a->post_content); ?></p>
 					</div>
 				</div>
 			</div>
@@ -138,6 +138,7 @@ $fEvents = tribe_get_events( array(
  'featured'       => true,
  'start_date' 	  => date( 'Y-m-d H:i:s' )
  ) );
+$terms = get_the_terms($post->ID, 'tribe_events_cat');
 ?>
 <?php if( $fEvents ) : ?>
 <div id="featured-events" class="events-list max-width">
@@ -152,7 +153,7 @@ $fEvents = tribe_get_events( array(
 				<span class="date"><?php echo date_i18n( 'l, d M Y @ G:i', date_timestamp_get($dt), false ); ?></span>
 				<span class="title"><?php echo the_title(); ?></span>
 				<span class="more-lnk">Weź Udział</span>
-				<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+				<?php if ($terms) foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
 			</a>
 		</div>
 		

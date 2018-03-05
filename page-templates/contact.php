@@ -27,10 +27,10 @@ global $post;
                     <a class="btn btn-nav" href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank">
                         <i class="icon-social-facebook"></i>
                     </a>
-                    <a class="btn btn-nav" href="<?php echo ot_get_option( 'twitter_url' ); ?>" target="_blank">
+                    <a class="btn btn-nav" href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank">
                         <i class="icon-social-instagram"></i>
                     </a>
-                    <a class="btn btn-nav" href="<?php echo ot_get_option( 'tripadvisor_url' ); ?>" target="_blank">
+                    <a class="btn btn-nav" href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank">
                         <i class="icon-social-tripadvisor"></i>
                     </a>
                 </div>

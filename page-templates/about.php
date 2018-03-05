@@ -136,7 +136,7 @@ get_template_part( 'template-parts/page/content', 'header' );
 					<div class="swiper-wrapper">
 						<?php foreach ($gallery as $image) : ?>
 						<div class="swiper-slide content-box">
-							<img src="<?php echo $image['sizes']['yumi-slider-image']; ?>');" />
+							<img src="<?php echo $image['sizes']['yumi-slider-image']; ?>');" width="<?php echo $image['sizes']['yumi-slider-image-width']; ?>" height="<?php echo $image['sizes']['yumi-slider-image-height']; ?>"/>
 		            		<div class="gradient-cover"></div>
 		            		<div class="content">
 		            			<h4><?php echo $image['title']; ?></h4>

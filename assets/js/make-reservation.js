@@ -4,7 +4,7 @@
 	var $timeFld = jQuery('#reservation_time');
 	var $dateHint = jQuery('#date-selector').find('.hint');
 	var $priceHint = jQuery('#quantity-selector').find('.hint');
-	var $menQty = jQuery('#qty-men-selector input');
+	var $personQty = jQuery('#qty-selector input');
 	var $ticketFld = jQuery('#date-selector #ticket-id');
 	var $eventFld = jQuery('#date-selector #event-id');
 	var $typeFld = jQuery('input[name=seat_type]');
@@ -32,8 +32,21 @@
 		updateCost();
 	});
 
+	var setUpAvailableZones = function() {
+
+		var seatType = ($('input[name=seat_type]:checked').val());
+
+		// block illegal zones
+		$('#zone-selector li').each(function() {
+			if($(this).find('input[data-type="' + seatType + '"]').length > 0)
+				$(this).removeClass('inactive')
+			else 
+				$(this).addClass('inactive')
+		});
+	}
 	$('.btn-switch-type').click(function() {
 		$('#zone-selector input[type=radio]').attr('checked', false);
+		setUpAvailableZones();
 		updateCost();
 	});
 
@@ -45,7 +58,7 @@
 	});
 
 	var updateCost = function() {
-		var quantity = parseInt($menQty.val());
+		var quantity = parseInt($personQty.val());
 		var total = quantity * window.ticketPrice;
 		
 		if (total) {
@@ -78,16 +91,20 @@
 		sumDate.text($dateFld.val());
 		sumHour.text($timeFld.val());
 		
-		var qty = parseInt($menQty.val());
+		var qty = parseInt($personQty.val());
+
 		if (qty) sumQty.text(qty);
 		else sumQty.empty();
 		
-		if($typeFld.val() == 'table')
+		if( $typeFld.val() == 'table' )
 			sumType.text('Stolik');
 		else
 			sumType.text('Loża');
 
-		sumZone.text($zoneFld.val());
+		if( $zoneFld.val() )
+			sumZone.text($zoneFld.val());
+		else
+			sumZone.empty();
 		
 		var total = 0;
 		var ticketPrice = $priceHint.find('.price').text();
@@ -106,25 +123,8 @@
 	    while (s.length < (size || 2)) {s = "0" + s;}
 	    return s;
 	}
-	
-	var date = new Date('Y.m.D');
-
-	jQuery('#reservation_time').datetimepicker({
-		minTime: '16:00',
-		maxTime: '24:00',
-		theme:'dark',
-		timepicker: true,
-		datepicker: false,
-		format:'G:i',
-		step:30,
-		lang: 'pl',
-		scrollMonth:false,
-	});
-
 	//var initDate = date.getYear() + '/' + (date.getMonth()).pad() + '/' + date.getDate();
 
-	
-	
 	var addToQuote = function() {
 		
 		//$ajaxLoader.addClass('on');
@@ -168,7 +168,7 @@
             processData: false,
             //dataType: 'json',
             success: function(response) {
-            	window.location.href= 'http://' + window.location.hostname + '/dziekujemy/';
+            	//window.location.href= 'http://' + window.location.hostname + '/dziekujemy/';
             	$ajaxLoader.removeClass('on');
             }
 	    });
@@ -204,7 +204,7 @@
 			$dateHint.text(event.title);
 			$dateHint.addClass('on');
 			window.ticketPrice = event.ticket_price;
-			var cost = parseInt($menQty.val()) * event.ticket_price;
+			var cost = parseInt($personQty.val()) * event.ticket_price;
 
 			if ( event.ticket_price && cost ) {
 				//$priceHint.addClass('on');
@@ -218,9 +218,12 @@
 	}
 	
 	var ct = new Date($('#reservation_date').val());
-	console.log(ct);
+	//console.log(ct);
 	loadEventData(ct);
 	
+	setUpAvailableZones();
+
+	var date = new Date('Y.m.D');
 	jQuery('#datePicker1').datetimepicker({
 	 	lang: 'de',
 	 	format:'l, d F Y',
@@ -251,6 +254,47 @@
 	});
 	$.datetimepicker.setLocale('pl');
 
+	var logic = function( currentDateTime ){
+
+		console.log('Setting min time');
+		
+		today = false;
+
+		sd = new Date($('#reservation_date').val());
+		now = new Date();
+
+		if (sd.getDay() == now.getDay() && 
+			sd.getMonth() == sd.getMonth() &&
+			sd.getYear() == sd.getYear()) {
+			today = true;
+		}
+
+		// 'this' is jquery object datetimepicker
+		if( today ){
+			console.log('Today!' + (now.getHours() + 1) + ':00' )
+			this.setOptions({
+			  //minTime: (now.getHours() + 1) + ':00 pm'
+			  minTime: new Date()
+			});
+		} else
+			console.log('Not today!')
+			this.setOptions({
+			  minTime:'06:00 pm'
+			});
+	};
+
+	jQuery('#reservation_time').datetimepicker({
+		//minTime: '16:00',
+		//maxTime: '24:00',
+		theme:'dark',
+		timepicker: true,
+		datepicker: false,
+		format:'G:i',
+		step:30,
+		lang: 'pl',
+		onChangeDateTime:logic,
+		onShow:logic,
+	});
 
 	var scrollToError = function(form, validator) {
 

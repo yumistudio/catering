@@ -19,8 +19,11 @@
 	.tribe-events-calendar td div[id*=tribe-events-daynum-] {
 		font-family: Open Sans, sans-serif;
 		font-weight: 300;
-		font-size: 30px;
-		margin: 30px 0 0 30px;
+		font-size: 20px;
+		@include breakpoint($sm) {
+			font-size: 30px;
+			margin: 30px 0 0 30px;
+		}
 	}
 
 	.tribe-events-calendar td,
@@ -87,13 +90,28 @@
 
 .tribe-bar-disabled {
 	position: relative;
-	float: right;
 	z-index: 1;
+	text-align: center;
+
+	@include breakpoint($sm) {
+		float: right;
+	}
 }
 
 #tribe-events-bar {
+	
+	label {
+		display: none;
+		margin-right: 20px;
+
+		@include breakpoint($sm) {
+			display: inline-block;
+		}
+	}
+
 	ul {
 		list-style: none;
+		padding-left: 0;
 	}
 
 	li {
@@ -186,6 +204,10 @@
 	.tribe-event-description {
 		display: none;
 	}
+}
+
+.month-grid-container {		
+	overflow-x: auto;
 }
 
 #events-calendar {
@@ -303,8 +325,11 @@
 	.row {
 		border: solid 1px $darkgrey;
 		@include pie-clearfix;
-		margin: 45px 0;
 		padding: 40px;
+
+		@include breakpoint($sm) {
+			margin: 45px 0;
+		}
 	}
 
 	.tribe-events-loop .tribe-events-event-meta dd {
@@ -318,15 +343,28 @@
 	.tribe-events-event-image img {
 		display: block;
 	    position: relative;
-	    margin: -70px -25px -70px;
+
+	    @include breakpoint($sm) {
+	    	margin: -70px -25px -70px;
+	    }
 	}
 
 	.tribe-events-event-meta:first-child {
 	    border-top: none;
 	}
 
+	.tribe-events-list-separator-month {
+		text-align: center;
+		display: block;
+		@include breakpoint($sm) {
+			text-align: left;
+		}
+	}
+
 	h4 {
-		margin-top: 0;
+		@include breakpoint($sm) {
+			margin-top: 0;
+		}
 	}
 
 	.btn {

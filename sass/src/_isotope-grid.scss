@@ -12,12 +12,39 @@
 }
 
 /* ---- .grid-item ---- */
-
 .grid-item {
     float: left;
     position: relative;
 
-    width: 33.33333%;
+    width: 100%;
+    a {
+        padding-top: 75%;
+    }
+
+    @include breakpoint(min-width 480px) {
+        width: 50%;
+    }
+
+    @include breakpoint($md) {
+        width: 33.33333%;
+    }
+}
+
+@include breakpoint($sm) {
+    .grid-item--height-small {
+        padding-top: 50% !important;
+    }
+
+    .grid-item--height-reg {
+        padding-top: 100% !important;
+    }
+
+    .grid-item--height-big {
+        padding-top: 150% !important;
+    }
+}
+
+.grid-item {
     
     & > a {
         display: block;
@@ -68,17 +95,5 @@
         }
     }
 
-}
-
-.grid-item--height-small {
-    padding-top: 50%;   
-}
-
-.grid-item--height-reg {
-    padding-top: 100%;
-}
-
-.grid-item--height-big {
-    padding-top: 150%;
 }
 

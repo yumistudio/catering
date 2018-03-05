@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: icons;
-    src: url(assets/fonts/s54-ui-icons.svg);
+    src: url(assets/fonts/scena54-ui-icons.svg);
 }
 
 
@@ -261,9 +261,9 @@ input[type=button] {
 
 .max-width {
     //box-sizing: content-box;
-    max-width: 1170px;
-    //padding-left: 30px;
-    //padding-right: 30px;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -727,7 +727,7 @@ input[type=button] {
     }
     
     #logo-mobile {
-        padding: 10px;
+        padding: 0 10px;
         float: left;
 
         img {
@@ -762,9 +762,21 @@ input[type=button] {
 
     #call-us-link a {
         color: $lightgrey;
-        margin-right: 30px;
+        margin: 0 10px;
+        
         i {
             top: 8px;
+        }
+
+        span {
+            display: none;
+        }
+
+        @include breakpoint($sm) {
+            span {
+                display: inline;
+            }
+            margin-right: 30px;
         }
     }
 
@@ -783,6 +795,25 @@ input[type=button] {
         font-size: 30px;
         line-height: 50px;
     }      
+}
+
+.video-wrap {
+    max-width: 760px;
+    /* margin: 0 auto; */
+}
+
+.video-inner-wrap {
+    position: relative;
+    iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    &.on > iframe {
+        visibility: visible !important;
+    }
 }
 
 #main-navigation-bar {
@@ -808,6 +839,10 @@ input[type=button] {
 
     @include breakpoint($md) {
         display: none;
+    }
+
+    i {
+        font-size: 50px;
     }
 }
 
@@ -923,7 +958,7 @@ input[type=button] {
 #sticky-logo {
     display: block;
     float: left;
-
+    padding-top: 10px;
     i {
         font-size: 50px;
         line-height: 34px;
@@ -960,6 +995,11 @@ input[type=button] {
         float: left;
         width: 50%;
         font-size: 14px;
+        text-align: center;
+
+        @include breakpoint($sm) {
+            text-align: left;
+        }
     }
 }
 
@@ -1089,8 +1129,8 @@ lable.es_shortcode_form_email {
     }
 
     .slide-title {
-        position: absolute;
-        top: 67%;
+        position: relative;
+        top: 70%;
         color: #fff;
         font-size: 18px;
         font-weight: 300;
@@ -1772,9 +1812,10 @@ div.wpcf7 {
         display: block;
         float: left;
         
-        width: 20%;
-        padding-top: 20%;
+        width: 33.3333%;
+        padding-top: 33.3333%;
 
+        &:nth-child(11),
         &:nth-child(12),
         &:nth-child(13) {
             display: none;
@@ -1783,6 +1824,10 @@ div.wpcf7 {
         @include breakpoint($sm) {
             width: 25%;
             padding-top: 25%;
+
+            &:nth-child(11) {
+                display: block;
+            }
         }
 
         @include breakpoint($lg) {
@@ -1801,7 +1846,7 @@ div.wpcf7 {
 
         position: relative;
         background-size: cover;
-        font-family: 's54-ui-icons' !important;
+        font-family: 'scena54-ui-icons' !important;
 
         &>div {
             position: absolute;
@@ -1860,6 +1905,10 @@ div.wpcf7 {
     
     input {
         display: none;
+    }
+
+    label {
+        margin-bottom: 5px;
     }
 }
 
@@ -2048,15 +2097,17 @@ div.wpcf7 {
 
     .label {
         display: block;
-        float: right;
-        text-align: right;
         font-size: 18px;
         font-family: Raleway, sans-serif;
         font-weight: 800;
         text-transform: uppercase;
         color: #fff;
-        max-width: 180px;
 
+        @include breakpoint($sm) {
+            float: right;
+            text-align: right;
+            max-width: 180px;
+        }
 
         & > div {
             max-width: 200px;
@@ -2113,6 +2164,7 @@ div.wpcf7 {
 
     textarea {
         height: 160px;
+        resize: none;
     }
 
     .hint {

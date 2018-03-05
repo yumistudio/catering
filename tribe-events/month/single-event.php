@@ -26,7 +26,8 @@ $day      = tribe_events_get_current_month_day();
 $event_id = "{$post->ID}-{$day['daynum']}";
 $link     = tribe_get_event_link( $post );
 $title    = get_the_title( $post );
-$category = get_the_category($post->ID); 
+//$category = get_the_category($post->ID);
+$terms = get_the_terms($post->ID, 'tribe_events_cat')
 
 /**
  * How to Use the Javascript Templating System in this View
@@ -195,6 +196,6 @@ $category = get_the_category($post->ID);
 
 <div id="tribe-events-event-<?php echo esc_attr( $event_id ); ?>" class="<?php tribe_events_event_classes() ?>" data-tribejson='<?php echo esc_attr( tribe_events_template_data( $post ) ); ?>'>
 	<h4 class="tribe-events-month-event-title"><a href="<?php echo esc_url( $link ) ?>" class="url"><?php echo $title ?></a></h4>
-	<?php foreach (get_the_terms($post->ID, 'tribe_events_cat') as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
+	<?php if($terms) foreach ($terms as $cat) echo '<span class="category">'.$cat->name.'</span>'; ?>
 </div><!-- #tribe-events-event-# -->
 

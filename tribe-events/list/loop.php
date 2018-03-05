@@ -19,7 +19,6 @@ global $post;
 global $more;
 $more = false;
 ?>
-
 <div class="tribe-events-loop">
 
 	<?php while ( have_posts() ) : the_post(); ?>

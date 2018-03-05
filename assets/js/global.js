@@ -250,6 +250,23 @@
 		},
 	})
 
+	$('.buy-link').click(function(e) {
+		e.preventDefault();
+		var qty = $(this).parent().siblings('.qty-selector').children('input').val();
+		var buyTicketsUrl = $(this).data('buy-url') + '&quantity=' + qty + '&clear-cart=1';
+		
+		console.log(buyTicketsUrl);
+		$.get(buyTicketsUrl, function(data) {
+		 	window.location = 'http://' + window.location.hostname + '/checkout/';
+		});
+	});
+
+	$('.make-reservation').click(function(e) {
+		e.preventDefault();
+		var qty = $(this).parent().prev().find('input').val();
+		window.location = 'http://' + window.location.hostname + $(this).attr('href') + '&quantity=' + qty;
+	});
+
 	$(window).load(function() {
 		if( $('#tribe-events-content').hasClass('tribe-events-list') ) {
 			$('.tribe-bar-views-option-list').addClass('on')
