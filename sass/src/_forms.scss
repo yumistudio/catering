@@ -22,10 +22,10 @@
 }
 
 // Forms basic
-$input-border-color: rgba(0,0,0,.2) !default;
+$input-border-color: lighten(#959595, 35%) !default;
 $input-disabled-color: rgba(0,0,0,.2) !default;
-$input-focus-color: #000000 !default;
-$input-success-color: #11ab63 !default;
+$input-focus-color: $green !default;
+$input-success-color: $green-secondary !default;
 $input-error-color: $color-pallete-red !default;
 $input-font-size: 1rem;
 $label-font-size: 0.75rem;
@@ -45,8 +45,8 @@ textarea.md-textarea {
   // General Styles
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid $input-border-color;
-  border-radius: 0;
+  border: 1px solid $input-border-color;
+  border-radius: 4px;
   outline: none;
   height: 1.8rem;
   width: 100%;
@@ -54,7 +54,7 @@ textarea.md-textarea {
   box-shadow: none;
   box-sizing: content-box;
   @include transition(all .3s);
-
+  padding-left: 1.25rem;
   // Disabled & readonly
   &:disabled, &[readonly="readonly"] {
     color: $input-disabled-color;
@@ -67,8 +67,8 @@ textarea.md-textarea {
   }
   // Focused input style
   &:focus:not([readonly]) {
-    border-bottom: 1px solid $input-focus-color;
-    box-shadow: 0 1px 0 0 $input-focus-color;
+    border: 1px solid $input-focus-color;
+    box-shadow: 1px $input-focus-color;
     // Focused label style
     + label {
       color: $input-focus-color;
@@ -77,8 +77,8 @@ textarea.md-textarea {
 
   // Valid input style
   &.valid, &:focus.valid {
-    border-bottom: 1px solid $input-success-color;
-    box-shadow: 0 1px 0 0 $input-success-color;
+    border: 1px solid $input-success-color;
+    box-shadow: 1px $input-success-color;
   }
 
   &.valid + label:after, &:focus.valid + label:after {
@@ -124,8 +124,8 @@ textarea.md-textarea {
 // Input with label
 .form-control {
   padding: 0;
-  padding-bottom: 0.4rem;
-  padding-top: 0.5rem;
+  padding-bottom: .2rem;
+  padding-top: 1.25rem;
   font-size: 1rem;
   line-height: 1.5;
   background-color: transparent;
@@ -149,14 +149,14 @@ textarea.md-textarea {
   margin-bottom: .75rem;
   label {
     @include transition(.2s ease-out);
-    color: #757575;
+    color: #959595;
     position: absolute;
-    top: 0.8rem;
-    left: 0;
+    top: 1.25rem;
+    left: 1.25rem;
     font-size: 1rem;
     cursor: text;
     &.active {
-      @include transform(translateY(-100%));
+      @include transform(translateY(-50%));
       font-size: $label-font-size;
     }
   }
@@ -166,7 +166,7 @@ textarea.md-textarea {
     position: absolute;
     width: 3rem;
     font-size: 1.5rem;
-    padding-top: .75rem;
+    padding-top: 1.25rem;
     ~ input, ~ textarea {
       margin-left: 3rem;
       width: 92%;
@@ -281,8 +281,8 @@ textarea {
 }
 
 label.error, label.error .active {
-  color: $color-pallete-red;
+  color: $red;
   font-size: 12px;
-  top: 52px !important;
+  top: 60px !important;
   transform: none !important;
 }

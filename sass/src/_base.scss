@@ -14,12 +14,12 @@ $rhythm-unit: 'em' !default;
 $strict-normalize: false !default;
 
 // The default font family.
-$base-font-family: 'Hind', sans-serif !default;
+$base-font-family: 'Woodford', sans-serif !default;
 
 // The font sizes for h1-h6.
-$h1-font-size: 2.4rem	* $base-font-size !default;
-$h2-font-size: 2.4rem	* $base-font-size !default;
-$h3-font-size: 1.17rem	* $base-font-size !default;
+$h1-font-size: 2.5rem	* $base-font-size !default;
+$h2-font-size: 1.875rem	* $base-font-size !default;
+$h3-font-size: 1.5rem	* $base-font-size !default;
 $h4-font-size: 1rem		* $base-font-size !default;
 $h5-font-size: 0.83 * $base-font-size !default;
 $h6-font-size: 0.67 * $base-font-size !default;
@@ -27,18 +27,16 @@ $h6-font-size: 0.67 * $base-font-size !default;
 // The amount lists and blockquotes are indented.
 $indent-amount: 40px !default;
 
-$lightergrey  : #dadada;
-$lightgrey  : #858585;
-$darkgrey   : #1a1d25; 
-$darkergrey : #151515;
-$gold       : #ffe2a6;
-$gold50     : rgba(255, 226, 166, .5)   ;
-$brown      : #665a42;
-
+$lightgrey  : #555555;
+$darkgrey   : #252525; 
+$gold       : #f1b94d;
+$green: #77b557;
+$green-secondary: #3fa659;
+$red: #ee3b65;
 
 //New swatches 
 $white: #ffffff !default;
-$black: #000000 !default;
+$black: #151515 !default;
 $color-pallete-red: #ac1249 !default;
 $color-pallete-gold: #ffca61 !default;
 
@@ -58,6 +56,8 @@ $text-color: #343434 !default;
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "breakpoint";
+@import "nav";
+@import "button";
 
 // RWD STEPS
 $xxs: min-width 420px;

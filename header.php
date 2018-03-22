@@ -38,109 +38,40 @@ $subtitle = get_field('page_subtitle');
     </div>
     <div id="outer-wrap">
         
-        <header style="background-image: url('<?php the_post_thumbnail_url(); ?>');" <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>id="reservation-header" class="divider-black"<?php elseif ( is_front_page() == TRUE ) : ?>id="homepage-header"<?php else : ?>id="page-header" class="divider-black"<?php endif; ?>>
-            
-            <div id="main-navigation" class="">
+            <!-- Header main -->
+            <?php 
+                if (is_front_page() == TRUE) {
+            ?>
+        
+        <header class="header-main">
+            <?php 
+                get_template_part('template-parts/navigation/navigation', 'main');
+            ?>        
+            <div class="header-main__logo text-center">
+                <img id="logo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-white.svg" alt="Catering Logo"/>
+            </div>  
+            <div class="header-main__welcome text-center">
+                <h1>
+                    <span class="claim">Sztuka gotowania i wiedza o zarządzaniu</span>
+                    Catering na każdą okazję
+                </h1>
+                <a href="#" class="btn btn-primary">Sprawdź ofertę</a>
+            </div>
 
-                <div id="sticky-navigation" class="">
-
-                    <div id="menu-mobile" class="hidden-lg hidden-md">
-                        <nav>
-                            <?php wp_nav_menu( array(
-                                'menu'           => 'top-menu-left' ,
-                                'menu_class'     => '',
-                            ) ); ?>
-                            <?php wp_nav_menu( array(
-                                'menu'           => 'top-menu-right' ,
-                                'menu_class'     => '',
-                            ) ); ?>
-                        </nav>
-                    </div>
-                
-                    <div id="main-nav" class="container">
-                    <div class="row">
-                        <div id="main-nav__left" class="col-md-5 text-right no-gutters">
-                            <nav>
-                                <?php wp_nav_menu( array(
-                                    //'theme_location' => 'top',
-                                    'menu'           => 'top-menu-left',
-                                    //'menu_id'        => 'sticky-menu',
-                                    'menu_class'     => 'navigation',
-                                ) ); ?>
-                            </nav>
-                            </div>
-                        <div id="main-nav__logo" class="col-md-2">
-                            <a href="<?php echo get_site_url(); ?>"><img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav-white.png" alt="logo cargo"/></a>
-                        </div>
-                        <div id="main-nav__right" class="col-md-5 text-left no-gutters">
-                            <nav>
-                               <?php wp_nav_menu( array(
-                                    'menu'           => 'top-menu-right',
-                                    'menu_class'     => 'navigation',
-                                ) ); ?>
-                           </nav>
-                        </div>
-                    </div>
-                    </div>
+            <div class="header-main__plate">
+                <div class="container parallax-img-container">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/plate.png" class="parallax-move"/>
                 </div>
-
-                <div id="mobile-nav-toggle"><i class="icon-menu"></i></div>
-
-                <div id="top-navigation-bar" class="container-fluid">
-                    <div class="container no-gutters">
-                        <div id="top-navigation-bar__address" class="text-left col-xs-6"><i class="icon icon-map-outline"></i>Dolnych Młynów 10/2H<span class="hidden-xs">, Kraków</span></div>
-                        <div id="top-navigation-bar__phone" class="text-right col-xs-6"><i class="icon icon-phone-outline"></i><a href="tel: 12 686 55 22"><span itemprop="telephone">12 686 55 22</span></a></div>
-                    </div>
-                </div>
-                <div id="main-nav" class="container">
-                   <div class="row">
-                       <div id="main-nav__left" class="col-md-5 text-right">
-                           <nav>
-                               <?php wp_nav_menu( array(
-                                    'menu'           => 'top-menu-left' ,
-                                    'menu_class'     => 'navigation',
-                                ) ); ?>
-                           </nav>
-                        </div>
-                       <div id="main-nav__logo" class="col-md-2">
-                           <a href="<?php echo get_site_url(); ?>"><img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-cargo-nav.png" alt="logo cargo"/></a>
-                       </div>
-                       <div id="main-nav__right" class="col-md-5 text-left">
-                            <nav>
-                               <?php wp_nav_menu( array(
-                                    'menu'           => 'top-menu-right',
-                                    'menu_class'     => 'navigation',
-                                ) ); ?>
-                           </nav>
-                       </div>
-                   </div>
-                </div><!-- .container -->
-            </div><!-- .navigation-top -->
-
-            <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>
-                <div id="reservation-header__title">
-                    <h1><?php the_title(); ?></h1>
-                    <p><?php echo nl2br($subtitle); ?></p>
-                    <a href="tel: <?php echo ot_get_option( 'phone' ); ?>"><i class="icon icon-phone-outline"></i><?php echo ot_get_option( 'phone' ); ?></a>
-                </div>
-
-            <?php elseif ( is_front_page() == TRUE ) : ?>
-                <div id="homepage-header__welcome">
-                    <h1>#GRILLWITHIT</h1>
-                    <p><?php echo nl2br($subtitle); ?></p>
-                    <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
-                </div>
-                <div id="homepage-header__reservation">
-                    <a id="res-btn" href="<?php echo get_permalink('212'); ?>" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
-                </div>
-                <div class="next-section"><i class="icon-arrow-down"></i></div>
-            <?php else : ?>
-                <div id="page-header__title">
-                    <h1><?php the_title(); ?></h1>
-                    <p><?php echo nl2br($subtitle); ?></p>
-                </div>
-            <?php endif; ?>
-        </header>
-
-        <div id="inner-wrap">
+            </div>
+            <div class="header-main__scroll">
+                <i class="icon icon-navigate-down"></i>
+            </div>
+            <!-- Header subpage -->
+            <?php
+                } else {
+                    get_template_part('template-parts/navigation/navigation', 'secondary');
+                }
+            ?>
+        </header>            
+    <div id="inner-wrap">
         

@@ -1,33 +1,27 @@
 // Import fonts without glyph (icomoon)
 
-$gabriele-font-path: "assets/fonts/gabriele" !default;
-$rust-font-path: "assets/fonts/introrustg" !default;
+$woodford-font-path: "assets/fonts/woodford" !default;
 
-//Hind 
-@import url('https://fonts.googleapis.com/css?family=Hind');
+// Libre Baskerville
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i&subset=latin-ext');
 
-//Gabriele – BLACK
+// Woodford
 @font-face {
-    font-family: 'Gabriele';
-    src: url('#{$gabriele-font-path}/GabrieleBlackRibbonFG.woff2') format('woff2'),
-        url('#{$gabriele-font-path}/GabrieleBlackRibbonFG.woff') format('woff'),
-        url('#{$gabriele-font-path}/GabrieleBlackRibbonFG.ttf') format('truetype'),
-        url('#{$gabriele-font-path}/GabrieleBlackRibbonFG.svg#GabrieleBlackRibbonFG') format('svg');
-    font-weight: 500;
+    font-family: 'Woodford';
+    src: url('#{$woodford-font-path}/WoodfordBourne-Bold.woff2') format('woff2'),
+        url('#{$woodford-font-path}/WoodfordBourne-Bold.woff') format('woff'),
+        url('#{$woodford-font-path}/WoodfordBourne-Bold.ttf') format('truetype'),
+        url('#{$woodford-font-path}/WoodfordBourne-Bold.svg#WoodfordBourne-Bold') format('svg');
+    font-weight: bold;
     font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-//Intro Rust G Base 2 Line as "rust"
 @font-face {
-    font-family: 'Rust';
-    src: url('#{$rust-font-path}/IntroRustG-Base2Line.woff2') format('woff2'),
-        url('#{$rust-font-path}/IntroRustG-Base2Line.woff') format('woff'),
-        url('#{$rust-font-path}/IntroRustG-Base2Line.ttf') format('truetype'),
-        url('#{$rust-font-path}/IntroRustG-Base2Line.svg#IntroRustG-Base2Line') format('svg');
+    font-family: 'Woodford';
+    src: url('#{$woodford-font-path}/WoodfordBourne-Regular.woff2') format('woff2'),
+        url('#{$woodford-font-path}/WoodfordBourne-Regular.woff') format('woff'),
+        url('#{$woodford-font-path}/WoodfordBourne-Regular.ttf') format('truetype'),
+        url('#{$woodford-font-path}/WoodfordBourne-Regular.svg#WoodfordBourne-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }

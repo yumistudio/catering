@@ -1,0 +1,13 @@
+/*---------------------------------
+
+MIXINS
+
+-----------------------------------*/
+
+@mixin hover-link($color) {
+    color: $color;
+    transition: all .3s ease-in-out;
+    &:hover {
+        color: lighten($color, 10%);
+    }
+}

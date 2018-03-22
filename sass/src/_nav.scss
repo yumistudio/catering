@@ -1,0 +1,52 @@
+/*---------------------------------
+
+NAVIGATION STYLES
+
+-----------------------------------*/
+
+nav.header-nav {
+    ul {
+        margin: 0 25px;
+        padding: 0;
+        list-style: none;
+    }
+    
+    li {
+        display: inline-flex;
+        padding: 0;
+        margin: 28px 22px;
+        a {
+            margin-top: 4px;
+            position: relative;
+            color: $black;
+            transition: color .15s ease-in-out;
+            &::after {
+                content: '';
+                height: 1px;
+                background-color: $green;
+                width: 0;
+                display: block;
+                margin-top: 4px;
+                transition: width .3s ease-in-out;
+            }
+            &:hover {
+                color: $green;
+                &::after {
+                    content: '';
+                    width: 20px;
+                }
+            }
+        }
+    }
+    &.header-nav-white {
+        a {
+            color: $white;
+            &::after {
+                background-color: $white;
+            }
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}

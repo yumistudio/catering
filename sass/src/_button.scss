@@ -1,0 +1,52 @@
+/*---------------------------------
+
+BUTTONS STYLES
+
+-----------------------------------*/
+.btn {
+    display: inline-block;
+    font-family: $base-font-family;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    padding: 1.125rem 3rem;
+    color: $green;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color: $green-secondary; 
+    }
+    &.btn-sm {
+        font-size: 1rem;
+        text-transform: uppercase; 
+    }
+    &.btn-primary {
+        color: $white;
+        position: relative;
+        background-size: 200% auto;
+        transition: 0.5s ease-in-out;
+        background-image: linear-gradient(to right, $green-secondary 0%, $green 50%);
+        &:hover {
+            background-image: linear-gradient(to right, $green-secondary 0%, $green 50%, $green 100%);
+            background-position: right center;
+        }
+    }
+    &.btn-secondary {
+        color: $white;
+        transition: all .25s ease-in-out;
+        background: $green;
+        &:hover {
+            background: lighten($green, 15%); 
+        }
+        &-outline {
+            padding: calc(1.125rem - 2px) calc(2.9rem - 2px);
+            color: $green;
+            border: 2px solid $green;
+            background: transparent;
+            &:hover {
+                color: $white;
+                background: $green; 
+            }
+        }
+    }     
+}
