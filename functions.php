@@ -350,66 +350,36 @@ function custom_taxonomy_our_people_category() {
 }
 add_action( 'init', 'custom_taxonomy_our_people_category', 0 );
 
-function custom_post_menu_item() {
+function custom_post_our_references() {
 	$labels = array(
-		'name'               => _x( 'Pozycje Menu', 'post type general name' ),
-		'singular_name'      => _x( 'Pozycja', 'post type singular name' ),
-		'add_new'            => _x( 'Nowy', 'Pzycja' ),
-		'add_new_item'       => __( 'Nowa Pozycja' ),
+		'name'               => _x( 'Referencje', 'post type general name' ),
+		'singular_name'      => _x( 'Referenccja', 'post type singular name' ),
+		'add_new'            => _x( 'Nowa', 'Person' ),
+		'add_new_item'       => __( 'Nowa Referencja' ),
 		'edit_item'          => __( 'Edytuj' ),
-		'new_item'           => __( 'Nowa Pozycja' ),
-		'all_items'          => __( 'Wszystkie pozycje' ),
+		'new_item'           => __( 'Nowa Referencja' ),
+		'all_items'          => __( 'Wszystkie' ),
 		'view_item'          => __( 'Zobacz' ),
-		'search_items'       => __( 'Szukaj pozycji' ),
+		'search_items'       => __( 'Przeszukaj Referencje' ),
 		'not_found'          => __( 'No client found' ),
 		'not_found_in_trash' => __( 'No client found in the Trash' ), 
 		'parent_item_colon'  => '',
-		'menu_name'          => 'Nasze Menu'
-	);
-	$args = array(
-		'labels'        => $labels,
-		'description'   => 'Holds our artists',
-		'public'        => true,
-		'menu_position' => 37,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-		'hierarchical'  => false,
-		'has_archive'   => true,
-		//'rewrite' => array( 'slug' => 'artysci' ),
-	);
-	register_post_type( 'menu_item', $args );
-}
-add_action( 'init', 'custom_post_menu_item' );
-
-
-function custom_post_gallery() {
-	$labels = array(
-		'name'               => _x( 'Nasi ludzie', 'post type general name' ),
-		'singular_name'      => _x( 'Osoba', 'post type singular name' ),
-		'add_new'            => _x( 'Nowy', 'Person' ),
-		'add_new_item'       => __( 'Nowa Osoba' ),
-		'edit_item'          => __( 'Edytuj' ),
-		'new_item'           => __( 'Nowa Osoba' ),
-		'all_items'          => __( 'Wszyscy' ),
-		'view_item'          => __( 'Zobacz' ),
-		'search_items'       => __( 'Search Persons' ),
-		'not_found'          => __( 'No client found' ),
-		'not_found_in_trash' => __( 'No client found in the Trash' ), 
-		'parent_item_colon'  => '',
-		'menu_name'          => 'Nasi ludzie'
+		'menu_name'          => 'Referencje'
 	);
 	$args = array(
 		'labels'        => $labels,
 		'description'   => 'Holds our people',
 		'public'        => true,
-		'menu_position' => 36,
+		'menu_position' => 37,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'hierarchical'  => false,
 		'has_archive'   => true,
-		'rewrite' => array( 'slug' => 'nasz-zespol' ),
+		'rewrite' => array( 'slug' => 'referencje' ),
 	);
-	register_post_type( 'artist', $args );
+	register_post_type( 'reference', $args );
 }
-add_action( 'init', 'custom_post_gallery' );
+add_action( 'init', 'custom_post_our_references' );
+
 
 function wpb_disable_feed() {
 	wp_die( __('No feed available,please visit our <a href="'. get_bloginfo('url') .'">homepage</a>!') );
