@@ -24,10 +24,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <?php
-
 wp_head();
-
-$subtitle = get_field('page_subtitle');
 ?>
 
 </head>
@@ -52,10 +49,10 @@ $subtitle = get_field('page_subtitle');
             </div>  
             <div class="header-main__welcome text-center">
                 <h1>
-                    <span class="claim">Sztuka gotowania i wiedza o zarządzaniu</span>
-                    Catering na każdą okazję
+                    <span class="claim"><?php the_field('claim'); ?></span>
+                    <?php the_title(); ?>
                 </h1>
-                <a href="#" class="btn btn-primary">Sprawdź ofertę</a>
+                <a href="/oferta/" class="btn btn-primary">Sprawdź ofertę</a>
             </div>
 
             <div class="header-main__plate">
@@ -63,7 +60,7 @@ $subtitle = get_field('page_subtitle');
                     <img src="<?php echo get_template_directory_uri() ?>/assets/images/plate.png" class="parallax-move"/>
                 </div>
             </div>
-            <div class="header-main__scroll">
+            <div class="header-main__scroll next-section-scroll">
                 <i class="icon icon-navigate-down"></i>
             </div>
             <!-- Header subpage -->

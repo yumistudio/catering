@@ -25,11 +25,7 @@
 						<h5>Cargo grill & deli</h5>
 						<nav class="footer-menu">
                             <?php wp_nav_menu( array(
-                                'menu'           => 'top-menu-left' ,
-                                'menu_class'     => '',
-                            ) ); ?>
-                            <?php wp_nav_menu( array(
-                                'menu'           => 'top-menu-right' ,
+                                'menu'           => 'footer-menu' ,
                                 'menu_class'     => '',
                             ) ); ?>
                         </nav>

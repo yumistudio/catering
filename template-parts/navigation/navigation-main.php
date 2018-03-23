@@ -11,15 +11,12 @@
 ?>
 <div class="header-main__bar">
 	<nav class="header-nav header-nav-white">
-		<ul>
-			<li><a href="#">O nas</a></li>
-			<li><a href="#">Oferta</a></li>
-			<li><a href="#">Referencje</a></li>
-			<li><a href="#">Galeria</a></li>
-			<li><a href="#">Kontakt</a></li>
-		</ul>
+		<?php wp_nav_menu( array(
+            'menu'           => 'top-menu' ,
+            'menu_class'     => '',
+        ) ); ?>
 	</nav>
 	<div class="header-main__bar__phone">
-		<a href="#"><i class="icon icon-phone"></i>519 448 578</a>
+		<a href="tel: <?php echo ot_get_option( 'phone' ); ?>"><i class="icon icon-phone"></i><?php echo ot_get_option( 'phone' ); ?></a>
 	</div>
 </div>

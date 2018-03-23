@@ -110,20 +110,12 @@
 		$('#'+$(this).data('for')).siblings('input[type=checkbox]').removeClass('checked');
 		$('#'+$(this).data('for')).toggleClass('checked');
 	});
-	
-	// 
-	$('.add-next-scroll').each(function() {
-		
-		var nextArrow = $('<div class="next-section"><i class="icon-arrow-down"></i></div>');
 
-		$(this).append(nextArrow);
-
-		nextArrow.click(function() {
-			var target = $(this).closest('section').next();
-			$('html, body').animate({
-			  scrollTop: target.offset().top - 70
-			}, 1000);
-		});
+	$('.next-section-scroll').click(function() {
+		var target = $(this).parent().next();
+		$('html, body').animate({
+		  scrollTop: target.offset().top - 70
+		}, 1000);
 	});
 
 	$('iframe[src*="youtube.com"]').each(function() {

@@ -17,8 +17,8 @@ get_header(); ?>
 <section id="wwa" class="padding-section">
 	<div class="container text-center">
 		<h1>
-			<span class="claim">Kim jesteśmy?</span>
-			Catering scandale
+			<span class="claim"><?php the_field('cs_section_subtitle'); ?></span>
+			<?php the_field('cs_section_title'); ?>
 		</h1>
 	</div>
 	<div class="container text-center cf no-gutters">
@@ -30,22 +30,27 @@ get_header(); ?>
 	</div>
 	<div class="container text-center cf">
 		<div class="col-md-offset-2 col-md-8">
-			<p class="lead">Wieloletnie doświadczenie w branży gastronomicznej sprawia, że dysponujemy kompleksową wiedzą umożliwiającą nam organizację cateringu zarówno na małe, kameralne spotkania, jak i duże eventy. Zaplecze, jakim dysponujemy, sprawia, że oferowana przez nas kuchnia jest różnorodna, a każde spotkanie możemy obsłużyć od A do Z.</p>
-			<a href="#" class="btn btn-primary">Dowiedz się więcej</a>
+			<p class="lead"><?php the_field('cs_section_content'); ?></p>
+			<a href="/o-nas/" class="btn btn-primary">Dowiedz się więcej</a>
 		</div>
 	</div>
 </section>
 
 <section class="section-info cf">
+	<?php $query = new WP_Query( array(
+		'post_type' => 'page',
+	    'posts_per_page' => 6,
+	    'post_parent' => 97)
+	);
+	        
+	while ($query->have_posts()) : $query->the_post(); ?>
 	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
+		<div class="section-info__box__holder" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
 			<div class="wrapper">
 				<div class="title">
-					<h3>Spotkania biznesowe</h3>
+					<h3><?php the_title(); ?></h3>
 					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
+						<?php the_field('short_description'); ?>
 					</div>
 					<div class="border-bottom">
 						<span class="icon icon-bow"></span>
@@ -54,98 +59,14 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
-			<div class="wrapper">
-				<div class="title">
-					<h3>Spotkania biznesowe</h3>
-					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
-					</div>
-					<div class="border-bottom">
-						<span class="icon icon-bow"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
-			<div class="wrapper">
-				<div class="title">
-					<h3>Spotkania biznesowe</h3>
-					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
-					</div>
-					<div class="border-bottom">
-						<span class="icon icon-bow"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
-			<div class="wrapper">
-				<div class="title">
-					<h3>Spotkania biznesowe</h3>
-					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
-					</div>
-					<div class="border-bottom">
-						<span class="icon icon-bow"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
-			<div class="wrapper">
-				<div class="title">
-					<h3>Spotkania biznesowe</h3>
-					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
-					</div>
-					<div class="border-bottom">
-						<span class="icon icon-bow"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 section-info__box">
-		<div class="section-info__box__holder">
-			<div class="wrapper">
-				<div class="title">
-					<h3>Spotkania biznesowe</h3>
-					<div class="hidden">
-						<p>
-							Ze świeżych składników starannie przygotowujemy lunch boxy w torbach na wynos. Do wyboru: sałatka luz zupa...
-						</p>
-					</div>
-					<div class="border-bottom">
-						<span class="icon icon-bow"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php endwhile; wp_reset_postdata(); ?>
 </section>
 
 <section id="home-people" class="padding-section">
 	<div class="container text-center">
 		<h1>
-			<span class="claim">Poznaj nas</span>
-			Nasz zespół
+			<span class="claim"><?php the_field('ot_section_subtitle'); ?></span>
+			<?php the_field('ot_section_title'); ?>
 		</h1>
 	</div>
 	<div class="container text-center cf no-gutters">
@@ -291,6 +212,34 @@ get_header(); ?>
 <section id="trust" class="padding-section">
 	<div class="container text-center">
 		<h1>
+			<span class="claim"><?php the_field('t_section_subtitle'); ?></span>
+			<?php the_field('t_section_title'); ?>
+		</h1>
+	</div>
+	<div class="container text-center cf no-gutters">
+		<div class="col-md-offset-3 col-md-6">
+			<div class="bow bow-fluid">
+				<span class="icon icon-bow"></span>
+			</div>
+		</div>
+	</div>
+	<div class="container text-center cf">
+	<?php
+	$query = new WP_Query( array('post_type' => 'reference', 'posts_per_page' => 8, ) );        
+	while ($query->have_posts()) : $query->the_post(); 
+		$aterms = get_the_terms(get_the_ID(), 'artist_categories');
+	?>
+	<div class="reference-item">
+		<?php the_title(); ?>
+	</div>
+	<?php endwhile; wp_reset_postdata(); ?>
+		<a href="/referencje/" class="btn btn-primary"><?php the_field('t_button_text'); ?></a>
+	</div>
+</section>
+
+<!-- <section id="trust" class="padding-section">
+	<div class="container text-center">
+		<h1>
 			<span class="claim">Nasze referencje</span>
 			Zaufali nam
 		</h1>
@@ -347,25 +296,44 @@ get_header(); ?>
 	<div class="container text-center cf ">
 		<a href="#" class="btn btn-primary">Zobacz referencje</a>
 	</div>
-</section>
+</section> -->
 
 <section id="home-reservation" class="padding-section">
 	<div class="container-fluid max-width">
 		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8">
 			<div class="section-header">
 				<h1>
-					<span class="claim">Sztuka gotowania i wiedza o zarządzaniu</span>
-					Zamów catering Już dziś
+					<span class="claim"><?php the_field('oc_section_subtitle'); ?></span>
+					<?php the_field('oc_section_title'); ?>
 				</h1>
 			</div>
 			<div id="home-reservation__cta" class="text-center">
 				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone"></i>519 448 448</a>
 				<div class="or">lub</div>
-				<a href="/rezerwacja/" class="btn btn-primary">Zostaw swój numer, oddzwonimy!</a>
+				<a href="#" class="btn btn-primary"><?php the_field('oc_button_text'); ?></a>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- <section id="home-reservation" class="padding-section">
+	<div class="container text-center">
+		<h1>
+			<span class="claim"><?php the_field('oc_section_subtitle'); ?></span>
+			<?php the_field('oc_section_title'); ?>
+		</h1>
+	</div>
+	<div class="container text-center cf no-gutters">
+		<div class="col-md-offset-3 col-md-6">
+			<div class="bow bow-fluid">
+				<span class="icon icon-bow"></span>
+			</div>
+		</div>
+	</div>
+	<div class="container text-center cf">
+		<a href="#" class="btn btn-primary"><?php the_field('oc_button_text'); ?></a>
+	</div>
+</section> -->
 
 <section id="home-map">
 	
@@ -410,4 +378,5 @@ get_header(); ?>
 	<?php get_template_part( 'template-parts/page/content', 'google-map' ); ?>
 	</script>
 </section>
+
 <?php get_footer();
