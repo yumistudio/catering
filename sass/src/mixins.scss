@@ -11,3 +11,11 @@ MIXINS
         color: lighten($color, 10%);
     }
 }
+
+@mixin bg-transition($primary, $secondary) {
+    background-color: $primary;
+    transition: background-color .3s ease-in-out;
+    &:hover {
+        background-color: $secondary;
+    }
+}

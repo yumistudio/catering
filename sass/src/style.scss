@@ -184,8 +184,8 @@ i {
 }
 
 .no-gutters {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .section-padding {
@@ -881,6 +881,42 @@ footer {
     background-size: cover;
     &__carousel {
         margin-top: 1rem !important;
+    }
+    .arrow-conatainer {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        [class^="swiper-nav-"] {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: $green;
+            color: $white;
+            border-radius: 100px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-50%);
+            @include bg-transition($green, $green-secondary);
+            i {
+                font-size: 0.875rem;
+                margin-bottom: 2px;
+            }
+        }
+        [class^="swiper-nav-prev"] {
+            left: 40px;
+            i {
+                margin-right: 3px;
+            }
+        }
+        [class^="swiper-nav-next"] {
+            right: 40px;
+            i {
+                margin-left: 3px;
+            }
+        }
     }
 }
 
@@ -2235,6 +2271,10 @@ p.p-outline {
                     justify-content: center;
                     transition: max-height 500ms cubic-bezier(0, 1, 0, 1);
                     padding: 0 30px;
+                    .btn {
+                        margin-top: 20px;
+                        margin-bottom: 16px;
+                    }
                 }
                 &:hover {
                     .hidden {

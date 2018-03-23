@@ -69,6 +69,10 @@ wp_head();
                     get_template_part('template-parts/navigation/navigation', 'secondary');
                 }
             ?>
-        </header>            
+        </header>   
+        
+        <div class="phone-fixed">
+            <a href="#"><i class="icon icon-phone"></i></a>
+        </div>
     <div id="inner-wrap">
         
