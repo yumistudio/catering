@@ -50,3 +50,39 @@ nav.header-nav {
         }
     }
 }
+
+.sticky-nav {
+    padding: 0 40px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    border-bottom: 1px solid $border-color;
+    transform: translateY(-101%);
+    transition: transform .5s ease-in;
+    &.show-sticky-nav {
+        transform: translateY(0%);
+    }
+    &__container {
+        display: inline-flex;
+        .header-nav + .sticky-nav__phone {
+            display: flex;
+            align-items: center;
+            a {
+                display: flex;
+                color: $gold;
+                align-items: center;
+                font-weight: 700;
+                i {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+}

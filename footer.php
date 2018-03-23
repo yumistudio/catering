@@ -24,30 +24,19 @@
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Cargo grill & deli</h5>
 						<nav class="footer-menu">
-                            <?php wp_nav_menu( array(
-                                'menu'           => 'footer-menu' ,
-                                'menu_class'     => '',
-                            ) ); ?>
+							<div class="menu-footer-menu-container">
+								<ul id="menu-footer-menu">
+									<li>
+										<a href="http://127.0.0.1:85/catering/">Strona główna</a>
+									</li>
+								</ul>
+							</div>	
                         </nav>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<h5>Newsletter</h5>
 						<p><?php echo ot_get_option( 'newsletter_prompt' ); ?></p>
 						<?php es_subbox($namefield = "NO", $desc = "", $group = "Public"); ?>
-					</div>
-					<div class="col-md-2 col-lg-2">
-						<h5>Znajdź nas na</h5>
-						<ul class="footer-social">
-							<li><a href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank">
-								<i class="icon icon-social-facebook"></i>
-							</a></li>
-							<li><a href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank">
-								<i class="icon icon-social-instagram"></i>
-							</a></li>
-							<li><a href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank">
-								<i class="icon icon-social-tripadvisor"></i>
-							</a></li>
-						</ul>
 					</div>
 
 				</div>
