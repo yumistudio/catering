@@ -24,13 +24,10 @@
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Cargo grill & deli</h5>
 						<nav class="footer-menu">
-							<div class="menu-footer-menu-container">
-								<ul id="menu-footer-menu">
-									<li>
-										<a href="http://127.0.0.1:85/catering/">Strona główna</a>
-									</li>
-								</ul>
-							</div>	
+                            <?php wp_nav_menu( array(
+                                'menu'           => 'footer-menu' ,
+                                'menu_class'     => '',
+                            ) ); ?>
                         </nav>
 					</div>
 					<div class="col-md-6 col-lg-4">

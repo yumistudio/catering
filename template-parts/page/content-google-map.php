@@ -16,7 +16,7 @@ function initMap() {
    	var image = 'http://' + window.location.hostname + '/wp-content/themes/funktional/assets/images/marker.png';
 
     marker = new google.maps.Marker({
-        position: {lat: 50.064806, lng: 19.92682},
+        position: {lat: 50.051891, lng: 19.944578},
         map: map,
         icon: image,
     });

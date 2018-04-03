@@ -227,80 +227,21 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div class="container text-center cf">
+	<div class="container text-center cf partners">
 	<?php
 	$query = new WP_Query( array('post_type' => 'reference', 'posts_per_page' => 8, ) );        
-	while ($query->have_posts()) : $query->the_post(); 
-		$aterms = get_the_terms(get_the_ID(), 'artist_categories');
-	?>
-	<div class="reference-item">
-		<?php the_title(); ?>
-	</div>
+	while ($query->have_posts()) : $query->the_post(); ?>
+		<div class="col-md-3">
+			<div class="partner">
+				<img src="<?php the_post_thumbnail_url(); ?>" />
+			</div>
+		</div>
 	<?php endwhile; wp_reset_postdata(); ?>
+	</div>
+	<div class="container text-center cf ">
 		<a href="/referencje/" class="btn btn-primary"><?php the_field('t_button_text'); ?></a>
 	</div>
 </section>
-
-<!-- <section id="trust" class="padding-section">
-	<div class="container text-center">
-		<h1>
-			<span class="claim">Nasze referencje</span>
-			Zaufali nam
-		</h1>
-	</div>
-	<div class="container text-center cf no-gutters">
-		<div class="col-md-offset-3 col-md-6">
-			<div class="bow bow-fluid">
-				<span class="icon icon-bow"></span>
-			</div>
-		</div>
-	</div>
-	<div class="container text-center cf partners">
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/capgemini.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/hilton-garden-inn.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/bp.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/royal-canin.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/shell.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/veracomp.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/hcl.png" />
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="partner">
-				<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners-logo/capita.png" />
-			</div>
-		</div>
-	</div>
-	<div class="container text-center cf ">
-		<a href="#" class="btn btn-primary">Zobacz referencje</a>
-	</div>
-</section> -->
 
 <section id="home-reservation" class="padding-section">
 	<div class="container-fluid max-width">
@@ -312,32 +253,13 @@ get_header(); ?>
 				</h1>
 			</div>
 			<div id="home-reservation__cta" class="text-center">
-				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone"></i>519 448 448</a>
+				<a class="phone" href="tel: <?php echo ot_get_option( 'phone' ); ?>"><i class="icon icon-phone"></i><?php echo ot_get_option( 'phone' ); ?></a>
 				<div class="or">lub</div>
 				<a href="#" class="btn btn-primary"><?php the_field('oc_button_text'); ?></a>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- <section id="home-reservation" class="padding-section">
-	<div class="container text-center">
-		<h1>
-			<span class="claim"><?php the_field('oc_section_subtitle'); ?></span>
-			<?php the_field('oc_section_title'); ?>
-		</h1>
-	</div>
-	<div class="container text-center cf no-gutters">
-		<div class="col-md-offset-3 col-md-6">
-			<div class="bow bow-fluid">
-				<span class="icon icon-bow"></span>
-			</div>
-		</div>
-	</div>
-	<div class="container text-center cf">
-		<a href="#" class="btn btn-primary"><?php the_field('oc_button_text'); ?></a>
-	</div>
-</section> -->
 
 <section id="home-map">
 	
@@ -362,8 +284,14 @@ get_header(); ?>
 			</div>
 			<div class="item__data">
 				<div class="item__data__inner">
-					<a href="#"><span class="icon icon-phone"></span>519 448 448</a>
-					<a href="#"><span class="icon icon-mail"></span>catering@scandale.pl</a>
+					<a href="tel: <?php echo ot_get_option( 'phone' ); ?>">
+						<span class="icon icon-phone"></span>
+						<?php echo ot_get_option( 'phone' ); ?>
+					</a>
+					<a href="mailto: <?php echo ot_get_option( 'email' ); ?>">
+						<span class="icon icon-mail"></span>
+						<?php echo ot_get_option( 'email' ); ?>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -375,9 +303,9 @@ get_header(); ?>
 	var getMapCenter = function() {
 		   
 	    if( screen.width > 767 )
-	        return {lat: 50.064806, lng: 19.927};
+	        return {lat: 50.051891, lng: 19.944578};
 	    else
-	        return {lat: 50.064806, lng: 19.926007};
+	        return {lat: 50.051891, lng: 19.944578};
 	}
 	<?php get_template_part( 'template-parts/page/content', 'google-map' ); ?>
 	</script>
