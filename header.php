@@ -72,23 +72,23 @@ wp_head();
         </header>   
         
         <div class="phone-fixed">
-        <div class="asd">
-								<div id="popup-<?php the_ID(); ?>" class="black-popup max-width mfp-hide">
-									<div class="black-popup__wrapper">
-										<button title="Zamknij (Esc)" id="mfp-close" type="button" class="mfp-close"><i class="icon-close"></i></button>
-										<div>
-											<div class="table">
-												<div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
-												<div class="cell"><div class="content">
-													<?php the_title('<h3>', '</h3>');
-													foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
-													the_content(); ?>
-												</div></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+            <div class="asd">
+                <div id="popup-<?php the_ID(); ?>" class="black-popup max-width mfp-hide">
+                    <div class="black-popup__wrapper">
+                        <button title="Zamknij (Esc)" id="mfp-close" type="button" class="mfp-close"><i class="icon-close"></i></button>
+                        <div>
+                            <div class="table">
+                                <div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
+                                <div class="cell"><div class="content">
+                                    <?php the_title('<h3>', '</h3>');
+                                    foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
+                                    the_content(); ?>
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="#"><i class="icon icon-phone"></i></a>
         </div>
         <script>
