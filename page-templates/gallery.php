@@ -5,7 +5,7 @@
  * @package WordPress
  * @since vilicon 1.0
  */
-
+/*
 $grid = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
@@ -28,7 +28,7 @@ $grid = array(
 	18 => 'grid-item--height-small',
 	19 => 'grid-item--height-reg',
 );
-
+*/
 $heights = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
@@ -48,12 +48,18 @@ $widths = array(
 	5 => 'grid-item--width-double',
 );
 
-wp_enqueue_style( 'photoswipe-css', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.css' ) );
-wp_enqueue_style( 'photoswipe-default-skin', get_theme_file_uri( '/assets/js/photoswipe/dist/default-skin/default-skin.css' ) );
-wp_enqueue_script( 'photoswipe-main', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.min.js' ), array(), '', false );
-wp_enqueue_script( 'photoswipe-ui', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe-ui-default.min.js' ), array(), '', false );
-
 get_header();
+
+$all_terms = array();
+$gallery = get_field('gallery', 2);
+foreach ($gallery as $key => $image) {
+	if ( $term = get_field('kategoria', $image['ID']))
+		$all_terms[$term->slug] = $term->name;
+
+	$gallery[$key]['term'] = $term;
+}
+
+/*
 
 $args = array(
 	'post_type' => 'post',
@@ -61,7 +67,6 @@ $args = array(
 
 $query = new WP_Query($args);
 
-$all_terms = array();
 $i = 0;
 foreach ($query->posts as $key => $post) {
 	$terms = get_the_category($post->ID);
@@ -71,6 +76,7 @@ foreach ($query->posts as $key => $post) {
 	$post->filter = $terms;
 	$i++;
 }
+*/
 ?>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">
@@ -78,58 +84,57 @@ foreach ($query->posts as $key => $post) {
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
-				<input name="filter" value="*" checked="checked" type="radio">
+				<input name="filter" data-filter="*" checked="checked" type="radio">
 				Wszystkie
 			</label>
 			<?php foreach ($all_terms as $slug => $name) : ?>
 			<label class="btn on">
-				<input name="filter" value="<?php echo $slug; ?>" type="radio">
+				<input name="filter" data-filter=".<?php echo $slug; ?>" type="radio">
 				<?php echo $name; ?>
 			</label>
 			<?php endforeach; ?>
 		</div>
 	</div>
 	<div class="grid-wrap max-width">
-		<div id="gallery-grid" class="grid photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery">
-			<?php $i=0; while ( $query->have_posts() ) : $query->the_post(); global $post;
-				
-				$classesStr = '';
-				foreach ($post->filter as $term)
-					$classesStr .= ' '.$term->slug;
+		<div id="masonry_gallery" class="max-width photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery"> 
+			<div class="grid-sizer"></div> 
+			<div class="gutter-sizer"></div> 
 
-				$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'yumi-full-hd');
-				$width=$attachment[1];
-				$height=$attachment[2];
-			?>
-	
-			<div class="grid-item photoswipe-item <?php echo $widths[$i]; ?> <?php echo $heights[$i]; ?> <?php echo $classesStr; ?>">
-				<a href="<?php echo $attachment[0]; ?>" data-size="<?php echo $width?>x<?php echo $height?>" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
-					<div class="overlay"><i class="icon-search"></i></div>
+			<?php foreach ($gallery as $key => $image) : ?>
+			<div class="grid-item photoswipe-item <?php echo $image['term']->slug; ?>">
+				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="<?php echo $image['sizes']['yumi-gallery-item-width']; ?>x<?php echo $image['sizes']['yumi-gallery-item-height']; ?>" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+					<div class="grid-item-inner">
+						<div class="overlay"><i class="icon-search"></i></div>
+					</div>
 				</a>
 			</div>
-			<?php $i++; endwhile; // End of the loop. ?>	
+			<?php endforeach; // End of the loop. ?>
 		</div>
 	</div>
 
 <?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
-
 <script>
 (function($) {
 	$(document).ready(function() {
-		var $grid = jQuery('#gallery-grid');
-		$grid.isotope({
-		  // options
-		  itemSelector: '.grid-item',
-		  layoutMode: 'masonry'
+		var $grid_demo_resize = $('#masonry_gallery');
+		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 30});
+		// Use resize
+		var grid_resize = grid3.resize({
+			celHeight 	: 180,
+			sizeMap 	: [[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]],
+			resize 		: false,
 		});
-
-		$('.filters input').change(function() {
-			$(this).parent().siblings().removeClass('on');
-			$(this).parent().toggleClass('on');
-			var value = $(this).val();
-			if ( value != '*' ) value = '.' + value;
-			$grid.isotope({ filter: value });
+		// Get Size Map
+		grid_resize.getSizeMap();
+		// Set Size Map & apply Size Map
+		grid_resize.setSizeMap([[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]]).applySize();
+		$('.filters input').on('click', function() {
+			var filterValue = $(this).attr('data-filter');
+			grid3.grid.isotope({
+				filter: filterValue
+			});
 		});
+		grid3.grid.isotope();
 	});
 })(jQuery);
 </script>
