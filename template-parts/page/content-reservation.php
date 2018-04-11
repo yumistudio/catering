@@ -8,7 +8,7 @@
 				<p>Nie czekaj i już dzisiaj rozkoszuj się naszymi</br>wspaniałymi daniami na miejscu.</p>
 			</div>
 			<div id="home-reservation__cta" class="text-center">
-				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone-outline"></i>12 686 55 22</a>
+				<a class="phone" href="tel: 12 686 55 22"><i class="icon icon-phone"></i>12 686 55 22</a>
 				<div class="or">lub</div>
 				<a href="/miejsce/" class="btn btn-primary">Zarezerwuj online</a>
 			</div>

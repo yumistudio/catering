@@ -53,8 +53,10 @@ textarea.md-textarea {
   font-size: $input-font-size;
   box-shadow: none;
   box-sizing: content-box;
+  color: $lightgrey;
   @include transition(all .3s);
   padding-left: 1.25rem;
+  padding-right: 1.25rem;
   // Disabled & readonly
   &:disabled, &[readonly="readonly"] {
     color: $input-disabled-color;
@@ -243,7 +245,7 @@ textarea {
   background-color: transparent;
   &.md-textarea {
     overflow-y: hidden;
-    padding: 1.6rem 0;
+    padding: 1.6rem 1.25rem;
     resize: none;
     min-height: 3rem;
   }

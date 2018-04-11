@@ -2368,6 +2368,12 @@ p.p-outline {
     }
 }
 
+.page-template-contact {
+    #home-reservation {
+        padding: 4rem 0;
+    }
+}
+
 .bg-subpage {
     background-image: url('assets/images/backgrounds/subpages-main-bg.jpg') !important;
     background-size: cover;
@@ -2419,17 +2425,29 @@ p.p-outline {
         @include pie-clearfix;
         width: 100%;
         display: block;
+        .mr-4 {
+            margin-top: 4px;
+        }
+        .mr-9 {
+            margin-top: 9px;
+        }
+        .mr-12 {
+            margin-top: 12px;
+        }
         &__icon {
-            margin-top: -3px;
             float: left;
             margin-right: 10px;
-            color: #545454;
+            color: $gold;
+            i {
+                font-size: 20px;
+            }
         }
         &__text {
             float: left;
             line-height: 1.8;
-            a {
-                color: #334433;
+            color: $lightgrey !important;
+            a, p {
+                color: $lightgrey !important;
             }
         }
     }

@@ -50,11 +50,29 @@ global $post;
 			    Informacje
 		    </h2>
             <div class="info">
-                <div class="info__icon">
+                <div class="info__icon mr-4">
+                    <i class="icon icon-location"></i>
+                </div>
+                <div class="info__text">
+                    Plac Nowy 9, 31-000 Kraków
+                </div>
+            </div>
+            <div class="info">
+                <div class="info__icon mr-9">
                     <i class="icon icon-phone"></i>
                 </div>
                 <div class="info__text">
-                    <?php echo str_replace("\r\n", '<br />', ot_get_option( 'address' )); ?>
+                    <p><a href="tel: ">519 448 448</a></p>
+                    <p><a href="tel: ">501 577 146</a></p>
+                    <p><a href="tel: ">501 301 104</a></p>
+                </div>
+            </div>
+            <div class="info">
+                <div class="info__icon mr-12">
+                    <i class="icon icon-mail"></i>
+                </div>
+                <div class="info__text">
+                    <p><a href="mailto: ">catering@scandale.pl</a></p>
                 </div>
             </div>
 		</div>
@@ -62,117 +80,10 @@ global $post;
 		    <h2>
 			    <span class="claim">Napisz do nas</span>
 			    Wyślij wiadomość
-		    </h2>
+            </h2>
+            <?php echo do_shortcode('[contact-form-7 id="31" title="Contact form 1"]'); ?>
 		</div>
 	</div>
-</section>
-<section id="contact" class="cf padding-section">
-    <div class="container">
-        <div class="col-sm-5 col-md-3 no-gutters">
-            <h2>Informacje</h2>
-            <div class="info">
-                <div class="info__icon">
-                    <i class="icon icon-phone"></i>
-                </div>
-                <div class="info__text">
-                    <?php echo str_replace("\r\n", '<br />', ot_get_option( 'address' )); ?>
-                </div>
-            </div>
-            <div class="info">
-                <div class="info__icon">
-                    <i class="icon icon-phone"></i>
-                </div>
-                <div class="info__text">
-                    <?php echo ot_get_option( 'phone' ); ?>
-                </div>
-            </div>
-            <div class="info">
-                <div class="info__icon">
-                    <i class="icon icon-mail-outline"></i>
-                </div>
-                <div class="info__text">
-                    <a href="<?php echo ot_get_option( 'email' ); ?>"><?php echo ot_get_option( 'email' ); ?></a>
-                </div>
-            </div>
-
-            <div class="social">
-                <ul>
-                    <li><a href="<?php echo ot_get_option( 'facebook_link' ); ?>" target="_blank"><i class="icon icon-social-facebook"></i></a></li>
-                    <li><a href="<?php echo ot_get_option( 'instagram_link' ); ?>" target="_blank"><i class="icon icon-social-instagram"></i></a></li>
-                    <li><a href="<?php echo ot_get_option( 'trip_advisor_link' ); ?>" target="_blank"><i class="icon icon-social-tripadvisor"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-sm-5 col-md-3 col-sm-offset-1 no-gutters hidden-md hidden-lg">
-            <h2>Godziny otwarcia</h2>
-            <div class="col-xs-6 no-gutters mr-top">
-                <div class="info">
-                    <div class="info__icon">
-                        <i class="icon icon-clock-outline"></i>
-                    </div>
-                    <div class="info__text">
-                    <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
-                        $lineArr = explode('|', $item);
-                    ?>
-                        <?php echo $lineArr[0]. '</br>'; ?>
-                    <?php endforeach; ?>   
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 no-gutters mr-top mr-bottom">
-                <div class="info">
-                    <div class="info__text pull-right">
-                        <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
-                            $lineArr = explode('|', $item);
-                        ?>
-                        <strong><?php echo $lineArr[1]. '</br>'; ?></strong>
-                        <?php endforeach; ?>   
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-8 col-md-offset-1 col-lg-4 no-gutters hidden-xs hidden-sm">
-            <h2>Napisz do nas</h2>
-            <?php echo do_shortcode('[contact-form-7 id="31" title="Contact form 1"]'); ?>
-        </div>
-
-        <div class="col-sm-12 no-gutters hidden-md hidden-lg">
-            <h2>Napisz do nas</h2>
-            <?php echo do_shortcode('[contact-form-7 id="31" title="Contact form 1"]'); ?>
-        </div>                    
-
-        <div class="col-sm-5 col-md-3 col-lg-3 col-lg-offset-1 no-gutters hidden-xs hidden-sm">
-            <h2>Godziny otwarcia</h2>
-        
-            <div class="col-md-6 no-gutters mr-top">
-                <div class="info">
-                    <div class="info__icon">
-                        <i class="icon icon-clock-outline"></i>
-                    </div>
-                    <div class="info__text">
-                    <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
-                        $lineArr = explode('|', $item);
-                    ?>
-                        <?php echo $lineArr[0]. '</br>'; ?>
-                    <?php endforeach; ?>   
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 no-gutters mr-top">
-                <div class="info">
-                    <div class="info__text pull-right">
-                        <?php foreach(explode("\n", ot_get_option( 'openning_hours' )) as $item) :
-                            $lineArr = explode('|', $item);
-                        ?>
-                        <strong><?php echo $lineArr[1]. '</br>'; ?></strong>
-                        <?php endforeach; ?>   
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 <?php get_template_part( 'template-parts/page/content', 'reservation' ); ?>
 <?php get_footer(); ?>
