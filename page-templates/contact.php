@@ -32,16 +32,9 @@ global $post;
 			    Dane firmy
             </h2>
             <p>
-                Grupa Scandale Royal
-            </p>
-            <p>
-                Pajda Klesyk Spółka Jawna
-            </p>
-            <p>
-                REGON: 122627960
-            </p>
-            <p>
-                NIP: 6762457712
+            <?php
+                echo str_replace("\r\n", "</p>\n<p>", ot_get_option( 'company_data' ) );
+            ?>
             </p>
 		</div>
 		<div class="col-md-offset-1 col-md-3">
@@ -54,7 +47,7 @@ global $post;
                     <i class="icon icon-location"></i>
                 </div>
                 <div class="info__text">
-                    Plac Nowy 9, 31-000 Kraków
+                    <?php echo str_replace("\r\n", ", ", ot_get_option( 'address' )); ?>
                 </div>
             </div>
             <div class="info">
@@ -62,9 +55,9 @@ global $post;
                     <i class="icon icon-phone"></i>
                 </div>
                 <div class="info__text">
-                    <p><a href="tel: ">519 448 448</a></p>
-                    <p><a href="tel: ">501 577 146</a></p>
-                    <p><a href="tel: ">501 301 104</a></p>
+                    <?php foreach( explode("\r\n", ot_get_option( 'information_phones' )) as $phone)
+                        echo '<p><a href="tel: '.$phone.'">'.$phone.'</a></p>';
+                    ?>
                 </div>
             </div>
             <div class="info">
@@ -72,7 +65,9 @@ global $post;
                     <i class="icon icon-mail"></i>
                 </div>
                 <div class="info__text">
-                    <p><a href="mailto: ">catering@scandale.pl</a></p>
+                    <p><a href="mailto: <?php echo ot_get_option( 'email' ); ?>">
+                        <?php echo ot_get_option( 'email' ); ?>
+                    </a></p>
                 </div>
             </div>
 		</div>
@@ -85,5 +80,7 @@ global $post;
 		</div>
 	</div>
 </section>
-<?php get_template_part( 'template-parts/page/content', 'reservation' ); ?>
+<?php 
+    get_template_part('template-parts/parts/order');
+?>
 <?php get_footer(); ?>
