@@ -13,8 +13,8 @@ get_header();
 <section class="about-us">
 	<div class="container text-center">
 		<h1>
-			<span class="claim">Poznajmy się lepiej!</span>
-			O nas
+			<span class="claim"><?php the_field('claim') ?></span>
+			<?php the_title(); ?>
 		</h1>
 	</div>
 	<div class="container text-center cf no-gutters">
@@ -29,37 +29,27 @@ get_header();
 			<div class="container cf col-pd-bottom">
 				<div class="col-md-5">
 					<h2>
-						<span class="claim">Kim jesteśmy?</span>
-						Catering Scandale
+						<span class="claim"><?php the_field('claim_section_1'); ?></span>
+						<?php the_field('title_section_1'); ?>
 					</h2>
-					<p>
-						Jeteśmy specjalistami do sprawiania kulinarnych przyjemności i oganizowania dobrej zabawy. Jako właściciele dwóch kultowych restauracji w Krakowie – Le Scandale i Scandale Royal doskonale znamy się na przygotowywaniu dań z kuchni całego świata. Specjalnością Grupy Scandale jest również catering w Krakowie i okolicach.
-					</p>
+					<?php echo apply_filters('content', get_field('text_section_1')); ?>
 				</div>
 				<div class="col-md-offset-1 col-md-6">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about-us-1.png" alt=""/>
+					<img class="img-fluid" src="<?php the_field('image_section_1'); ?>" alt=""/>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-offset-1 col-md-10">
 			<div class="container cf col-pd-bottom">
 				<div class="col-md-5">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/images/about-us-2.png" alt=""/>
+					<img class="img-fluid" src="<?php the_field('image_section_2'); ?>" alt=""/>
 				</div>
 				<div class="col-md-offset-1 col-md-6">
 					<h2>
-						<span class="claim">Co możemy dla Ciebie zrobić?</span>
-						Pomożemy w każdym aspekcie
+						<span class="claim"><?php the_field('claim_section_2'); ?></span>
+						<?php the_field('title_section_2'); ?>
 					</h2>
-					<p>
-						Grupa Scandale to firma, w której nie boimy się wyzwań. Jesteśmy elastyczni i otwarci na propozycje. Nie musisz się też martwić, gdy brakuje Ci pomysłów na menu,artystyczną oprawę, wystrój czy motyw przewodni imprezy.
-					</p>
-					<p>
-						Nasi specjaliści zawsze chętnie podpowiedzą, doradzą, zainspirują. A doświadczenie w robieniu dobrego wrażenia mamy spore. Wystarczy zapytać o to gości restauracji należących do Grupy Scandale, w których organizowaliśmy już pokazy kulinarne, wieczory z degustacją win, koncerty, walki kickbokserskie czy imprezy-przebieranki.
-					</p>
-					<p>
-						Powierzając nam organizację przyjęcia, możesz zająć się wyłącznie dobrą zabawą, dbaniem o zaproszonych gości i… zbieraniem od nich pochwał.
-					</p>
+					<?php echo apply_filters('content', get_field('text_section_2')); ?>
 				</div>
 			</div>
 		</div>
