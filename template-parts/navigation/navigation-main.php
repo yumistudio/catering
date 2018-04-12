@@ -12,7 +12,7 @@
 <div class="sticky-nav">
 	<div class="sticky-nav__logo">
 		<div id="logo">
-			<img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png"/>
+			<a href="<?php bloginfo( 'siteurl' ) ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png"/></a>
 		</div>
 	</div>
 

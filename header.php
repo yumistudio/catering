@@ -45,7 +45,7 @@ wp_head();
                 get_template_part('template-parts/navigation/navigation', 'main');
             ?>        
             <div class="header-main__logo text-center">
-                <img id="logo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-white.svg" alt="Catering Logo"/>
+                <img id="logo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-white.png" alt="Catering Logo"/>
             </div>  
             <div class="header-main__welcome text-center">
                 <h1>
