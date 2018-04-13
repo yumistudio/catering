@@ -1,82 +1,13 @@
 <?php
 /**
- * Template Name: Strona Galerii Detale
+ * Template Name: Strona Galeria Detal
  *
  * @package WordPress
  * @since vilicon 1.0
  */
-/*
-$grid = array(
-	0 => 'grid-item--height-reg',
-	1 => 'grid-item--height-small',
-	2 => 'grid-item--height-reg',
-	3 => 'grid-item--height-small',
-	4 => 'grid-item--height-small',
-	5 => 'grid-item--height-reg',
-	6 => 'grid-item--height-small',
-	7 => 'grid-item--height-reg',
-	8 => 'grid-item--height-small',
-	9 => 'grid-item--height-reg',
-	10 => 'grid-item--height-reg',
-	11 => 'grid-item--height-small',
-	12 => 'grid-item--height-small',
-	13 => 'grid-item--height-reg',
-	14 => 'grid-item--height-small',
-	15 => 'grid-item--height-reg',
-	16 => 'grid-item--height-small',
-	17 => 'grid-item--height-reg',
-	18 => 'grid-item--height-small',
-	19 => 'grid-item--height-reg',
-);
-*/
-$heights = array(
-	0 => 'grid-item--height-reg',
-	1 => 'grid-item--height-small',
-	2 => 'grid-item--height-reg',
-	3 => 'grid-item--height-reg',
-	4 => 'grid-item--height-small',
-	5 => 'grid-item--height-small',
-	6 => 'grid-item--height-small',
-);
-$widths = array(
-	0 => '',
-	1 => 'grid-item--width-double',
-	2 => '',
-	3 => '',
-	4 => '',
-	6 => '',
-	5 => 'grid-item--width-double',
-);
 
 get_header();
 
-$all_terms = array();
-$gallery = get_field('gallery', 2);
-foreach ($gallery as $key => $image) {
-	if ( $term = get_field('kategoria', $image['ID']))
-		$all_terms[$term->slug] = $term->name;
-
-	$gallery[$key]['term'] = $term;
-}
-
-/*
-
-$args = array(
-	'post_type' => 'post',
-);
-
-$query = new WP_Query($args);
-
-$i = 0;
-foreach ($query->posts as $key => $post) {
-	$terms = get_the_category($post->ID);
-	foreach( $terms as $term ) {
-		$all_terms[$term->slug] = $term->name;
-	}
-	$post->filter = $terms;
-	$i++;
-}
-*/
 ?>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">

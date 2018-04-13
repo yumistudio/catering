@@ -13,7 +13,7 @@
 					<h3><?php the_title(); ?></h3>
 					<div class="hidden">
 						<?php the_field('short_description'); ?>
-						<a class="btn btn-secondary-outline" href="#">Zobacz warianty</a>
+						<a class="btn btn-secondary-outline btn-sm" href="#">Zobacz warianty</a>
 					</div>
 					<div class="border-bottom">
 						<span class="icon icon-bow"></span>
