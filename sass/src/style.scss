@@ -502,14 +502,15 @@ footer {
     padding-top: 60px;
     padding-bottom: 30px;
     h5 {
-        color: #545454;
-        font-family: Hind, sans-serif;
+        color: $gold;
+        font-family: 'Libre Baskerville';
+        font-style: italic;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
     }
     p {
-        font-size: 1rem;
-        color: #949494;
+        font-size: 16px;
+        color: #d5d5d5;
         line-height: 25px;
     }
     .footer-menu {
@@ -519,12 +520,14 @@ footer {
         }
         li {
             margin-bottom: 5px;
+            width: 49%;
+            float: left;
         }
         a {
-            color: #949494;
+            color: #d5d5d5;
             transition: all .3s ease-in-out;
             &:hover {
-                text-decoration: none;
+                text-decoration: underline;
                 color: $white; 
             }
         }
