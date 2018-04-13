@@ -33,51 +33,7 @@ get_header();
 				<h2>Konferencja Medica</h2>
 			</div>
 			<div class="overlay">
-				<a class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
-			</div>
-		</div>
-		<div class="col-md-4 gallery-main__item">
-			<div class="image" style="background-image: url('<?php echo bloginfo( 'template_url' ) ?>/assets/images/place.png');">
-			</div>
-			<div class="text">
-				<h3>Sierpień 2017</h3>
-				<h2>Konferencja Medica</h2>
-			</div>
-			<div class="overlay">
-				<a class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
-			</div>
-		</div>
-		<div class="col-md-4 gallery-main__item">
-			<div class="image" style="background-image: url('<?php echo bloginfo( 'template_url' ) ?>/assets/images/place.png');">
-			</div>
-			<div class="text">
-				<h3>Sierpień 2017</h3>
-				<h2>Konferencja Medica</h2>
-			</div>
-			<div class="overlay">
-				<a class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
-			</div>
-		</div>
-		<div class="col-md-4 gallery-main__item">
-			<div class="image" style="background-image: url('<?php echo bloginfo( 'template_url' ) ?>/assets/images/place.png');">
-			</div>
-			<div class="text">
-				<h3>Sierpień 2017</h3>
-				<h2>Konferencja Medica</h2>
-			</div>
-			<div class="overlay">
-				<a class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
-			</div>
-		</div>
-		<div class="col-md-4 gallery-main__item">
-			<div class="image" style="background-image: url('<?php echo bloginfo( 'template_url' ) ?>/assets/images/place.png');">
-			</div>
-			<div class="text">
-				<h3>Sierpień 2017</h3>
-				<h2>Konferencja Medica</h2>
-			</div>
-			<div class="overlay">
-				<a class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
+				<a href="<?php echo bloginfo( 'url' ) ?>/galeria-detal" class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
 			</div>
 		</div>
 	</div>

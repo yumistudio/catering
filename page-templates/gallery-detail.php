@@ -11,7 +11,26 @@ get_header();
 ?>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">
-	<h1 class="text-dark text-center">Galeria</h1>
+	<div class="container">
+		<div class="col-md-2">
+			<a href="#" class="btn btn-link">
+				<i class="icon icon-back"></i>Wszystkie galerie
+			</a>
+		</div>
+		<div class="col-md-8 text-center">
+			<h1>
+				<span class="claim">Sierpień 2017</span>
+				Konferencja Medica
+			</h1>
+		</div>
+	</div>
+	<div class="container text-center cf no-gutters">
+		<div class="col-md-12">
+			<div class="bow bow-fluid bow-space">
+				<span class="icon icon-bow"></span>
+			</div>
+		</div>
+	</div>
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
