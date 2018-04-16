@@ -13,7 +13,7 @@ get_header();
 <section id="gallery" class="padding-section pattern-section divider-bottom">
 	<div class="container">
 		<div class="col-md-2">
-			<a href="#" class="btn btn-link">
+			<a href="<?php bloginfo( 'url' )?>/galeria" class="btn btn-link">
 				<i class="icon icon-back"></i>Wszystkie galerie
 			</a>
 		</div>
