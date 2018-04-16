@@ -10,7 +10,7 @@
 			<div id="home-reservation__cta" class="text-center">
 				<a class="phone" href="tel: <?php echo ot_get_option( 'phone' ); ?>"><i class="icon icon-phone"></i><?php echo ot_get_option( 'phone' ); ?></a>
 				<div class="or">lub</div>
-				<a href="#" class="btn btn-primary"><?php the_field('oc_button_text'); ?></a>
+				<a href="#" class="btn btn-primary"><?php the_field('oc_button_text', 2); ?></a>
 			</div>
 		</div>
 	</div>

@@ -23,7 +23,4 @@
 		</div>
 	<?php endwhile; wp_reset_postdata(); ?>
 	</div>
-	<div class="container text-center cf ">
-		<a href="/referencje/" class="btn btn-primary"><?php the_field('t_button_text'); ?></a>
-	</div>
 </section>
