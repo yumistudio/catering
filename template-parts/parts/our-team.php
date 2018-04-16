@@ -87,8 +87,6 @@
 							});
 							
 							container.getNiceScroll().resize();
-							//console.log(container.width() + ' / ' + container.height());
-							//console.log(container.getNiceScroll());
 						}
 
 						$('#home-people__carousel').magnificPopup({
@@ -109,10 +107,6 @@
 									this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
 								}
 							},
-							/*
-							preloader: false,
-							fixedContentPos: false,
-							*/
 						});
 					});
 				})(jQuery);

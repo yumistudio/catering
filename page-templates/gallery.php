@@ -10,7 +10,7 @@ get_header();
 
 ?>
 
-<section id="gallery-main" class="padding-section pattern-section divider-bottom">
+<section id="gallery-main" class="bg-subpage section-pd-top section-pd-bottom">
 	<div class="container text-center">
 		<h1>
 			<span class="claim">Jak to wygląda?</span>
