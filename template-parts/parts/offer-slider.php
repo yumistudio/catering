@@ -40,7 +40,7 @@
                                             <a class="btn" href="<?php echo get_permalink(get_the_ID()); ?>">Zobacz warianty</a>
                                         </div>
                                         <div class="border-bottom">
-                                            <span class="icon icon-bow"></span>
+                                            <img class="icon" src="<?php bloginfo( 'template_url' ); ?>/assets/images/bow.png"/>
                                         </div>
                                     </div>
                                 </div>

@@ -2289,17 +2289,17 @@ p.p-outline {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    transition: max-height 500ms cubic-bezier(0, 1, 0, 1);
+                    transition: max-height 500ms;
                     padding: 0 30px;
                     .btn {
                         margin-top: 20px;
                         margin-bottom: 16px;
                     }
                 }
+                
                 &:hover {
                     .hidden {
-                        transition: max-height 1s ease-in-out;
-                        max-height: 100%;
+                        max-height: 300px !important;
                     }
                 }
             }
@@ -2745,18 +2745,27 @@ p.p-outline {
     
         .section-info__box {
             &__holder {
+                transition: all .5s;
                 .wrapper {
                     width: 90%;
                     bottom: -35px;
+                    transition: all .5s;
                     .title {
                         padding: .25rem 0;
                         h3 {
                             font-size: 19px;
                         }
+                        .border-bottom .icon {
+                            bottom: -9px;
+                            background: transparent;
+                        }
                     }
                     .hidden {
                         width: 100%;
                         padding: 0 10px;
+                        font-size: 14px;
+                        line-height: 20px;
+                        transition: all .5s;
                         .btn {
                             margin: 0;
                             font-size: 1rem;
@@ -2764,6 +2773,11 @@ p.p-outline {
                             padding-right: 15px;
                             position: relative;
                             z-index: 600;
+                        }
+                    }
+                    &:hover {
+                        .hidden {
+                            max-height: 300px !important;
                         }
                     }
                 }
