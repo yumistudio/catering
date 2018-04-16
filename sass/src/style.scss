@@ -2753,10 +2753,16 @@ p.p-outline {
                         h3 {
                             font-size: 19px;
                         }
+                        .border-bottom .icon {
+                            bottom: -9px;
+                            background: transparent;
+                        }
                     }
                     .hidden {
                         width: 100%;
                         padding: 0 10px;
+                        font-size: 14px;
+                        line-height: 20px;
                         .btn {
                             margin: 0;
                             font-size: 1rem;
