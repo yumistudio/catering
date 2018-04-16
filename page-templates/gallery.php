@@ -24,18 +24,26 @@ get_header();
 			</div>
 		</div>
 	</div>
+	<?php $query = new WP_Query( array(
+        'category_name' => 'galeria',
+        'posts_per_page' => 20,
+    	)
+    );
+	?>
 	<div class="container cf gallery-main">
+		<?php while ($query->have_posts()) : $query->the_post(); ?>
 		<div class="col-md-4 gallery-main__item">
-			<div class="image" style="background-image: url('<?php echo bloginfo( 'template_url' ) ?>/assets/images/place.png');">
+			<div class="image" style="background-image: url('<?php the_post_thumbnail_url(); ?>">
 			</div>
 			<div class="text">
-				<h3>Sierpień 2017</h3>
-				<h2>Konferencja Medica</h2>
+				<h3><?php the_field('gallery_date'); ?></h3>
+				<h2><?php the_title(); ?></h2>
 			</div>
 			<div class="overlay">
-				<a href="<?php echo bloginfo( 'url' ) ?>/galeria-detal" class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
+				<a href="<?php echo get_permalink(get_the_ID()); ?>" class="btn btn-secondary-outline btn-sm">Zobacz zdjęcia</a>
 			</div>
 		</div>
+		<?php endwhile; wp_reset_postdata(); ?>
 	</div>
 </section>
 <?php get_footer(); ?>

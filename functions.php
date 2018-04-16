@@ -170,7 +170,8 @@ function yumi_scripts() {
 	}
 
 	wp_enqueue_script( 'isotope', get_theme_file_uri( '/assets/js/isotope.pkgd.min.js' ), array(), '', false );
-	
+	wp_enqueue_script( 'isotope-masonry-hybrid', get_theme_file_uri( 'assets/js/jquery.masonry-hybrid.min.js' ), array(), '', false );
+
 	wp_enqueue_style( 'swiper', get_theme_file_uri( '/lib/swiper/dist/css/swiper.min.css' ) );
 	wp_enqueue_script( 'swiper', get_theme_file_uri( '/lib/swiper/dist/js/swiper.min.js' ), array(), '', true );
 
@@ -196,6 +197,12 @@ function yumi_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'yumi_scripts' );
 
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.0.min.js", array(), '3.1.0' );
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 /**
  * Filter the `sizes` value in the header image markup.
