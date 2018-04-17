@@ -8,14 +8,14 @@
 
 get_header();
 
-?>
+while ( have_posts() ) : the_post(); ?>
 
 <section class="bg-subpage section-pd-top">
 	<div class="container">
 		<div class="col-md-12 text-center">
 			<h1>
-				<span class="claim">Oferta</span>
-				Przyjęcia okolicznościowe
+				<span class="claim"><?php the_field('claim'); ?></span>
+				<?php the_title(); ?>
 			</h1>
 		</div>
 	</div>
@@ -31,58 +31,44 @@ get_header();
 		<div class="col-md-offset-1 col-md-10">
 			<div class="col-md-6">
 				<h2>
-					<span class="claim">Przygotowania zostaw nam</span>
-					Ciesz się okazją
+					<span class="claim"><?php the_field('claim_section_1'); ?></span>
+					<?php the_field('title_section_1'); ?>
 				</h2>
-				<p>
-				Troszczymy się o niezapomniane wspomnienia z ważnych wydarzeń. Dbamy o to, aby uczestniczący w nim goście nie musieli martwić się przygotowaniami ani obsługą, a zamiast tego mogli skupić się na byciu z bliskimi w wyjątkowych chwilach. Organizujemy indywidualną oprawę: komunii  /  chrzcin  /  wesel  /  rodzinnych przyjęć
-				</p>
+				<?php the_content(); ?>
 			</div>
 			<div class="col-md-6">
 				<img class="img-fluid" src="<?php bloginfo( 'template_url' ); ?>/assets/images/about-us-1.png" alt=""/>
 			</div>
 		</div>
 	</div>
-
+<?php if( have_rows('variants') ): ?>
 	<div class="container cf section-pd-top no-gutters">
 		<div class="col-md-12 no-gutters">
+			<?php while ( have_rows('variants') ) : the_row(); ?>
 			<div class="col-md-4">
 				<div class="image-box">
-					<h2>Wariant pierwszy</h2>
-					<p>Przystawka, danie główne, zimny lub ciepły bufet</p>
-					<a href="#" class="btn btn-secondary-outline btn-sm">Sprawdź menu</a>
+					<h2><?php the_sub_field('name'); ?></h2>
+					<p><?php the_sub_field('short_description'); ?></p>
+					<a href="<?php the_sub_field('pdf_file'); ?>" target="_blank" class="btn btn-secondary-outline btn-sm">Sprawdź menu</a>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="image-box">
-					<h2>Wariant drugi</h2>
-					<p>Przystawka, danie główne, zimny lub ciepły bufet</p>
-					<a href="#" class="btn btn-secondary-outline btn-sm">Sprawdź menu</a>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="image-box">
-					<h2>Wariant trzeci</h2>
-					<p>Przystawka, danie główne, zimny lub ciepły bufet</p>
-					<a href="#" class="btn btn-secondary-outline btn-sm">Sprawdź menu</a>
-				</div>
-			</div>
+			<?php endwhile; ?>
 		</div>
 	</div>
-
+<?php endif; ?>
 	
 	<div class="container cf section-pd-top">
 		<div class="col-md-offset-1 col-md-10">
 			<div class="container cf col-pd-bottom">
 				<div class="col-md-offset-2 col-md-8 text-center no-gutters">
-					<p>
-					Zamówienia realizujemy w dowolnej, dogodnej dla klienta lokalizacji. Doradzamy na etapie budowania koncepcji przyjęcia, pomagamy w konstrukcji niepowtarzalnego menu, posiłki dostarczamy w gotowej formie lub przygotowujemy je na miejscu, w kuchni klienta. Dysponujemy szeroką ofertą zastawy stołowej oraz profesjonalną obsługa kelnerską, dzięki której gospodarz może skupić się wyłącznie na gościach.
-					</p>
+					<?php the_field('secondary_text'); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+<? endwhile; ?>
 
 <?php 
 	get_template_part('template-parts/parts/offer-features');

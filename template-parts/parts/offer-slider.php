@@ -37,7 +37,7 @@
                                         <h3><?php the_title(); ?></h3>
                                         <div class="hidden">
                                             <?php the_field('short_description'); ?>
-                                            <a class="btn" href="<?php bloginfo( 'url' )?>/oferta-detal">Zobacz warianty</a>
+                                            <a class="btn" href="<?php echo get_permalink(get_the_ID()); ?>">Zobacz warianty</a>
                                         </div>
                                         <div class="border-bottom">
                                             <img class="icon" src="<?php bloginfo( 'template_url' ); ?>/assets/images/bow.png"/>
