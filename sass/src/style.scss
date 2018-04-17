@@ -2672,7 +2672,7 @@ p.p-outline {
                 width: 100%;
                 height: 100%;
                 transition-delay: 400ms;
-                transition: all 250ms ease-in-out;
+                transition: all 500ms ease-in-out;
             }
     
             &__wrapper:hover + .swiper-slide__overlay {
@@ -2788,6 +2788,73 @@ p.p-outline {
             position: absolute;
             top: 50%;
             z-index: 999;
+        }
+    }
+}
+
+.phone-popup {
+    &__wrapper {
+        background: $white;
+        padding: 60px 0 40px 0;
+        .bow {
+            margin-bottom: 2.25rem;
+        }
+        .btn {
+            width: 100%;
+        }
+        .mfp-close {
+            right: 45px;
+            top: 30px; 
+            i {
+                font-size: 16px;
+            }
+        }
+        .disclaimer {
+            border-top: 1px solid #ececec;
+            display: flex;
+            padding-top: 25px;
+            margin-top: 25px;
+            align-items: center;
+            i {
+                color: #757575;
+                font-size: 22px;
+            }
+            p {
+                color: #757575;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}
+
+.black-popup {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    &__content {
+        background: $white;
+        padding: 0;
+    }
+    &__image {
+        background: #f2f2f2;
+        img {    
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    &__text {
+        padding: 45px 60px;
+        position: relative;
+        .mfp-close {
+            right: 25px;
+            top: 20px; 
+            i {
+                font-size: 16px;
+            }
         }
     }
 }

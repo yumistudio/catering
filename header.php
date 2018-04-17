@@ -71,25 +71,63 @@ wp_head();
             ?>
         </header>   
         
+        
         <div class="phone-fixed">
-            <div class="asd">
-                <div id="popup-<?php the_ID(); ?>" class="black-popup max-width mfp-hide">
-                    <div class="black-popup__wrapper">
+            <a href="#" data-mfp-src="#popup-phone"><i class="icon icon-phone"></i></a>
+            <div id="popup-phone" class="max-width mfp-hide">
+                <div class="col-md-offset-3 col-md-6">
+                    <div class="phone-popup__wrapper">
                         <button title="Zamknij (Esc)" id="mfp-close" type="button" class="mfp-close"><i class="icon-close"></i></button>
                         <div>
                             <div class="table">
-                                <div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
-                                <div class="cell"><div class="content">
-                                    <?php the_title('<h3>', '</h3>');
-                                    foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
-                                    the_content(); ?>
-                                </div></div>
+                                <div class="content">
+                                    <div class="col-md-offset-1 col-md-10 text-center">
+                                        <h1>
+                                            <span class="claim">Oddzwonimy do Ciebie</span>
+                                            Zostaw numer
+                                        </h1>
+                                        
+                                        <div class="container text-center cf">
+                                            <div class="col-md-12">
+                                                <div class="bow bow-fluid">
+                                                    <span class="icon icon-bow"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container text-center cf">
+                                            <div class="col-md-12">
+                                                <div class="md-form">
+                                                    <input name="yourPhone" class="form-control" aria-required="true" aria-invalid="false" type="text">
+                                                    <label for="yourPhone">Telefon</label>
+                                                </div>
+                                                <a href="#" class="btn btn-primary">Zamów rozmowę</a>
+                                                <a href="<?php bloginfo( 'url' )?>/kontakt" class="btn">lub Wyślij wiadomość</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="container text-center cf">
+                                            <div class="col-md-12">
+                                                <div class="disclaimer">
+                                                <div class="col-md-2">
+                                                    <i class="icon icon-shield"></i>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p>
+                                                        Twoje dane są bezpieczne i nie zostaną sprzedane </br>
+                                                        lub wykorzystane w celach marketingowych.
+                                                    </p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#"><i class="icon icon-phone"></i></a>
         </div>
         <script>
             (function($) {
@@ -106,20 +144,17 @@ wp_head();
                     }
                     $('.phone-fixed').magnificPopup({
                         disableOn: 700,
+                        delegate: 'a',
                         type: 'inline',
                         closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
-                        mainClass: 'mfp-fade asd',
+                        mainClass: 'mfp-fade phone-popup',
                         removalDelay: 160,
                         gallery:{ 
-                            enabled:true,
-                            arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"><i class="icon-navigate-%dir%"></i></button>'
+                            enabled:false
                         },
                         callbacks: {
                             open: setUpNiceScroll,
                             change: setUpNiceScroll,
-                            buildControls: function() {
-                                this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
-                            }
                         },
                         /*
                         preloader: false,
