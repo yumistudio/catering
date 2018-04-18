@@ -1,8 +1,8 @@
 <section id="trust" class="padding-section">
 	<div class="container text-center">
 		<h1>
-			<span class="claim"><?php the_field('t_section_subtitle'); ?></span>
-			<?php the_field('t_section_title'); ?>
+			<span class="claim"><?php the_title(); ?></span>
+			<?php the_field('claim'); ?>
 		</h1>
 	</div>
 	<div class="container text-center cf no-gutters">
