@@ -1,5 +1,29 @@
 /* global twentyseventeenScreenReaderText */
 (function( $ ) {
+	var setUpNiceScroll = function() {
+			var container = $(this.content.get()).find('.content');
+			
+			container.niceScroll({
+					cursorcolor: '#ffe2a680',
+					cursorborder: '1px solid #ffe2a680',
+			});
+			
+			container.getNiceScroll().resize();
+	}
+	$('.open-menu-link').magnificPopup({
+			disableOn: 700,
+			type: 'inline',
+			closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
+			mainClass: 'mfp-fade mobile-menu-popup',
+			removalDelay: 160,
+			gallery:{ 
+					enabled:false
+			},
+			callbacks: {
+					open: setUpNiceScroll,
+					change: setUpNiceScroll,
+			},
+	});
 
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
@@ -201,13 +225,7 @@
 		},
 	})
 
-	$(window).load(function() {
-		if( $('#tribe-events-content').hasClass('tribe-events-list') ) {
-			$('.tribe-bar-views-option-list').addClass('on')
-		} else {
-			$('.tribe-bar-views-option-month').addClass('on')
-		}
-	});
+
 
 	$(document).ready(function () {
 

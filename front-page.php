@@ -73,7 +73,7 @@ get_header(); ?>
 				</p>
 				<a href="<?php echo ot_get_option( 'drive_directions' ); ?>" target="_blank" class="btn">Wskazówki dojazdu</a>
 			</div>
-			<div class="item__data">
+			<div class="item__data container">
 				<div class="item__data__inner">
 					<a href="tel: <?php echo ot_get_option( 'phone' ); ?>">
 						<span class="icon icon-phone"></span>

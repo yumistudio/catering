@@ -26,7 +26,7 @@
 						<nav class="footer-menu">
                             <?php wp_nav_menu( array(
                                 'menu'           => 'footer-menu' ,
-                                'menu_class'     => '',
+                                'menu_class'     => 'cf',
                             ) ); ?>
                         </nav>
 					</div>
@@ -50,6 +50,13 @@
 						<div class="col-md-offset-6 col-md-2 text-right copy no-gutters">
 							© Grupa Scandale 2018
 						</div>
+					</div>
+					<div class="footer-bottom footer-center">
+						<div class="no-gutters">
+							Scandale Catering</br>
+							jest częścią Grupy Scandale</br>
+							© Grupa Scandale 2018
+						</div>	
 					</div>
 				</div>
 			</footer>

@@ -184,7 +184,7 @@ i {
 }
 
 .img-fluid {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -507,6 +507,10 @@ footer {
         font-style: italic;
         font-weight: 400;
         font-size: 14px;
+        margin-top: 30px;
+        @include breakpoint($md) {
+            margin-top: 16px;
+        }
     }
     p {
         font-size: 16px;
@@ -574,11 +578,23 @@ footer {
     }
 
     .footer-bottom {
+        display: none;
         margin-top: 50px;
         padding-top: 30px;
         border-top: 1px solid #242424;
         color: #747474;
         font-size: 0.875rem;
+        @include breakpoint($md) {
+            display: initial;
+        }
+        &.footer-center {
+            display: initial;
+            text-align: center;
+            margin-top: 30px;
+            @include breakpoint($md) {
+                display: none;
+            }
+        }
         img {
             margin-top: 6px;
         }
@@ -2266,12 +2282,15 @@ p.p-outline {
             text-align: center;
             
             .wrapper {
-                width: 70%;
+                width: 90%;
                 position: absolute;
                 bottom: -50px;
                 left: 50%;
                 transform: translate(-50%, 0%);
                 background: $white;
+                @include breakpoint($sm) {
+                    width: 70%;
+                }
                 .title {
                     position: relative;
                     padding: 1.25rem 0;
@@ -2923,13 +2942,15 @@ p.p-outline {
         color: $lightgrey;
     }
     .es_textbox_class {
+        color: ivory;
         border: 1px solid $lightgrey;
         padding: 10px 15px;
         &:focus {
-            border: 1px solid #77b557;
+            border: 1px solid #77b557 !important;
         }
     }
-    .btn {
-        
+    .es_button input {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }

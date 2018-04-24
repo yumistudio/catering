@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.25 16.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #252525;
+        stroke-miterlimit: 10;
+        stroke-width: 2.49px;
+      }
+    </style>
+  </defs>
+  <title>mobile-menu-ico</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <line class="cls-1" y1="1.24" x2="23.25" y2="1.24"/>
+      <line class="cls-1" y1="8.24" x2="23.25" y2="8.24"/>
+      <line class="cls-1" y1="15.24" x2="23.25" y2="15.24"/>
+    </g>
+  </g>
+</svg>
