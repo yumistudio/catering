@@ -1,5 +1,5 @@
 <section id="parallax-1" class="offer-features">
-<div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/backgrounds/info-parallax-bg.jpg" style="min-height: 300px;">
+<div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/backgrounds/info-parallax-bg.jpg">
     <div class="container cf">
         <div class="col-md-3 offer-features__feature">
 			<i class="icon icon-fork-knife"></i>

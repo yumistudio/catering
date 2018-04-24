@@ -87,6 +87,13 @@
 							nextEl: '.swiper-nav-next',
 							prevEl: '.swiper-nav-prev',
 						},
+						breakpoints: {
+							1440: { slidesPerView: 4 },
+							1300: { slidesPerView: 3 },
+							1024: { slidesPerView: 3 },
+							768: { slidesPerView: 1 },
+							480: { slidesPerView: 1 }
+							},
 						});
 						var setUpNiceScroll = function() {
 							var container = $(this.content.get()).find('.content');

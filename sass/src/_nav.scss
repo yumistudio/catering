@@ -5,6 +5,10 @@ NAVIGATION STYLES
 -----------------------------------*/
 
 nav.header-nav {
+    display: none;
+    @include breakpoint(min-width 992px) {
+        display: initial;
+    }
     ul {
         margin: 0 25px;
         padding: 0;
@@ -15,6 +19,7 @@ nav.header-nav {
         display: inline-flex;
         padding: 0;
         margin: 28px 22px;
+        position: relative;
         a {
             margin-top: 4px;
             position: relative;
@@ -48,6 +53,32 @@ nav.header-nav {
                 color: $white;
             }
         }
+    }
+    .current_page_item {
+        a {
+            color: $gold;
+            position: relative;
+        }
+        &::after {
+            content: '';
+            height: 1px;
+            background-color: $gold;
+            width: 20px;
+            display: block;
+            margin-top: 4px;
+            bottom: 0;
+            position: absolute;
+        }
+    }
+}
+
+.header-nav-mobile {
+    display: initial;
+    @include breakpoint(min-width 992px) {
+        display: none;
+    }
+    &__icon {
+        margin: 28px 22px;
     }
 }
 
@@ -84,6 +115,14 @@ nav.header-nav {
     &__logo {
         display: flex;
         align-items: center;
+        img {
+            width: 130px;
+            margin: 20px 0 15px 0;
+            @include breakpoint(min-width 800px) {
+                width: 100%;
+                margin: 0;
+            }
+        }
     }
 }
 
@@ -92,3 +131,4 @@ nav.header-nav {
     height: 90px;
     width: 100%;
 }
+

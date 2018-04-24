@@ -17,6 +17,10 @@
 	</div>
 
 	<div class="sticky-nav__container">
+		<nav class="header-nav-mobile">
+		
+			<?php //get_template_part('template-parts/navigation/navigation', 'mobile'); ?>
+		</nav>
 		<nav class="header-nav">
 			<?php wp_nav_menu( array(
 	            'menu'           => 'top-menu' ,

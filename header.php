@@ -161,6 +161,8 @@ wp_head();
                         fixedContentPos: false,
                         */
                     });
+                    
+                   
                 });
             })(jQuery);
         </script>

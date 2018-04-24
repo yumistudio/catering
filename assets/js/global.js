@@ -138,9 +138,8 @@
 	});
 
 	$('.es_button').each(function() {
-		$(this).addClass('btn frame-btn');
+		$(this).addClass('btn btn-primary');
 		$(this).children('input').val('zapisz się');
-		$(this).append('<span class="frame"></span>');
 	});
 
 	$('.filters input').change(function() {

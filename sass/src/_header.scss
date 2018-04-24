@@ -34,15 +34,24 @@
     }
 
     &__logo {
-        margin-top: 0px;
+        margin-top: 40px;
+        img {
+            width: 30%;
+        }
         @include breakpoint($sm) {
             margin-top: 20px;
         }
         @include breakpoint($md) {
             margin-top: 40px;
+            img {
+                width: auto;
+            }
         }
         @include breakpoint($lg) {
             margin-top: 60px;
+            img {
+                width: auto;
+            }
         }
     }
 
@@ -50,10 +59,10 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, calc(-50% + 40px));
         width: 100%;
         @include breakpoint($sm) {
-            transform: translate(-50%, calc(-50% + 20px));
+            transform: translate(-50%, calc(-50% + 40px));
         }
         @include breakpoint($md) {
             transform: translate(-50%, calc(-50% + 40px));
@@ -65,11 +74,24 @@
             transform: translate(-50%, calc(-50% + 100px));
         }
         h1 {
-            font-size: 3rem;
+            font-size: 2rem;
+            line-height: 2rem;
             color: $white;
+            @include breakpoint($sm) {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+            .claim {
+                line-height: 1.75rem;
+                font-size: 1rem;
+                @include breakpoint($sm) {
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
+            }
         }
         .btn {
-            margin-top: 20px;
+            margin-top: 40px;
             @include breakpoint($sm) {
                 margin-top: 40px;
             }
@@ -86,11 +108,15 @@
     }
 
     &__plate {
+        display: none;
         position: absolute;
         bottom: 0;
         left: 50%;
         width: 100%;
         transform: translateX(-50%);
+        @include breakpoint($md) {
+            display: initial;
+        }
         .container {
             max-height: 0px;
         }

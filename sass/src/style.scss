@@ -751,7 +751,9 @@ footer {
 }
 
 #home-reservation { 
-    background-image: url('assets/images/backgrounds/plate-bread.png'), url('assets/images/backgrounds/glass-drink.png');
+    @include breakpoint($md) {
+        background-image: url('assets/images/backgrounds/plate-bread.png'), url('assets/images/backgrounds/glass-drink.png');
+    }
     background-position: 3% 85%, 95% 25%;
     background-repeat: no-repeat;
     position: relative;
@@ -778,13 +780,13 @@ footer {
         }
 
         .btn {
-            width: 420px;
+            max-width: 420px;
             text-align: center;
         }
         .or {
             padding-bottom: .75rem;
             color: $lightgrey;
-            width: 520px;
+            max-width: 520px;
             margin: 20px auto;
             font-family: 'Libre Baskerville';
             font-style: italic;
@@ -1161,7 +1163,7 @@ footer {
         background-color: $white;    
         text-align: center;
         &-inner {
-            margin: 60px 0 0px 0;
+            padding: 60px 0 0px 0;
         }
         h2 {
             line-height: 2rem;
@@ -2032,6 +2034,10 @@ input[type="number"] {
         margin: 0;
     }
     &__feature {
+        margin: 30px 0;  
+        @include breakpoint($md) {
+            margin: 0;  
+        }
         i {
             border: 2px solid rgba(255,255,255,0.4);
             border-radius: 999px;
@@ -2042,6 +2048,12 @@ input[type="number"] {
             & + p {
                 margin-top: 3px;
             }
+        }
+    }
+    .parallaxed-window {
+        min-height: 900px;
+        @include breakpoint($md) {
+            min-height: 300px;
         }
     }
 }
@@ -2391,9 +2403,17 @@ p.p-outline {
         display: inline-flex;
         justify-content: space-around;
         width: 100%;
+        flex-direction: column;
+        @include breakpoint($md) {
+            flex-direction: row;
+        }
         &__feature {
+            margin: 30px 0;
             text-align: center;
-            max-width: 170px;
+            @include breakpoint($md) {
+                margin: 0;
+                max-width: 170px;
+            }
             i {
                 color: $gold;
                 border: 2px solid rgba(241, 185, 77, 0.4);
@@ -2856,5 +2876,60 @@ p.p-outline {
                 font-size: 16px;
             }
         }
+    }
+}
+
+.mfp-gallery {
+    .mfp-arrow::before, .mfp-arrow::after {
+        display: none;
+    }
+    .mfp-arrow {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: $green;
+        color: $white;
+        border-radius: 100px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+        margin-top: 0;
+        @include bg-transition($green, $green-secondary);
+        i {
+            font-size: 0.875rem;
+        }
+    }
+    [class^="mfp-arrow-left"] {
+        left: 40px;
+        i {
+            margin-right: 3px;
+        }
+    }
+    [class^="mfp-arrow-right"] {
+        right: 40px;
+        i {
+            margin-left: 3px;
+        }
+    }
+}
+
+.es_shortcode_form {
+    .es_textbox {
+        width: 100%;
+    }
+    .es_lablebox {
+        color: $lightgrey;
+    }
+    .es_textbox_class {
+        border: 1px solid $lightgrey;
+        padding: 10px 15px;
+        &:focus {
+            border: 1px solid #77b557;
+        }
+    }
+    .btn {
+        
     }
 }
