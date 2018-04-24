@@ -136,9 +136,9 @@
 	});
 
 	$('.next-section-scroll').click(function() {
-		var target = $(this).parent().next();
+		var target = $('#inner-wrap');
 		$('html, body').animate({
-		  scrollTop: target.offset().top - 70
+		  scrollTop: target.offset().top
 		}, 1000);
 	});
 
