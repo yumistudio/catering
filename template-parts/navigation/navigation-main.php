@@ -17,6 +17,9 @@
 	</div>
 
 	<div class="sticky-nav__container">
+		<nav class="header-nav-mobile">
+			<?php get_template_part('template-parts/navigation/navigation', 'mobile'); ?>
+		</nav>
 		<nav class="header-nav">
 			<?php wp_nav_menu( array(
 	            'menu'           => 'top-menu' ,
@@ -30,6 +33,11 @@
 </div>
 
 <div class="header-main__bar">
+	<nav class="header-nav-mobile">
+		<div class="header-nav-mobile__icon">
+			<a href="#menu-popup" class="open-menu-link"><img src="<?php echo get_template_directory_uri() ?>/assets/images/mobile-menu-ico-white.png"/></a>
+		</div>
+	</nav>
 	<nav class="header-nav header-nav-white">
 		<?php wp_nav_menu( array(
             'menu'           => 'top-menu' ,
