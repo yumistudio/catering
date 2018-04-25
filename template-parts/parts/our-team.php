@@ -108,7 +108,6 @@
 
 						$('#home-people__carousel').magnificPopup({
 							delegate: 'a.btn',
-							disableOn: 700,
 							type: 'inline',
 							
 							mainClass: 'mfp-fade about-us-popup',

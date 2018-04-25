@@ -11,7 +11,6 @@
 			container.getNiceScroll().resize();
 	}
 	$('.open-menu-link').magnificPopup({
-			disableOn: 700,
 			type: 'inline',
 			closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
 			mainClass: 'mfp-fade mobile-menu-popup',

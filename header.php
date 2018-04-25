@@ -143,7 +143,6 @@ wp_head();
                         container.getNiceScroll().resize();
                     }
                     $('.phone-fixed').magnificPopup({
-                        disableOn: 700,
                         delegate: 'a',
                         type: 'inline',
                         closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
